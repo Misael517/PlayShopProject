@@ -1,0 +1,36 @@
+.sectionName {
+    position: absolute;
+    z-index: 3;
+    text-transform: uppercase;
+    font-size: 2.1vh;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    padding: 0.3em;
+    border: 3px solid rgb(0, 0, 0);
+    color: black;
+    border-radius: 0.2em;
+}
+
+.itemsGrid {
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    grid-template-rows: 31.5vh 31.5vh;
+    grid-template-columns: 28vw 28vw 28vw;
+    width: 100%;
+    gap: .1%;
+}
+
+.itemsContent {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    transition: 200ms;
+    z-index: 2;
+}
+
+.itemsContent:hover {
+    transform: scale(1.01);
+    transition: 200ms;
+    cursor: pointer;
+}
