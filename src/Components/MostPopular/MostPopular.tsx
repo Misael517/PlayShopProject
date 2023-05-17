@@ -8,6 +8,12 @@ import icon3 from './images/icon3.jpg';
 import icon4 from './images/icon4.jpg';
 import icon5 from './images/icon5.jpg';
 import icon6 from './images/icon6.jpg';
+import icon7 from './images/icon7.jpg';
+import icon8 from './images/icon8.jpg';
+import icon9 from './images/icon9.jpg';
+import icon10 from './images/icon10.jpg';
+import icon11 from './images/icon11.jpg';
+import icon12 from './images/icon12.jpg';
 
 // buttons icons:
 import leftBtn from './images/R.png';
@@ -19,8 +25,6 @@ interface Game {
     name: string;
     icon: string;
     price: number;
-    discount: number;
-    actualPrice: number;
 }
 
 interface GamesGenre {
@@ -49,46 +53,34 @@ function OnSale() {
             id: 0,
             games: [
                 {
-                    name: 'The Witcher',
+                    name: 'Grand Theft auto',
                     icon: icon1,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
                 {
-                    name: 'God Of War Ragnarok ',
+                    name: 'Elden Ring',
                     icon: icon2,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
                 {
-                    name: 'Jedi Survivor',
+                    name: 'Stray',
                     icon: icon3,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
                 {
-                    name: 'Kena Bridge of Spirits',
+                    name: 'Horizon Forbidden West',
                     icon: icon4,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
                 {
-                    name: 'Kena Bridge of Spirits',
+                    name: 'A Plague Tale Requiem',
                     icon: icon5,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
                 {
-                    name: 'Kena Bridge of Spirits',
+                    name: 'The Calisto Protocol',
                     icon: icon6,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
             ]
         },
@@ -96,46 +88,34 @@ function OnSale() {
             id: 1,
             games: [
                 {
-                    name: 'Assetto Corsa',
-                    icon: '',
+                    name: 'Need For Speed Unbound',
+                    icon: icon7,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
                 {
-                    name: 'Assetto Corsa Competizione',
-                    icon: '',
+                    name: 'Gotham Knights',
+                    icon: icon8,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
                 {
-                    name: 'iRacing',
-                    icon: icon1,
+                    name: 'High On Life',
+                    icon: icon9,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
                 {
-                    name: 'Forza Horizon 5',
-                    icon: '',
+                    name: 'Sonic Frontiers',
+                    icon: icon10,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
                 {
-                    name: 'Kena Bridge of Spirits',
-                    icon: icon4,
+                    name: 'Kirby and the forgotten land',
+                    icon: icon11,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
                 {
-                    name: 'Kena Bridge of Spirits',
-                    icon: icon5,
+                    name: 'DyingLight 2',
+                    icon: icon12,
                     price: 60,
-                    discount: 20,
-                    actualPrice: 40,
                 },
             ]
         },
