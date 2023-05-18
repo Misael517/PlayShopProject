@@ -27,6 +27,8 @@
     width: 100%;
     transition: 200ms;
     z-index: 2;
+    background-position: center;
+    background-size: cover;
 }
 
 .itemsContent:hover {

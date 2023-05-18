@@ -10,27 +10,32 @@ import icon6 from './images/icon6.jpg';
 
 interface GameContent {
     id: number;
+    name: string;
     url: string;
     icon: string;
-    price: number;
 }
 
 function GamesGenre() {
     const gamesContent: GameContent[] = [
-        { id: 0, url: 'https://www.google.com/', icon: icon1, price: 123 },
-        { id: 1, url: 'https://www.google.com/', icon: icon2, price: 60 },
-        { id: 2, url: 'https://www.google.com/', icon: icon3, price: 60 },
-        { id: 3, url: 'https://www.google.com/', icon: icon4, price: 60 },
-        { id: 4, url: 'https://www.google.com/', icon: icon5, price: 70 },
-        { id: 5, url: 'https://www.google.com/', icon: icon6, price: 70 },
+        { id: 0, name: 'Action', url: 'https://www.google.com/', icon: icon1, },
+        { id: 1, name: 'Adventure', url: 'https://www.google.com/', icon: icon2, },
+        { id: 2, name: 'Figthing', url: 'https://www.google.com/', icon: icon3, },
+        { id: 3, name: 'Racing', url: 'https://www.google.com/', icon: icon4, },
+        { id: 4, name: 'RPG', url: 'https://www.google.com/', icon: icon5, },
+        { id: 5, name: 'Shooters', url: 'https://www.google.com/', icon: icon6, },
     ]
 
     return (
         <>
             <h2 className={styles.sectionName}>Games by genre</h2>
             <div className={styles.itemsGrid}>
-                {gamesContent.map((game) => (
-                    <div className={styles.itemsContent} key={game.id} style={{ backgroundImage: `url(${game.icon})` }}>
+                {gamesContent.map((genre) => (
+                    <div className={styles.itemsContent} key={genre.id} style={{ backgroundImage: `url(${genre.icon})` }}>
+
+
+                        <div className={styles.gamesInfo}>
+                            <h3>{genre.name}</h3>
+                        </div>
 
                     </div>
                 ))}

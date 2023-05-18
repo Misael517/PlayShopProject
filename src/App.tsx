@@ -19,10 +19,10 @@ function App() {
           <NewReleases />
         </section>
         <section className={styles.section2}>
-          <OnSale />
+          <GamesGenre />
         </section>
         <section className={styles.section3}>
-          <GamesGenre />
+          <OnSale />
         </section>
         <section className={styles.section4}>
           <MostPopular />
