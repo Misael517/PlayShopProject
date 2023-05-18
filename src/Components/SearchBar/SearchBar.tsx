@@ -1,4 +1,5 @@
 import styles from './SearchBar.module.css';
+import { useState } from 'react';
 
 // game icons:
 import icon1 from '../../assets/Images/icon1.jpg';
@@ -321,18 +322,28 @@ const gamesFilter: GamesFilter[] = [
 ]
 
 function SearchBar() {
+    const [searchItem, setSearchItem] = useState<string>('')
+
     return (
         <>
 
-            <h1 className={styles.pageTitle}>List of Video Games</h1>
+            <h1 className={styles.pageTitle}>Find any Video Game</h1>
 
             <div className={styles.searchContainer}>
-                <input type='text' className={styles.searchInput}></input>
-                <button className={styles.searchBtn}>Search</button>
+                <input type='text' className={styles.searchInput} placeholder='search...' onChange={(e) => { setSearchItem(e.target.value) }}></input>
+                <button className={styles.filterBtn}>Filter</button>
             </div>
 
             <div className={styles.gamesContainer}>
-                {gamesFilter.map((games) => (
+                {gamesFilter.filter((games) => {
+                    if (searchItem === '') {
+                        return games
+                    } else if (games.name.toLocaleLowerCase().includes(searchItem.toLocaleLowerCase())) {
+                        return games
+                    }
+
+                }
+                ).map((games) => (
                     <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id}>
 
 

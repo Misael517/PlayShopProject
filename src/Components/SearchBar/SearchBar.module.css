@@ -13,7 +13,7 @@
 
 .searchContainer {
     display: flex;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
 }
 
@@ -21,9 +21,11 @@
     width: 30%;
     height: 3.5vh;
     border: 1.5px solid black;
+    color: black;
+    padding: 1vh;
 }
 
-.searchBtn {
+.filterBtn {
     background: rgb(0, 51, 70);
     background: radial-gradient(circle, rgb(1, 81, 110) 0%, rgba(0, 61, 94, 0.8799894957983193) 100%);
     border: none;
@@ -38,9 +40,14 @@
     transition: 200ms;
 }
 
+.filterBtn {
+    cursor: pointer;
+    transition: 200ms;
+}
+
 .gamesContainer {
     display: flex;
-    margin-top: 5vh;
+    margin-top: 4vh;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
@@ -53,7 +60,6 @@
     position: relative;
     background-color: gray;
     background-size: cover;
-    top: 6vh;
     height: 18vw;
     width: 13%;
     margin: 0.5em;

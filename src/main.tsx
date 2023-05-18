@@ -8,7 +8,7 @@ import Support from './Pages/Support/Support.tsx'
 
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <App />,
     errorElement: 'Error page',
   },
