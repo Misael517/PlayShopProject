@@ -2,22 +2,22 @@ import styles from './MostPopular.module.css';
 import { useState } from 'react';
 
 // game icons:
-import icon1 from './images/icon1.jpg';
-import icon2 from './images/icon2.jpg';
-import icon3 from './images/icon3.jpg';
-import icon4 from './images/icon4.jpg';
-import icon5 from './images/icon5.jpg';
-import icon6 from './images/icon6.jpg';
-import icon7 from './images/icon7.jpg';
-import icon8 from './images/icon8.jpg';
-import icon9 from './images/icon9.jpg';
-import icon10 from './images/icon10.jpg';
-import icon11 from './images/icon11.jpg';
-import icon12 from './images/icon12.jpg';
+import icon1 from '../../assets/Images/icon1.jpg';
+import icon2 from '../../assets/Images/icon2.jpg';
+import icon3 from '../../assets/Images/icon3.jpg';
+import icon4 from '../../assets/Images/icon4.jpg';
+import icon5 from '../../assets/Images/icon5.jpg';
+import icon6 from '../../assets/Images/icon6.jpg';
+import icon7 from '../../assets/Images/icon7.jpg';
+import icon8 from '../../assets/Images/icon8.jpg';
+import icon9 from '../../assets/Images/icon9.jpg';
+import icon10 from '../../assets/Images/icon10.jpg';
+import icon11 from '../../assets/Images/icon11.jpg';
+import icon12 from '../../assets/Images/icon12.jpg';
 
 // buttons icons:
-import leftBtn from './images/R.png';
-import rightBtn from './images/L.png';
+import leftBtn from '../../assets/Images/R.png';
+import rightBtn from '../../assets/Images/L.png';
 
 // Interfaces:
 
@@ -48,7 +48,7 @@ function OnSale() {
         }
     }
 
-    const gamesOnSale: GamesGenre[] = [
+    const gamesPopular: GamesGenre[] = [
         {
             id: 0,
             games: [
@@ -127,14 +127,14 @@ function OnSale() {
 
             <button className={styles.sectionBtn} onClick={handleBack}><img src={rightBtn} className={styles.btnImgLeft} /></button>
 
-            {gamesOnSale[currentGames].games.map((gamesSale) => (
-                <div className={styles.itemsContent} style={{ backgroundImage: `url(${gamesSale.icon})` }} >
+            {gamesPopular[currentGames].games.map((games) => (
+                <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} >
 
 
                     <div className={styles.gamesInfo}>
-                        <h3>{gamesSale.name}</h3>
+                        <h3>{games.name}</h3>
                         <div className={styles.gamesPrice}>
-                            <p>${gamesSale.price}</p>
+                            <p>${games.price}</p>
                         </div>
                     </div>
                 </div>))}

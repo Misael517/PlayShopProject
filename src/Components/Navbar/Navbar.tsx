@@ -1,7 +1,8 @@
 import styles from './Navbar.module.css';
 import logo from './images/logo.png';
 import cartIcon from './images/cart.png';
-import profilePic from './images/profile1.png'
+import profilePic from './images/profile1.png';
+import { Outlet, Link } from "react-router-dom";
 
 
 function Navbar() {
@@ -14,16 +15,13 @@ function Navbar() {
 
                 <ul>
                     <li>
-                        <a>Home</a>
+                        <Link to={`/home`}>Home</Link>
                     </li>
                     <li>
-                        <a>Explore</a>
+                        <Link to={`/discover`}>Discover</Link>
                     </li>
                     <li>
-                        <a>Support</a>
-                    </li>
-                    <li>
-                        <a>Contact</a>
+                        <Link to={`/support`}>Support</Link>
                     </li>
                 </ul>
             </nav >

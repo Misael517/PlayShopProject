@@ -2,22 +2,23 @@ import styles from './OnSale.module.css';
 import { useState } from 'react';
 
 // game icons:
-import icon1 from './images/icon1.jpg';
-import icon2 from './images/icon2.jpg';
-import icon3 from './images/icon3.jpg';
-import icon4 from './images/icon4.jpg';
-import icon5 from './images/icon5.jpg';
-import icon6 from './images/icon6.jpg';
-import icon7 from './images/icon7.jpg';
-import icon8 from './images/icon8.jpg';
-import icon9 from './images/icon9.jpg';
-import icon10 from './images/icon10.jpg';
-import icon11 from './images/icon11.jpg';
-import icon12 from './images/icon11.jpg';
+import icon1 from '../../assets/Images/icon13.jpg';
+import icon2 from '../../assets/Images/icon14.jpg';
+import icon3 from '../../assets/Images/icon15.jpg';
+import icon4 from '../../assets/Images/icon16.jpg';
+import icon5 from '../../assets/Images/icon17.jpg';
+import icon6 from '../../assets/Images/icon18.jpg';
+import icon7 from '../../assets/Images/icon19.jpg';
+import icon8 from '../../assets/Images/icon20.jpg';
+import icon9 from '../../assets/Images/icon21.jpg';
+import icon10 from '../../assets/Images/icon22.jpg';
+import icon11 from '../../assets/Images/icon23.jpg';
+import icon12 from '../../assets/Images/icon24.jpg';
+
 
 // buttons icons:
-import leftBtn from './images/R.png';
-import rightBtn from './images/L.png';
+import leftBtn from '../../assets/Images/R.png';
+import rightBtn from '../../assets/Images/L.png';
 
 
 // Interfaces:
