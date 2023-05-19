@@ -1,36 +1,159 @@
 import styles from './MostPopular.module.css';
 import { useState } from 'react';
-
-// game icons:
-import icon1 from '../../assets/Images/icon1.jpg';
-import icon2 from '../../assets/Images/icon2.jpg';
-import icon3 from '../../assets/Images/icon3.jpg';
-import icon4 from '../../assets/Images/icon4.jpg';
-import icon5 from '../../assets/Images/icon5.jpg';
-import icon6 from '../../assets/Images/icon6.jpg';
-import icon7 from '../../assets/Images/icon7.jpg';
-import icon8 from '../../assets/Images/icon8.jpg';
-import icon9 from '../../assets/Images/icon9.jpg';
-import icon10 from '../../assets/Images/icon10.jpg';
-import icon11 from '../../assets/Images/icon11.jpg';
-import icon12 from '../../assets/Images/icon12.jpg';
-
-// buttons icons:
-import leftBtn from '../../assets/Images/R.png';
-import rightBtn from '../../assets/Images/L.png';
+import jsonData from '../../assets/gamesInfo.json';
 
 // Interfaces:
-
 interface Game {
+    id: number,
     name: string;
     icon: string;
     price: number;
+    coomingSoon: boolean;
+    isOnSale: boolean;
+    discount: number;
+    actualPrice: number;
 }
+
 
 interface GamesGenre {
     id: number,
     games: Game[],
 }
+
+const gamesPopular: GamesGenre[] = [
+    {
+        id: 0,
+        games: [
+            {
+                id: 0,
+                name: jsonData[0].name,
+                icon: jsonData[0].icon,
+                isOnSale: jsonData[0].isOnSale,
+                price: jsonData[0].price,
+                coomingSoon: jsonData[0].coomingSoon,
+                discount: jsonData[0].discount,
+                actualPrice: jsonData[0].actualPrice,
+            },
+            {
+                id: 1,
+                name: jsonData[1].name,
+                icon: jsonData[1].icon,
+                isOnSale: jsonData[1].isOnSale,
+                price: jsonData[1].price,
+                coomingSoon: jsonData[1].coomingSoon,
+                discount: jsonData[1].discount,
+                actualPrice: jsonData[1].actualPrice,
+            },
+            {
+                id: 2,
+                name: jsonData[2].name,
+                icon: jsonData[2].icon,
+                isOnSale: jsonData[2].isOnSale,
+                price: jsonData[2].price,
+                coomingSoon: jsonData[2].coomingSoon,
+                discount: jsonData[2].discount,
+                actualPrice: jsonData[2].actualPrice,
+            },
+            {
+                id: 3,
+                name: jsonData[3].name,
+                icon: jsonData[3].icon,
+                isOnSale: jsonData[3].isOnSale,
+                price: jsonData[3].price,
+                coomingSoon: jsonData[3].coomingSoon,
+                discount: jsonData[3].discount,
+                actualPrice: jsonData[3].actualPrice,
+            },
+            {
+                id: 4,
+                name: jsonData[4].name,
+                icon: jsonData[4].icon,
+                isOnSale: jsonData[4].isOnSale,
+                price: jsonData[4].price,
+                coomingSoon: jsonData[4].coomingSoon,
+                discount: jsonData[4].discount,
+                actualPrice: jsonData[4].actualPrice,
+            },
+            {
+                id: 5,
+                name: jsonData[5].name,
+                icon: jsonData[5].icon,
+                isOnSale: jsonData[5].isOnSale,
+                coomingSoon: jsonData[5].coomingSoon,
+                price: jsonData[5].price,
+                discount: jsonData[5].discount,
+                actualPrice: jsonData[5].actualPrice,
+            },
+
+        ]
+    },
+    {
+        id: 1,
+        games: [
+            {
+                id: 6,
+                name: jsonData[6].name,
+                icon: jsonData[6].icon,
+                isOnSale: jsonData[6].isOnSale,
+                coomingSoon: jsonData[6].coomingSoon,
+                price: jsonData[6].price,
+                discount: jsonData[6].discount,
+                actualPrice: jsonData[6].actualPrice,
+            },
+            {
+                id: 7,
+                name: jsonData[7].name,
+                icon: jsonData[7].icon,
+                isOnSale: jsonData[7].isOnSale,
+                coomingSoon: jsonData[7].coomingSoon,
+                price: jsonData[7].price,
+                discount: jsonData[7].discount,
+                actualPrice: jsonData[7].actualPrice,
+            },
+            {
+                id: 8,
+                name: jsonData[8].name,
+                icon: jsonData[8].icon,
+                isOnSale: jsonData[8].isOnSale,
+                price: jsonData[8].price,
+                coomingSoon: jsonData[8].coomingSoon,
+                discount: jsonData[8].discount,
+                actualPrice: jsonData[8].actualPrice,
+            },
+            {
+                id: 9,
+                name: jsonData[9].name,
+                icon: jsonData[9].icon,
+                isOnSale: jsonData[9].isOnSale,
+                price: jsonData[9].price,
+                coomingSoon: jsonData[9].coomingSoon,
+                discount: jsonData[9].discount,
+                actualPrice: jsonData[9].actualPrice,
+            },
+            {
+                id: 10,
+                name: jsonData[10].name,
+                icon: jsonData[10].icon,
+                isOnSale: jsonData[10].isOnSale,
+                price: jsonData[10].price,
+                coomingSoon: jsonData[10].coomingSoon,
+                discount: jsonData[10].discount,
+                actualPrice: jsonData[10].actualPrice,
+            },
+            {
+                id: 11,
+                name: jsonData[11].name,
+                icon: jsonData[11].icon,
+                isOnSale: jsonData[11].isOnSale,
+                price: jsonData[11].price,
+                coomingSoon: jsonData[11].coomingSoon,
+                discount: jsonData[11].discount,
+                actualPrice: jsonData[11].actualPrice,
+            },
+        ]
+    },
+]
+
 
 
 function OnSale() {
@@ -48,97 +171,26 @@ function OnSale() {
         }
     }
 
-    const gamesPopular: GamesGenre[] = [
-        {
-            id: 0,
-            games: [
-                {
-                    name: 'Grand Theft auto',
-                    icon: icon1,
-                    price: 60,
-                },
-                {
-                    name: 'Elden Ring',
-                    icon: icon2,
-                    price: 60,
-                },
-                {
-                    name: 'Stray',
-                    icon: icon3,
-                    price: 60,
-                },
-                {
-                    name: 'Horizon Forbidden West',
-                    icon: icon4,
-                    price: 60,
-                },
-                {
-                    name: 'A Plague Tale Requiem',
-                    icon: icon5,
-                    price: 60,
-                },
-                {
-                    name: 'The Calisto Protocol',
-                    icon: icon6,
-                    price: 60,
-                },
-            ]
-        },
-        {
-            id: 1,
-            games: [
-                {
-                    name: 'Need For Speed Unbound',
-                    icon: icon7,
-                    price: 60,
-                },
-                {
-                    name: 'Gotham Knights',
-                    icon: icon8,
-                    price: 60,
-                },
-                {
-                    name: 'High On Life',
-                    icon: icon9,
-                    price: 60,
-                },
-                {
-                    name: 'Sonic Frontiers',
-                    icon: icon10,
-                    price: 60,
-                },
-                {
-                    name: 'Kirby and the forgotten land',
-                    icon: icon11,
-                    price: 60,
-                },
-                {
-                    name: 'DyingLight 2',
-                    icon: icon12,
-                    price: 60,
-                },
-            ]
-        },
-    ]
-
     return (
         <>
             <h2 className={styles.sectionName}>Most Popular</h2>
 
-            <button className={styles.sectionBtn} onClick={handleBack}><img src={rightBtn} className={styles.btnImgLeft} /></button>
+            <button className={styles.sectionBtn} onClick={handleBack}><img src={'/L.png'} className={styles.btnImgLeft} /></button>
 
             {gamesPopular[currentGames].games.map((games) => (
-                <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} >
+                <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id}>
 
 
                     <div className={styles.gamesInfo}>
                         <h3>{games.name}</h3>
                         <div className={styles.gamesPrice}>
-                            <p>${games.price}</p>
+                            <p><span className={games.isOnSale ? styles.discountColor : ''}>{games.isOnSale ? `-${games.discount}%` : ''}</span></p>
+                            <p><span className={games.isOnSale ? styles.strikeThrough : ''}>{games.isOnSale ? `${games.price}%` : ''}</span></p>
+                            <p style={{ textAlign: 'center' }}>{games.isOnSale ? `$${games.actualPrice}` : (games.coomingSoon ? '...' : `$${games.price}`)}</p>
                         </div>
                     </div>
                 </div>))}
-            <button className={styles.sectionBtn} onClick={handleNext}> <img src={leftBtn} className={styles.btnImgRight} /> </button>
+            <button className={styles.sectionBtn} onClick={handleNext}> <img src={'/R.png'} className={styles.btnImgRight} /> </button>
         </>
     )
 }

@@ -4,7 +4,7 @@ import App from './App.tsx'
 import Discover from './Pages/Discover/Discover.tsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Support from './Pages/Support/Support.tsx'
+import TheWitcher3 from './Pages/GamesPages/TheWitcher3/TheWitcher.tsx';
 
 const router = createBrowserRouter([
   {
@@ -17,16 +17,16 @@ const router = createBrowserRouter([
     element: <Discover />
   },
   {
-    path: "/support",
-    element: <Support />
-  },
-  {
     path: "/profile",
     element: ''
   },
   {
     path: "/cart",
     element: ''
+  },
+  {
+    path: "/TheWitcher3",
+    element: <TheWitcher3 />
   },
 ])
 

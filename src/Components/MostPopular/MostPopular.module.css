@@ -82,8 +82,20 @@
 
 .gamesPrice {
     display: flex;
+    justify-content: center;
     gap: 8px;
     font-weight: 400;
-    margin-top: 4%;
-    margin-bottom: 4%;
+    margin-top: 2.5%;
+    margin-bottom: 6%;
+}
+
+.discountColor {
+    background-color: rgb(0, 108, 122);
+    padding: 6px;
+    border-radius: 2px;
+}
+
+.strikeThrough {
+    text-decoration: line-through;
+    color: rgb(206, 206, 206);
 }

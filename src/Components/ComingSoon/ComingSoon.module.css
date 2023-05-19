@@ -12,6 +12,9 @@
 }
 
 .sectionBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 11.2%;
     height: 5vh;
     width: 2.5vw;
