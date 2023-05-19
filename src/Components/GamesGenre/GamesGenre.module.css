@@ -35,7 +35,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0, 0, 0, 10%);
+    background-color: rgb(0, 0, 0, 80%);
     font-weight: 100;
     font-size: 3vh;
 }
@@ -44,4 +44,8 @@
     transform: scale(1.01);
     transition: 200ms;
     cursor: pointer;
+}
+
+.genreName {
+    font-size: 3.5vh;
 }

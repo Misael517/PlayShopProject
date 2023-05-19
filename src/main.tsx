@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.tsx'
 import Discover from './Pages/Discover/Discover.tsx'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import TheWitcher3 from './Pages/GamesPages/TheWitcher3/TheWitcher.tsx';
 
 const router = createBrowserRouter([

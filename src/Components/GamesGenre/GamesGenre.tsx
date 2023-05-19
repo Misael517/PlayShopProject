@@ -34,7 +34,7 @@ function GamesGenre() {
 
 
                         <div className={styles.gamesInfo}>
-                            <h3>{genre.name}</h3>
+                            <h3 className={styles.genreName}>{genre.name}</h3>
                         </div>
 
                     </div>

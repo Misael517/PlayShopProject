@@ -23,6 +23,24 @@
     margin-bottom: 100vh;
 }
 
+.sectionName {
+    margin-bottom: 3vh;
+    text-transform: uppercase;
+    font-size: 2.1vh;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    padding: 0.3em;
+    border: 3px solid rgb(0, 0, 0);
+    color: black;
+    border-radius: 0.2em;
+}
+
+.imgDisplay {
+    height: 83vh;
+    width: 75%;
+}
+
+
 .footer {
     display: flex;
     justify-content: space-evenly;

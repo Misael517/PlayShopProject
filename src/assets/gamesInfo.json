@@ -4,7 +4,7 @@
         "name": "Grand Theft Auto",
         "icon": "/images/icons/icon1.jpg",
         "price": 59.99,
-        "coomingSoon": true,
+        "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
         "actualPrice": 40
