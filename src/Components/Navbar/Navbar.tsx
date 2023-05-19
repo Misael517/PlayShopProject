@@ -11,7 +11,10 @@ function Navbar() {
             {/* Nav bar */}
             < nav className={styles.navbar} >
                 {/* Header logo */}
-                < img src={logo} className={styles.logo} />
+                <div>
+                    < img src={logo} className={styles.logo} />
+                </div>
+
 
                 <ul>
                     <li>
