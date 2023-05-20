@@ -21,6 +21,10 @@ import Kirby from './Pages/GamesPages/Kirby/Kirby.tsx';
 import DyingLight2 from './Pages/GamesPages/DyingLight2/DyingLight2.tsx';
 import GodOfWar from './Pages/GamesPages/GodOfWar/GodOfWar.tsx';
 import Cyberpunk2077 from './Pages/GamesPages/Cyberpunk2077/Cyberpunk2077.tsx';
+import Kena from './Pages/GamesPages/Kena/Kena.tsx';
+import Acc from './Pages/GamesPages/Acc/Acc.tsx';
+import Fh5 from './Pages/GamesPages/FH5/FH5.tsx';
+import Destiny2 from './Pages/GamesPages/Destiny2/Destiny2.tsx';
 
 const router = createBrowserRouter([
   {
@@ -99,6 +103,22 @@ const router = createBrowserRouter([
   {
     path: "/Cyberpunk2077",
     element: <Cyberpunk2077 />
+  },
+  {
+    path: "/KenaBridgeOfSpirits",
+    element: <Kena />
+  },
+  {
+    path: "/AssettoCorsaCompetizione",
+    element: <Acc />
+  },
+  {
+    path: "/ForzaHorizon5",
+    element: <Fh5 />
+  },
+  {
+    path: "/Destiny2",
+    element: <Destiny2 />
   },
 ])
 
