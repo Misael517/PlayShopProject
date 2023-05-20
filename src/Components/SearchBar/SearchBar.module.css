@@ -59,8 +59,6 @@
     justify-content: center;
     align-items: flex-end;
     position: relative;
-    background-color: gray;
-    background-size: cover;
     height: 18vw;
     width: 13%;
     margin: 0.5em;
@@ -71,8 +69,9 @@
 
 .itemsContent:hover {
     cursor: pointer;
-    transition: 200ms;
     transform: scale(1.015);
+    transition: 200ms;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.7);
 }
 
 .gamesInfo {

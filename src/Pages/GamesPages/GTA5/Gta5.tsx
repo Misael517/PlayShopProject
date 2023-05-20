@@ -1,25 +1,25 @@
-import styles from './TheWitcher.module.css';
+import styles from './Gta5.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
-import { useState } from 'react';
 import jsonData from '../../../assets/gamesInfo.json';
+import { useState } from 'react';
 
 // Img imports
-import img1 from '/images/gamesImg/TheWitcher3/img1.jpg';
-import img2 from '/images/gamesImg/TheWitcher3/img2.jpg';
-import img3 from '/images/gamesImg/TheWitcher3/img3.jpg';
-import img4 from '/images/gamesImg/TheWitcher3/img4.jpg';
-import img5 from '/images/gamesImg/TheWitcher3/img5.jpg';
-import img6 from '/images/gamesImg/TheWitcher3/img6.jpg';
-import img7 from '/images/gamesImg/TheWitcher3/img7.jpg';
+import img1 from '/images/gamesImg/Gta5/img1.jpg';
+import img2 from '/images/gamesImg/Gta5/img2.jpg';
+import img3 from '/images/gamesImg/Gta5/img3.jpg';
+import img4 from '/images/gamesImg/Gta5/img4.jpg';
+import img5 from '/images/gamesImg/Gta5/img5.jpg';
+import img6 from '/images/gamesImg/Gta5/img6.jpg';
+import img7 from '/images/gamesImg/Gta5/img7.jpg';
 
 // thumbnails imports
-import thumb1 from "/images/gamesImg/TheWitcher3/imageThumbnail/thumb1.jpg";
-import thumb2 from "/images/gamesImg/TheWitcher3/imageThumbnail/thumb2.jpg";
-import thumb3 from "/images/gamesImg/TheWitcher3/imageThumbnail/thumb3.jpg";
-import thumb4 from "/images/gamesImg/TheWitcher3/imageThumbnail/thumb4.jpg";
-import thumb5 from "/images/gamesImg/TheWitcher3/imageThumbnail/thumb5.jpg";
-import thumb6 from "/images/gamesImg/TheWitcher3/imageThumbnail/thumb6.jpg";
+import thumb1 from "/images/gamesImg/Gta5/imageThumbnail/thumb1.jpg";
+import thumb2 from "/images/gamesImg/Gta5/imageThumbnail/thumb2.jpg";
+import thumb3 from "/images/gamesImg/Gta5/imageThumbnail/thumb3.jpg";
+import thumb4 from "/images/gamesImg/Gta5/imageThumbnail/thumb4.jpg";
+import thumb5 from "/images/gamesImg/Gta5/imageThumbnail/thumb5.jpg";
+import thumb6 from "/images/gamesImg/Gta5/imageThumbnail/thumb6.jpg";
 
 interface showCase {
     id: number;
@@ -64,7 +64,7 @@ const imgArr: showCase[] = [
 
 
 
-function TheWitcher3() {
+function Gta5() {
     const [currentImg, setCurrentImg] = useState<number>(0)
 
     return (
@@ -102,9 +102,9 @@ function TheWitcher3() {
 
                             <h3>Starting at:</h3>
                             <div className={styles.gamesPrice}>
-                                <p><span className={jsonData[12].isOnSale ? styles.discountColor : ''}>{jsonData[12].isOnSale ? `-${jsonData[12].discount}%` : ''}</span></p>
-                                <p><span className={jsonData[12].isOnSale ? styles.strikeThrough : ''}>{jsonData[12].isOnSale ? `${jsonData[12].price}%` : ''}</span></p>
-                                <p style={{ textAlign: 'center' }}>{jsonData[12].isOnSale ? `$${jsonData[12].actualPrice}` : (jsonData[12].coomingSoon ? '...' : `$${jsonData[12].price}`)}</p>
+                                <p><span className={jsonData[0].isOnSale ? styles.discountColor : ''}>{jsonData[0].isOnSale ? `-${jsonData[0].discount}%` : ''}</span></p>
+                                <p><span className={jsonData[0].isOnSale ? styles.strikeThrough : ''}>{jsonData[0].isOnSale ? `${jsonData[0].price}%` : ''}</span></p>
+                                <p style={{ textAlign: 'center' }}>{jsonData[0].isOnSale ? `$${jsonData[0].actualPrice}` : (jsonData[0].coomingSoon ? '...' : `$${jsonData[0].price}`)}</p>
                             </div>
                         </div>
                         <button className={styles.addBtn}><a target="_blank" href={''}></a>Add to cart</button>
@@ -114,17 +114,17 @@ function TheWitcher3() {
                     <div className={styles.detailsContainer}>
                         <div>
                             <h3 className={styles.detailsTitle}>Platforms</h3>
-                            <p className={styles.detailsContent}>{jsonData[12].Platforms}</p>
+                            <p className={styles.detailsContent}>{jsonData[0].Platforms}</p>
                         </div>
 
                         <div>
                             <h3 className={styles.detailsTitle}>Publisher</h3>
-                            <p className={styles.detailsContent}>{jsonData[12].Publisher}</p>
+                            <p className={styles.detailsContent}>{jsonData[0].Publisher}</p>
                         </div>
 
                         <div>
                             <h3 className={styles.detailsTitle}>Video Game Genre</h3>
-                            <p className={styles.detailsContent}>{jsonData[12].Genre}</p>
+                            <p className={styles.detailsContent}>{jsonData[0].Genre}</p>
                         </div>
                     </div>
                 </section>
@@ -137,4 +137,4 @@ function TheWitcher3() {
         </>)
 }
 
-export default TheWitcher3
+export default Gta5
