@@ -59,13 +59,15 @@
     justify-content: center;
     align-items: flex-end;
     position: relative;
+    background-color: gray;
+    background-position: center;
+    background-size: cover;
+    top: 6vh;
     height: 18vw;
     width: 13%;
     margin: 0.5em;
-    border-radius: 5px;
-    background-position: center;
-    background-size: cover;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
     transition: 200ms;
 }
 
