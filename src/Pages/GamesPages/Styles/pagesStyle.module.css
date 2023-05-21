@@ -129,13 +129,13 @@
     margin-top: .3em;
     width: 100%;
     height: 5vh;
-    transition: 450ms;
+    transition: 400ms;
 }
 
 .addBtn:hover {
     background-color: rgb(255, 255, 255);
     color: black;
-    transition: 450ms;
+    transition: 400ms;
     cursor: pointer;
 }
 

@@ -24,7 +24,7 @@
 .footer {
     display: flex;
     position: relative;
-    top: 8vh;
+    top: 35vh;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
