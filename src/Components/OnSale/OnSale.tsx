@@ -1,6 +1,7 @@
 import styles from './OnSale.module.css';
 import { useState } from 'react';
 import jsonData from '../../assets/gamesInfo.json';
+import { useNavigate } from 'react-router-dom';
 
 
 // Interfaces:
@@ -8,6 +9,7 @@ interface Game {
     id: number,
     name: string;
     icon: string;
+    link?: string;
     price: number;
     isOnSale: boolean;
     discount: number;
@@ -27,6 +29,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[12].id,
                 name: jsonData[12].name,
                 icon: jsonData[12].icon,
+                link: jsonData[12].link,
                 price: jsonData[12].price,
                 isOnSale: jsonData[12].isOnSale,
                 discount: jsonData[12].discount,
@@ -36,6 +39,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[13].id,
                 name: jsonData[13].name,
                 icon: jsonData[13].icon,
+                link: jsonData[13].link,
                 price: jsonData[13].price,
                 isOnSale: jsonData[13].isOnSale,
                 discount: jsonData[13].discount,
@@ -45,6 +49,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[14].id,
                 name: jsonData[14].name,
                 icon: jsonData[14].icon,
+                link: jsonData[14].link,
                 price: jsonData[14].price,
                 isOnSale: jsonData[14].isOnSale,
                 discount: jsonData[14].discount,
@@ -54,6 +59,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[15].id,
                 name: jsonData[15].name,
                 icon: jsonData[15].icon,
+                link: jsonData[15].link,
                 price: jsonData[15].price,
                 isOnSale: jsonData[15].isOnSale,
                 discount: jsonData[15].discount,
@@ -63,6 +69,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[16].id,
                 name: jsonData[16].name,
                 icon: jsonData[16].icon,
+                link: jsonData[16].link,
                 price: jsonData[16].price,
                 isOnSale: jsonData[16].isOnSale,
                 discount: jsonData[16].discount,
@@ -72,6 +79,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[17].id,
                 name: jsonData[17].name,
                 icon: jsonData[17].icon,
+                link: jsonData[17].link,
                 price: jsonData[17].price,
                 isOnSale: jsonData[17].isOnSale,
                 discount: jsonData[17].discount,
@@ -86,6 +94,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[18].id,
                 name: jsonData[18].name,
                 icon: jsonData[18].icon,
+                link: jsonData[18].link,
                 price: jsonData[18].price,
                 isOnSale: jsonData[18].isOnSale,
                 discount: jsonData[18].discount,
@@ -95,6 +104,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[19].id,
                 name: jsonData[19].name,
                 icon: jsonData[19].icon,
+                link: jsonData[19].link,
                 price: jsonData[19].price,
                 isOnSale: jsonData[19].isOnSale,
                 discount: jsonData[19].discount,
@@ -104,6 +114,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[20].id,
                 name: jsonData[20].name,
                 icon: jsonData[20].icon,
+                link: jsonData[20].link,
                 price: jsonData[20].price,
                 isOnSale: jsonData[20].isOnSale,
                 discount: jsonData[20].discount,
@@ -113,6 +124,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[21].id,
                 name: jsonData[21].name,
                 icon: jsonData[21].icon,
+                link: jsonData[21].link,
                 price: jsonData[21].price,
                 isOnSale: jsonData[21].isOnSale,
                 discount: jsonData[21].discount,
@@ -122,6 +134,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[22].id,
                 name: jsonData[22].name,
                 icon: jsonData[22].icon,
+                link: jsonData[22].link,
                 price: jsonData[22].price,
                 isOnSale: jsonData[22].isOnSale,
                 discount: jsonData[22].discount,
@@ -131,6 +144,7 @@ const gamesOnSale: GamesGenre[] = [
                 id: jsonData[23].id,
                 name: jsonData[23].name,
                 icon: jsonData[23].icon,
+                link: jsonData[23].link,
                 price: jsonData[23].price,
                 isOnSale: jsonData[23].isOnSale,
                 discount: jsonData[23].discount,
@@ -143,18 +157,17 @@ const gamesOnSale: GamesGenre[] = [
 
 function OnSale() {
     const [currentGames, setCurrentGames] = useState<number>(0);
+    const navigate = useNavigate();
 
     const handleNext = (): void => {
         if (currentGames < 1) {
             setCurrentGames(currentGames + 1)
-            console.log(currentGames)
         }
     }
 
     const handleBack = (): void => {
         if (currentGames > 0) {
             setCurrentGames(currentGames - 1)
-            console.log(currentGames)
         }
     }
 
@@ -165,7 +178,7 @@ function OnSale() {
             <button className={styles.sectionBtn} onClick={handleBack}><img src={'/L.png'} className={styles.btnImgLeft} /></button>
 
             {gamesOnSale[currentGames].games.map((gamesSale) => (
-                <div className={styles.itemsContent} style={{ backgroundImage: `url(${gamesSale.icon})` }} key={gamesSale.id}>
+                <div className={styles.itemsContent} style={{ backgroundImage: `url(${gamesSale.icon})` }} key={gamesSale.id} onClick={() => navigate(`${gamesSale.link}`)}>
 
 
                     <div className={styles.gamesInfo}>
@@ -176,7 +189,9 @@ function OnSale() {
                             <p>{gamesSale.isOnSale ? `$${gamesSale.actualPrice}` : `$${gamesSale.price}`}</p>
                         </div>
                     </div>
-                </div>))}
+
+                </div >))
+            }
             <button className={styles.sectionBtn} onClick={handleNext}> <img src={'/R.png'} className={styles.btnImgRight} /> </button>
         </>
     )

@@ -1,12 +1,14 @@
 import styles from './MostPopular.module.css';
 import { useState } from 'react';
 import jsonData from '../../assets/gamesInfo.json';
+import { useNavigate } from 'react-router-dom';
 
 // Interfaces:
 interface Game {
     id: number,
     name: string;
     icon: string;
+    link?: string;
     price: number;
     coomingSoon: boolean;
     isOnSale: boolean;
@@ -28,6 +30,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 0,
                 name: jsonData[0].name,
                 icon: jsonData[0].icon,
+                link: jsonData[0].link,
                 isOnSale: jsonData[0].isOnSale,
                 price: jsonData[0].price,
                 coomingSoon: jsonData[0].coomingSoon,
@@ -38,6 +41,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 1,
                 name: jsonData[1].name,
                 icon: jsonData[1].icon,
+                link: jsonData[1].link,
                 isOnSale: jsonData[1].isOnSale,
                 price: jsonData[1].price,
                 coomingSoon: jsonData[1].coomingSoon,
@@ -48,6 +52,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 2,
                 name: jsonData[2].name,
                 icon: jsonData[2].icon,
+                link: jsonData[2].link,
                 isOnSale: jsonData[2].isOnSale,
                 price: jsonData[2].price,
                 coomingSoon: jsonData[2].coomingSoon,
@@ -58,6 +63,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 3,
                 name: jsonData[3].name,
                 icon: jsonData[3].icon,
+                link: jsonData[3].link,
                 isOnSale: jsonData[3].isOnSale,
                 price: jsonData[3].price,
                 coomingSoon: jsonData[3].coomingSoon,
@@ -68,6 +74,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 4,
                 name: jsonData[4].name,
                 icon: jsonData[4].icon,
+                link: jsonData[4].link,
                 isOnSale: jsonData[4].isOnSale,
                 price: jsonData[4].price,
                 coomingSoon: jsonData[4].coomingSoon,
@@ -78,6 +85,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 5,
                 name: jsonData[5].name,
                 icon: jsonData[5].icon,
+                link: jsonData[5].link,
                 isOnSale: jsonData[5].isOnSale,
                 coomingSoon: jsonData[5].coomingSoon,
                 price: jsonData[5].price,
@@ -94,6 +102,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 6,
                 name: jsonData[6].name,
                 icon: jsonData[6].icon,
+                link: jsonData[6].link,
                 isOnSale: jsonData[6].isOnSale,
                 coomingSoon: jsonData[6].coomingSoon,
                 price: jsonData[6].price,
@@ -104,6 +113,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 7,
                 name: jsonData[7].name,
                 icon: jsonData[7].icon,
+                link: jsonData[7].link,
                 isOnSale: jsonData[7].isOnSale,
                 coomingSoon: jsonData[7].coomingSoon,
                 price: jsonData[7].price,
@@ -114,6 +124,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 8,
                 name: jsonData[8].name,
                 icon: jsonData[8].icon,
+                link: jsonData[8].link,
                 isOnSale: jsonData[8].isOnSale,
                 price: jsonData[8].price,
                 coomingSoon: jsonData[8].coomingSoon,
@@ -124,6 +135,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 9,
                 name: jsonData[9].name,
                 icon: jsonData[9].icon,
+                link: jsonData[9].link,
                 isOnSale: jsonData[9].isOnSale,
                 price: jsonData[9].price,
                 coomingSoon: jsonData[9].coomingSoon,
@@ -134,6 +146,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 10,
                 name: jsonData[10].name,
                 icon: jsonData[10].icon,
+                link: jsonData[10].link,
                 isOnSale: jsonData[10].isOnSale,
                 price: jsonData[10].price,
                 coomingSoon: jsonData[10].coomingSoon,
@@ -144,6 +157,7 @@ const gamesPopular: GamesGenre[] = [
                 id: 11,
                 name: jsonData[11].name,
                 icon: jsonData[11].icon,
+                link: jsonData[11].link,
                 isOnSale: jsonData[11].isOnSale,
                 price: jsonData[11].price,
                 coomingSoon: jsonData[11].coomingSoon,
@@ -158,6 +172,7 @@ const gamesPopular: GamesGenre[] = [
 
 function OnSale() {
     const [currentGames, setCurrentGames] = useState<number>(0);
+    const navigate = useNavigate()
 
     const handleNext = (): void => {
         if (currentGames < 1) {
@@ -178,7 +193,7 @@ function OnSale() {
             <button className={styles.sectionBtn} onClick={handleBack}><img src={'/L.png'} className={styles.btnImgLeft} /></button>
 
             {gamesPopular[currentGames].games.map((games) => (
-                <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id}>
+                <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
 
 
                     <div className={styles.gamesInfo}>
