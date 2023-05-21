@@ -90,10 +90,11 @@
     transition: 200ms;
     border-radius: 10px;
     z-index: 2;
-    box-shadow: 10px 10px 15px 15px rgba(0, 0, 0, .3);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .4);
 }
 
 .itemsContent:hover {
     transform: scale(1.03);
     transition: 200ms;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
