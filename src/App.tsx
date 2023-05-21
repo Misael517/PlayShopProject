@@ -18,9 +18,9 @@ function App() {
         <section className={styles.section1}>
           <NewReleases />
         </section>
-        <section className={styles.section2}>
+        {/* <section className={styles.section2}>
           <GamesGenre />
-        </section>
+        </section> */}
         <section className={styles.section3}>
           <OnSale />
         </section>

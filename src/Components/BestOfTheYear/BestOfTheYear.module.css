@@ -18,7 +18,7 @@
     grid-template-rows: 31.5vh 31.5vh;
     grid-template-columns: 28vw 28vw 28vw;
     width: 100%;
-    gap: .1%;
+    gap: .3%;
 }
 
 .itemsContent {
@@ -29,6 +29,7 @@
     z-index: 2;
     background-position: center;
     background-size: cover;
+    border-radius: 15px;
 }
 
 .itemsContent:hover {
