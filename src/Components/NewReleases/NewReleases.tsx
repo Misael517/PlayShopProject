@@ -57,12 +57,12 @@ function NewReleases() {
     return (
         <>
             <div className={styles.itemsDisplay} style={{ backgroundImage: `url(${gamesContent[currentGame].image})` }}>
-                <h1 className={styles.sectionName}>PLAYSHOP</h1>
+                {/* <h1 className={styles.sectionName}>PLAYSHOP</h1> */}
                 <div className={styles.itemsFrame}>
                     <img className={styles.itemslogo} src={gamesContent[currentGame].logo} alt="Game Logo" />
                     <p className={styles.itemDesc}>{gamesContent[currentGame].description}</p>
                     <p className={styles.itemPrice}>Starting at: ${gamesContent[currentGame].price}</p>
-                    <button className={styles.buyBtn} onClick={()=> navigate(`${gamesContent[currentGame].link}`)}>Buy</button>
+                    <button className={styles.buyBtn} onClick={() => navigate(`${gamesContent[currentGame].link}`)}>Buy</button>
                 </div>
             </div>
 

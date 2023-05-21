@@ -1,9 +1,9 @@
 import styles from './App.module.css';
 import Navbar from './Components/Navbar/Navbar';
 import NewReleases from './Components/NewReleases/NewReleases';
-import OnSale from './Components/OnSale/OnSale';
-import MostPopular from './Components/MostPopular/MostPopular';
-import ComingSoon from './Components/ComingSoon/ComingSoon';
+import OnSale from './Components/GamesDisplay/OnSale';
+import MostPopular from './Components/GamesDisplay/MostPopular';
+import CoomingSoon from './Components/GamesDisplay/CoomingSoon';
 import BestOfTheYear from './Components/BestOfTheYear/BestOfTheYear';
 import Footer from './Components/Footer/Footer';
 
@@ -14,19 +14,19 @@ function App() {
         <Navbar />
       </header>
       <main className={styles.main}>
-        <section className={styles.section1}>
+        <section className={styles.ReleasesSec}>
           <NewReleases />
         </section>
-        <section className={styles.section3}>
+        <section className={styles.OnSaleSec}>
           <OnSale />
         </section>
-        <section className={styles.section4}>
+        <section className={styles.PopularSec}>
           <MostPopular />
         </section>
-        <section className={styles.section5}>
-          <ComingSoon />
+        <section className={styles.CoomingSec}>
+          <CoomingSoon />
         </section>
-        <section className={styles.section6}>
+        <section className={styles.BestSec}>
           <BestOfTheYear />
         </section>
       </main>

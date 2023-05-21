@@ -13,7 +13,7 @@
     height: 100%;
 }
 
-.section1 {
+.ReleasesSec {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -22,38 +22,28 @@
     z-index: 1;
 }
 
-.section2 {
+.OnSaleSec {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    height: 75vh;
+    height: 50vh;
 }
 
-.section3 {
+.CoomingSec {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     height: 50vh;
-    margin-top: 1.6%;
 }
 
-.section4 {
+.PopularSec {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     height: 50vh;
-    width: 100%;
 }
 
-.section5 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 50vh;
-    width: 100%;
-}
-
-.section6 {
+.BestSec {
     display: flex;
     justify-content: space-evenly;
     width: 100%;

@@ -3,9 +3,12 @@ import logo from './images/logo.png';
 import cartIcon from './images/cart.png';
 import profilePic from './images/profile1.png';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
 function Navbar() {
+    const navigate = useNavigate()
+
     return (
         <>
             {/* Nav bar */}
@@ -21,15 +24,15 @@ function Navbar() {
                         <Link to={`/`}>Home</Link>
                     </li>
                     <li>
-                        <Link to={`/discover`}>Discover</Link>
+                        <Link to={`/Discover`}>Discover</Link>
                     </li>
                 </ul>
             </nav >
 
             <div className={styles.profileFrame}>
-                <img src={cartIcon} className={styles.cart} />
-                <img src={profilePic} className={styles.profilePic} />
-                <p className={styles.profileName}>UserName</p>
+                <img src={cartIcon} className={styles.cart} onClick={() => navigate('/Cart')} />
+                <img src={profilePic} className={styles.profilePic} onClick={() => navigate('/Profile')} />
+                <p className={styles.profileName} onClick={() => navigate('/Profile')}>UserName</p>
             </div>
         </>
     )

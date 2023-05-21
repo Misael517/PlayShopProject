@@ -1,10 +1,13 @@
-import styles from './MostPopular.module.css';
-import { useState } from 'react';
-import jsonData from '../../assets/gamesInfo.json';
 import { useNavigate } from 'react-router-dom';
+import styles from './Styles/GamesDisplay.module.css';
+import jsonData from '../../assets/gamesInfo.json';
+import { RootState } from '../../StateManagement/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { handleNext, handleBack } from '../../StateManagement/Slices/MostPopularSlice';
+
 
 // Interfaces:
-interface Game {
+interface Games {
     id: number,
     name: string;
     icon: string;
@@ -17,12 +20,12 @@ interface Game {
 }
 
 
-interface GamesGenre {
+interface GamesPopular {
     id: number,
-    games: Game[],
+    games: Games[],
 }
 
-const gamesPopular: GamesGenre[] = [
+const gamesPopular: GamesPopular[] = [
     {
         id: 0,
         games: [
@@ -169,30 +172,19 @@ const gamesPopular: GamesGenre[] = [
 ]
 
 
-
 function OnSale() {
-    const [currentGames, setCurrentGames] = useState<number>(0);
+    const switchGames = useSelector((state: RootState,) => state.switchGamesMostPopular.value)
+    const dispatch = useDispatch()
+
     const navigate = useNavigate()
-
-    const handleNext = (): void => {
-        if (currentGames < 1) {
-            setCurrentGames(currentGames + 1)
-        }
-    }
-
-    const handleBack = (): void => {
-        if (currentGames > 0) {
-            setCurrentGames(currentGames - 1)
-        }
-    }
 
     return (
         <>
             <h2 className={styles.sectionName}>Most Popular</h2>
 
-            <button className={styles.sectionBtn} onClick={handleBack}><img src={'/L.png'} className={styles.btnImgLeft} /></button>
+            <button className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={'/L.png'} className={styles.btnImgLeft} /></button>
 
-            {gamesPopular[currentGames].games.map((games) => (
+            {gamesPopular[switchGames].games.map((games) => (
                 <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
 
 
@@ -205,7 +197,7 @@ function OnSale() {
                         </div>
                     </div>
                 </div>))}
-            <button className={styles.sectionBtn} onClick={handleNext}> <img src={'/R.png'} className={styles.btnImgRight} /> </button>
+            <button className={styles.sectionBtn} onClick={() => dispatch(handleNext())}> <img src={'/R.png'} className={styles.btnImgRight} /> </button>
         </>
     )
 }

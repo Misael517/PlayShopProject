@@ -8,6 +8,9 @@ interface GamesFilter {
     name: string;
     icon: string;
     link?: string;
+    Platforms: string;
+    Publisher: string,
+    Genre: string;
     price: number;
     coomingSoon: boolean;
     isOnSale: boolean;
@@ -31,16 +34,16 @@ function SearchBar() {
             </div>
 
             <div className={styles.gamesContainer}>
-                {jsonData.filter((games: GamesFilter) => {
+                {jsonData.filter(({ name }) => {
                     if (searchItem === '') {
-                        return games
-                    } else if (games.name.toLocaleLowerCase().includes(searchItem.toLocaleLowerCase())) {
-                        return games
+                        return name
+                    } else if (name.toLocaleLowerCase().includes(searchItem.toLocaleLowerCase())) {
+                        return name
                     }
 
                 }
                 ).map((games: GamesFilter) => (
-                    <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={()=> navigate(`${games.link}`)}>
+                    <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
 
 
                         <div className={styles.gamesInfo}>

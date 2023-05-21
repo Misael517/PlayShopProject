@@ -1,8 +1,11 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { store } from './StateManagement/store.tsx';
+import { Provider } from 'react-redux';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.tsx'
 import Discover from './Pages/Discover/Discover.tsx'
+import Cart from './Pages/Cart/Cart.tsx';
 import './index.css'
 
 // Video Games pages
@@ -58,16 +61,16 @@ const router = createBrowserRouter([
     errorElement: 'Error page',
   },
   {
-    path: "/discover",
+    path: "/Discover",
     element: <Discover />
   },
   {
-    path: "/profile",
+    path: "/Profile",
     element: ''
   },
   {
-    path: "/cart",
-    element: ''
+    path: "/Cart",
+    element: <Cart />
   },
   {
     path: "/TheWitcher3",
@@ -249,6 +252,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )
