@@ -1,4 +1,4 @@
-import styles from './TheWitcher.module.css';
+import styles from '../pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
 import { useState } from 'react';

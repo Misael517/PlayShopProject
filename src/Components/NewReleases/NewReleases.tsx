@@ -1,5 +1,7 @@
 import styles from './NewReleases.module.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import jsonData from '../../assets/gamesInfo.json';
 
 // game backgrounds:
 import game1 from './images/game1.jpg';
@@ -33,7 +35,7 @@ interface GameContent {
     id: number;
     logo: string;
     description: string;
-    url: string;
+    link?: string;
     icon: string;
     image: string;
     price: number;
@@ -41,14 +43,15 @@ interface GameContent {
 
 function NewReleases() {
     const [currentGame, setCurrentGame] = useState<number>(0);
+    const navigate = useNavigate()
 
     const gamesContent: GameContent[] = [
-        { id: 0, logo: logo1, description: 'Embark on an epic and heartfelt journey as Kratos and Atreus.', url: 'https://www.google.com/', image: game1, icon: icon1, price: 123 },
-        { id: 1, logo: logo2, description: 'One of the most acclaimed RPGs of all time Now ready for a new generation.', url: 'https://www.google.com/', image: game2, icon: icon2, price: 60 },
-        { id: 2, logo: logo3, description: 'Explore the vast land and skies of Hyrule.', url: 'https://www.google.com/', image: game3, icon: icon3, price: 60 },
-        { id: 3, logo: logo4, description: 'Untangle the past as Kena, in search of the sacred Mountain Shrine.', url: 'https://www.google.com/', image: game4, icon: icon4, price: 60 },
-        { id: 4, logo: logo5, description: 'Ally with survivors against the creatures threatening to bleed the town dry.', url: 'https://www.google.com/', image: game5, icon: icon5, price: 70 },
-        { id: 5, logo: logo6, description: 'Become a Jedi and Stand Against the Darkness.', url: 'https://www.google.com/', image: game6, icon: icon6, price: 70 },
+        { id: 0, logo: logo1, description: 'Embark on an epic and heartfelt journey as Kratos and Atreus.', link: jsonData[13].link, image: game1, icon: icon1, price: 123 },
+        { id: 1, logo: logo2, description: 'One of the most acclaimed RPGs of all time Now ready for a new generation.', link: jsonData[12].link, image: game2, icon: icon2, price: 60 },
+        { id: 2, logo: logo3, description: 'Explore the vast land and skies of Hyrule.', link: jsonData[42].link, image: game3, icon: icon3, price: 60 },
+        { id: 3, logo: logo4, description: 'Untangle the past as Kena, in search of the sacred Mountain Shrine.', link: jsonData[15].link, image: game4, icon: icon4, price: 60 },
+        { id: 4, logo: logo5, description: 'Ally with survivors against the creatures threatening to bleed the town dry.', link: jsonData[43].link, image: game5, icon: icon5, price: 70 },
+        { id: 5, logo: logo6, description: 'Become a Jedi and Stand Against the Darkness.', link: jsonData[40].link, image: game6, icon: icon6, price: 70 },
     ]
 
     return (
@@ -59,12 +62,12 @@ function NewReleases() {
                     <img className={styles.itemslogo} src={gamesContent[currentGame].logo} alt="Game Logo" />
                     <p className={styles.itemDesc}>{gamesContent[currentGame].description}</p>
                     <p className={styles.itemPrice}>Starting at: ${gamesContent[currentGame].price}</p>
-                    <button className={styles.buyBtn}><a target="_blank" href={gamesContent[currentGame].url}></a> Buy</button>
+                    <button className={styles.buyBtn} onClick={()=> navigate(`${gamesContent[currentGame].link}`)}>Buy</button>
                 </div>
             </div>
 
             {gamesContent.map((game) => (
-                <div className={styles.itemsContent} key={game.id} style={{ backgroundImage: `url(${game.icon})` }} onMouseEnter={() => setCurrentGame(game.id)}>
+                <div className={`${styles.itemsContent} ${currentGame === game.id ? styles.selectedGame : ''}`} key={game.id} style={{ backgroundImage: `url(${game.icon})` }} onClick={() => setCurrentGame(game.id)}>
 
                 </div>
             ))}

@@ -1,4 +1,4 @@
-import styles from './JediSurvivor.module.css';
+import styles from '../pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
 import jsonData from '../../../assets/gamesInfo.json';

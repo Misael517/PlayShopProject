@@ -1,11 +1,13 @@
 import styles from './SearchBar.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface GamesFilter {
     id: number,
     name: string;
     icon: string;
+    link?: string;
     price: number;
     coomingSoon: boolean;
     isOnSale: boolean;
@@ -16,6 +18,7 @@ interface GamesFilter {
 
 function SearchBar() {
     const [searchItem, setSearchItem] = useState<string>('')
+    const navigate = useNavigate()
 
     return (
         <>
@@ -37,7 +40,7 @@ function SearchBar() {
 
                 }
                 ).map((games: GamesFilter) => (
-                    <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id}>
+                    <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={()=> navigate(`${games.link}`)}>
 
 
                         <div className={styles.gamesInfo}>

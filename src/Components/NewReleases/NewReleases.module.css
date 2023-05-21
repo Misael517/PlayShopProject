@@ -94,7 +94,12 @@
 }
 
 .itemsContent:hover {
-    transform: scale(1.03);
-    transition: 200ms;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 150ms;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+.selectedGame {
+    transform: scale(1.06);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
 }
