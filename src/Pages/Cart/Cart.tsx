@@ -18,33 +18,6 @@ interface Games {
     actualPrice: number;
 }
 
-interface CheckOut {
-    id: number,
-    games: Games[],
-}
-
-const cartProducts: CheckOut[] = [
-
-    {
-        id: 0,
-        games: [
-            {
-                id: 13,
-                name: jsonData[13].name,
-                icon: jsonData[13].icon,
-                link: jsonData[13].link,
-                isOnSale: jsonData[13].isOnSale,
-                price: jsonData[13].price,
-                coomingSoon: jsonData[13].coomingSoon,
-                discount: jsonData[13].discount,
-                actualPrice: jsonData[13].actualPrice,
-            },
-
-        ]
-    },
-
-
-]
 
 function Cart() {
     const [myList, setMyList] = useState<Games[]>([])
@@ -54,7 +27,6 @@ function Cart() {
     const handleAdd = (myList: Games[]) => {
        const newList = [...myList, item]
        setMyList(newList)
-       console.log(myList)
     }
 
     const navigate = useNavigate()
@@ -75,6 +47,7 @@ function Cart() {
                  {myList.map((item)=> {
                     return <>
                       <h1 style={{color: 'black'}} key={item.id}>{item.name}</h1>
+                      <h1 style={{color: 'black'}} key={item.id}>{item.price}</h1>
                     </>
                  })}
                     
