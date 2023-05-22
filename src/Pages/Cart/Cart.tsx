@@ -2,8 +2,8 @@ import styles from './Cart.module.css';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import jsonData from '../../assets/gamesInfo.json';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import img7 from '/images/gamesImg/GodOfWar/img7.jpg';
 
 interface Games {
@@ -23,7 +23,8 @@ interface CheckOut {
     games: Games[],
 }
 
-const itemsCheckOut: CheckOut[] = [
+const cartProducts: CheckOut[] = [
+
     {
         id: 0,
         games: [
@@ -46,6 +47,17 @@ const itemsCheckOut: CheckOut[] = [
 ]
 
 function Cart() {
+    const [newItem, setNewItem] = useState<string[]>([])
+
+    function handdleAdd() {
+        console.log(newItem)
+    }
+
+    function handdleChange(e: string) {
+        setNewItem([...newItem, e])
+    }
+
+
     const navigate = useNavigate()
 
     return (
@@ -56,54 +68,18 @@ function Cart() {
             <main className={styles.main}>
                 <section className={styles.itemsContainer}>
 
-                    {/* Page title */}
-                    <h2 className={styles.sectionName}>Shooping Cart</h2>
+                    <input style={{ color: 'black' }} type='text' placeholder='array testing' onChange={(e) => handdleChange(e.target.value)} />
+                    <button style={{ color: 'black' }} onClick={() => handdleAdd()}>
+                        Add
+                    </button>
 
-                    {/* Cart Item */}
-                    <div className={styles.cartItemContainer}>
+                    <h1 style={{ color: 'black' }}>
+                        {newItem.map((item, index) => (
+                            <span key={index}>{item}</span>
+                        ))}
+                    </h1>
 
 
-                        <div className={styles.cartItem}>
-                            <button className={styles.removeBtn}>Remove</button>
-
-                            {itemsCheckOut[0].games.map((games) => (
-                                <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
-
-                                </div>))}
-
-                            {/* Cart Item information */}
-                            <div className={styles.gamesDesc}>
-                                <h3 className={styles.gameName}>{jsonData[13].name}</h3>
-                                <div className={styles.gameData}>
-                                    <p className={styles.gamePara}>{jsonData[13].Publisher}</p>
-                                    <p className={styles.gamePara}>{jsonData[13].Genre}</p>
-                                    <p className={styles.gamePara}>{jsonData[13].Platforms}</p>
-                                    <div className={styles.gamesInfo}>
-                                        <div className={styles.gamesPrice}>
-                                            <p><span className={jsonData[13].isOnSale ? styles.discountColor : ''}>{jsonData[13].isOnSale ? `-${jsonData[13].discount}%` : ''}</span></p>
-                                            <p><span className={jsonData[13].isOnSale ? styles.strikeThrough : ''}>{jsonData[13].isOnSale ? `${jsonData[13].price}%` : ''}</span></p>
-                                            <p style={{ textAlign: 'center', }}>{jsonData[13].isOnSale ? `$${jsonData[13].actualPrice}` : (jsonData[13].coomingSoon ? '...' : `$${jsonData[13].price}`)}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Check out section */}
-                        <div className={styles.checkOutSection}>
-                            <img src={img7} className={styles.gamePortrait} />
-                            <div className={styles.gamesInfoCheck}>
-
-                                <h3 className={styles.priceTitle}>Subtotal:</h3>
-                                <div className={styles.gamesPriceCheck}>
-                                    <p><span className={jsonData[13].isOnSale ? styles.discountColor : ''}>{jsonData[13].isOnSale ? `-${jsonData[13].discount}%` : ''}</span></p>
-                                    <p><span className={jsonData[13].isOnSale ? styles.strikeThrough : ''}>{jsonData[13].isOnSale ? `${jsonData[13].price}%` : ''}</span></p>
-                                    <p style={{ textAlign: 'center', }}>{jsonData[13].isOnSale ? `$${jsonData[13].actualPrice}` : (jsonData[13].coomingSoon ? '...' : `$${jsonData[13].price}`)}</p>
-                                </div>
-                            </div>
-                            <button className={styles.addBtn}><a target="_blank" href={''}></a>Start check Out</button>
-                        </div>
-                    </div>
                 </section>
             </main>
 
