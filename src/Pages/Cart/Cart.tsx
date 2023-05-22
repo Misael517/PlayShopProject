@@ -61,7 +61,11 @@ function Cart() {
 
                     {/* Cart Item */}
                     <div className={styles.cartItemContainer}>
+
+
                         <div className={styles.cartItem}>
+                            <button className={styles.removeBtn}>Remove</button>
+
                             {itemsCheckOut[0].games.map((games) => (
                                 <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
 
@@ -69,24 +73,32 @@ function Cart() {
 
                             {/* Cart Item information */}
                             <div className={styles.gamesDesc}>
-                                <h3 className={styles.gamesName}>{jsonData[13].name}</h3>
-                                <p>{jsonData[13].Publisher}</p>
-                                <p>{jsonData[13].Genre}</p>
+                                <h3 className={styles.gameName}>{jsonData[13].name}</h3>
+                                <div className={styles.gameData}>
+                                    <p className={styles.gamePara}>{jsonData[13].Publisher}</p>
+                                    <p className={styles.gamePara}>{jsonData[13].Genre}</p>
+                                    <p className={styles.gamePara}>{jsonData[13].Platforms}</p>
+                                    <div className={styles.gamesInfo}>
+                                        <div className={styles.gamesPrice}>
+                                            <p><span className={jsonData[13].isOnSale ? styles.discountColor : ''}>{jsonData[13].isOnSale ? `-${jsonData[13].discount}%` : ''}</span></p>
+                                            <p><span className={jsonData[13].isOnSale ? styles.strikeThrough : ''}>{jsonData[13].isOnSale ? `${jsonData[13].price}%` : ''}</span></p>
+                                            <p style={{ textAlign: 'center', }}>{jsonData[13].isOnSale ? `$${jsonData[13].actualPrice}` : (jsonData[13].coomingSoon ? '...' : `$${jsonData[13].price}`)}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-
 
                         {/* Check out section */}
                         <div className={styles.checkOutSection}>
                             <img src={img7} className={styles.gamePortrait} />
                             <div className={styles.gamesInfoCheck}>
 
-                                <h3>Subtotal:</h3>
+                                <h3 className={styles.priceTitle}>Subtotal:</h3>
                                 <div className={styles.gamesPriceCheck}>
                                     <p><span className={jsonData[13].isOnSale ? styles.discountColor : ''}>{jsonData[13].isOnSale ? `-${jsonData[13].discount}%` : ''}</span></p>
                                     <p><span className={jsonData[13].isOnSale ? styles.strikeThrough : ''}>{jsonData[13].isOnSale ? `${jsonData[13].price}%` : ''}</span></p>
-                                    <p style={{ textAlign: 'center' }}>{jsonData[13].isOnSale ? `$${jsonData[13].actualPrice}` : (jsonData[13].coomingSoon ? '...' : `$${jsonData[13].price}`)}</p>
+                                    <p style={{ textAlign: 'center', }}>{jsonData[13].isOnSale ? `$${jsonData[13].actualPrice}` : (jsonData[13].coomingSoon ? '...' : `$${jsonData[13].price}`)}</p>
                                 </div>
                             </div>
                             <button className={styles.addBtn}><a target="_blank" href={''}></a>Start check Out</button>
@@ -98,7 +110,6 @@ function Cart() {
             <footer className={styles.footer}>
                 <Footer />
             </footer>
-
         </>
     )
 }

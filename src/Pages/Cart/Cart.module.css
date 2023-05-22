@@ -17,9 +17,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 3vh;
+    margin-top: 2vh;
     width: 100%;
 }
+
+
 
 
 
@@ -27,7 +29,7 @@
 .sectionName {
     z-index: 2;
     text-transform: uppercase;
-    font-size: 2.1vh;
+    font-size: 2.7vh;
     font-weight: 400;
     letter-spacing: 0.3rem;
     padding: 0.3em;
@@ -40,7 +42,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 3vh;
+    margin-top: 2vh;
     justify-content: space-evenly;
     border-radius: 15px;
     height: 40vh;
@@ -50,6 +52,7 @@
 .cartItem {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: flex-start;
     height: 40vh;
     border-radius: 15px;
@@ -57,16 +60,37 @@
     width: 65%;
 }
 
+.removeBtn {
+    position: absolute;
+    z-index: 2;
+    top: 14.9vh;
+    left: 65.3vw;
+    background-color: rgb(206, 1, 1);
+    text-transform: uppercase;
+    border: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 1.20vh;
+    border-radius: 10px;
+    transition: 200ms;
+}
+
+.removeBtn:hover {
+    cursor: pointer;
+    background-color: rgb(150, 0, 0);
+    transition: 200ms;
+}
+
 .itemsContent {
     display: flex;
-    margin: 1vw;
+    margin: 2em;
     justify-content: center;
     align-items: flex-end;
     position: relative;
     background-position: center;
     background-size: cover;
-    height: 18vw;
-    width: 12vw;
+    height: 34.78vh;
+    width: 12.45vw;
     border-radius: 15px;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
     transition: 200ms;
@@ -74,8 +98,6 @@
 
 .itemsContent:hover {
     cursor: pointer;
-    transform: scale(1.015);
-    transition: 200ms;
 }
 
 
@@ -93,22 +115,52 @@
     font-size: 1.5vh;
 }
 
-.gamesName {
-    margin-top: 0.8em;
+.gameName {
     font-weight: 600;
     font-size: 3.2vh;
     color: rgb(255, 253, 253);
 }
 
+.gameData {
+    font-weight: 100;
+    font-size: 2vh;
+    color: rgb(255, 253, 253);
+    margin-top: 0.3em;
+    width: 92%;
+}
+
+.gamePara {
+    margin-top: 0.5em;
+}
+
+.gamesInfo {
+    display: flex;
+    width: 100%;
+    height: 4vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(46, 46, 46);
+    border-radius: 12px;
+    font-size: 1.5vh;
+    margin-top: 5%;
+}
+
+.gamesPrice {
+    display: flex;
+    gap: 8px;
+    font-weight: 400;
+    font-size: 1.8vh;
+}
+
 .discountColor {
     background-color: rgb(0, 108, 122);
     padding: 6px;
-    border-radius: 2px;
+    border-radius: 4.5px;
 }
 
 .strikeThrough {
     text-decoration: line-through;
-    color: rgb(255, 255, 255);
+    color: rgb(206, 206, 206);
 }
 
 
@@ -137,19 +189,23 @@
 .gamesInfoCheck {
     display: flex;
     flex-direction: column;
-    padding: 10px;
     height: 20%;
     width: 100%;
-    justify-content: flex-end;
     align-items: center;
     background-color: rgb(0, 9, 12);
     font-size: 1.4vh;
+}
+
+.priceTitle {
+    margin-top: 0.35em;
+    font-size: 1.85vh;
 }
 
 .gamesPriceCheck {
     display: flex;
     gap: 8px;
     font-weight: 400;
+    font-size: 1.7vh;
     margin-top: 3%;
     margin-bottom: 5%;
 }
