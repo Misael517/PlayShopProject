@@ -35,8 +35,8 @@
 /* Item array section */
 .itemsContainer {
     display: flex;
-    background-color: rgb(26, 26, 26);
-    flex-direction: row;
+    background-color: rgb(20, 20, 20);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
     border-radius: 15px;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -50,44 +50,87 @@
     width: 12vw;
     margin: 1.3em;
     border-radius: 15px;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.7);
     transition: 200ms;
+}
+
+.itemIcon:hover {
+    cursor: pointer;
 }
 
 .itemInfo {
     display: flex;
-    flex-direction: column;
-    margin: 1.3em;
-    height: 100%;
-    width: 25%;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 1.8vh;
+    flex-direction: column;
+    font-size: 2.05vh;
+    font-weight: 100;
+    margin-top: 0.8em;
+    margin-left: 0.5em;
+    height: 100%;
+    width: 25%;
     color: white;
+}
+
+.dataContainer {
+    font-size: 2.3vh;
+    font-weight: 100;
+    margin-bottom: 6em;
+    text-align: left;
+    width: 100%;
+}
+
+.itemData {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
 }
 
 .itemPrice {
     display: flex;
+    justify-content: center;
     align-items: center;
-    height: 6vh;
+    height: 5vh;
     width: 100%;
-    font-size: 1.8vh;
-    border-radius: 15px;
     gap: 0.3em;
-    padding: 0.5em;
-    background-color: black;
+    font-size: 1.85vh;
+    font-weight: 400;
+    border-radius: 15px;
+    background-color: rgb(179, 21, 0)
 }
 
-.itemDiscount {
+.discountColor {
     background-color: rgb(0, 108, 122);
     padding: 6px;
-    border-radius: 2px;
+    border-radius: 4px;
 }
 
-.itemPrice .strikeThrough {
+.strikeThrough {
     text-decoration: line-through;
     color: rgb(206, 206, 206);
 }
+
+.removeBtn {
+    background-color: rgb(168, 1, 1);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 1.5vh;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 0.4em;
+    margin-left: 48.35%;
+    border: none;
+    transition: 200ms;
+}
+
+.removeBtn:hover {
+    cursor: pointer;
+    transition: 200ms;
+    color: rgb(196, 196, 196);
+    background-color: rgb(110, 13, 0);
+}
+
+
+
 
 
 
@@ -95,14 +138,15 @@
 /* Checkout section */
 .checkOutSection {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 20%;
     flex-direction: column;
     margin-top: 1.5em;
-    height: 100vh;
 }
 
 .gamePortrait {
-    height: 21%;
+    height: 15%;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -111,32 +155,19 @@
 .checkOutInfo {
     display: flex;
     flex-direction: column;
-    height: 8%;
+    height: 4%;
     width: 100%;
     justify-content: flex-end;
     align-items: center;
     background-color: rgb(20, 20, 20);
     font-size: 1.5vh;
-    padding-top: 2.8%;
 }
 
 .gamesSubtotal {
     display: flex;
-    gap: 8px;
     font-weight: 400;
     margin-top: 3.5%;
     margin-bottom: 5%;
-}
-
-.discountColor {
-    background-color: rgb(0, 108, 122);
-    padding: 6px;
-    border-radius: 2px;
-}
-
-.strikeThrough {
-    text-decoration: line-through;
-    color: rgb(206, 206, 206);
 }
 
 .checkOutBtn {
@@ -159,6 +190,10 @@
     color: black;
     cursor: pointer;
 }
+
+
+
+
 
 .footer {
     display: flex;

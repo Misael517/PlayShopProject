@@ -49,7 +49,6 @@ function Cart() {
                 </div>
                 <section className={styles.cartSection}>
 
-
                     <div className={styles.itemsSection}>
                         {myList.map((item) => {
                             return (
@@ -59,10 +58,12 @@ function Cart() {
                                     </div>
 
                                     <div className={styles.itemInfo}>
-                                        <h1>{item.name}</h1>
-                                        <p>{item.Publisher}</p>
-                                        <p>{item.Platforms}</p>
-                                        <p>{item.Genre}</p>
+                                        <h2>{item.name}</h2>
+                                        <div className={styles.dataContainer} >
+                                            <p className={styles.itemData}>{item.Publisher}</p>
+                                            <p className={styles.itemData}>{item.Platforms}</p>
+                                            <p className={styles.itemData}>{item.Genre}</p>
+                                        </div>
 
                                         <div className={styles.itemPrice}>
                                             <p><span className={item.isOnSale ? styles.discountColor : ''}>{item.isOnSale ? `-${item.discount}%` : ''}</span></p>
@@ -70,6 +71,8 @@ function Cart() {
                                             <p>{item.isOnSale ? `$${item.actualPrice}` : (item.coomingSoon ? '...' : `$${item.price}`)}</p>
                                         </div>
                                     </div>
+
+                                    <button className={styles.removeBtn}>remove</button>
                                 </div>)
                         })}
                     </div>
