@@ -1,5 +1,5 @@
 import styles from './BestOfTheYear.module.css';
-import { json, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import jsonData from '../../assets/gamesInfo.json';
 
 // game icons:

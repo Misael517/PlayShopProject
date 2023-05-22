@@ -47,16 +47,15 @@ const cartProducts: CheckOut[] = [
 ]
 
 function Cart() {
-    const [newItem, setNewItem] = useState<string[]>([])
+    const [myList, setMyList] = useState<Games[]>([])
+    const [item, setItem] = useState<Games>(jsonData[0])
+   
 
-    function handdleAdd() {
-        console.log(newItem)
+    const handleAdd = (myList: Games[]) => {
+       const newList = [...myList, item]
+       setMyList(newList)
+       console.log(myList)
     }
-
-    function handdleChange(e: string) {
-        setNewItem([...newItem, e])
-    }
-
 
     const navigate = useNavigate()
 
@@ -68,16 +67,17 @@ function Cart() {
             <main className={styles.main}>
                 <section className={styles.itemsContainer}>
 
-                    <input style={{ color: 'black' }} type='text' placeholder='array testing' onChange={(e) => handdleChange(e.target.value)} />
-                    <button style={{ color: 'black' }} onClick={() => handdleAdd()}>
+                    <input style={{ color: 'black' }} type='text' placeholder='array testing' onChange={(e)=>  setItem(jsonData[parseInt(e.target.value)])} />
+                    <button style={{ color: 'black' }} onClick={()=> handleAdd(myList)} >
                         Add
                     </button>
 
-                    <h1 style={{ color: 'black' }}>
-                        {newItem.map((item, index) => (
-                            <span key={index}>{item}</span>
-                        ))}
-                    </h1>
+                 {myList.map((item)=> {
+                    return <>
+                      <h1 style={{color: 'black'}} key={item.id}>{item.name}</h1>
+                    </>
+                 })}
+                    
 
 
                 </section>
