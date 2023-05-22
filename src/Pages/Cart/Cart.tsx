@@ -10,6 +10,9 @@ interface Games {
     id: number,
     name: string;
     icon: string;
+    Platforms: string,
+    Publisher: string,
+    Genre: string,
     link?: string;
     price: number;
     coomingSoon: boolean;
@@ -22,11 +25,10 @@ interface Games {
 function Cart() {
     const [myList, setMyList] = useState<Games[]>([])
     const [item, setItem] = useState<Games>(jsonData[0])
-   
+
 
     const handleAdd = (myList: Games[]) => {
-       const newList = [...myList, item]
-       setMyList(newList)
+        setMyList([item, ...myList])
     }
 
     const navigate = useNavigate()
@@ -37,22 +39,55 @@ function Cart() {
                 <Navbar />
             </header>
             <main className={styles.main}>
-                <section className={styles.itemsContainer}>
 
-                    <input style={{ color: 'black' }} type='text' placeholder='array testing' onChange={(e)=>  setItem(jsonData[parseInt(e.target.value)])} />
-                    <button style={{ color: 'black' }} onClick={()=> handleAdd(myList)} >
+
+                <div style={{ width: '100%', textAlign: 'center' }}>
+                    <input style={{ color: 'black' }} type='text' placeholder='array testing' onChange={(e) => setItem(jsonData[parseInt(e.target.value)])} />
+                    <button style={{ color: 'black' }} onClick={() => handleAdd(myList)} >
                         Add
                     </button>
-
-                 {myList.map((item)=> {
-                    return <>
-                      <h1 style={{color: 'black'}} key={item.id}>{item.name}</h1>
-                      <h1 style={{color: 'black'}} key={item.id}>{item.price}</h1>
-                    </>
-                 })}
-                    
+                </div>
+                <section className={styles.cartSection}>
 
 
+                    <div className={styles.itemsSection}>
+                        {myList.map((item) => {
+                            return (
+                                <div className={styles.itemsContainer}>
+                                    <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.icon})` }} key={item.id} onClick={() => navigate(`${item.link}`)}>
+
+                                    </div>
+
+                                    <div className={styles.itemInfo}>
+                                        <h1>{item.name}</h1>
+                                        <p>{item.Publisher}</p>
+                                        <p>{item.Platforms}</p>
+                                        <p>{item.Genre}</p>
+
+                                        <div className={styles.itemPrice}>
+                                            <p><span className={item.isOnSale ? styles.discountColor : ''}>{item.isOnSale ? `-${item.discount}%` : ''}</span></p>
+                                            <p><span className={item.isOnSale ? styles.strikeThrough : ''}>{item.isOnSale ? `${item.price}%` : ''}</span></p>
+                                            <p>{item.isOnSale ? `$${item.actualPrice}` : (item.coomingSoon ? '...' : `$${item.price}`)}</p>
+                                        </div>
+                                    </div>
+                                </div>)
+                        })}
+                    </div>
+
+
+                    <div className={styles.checkOutSection}>
+                        <img src={img7} className={styles.gamePortrait} />
+                        <div className={styles.checkOutInfo}>
+
+                            <h3>Subtotal:</h3>
+                            <div className={styles.gamesSubtotal}>
+                                <p><span className={jsonData[13].isOnSale ? styles.discountColor : ''}>{jsonData[13].isOnSale ? `-${jsonData[13].discount}%` : ''}</span></p>
+                                <p><span className={jsonData[13].isOnSale ? styles.strikeThrough : ''}>{jsonData[13].isOnSale ? `${jsonData[13].price}%` : ''}</span></p>
+                                <p style={{ textAlign: 'center' }}>{jsonData[13].isOnSale ? `$${jsonData[13].actualPrice}` : (jsonData[13].coomingSoon ? '...' : `$${jsonData[13].price}`)}</p>
+                            </div>
+                        </div>
+                        <button className={styles.checkOutBtn}><a target="_blank" href={''}></a>Start check out</button>
+                    </div>
                 </section>
             </main>
 

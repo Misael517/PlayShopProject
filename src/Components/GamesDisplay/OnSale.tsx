@@ -182,7 +182,6 @@ function OnSale() {
                             <p>{gamesSale.isOnSale ? `$${gamesSale.actualPrice}` : `$${gamesSale.price}`}</p>
                         </div>
                     </div>
-
                 </div >))
             }
             <button className={styles.sectionBtn} onClick={() => dispatch(handleNext())}> <img src={'/R.png'} className={styles.btnImgRight} /> </button>
