@@ -40,12 +40,16 @@
     align-items: center;
     margin-top: 1vh;
     width: 100%;
-    bottom: 8.5vh;
+    bottom: 9.4vh;
+}
+
+.imgHolder {
+    width: 12.1%;
+    margin: 0.5vh;
 }
 
 .imgItems {
-    margin: 0.5vh;
-    width: 12%;
+    width: 100%;
     transition: 150ms;
     border-radius: 10px;
 }

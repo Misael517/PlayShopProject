@@ -86,13 +86,12 @@ function Starfield() {
                     <div className={styles.imgContainer}>
                         {imgArr.map((img) => {
                             return (
-                                <>
-                                    <img src={img.thumbnail} key={img.id} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} onClick={() => setCurrentImg(img.id)} />
-                                </>
+                                <div key={img.id} className={styles.imgHolder}>
+                                    <img src={img.thumbnail} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} key={img.id} onClick={() => setCurrentImg(img.id)} />
+                                </div>
                             )
                         })}
                     </div>
-
 
 
                     {/* This show things like the price and the add to cart button */}

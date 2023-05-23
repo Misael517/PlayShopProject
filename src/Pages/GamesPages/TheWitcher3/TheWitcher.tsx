@@ -86,9 +86,9 @@ function TheWitcher3() {
                     <div className={styles.imgContainer}>
                         {imgArr.map((img) => {
                             return (
-                                <>
-                                    <img src={img.thumbnail} key={img.id} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} onClick={() => setCurrentImg(img.id)} />
-                                </>
+                                <div key={img.id} className={styles.imgHolder}>
+                                    <img src={img.thumbnail} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} key={img.id} onClick={() => setCurrentImg(img.id)} />
+                                </div>
                             )
                         })}
                     </div>

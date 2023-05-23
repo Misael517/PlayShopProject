@@ -1,7 +1,4 @@
 import { useState } from 'react';
-import type { RootState } from '../../../StateManagement/store';
-import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from '../../../StateManagement/Slices/CartSlice';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -69,10 +66,6 @@ const imgArr: showCase[] = [
 
 function Acc() {
     const [currentImg, setCurrentImg] = useState<number>(0)
-    const cartItems = useSelector((state: RootState) => state.cart.itemArr)
-    const dispatch = useDispatch()
-
-    console.log(cartItems)
 
     return (
         <>
@@ -93,8 +86,8 @@ function Acc() {
                     <div className={styles.imgContainer}>
                         {imgArr.map((img) => {
                             return (
-                                <div key={img.id}>
-                                    <img src={img.thumbnail} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} onClick={() => setCurrentImg(img.id)} />
+                                <div key={img.id} className={styles.imgHolder}>
+                                    <img src={img.thumbnail} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} key={img.id} onClick={() => setCurrentImg(img.id)} />
                                 </div>
                             )
                         })}
@@ -114,7 +107,7 @@ function Acc() {
                                 <p style={{ textAlign: 'center' }}>{jsonData[16].isOnSale ? `$${jsonData[16].actualPrice}` : (jsonData[16].coomingSoon ? '...' : `$${jsonData[16].price}`)}</p>
                             </div>
                         </div>
-                        <button className={styles.addBtn} onClick={() => dispatch(addItem(jsonData[16]))}>Add to cart</button>
+                        <button className={styles.addBtn}><a target="_blank" href={''}></a>Add to cart</button>
                     </div>
 
                     {/* This show details about the product */}
