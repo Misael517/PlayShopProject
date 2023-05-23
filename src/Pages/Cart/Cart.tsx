@@ -3,8 +3,8 @@ import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import jsonData from '../../assets/gamesInfo.json';
 import type { RootState } from '../../StateManagement/store';
+import { removeItem } from '../../StateManagement/Slices/CartSlice';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import img7 from '/images/gamesImg/GodOfWar/img7.jpg';
 
@@ -29,17 +29,8 @@ interface Cart {
 }
 
 function Cart() {
-    const [myList, setMyList] = useState<Cart[]>([])
     const navigate = useNavigate()
-
     const myCart = useSelector((state: RootState) => state.cart.itemArr)
-
-
-
-    // remove function
-    const handleRemove = (cartGame: string) => {
-        setMyList(myList.filter((cartItem) => cartItem.id !== cartGame));
-    };
 
     return (
         <>
@@ -76,7 +67,7 @@ function Cart() {
                                         </div>
                                     </div>
 
-                                    <button className={styles.removeBtn} onClick={() => handleRemove(item.id)}>remove</button>
+                                    <button className={styles.removeBtn} onClick={() => removeItem(item)}>remove</button>
                                 </div>)
                         })}
                     </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import type { RootState } from '../../../StateManagement/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { addItem } from '../../../StateManagement/Slices/CartSlice';
@@ -71,6 +71,8 @@ function Acc() {
     const [currentImg, setCurrentImg] = useState<number>(0)
     const cartItems = useSelector((state: RootState) => state.cart.itemArr)
     const dispatch = useDispatch()
+
+    console.log(cartItems)
 
     return (
         <>

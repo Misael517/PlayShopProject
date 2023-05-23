@@ -39,11 +39,14 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addItem: (state, action: PayloadAction<Game>) => {
-            const newItem: Item = {
-                id: crypto.randomUUID(),
-                game: action.payload,
-            };
-            state.itemArr = [newItem, ...state.itemArr];
+            state.itemArr = [
+                {
+                    id: crypto.randomUUID(), 
+                    game: action.payload
+                }, 
+                
+                ...state.itemArr
+            ];
         },
         removeItem: (state, action: PayloadAction<Item>) => {
             state.itemArr = state.itemArr.filter((cartItem) => cartItem.id !== action.payload.id);
