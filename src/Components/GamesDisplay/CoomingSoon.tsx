@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
-import type { RootState } from '../../StateManagement/store';
+import type { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
-import { handleNext, handleBack } from '../../StateManagement/Slices/CoomingSoonSlice';
+import { handleNext, handleBack } from '../../app/Slices/CoomingSoonSlice';
 
 // Interfaces:
 interface Games {

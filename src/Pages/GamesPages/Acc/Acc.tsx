@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import type { RootState } from '../../../app/store';
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem } from '../../../app/Slices/CartSlice';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -66,7 +69,10 @@ const imgArr: showCase[] = [
 
 function Acc() {
     const [currentImg, setCurrentImg] = useState<number>(0)
+    const myCart = useSelector((state: RootState) => state.cart.itemArr)
+    const dispatch = useDispatch()
 
+    console.log(myCart)
     return (
         <>
             {/* This is the navbar */}
@@ -107,7 +113,7 @@ function Acc() {
                                 <p style={{ textAlign: 'center' }}>{jsonData[16].isOnSale ? `$${jsonData[16].actualPrice}` : (jsonData[16].coomingSoon ? '...' : `$${jsonData[16].price}`)}</p>
                             </div>
                         </div>
-                        <button className={styles.addBtn}><a target="_blank" href={''}></a>Add to cart</button>
+                        <button className={styles.addBtn} onClick={() => dispatch(addItem(jsonData[16]))}>Add to cart</button>
                     </div>
 
                     {/* This show details about the product */}

@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
-import { RootState } from '../../StateManagement/store';
+import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
-import { handleNext, handleBack } from '../../StateManagement/Slices/OnSaleSlice';
+import { handleNext, handleBack } from '../../app/Slices/OnSaleSlice';
 
 
 // Interfaces:

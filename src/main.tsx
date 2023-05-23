@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { store } from './StateManagement/store.tsx';
+import { store } from './app/store.tsx';
 import { Provider } from 'react-redux';
 import React from 'react'
 import ReactDOM from 'react-dom/client'

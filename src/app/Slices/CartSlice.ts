@@ -1,6 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 // interfaces:
 interface Game {
@@ -24,13 +22,15 @@ interface Item {
 }
 
 interface initialState {
-    itemArr: Item[]
+    itemArr: Item[];
+    storedCartItems: Item[]
 }
 
 
 // initialState:
 const initialState: initialState = {
     itemArr: [],
+    storedCartItems: []
 }
 
 
@@ -39,19 +39,28 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addItem: (state, action: PayloadAction<Game>) => {
+            const existingCartItems = localStorage.getItem('myCart');
+
+            if (existingCartItems) {
+                state.storedCartItems = JSON.parse(existingCartItems);
+            }
+
+
             state.itemArr = [
                 {
-                    id: crypto.randomUUID(), 
+                    id: crypto.randomUUID(),
                     game: action.payload
-                }, 
-                
+                },
+
                 ...state.itemArr
             ];
+
+            localStorage.setItem('myCart', JSON.stringify(state.itemArr));
         },
         removeItem: (state, action: PayloadAction<Item>) => {
             state.itemArr = state.itemArr.filter((cartItem) => cartItem.id !== action.payload.id);
         },
-    },
+    }
 });
 
 

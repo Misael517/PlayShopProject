@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import type { RootState } from '../../../app/store';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem } from '../../../app/Slices/CartSlice';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -66,6 +69,10 @@ const imgArr: showCase[] = [
 
 function AtomicHeart() {
     const [currentImg, setCurrentImg] = useState<number>(0)
+    const myCart = useSelector((state: RootState) => state.cart.itemArr)
+    const dispatch = useDispatch()
+
+    console.log(myCart)
 
     return (
         <>
@@ -107,7 +114,7 @@ function AtomicHeart() {
                                 <p style={{ textAlign: 'center' }}>{jsonData[38].isOnSale ? `$${jsonData[38].actualPrice}` : (jsonData[38].coomingSoon ? '...' : `$${jsonData[38].price}`)}</p>
                             </div>
                         </div>
-                        <button className={styles.addBtn}><a target="_blank" href={''}></a>Add to cart</button>
+                        <button className={styles.addBtn} onClick={() => dispatch(addItem(jsonData[38]))}>Add to cart</button>
                     </div>
 
                     {/* This show details about the product */}

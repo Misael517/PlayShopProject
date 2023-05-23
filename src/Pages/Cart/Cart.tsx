@@ -1,11 +1,10 @@
+import { removeItem } from '../../app/Slices/CartSlice';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import styles from './Cart.module.css';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import jsonData from '../../assets/gamesInfo.json';
-import type { RootState } from '../../StateManagement/store';
-import { removeItem } from '../../StateManagement/Slices/CartSlice';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import img7 from '/images/gamesImg/GodOfWar/img7.jpg';
 
 interface Game {
@@ -28,9 +27,19 @@ interface Cart {
     game: Game;
 }
 
+
 function Cart() {
     const navigate = useNavigate()
-    const myCart = useSelector((state: RootState) => state.cart.itemArr)
+
+
+    const existingCartItems = localStorage.getItem('myCart')
+    let storedCartItems: Cart[] = [];
+
+    if (existingCartItems !== null) {
+        storedCartItems = JSON.parse(existingCartItems);
+    }
+
+
 
     return (
         <>
@@ -45,7 +54,7 @@ function Cart() {
 
                     {/* Item container with descriptions */}
                     <div className={styles.itemsSection}>
-                        {myCart.map((item) => {
+                        {storedCartItems.map((item) => {
                             return (
                                 <div className={styles.itemsContainer} key={item.id}>
                                     <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.game.icon})` }} onClick={() => navigate(`${item.game.link}`)}>
