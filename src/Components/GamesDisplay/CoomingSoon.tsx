@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
-import { RootState } from '../../StateManagement/store';
+import type { RootState } from '../../StateManagement/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../StateManagement/Slices/CoomingSoonSlice';
 

@@ -10,7 +10,7 @@ const initialState: CurrentGamesState = {
 }
 
 export const coomingSoonSlice = createSlice({
-    name: 'CoomingSoonSwitch',
+    name: 'coomingSoonSwitch',
     initialState,
     reducers: {
         handleNext: (state) => {

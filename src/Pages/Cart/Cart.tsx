@@ -2,6 +2,8 @@ import styles from './Cart.module.css';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import jsonData from '../../assets/gamesInfo.json';
+import type { RootState } from '../../StateManagement/store';
+import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import img7 from '/images/gamesImg/GodOfWar/img7.jpg';
@@ -28,18 +30,11 @@ interface Cart {
 
 function Cart() {
     const [myList, setMyList] = useState<Cart[]>([])
-    const [item, setItem] = useState<Game>(jsonData[0])
     const navigate = useNavigate()
 
+    const cartItems = useSelector((state: RootState) => state.cart.itemArr)
 
-    // Add to cart function
-    const handleAdd = () => {
-        const newItem: Cart = {
-            id: crypto.randomUUID(),
-            game: item
-        }
-        setMyList([newItem, ...myList])
-    }
+    console.log(cartItems)
 
     // remove function
     const handleRemove = (cartGame: string) => {
@@ -53,20 +48,13 @@ function Cart() {
             </header>
             <main className={styles.main}>
 
-                {/* Input for testing */}
-                <div style={{ width: '100%', textAlign: 'center' }}>
-                    <input style={{ color: 'black' }} type='text' placeholder='array testing' onChange={(e) => setItem(jsonData[parseInt(e.target.value)])} />
-                    <button style={{ color: 'black' }} onClick={() => handleAdd()} >
-                        Add
-                    </button>
-                </div>
 
                 {/* Cart section */}
                 <section className={styles.cartSection}>
 
                     {/* Item container with descriptions */}
                     <div className={styles.itemsSection}>
-                        {myList.map((item, key) => {
+                        {cartItems.map((item) => {
                             return (
                                 <div className={styles.itemsContainer} key={item.id}>
                                     <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.game.icon})` }} onClick={() => navigate(`${item.game.link}`)}>
