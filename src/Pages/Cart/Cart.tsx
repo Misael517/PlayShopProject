@@ -29,17 +29,17 @@ interface Cart {
 
 
 function Cart() {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
 
+    const currentCart = localStorage.getItem('myCart')
+    let cartItems: Cart[] = [];
 
-    const existingCartItems = localStorage.getItem('myCart')
-    let storedCartItems: Cart[] = [];
-
-    if (existingCartItems !== null) {
-        storedCartItems = JSON.parse(existingCartItems);
+    if (currentCart !== null) {
+        cartItems = JSON.parse(currentCart);
     }
 
-
+    console.log(cartItems)
 
     return (
         <>
@@ -54,7 +54,7 @@ function Cart() {
 
                     {/* Item container with descriptions */}
                     <div className={styles.itemsSection}>
-                        {storedCartItems.map((item) => {
+                        {cartItems.map((item) => {
                             return (
                                 <div className={styles.itemsContainer} key={item.id}>
                                     <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.game.icon})` }} onClick={() => navigate(`${item.game.link}`)}>
@@ -76,7 +76,7 @@ function Cart() {
                                         </div>
                                     </div>
 
-                                    <button className={styles.removeBtn} onClick={() => removeItem(item)}>remove</button>
+                                    <button className={styles.removeBtn} onClick={() => dispatch(removeItem(item))}>remove</button>
                                 </div>)
                         })}
                     </div>

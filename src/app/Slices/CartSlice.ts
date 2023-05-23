@@ -23,14 +23,14 @@ interface Item {
 
 interface initialState {
     itemArr: Item[];
-    storedCartItems: Item[]
+    cartItems: Item[]
 }
 
 
 // initialState:
 const initialState: initialState = {
     itemArr: [],
-    storedCartItems: []
+    cartItems: []
 }
 
 
@@ -39,10 +39,10 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addItem: (state, action: PayloadAction<Game>) => {
-            const existingCartItems = localStorage.getItem('myCart');
+            const currentCart = localStorage.getItem('myCart');
 
-            if (existingCartItems) {
-                state.storedCartItems = JSON.parse(existingCartItems);
+            if (currentCart) {
+                state.cartItems = JSON.parse(currentCart);
             }
 
 
@@ -52,13 +52,21 @@ export const cartSlice = createSlice({
                     game: action.payload
                 },
 
-                ...state.itemArr
+                ...state.cartItems
             ];
 
             localStorage.setItem('myCart', JSON.stringify(state.itemArr));
         },
         removeItem: (state, action: PayloadAction<Item>) => {
-            state.itemArr = state.itemArr.filter((cartItem) => cartItem.id !== action.payload.id);
+            const currentCart = localStorage.getItem('myCart');
+
+            if (currentCart) {
+                state.cartItems = JSON.parse(currentCart);
+            }
+
+            state.itemArr = state.cartItems.filter((cartItem) => cartItem.id !== action.payload.id);
+
+            localStorage.setItem('myCart', JSON.stringify(state.itemArr));
         },
     }
 });
