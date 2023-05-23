@@ -32,9 +32,9 @@ function Cart() {
     const [myList, setMyList] = useState<Cart[]>([])
     const navigate = useNavigate()
 
-    const cartItems = useSelector((state: RootState) => state.cart.itemArr)
+    const myCart = useSelector((state: RootState) => state.cart.itemArr)
 
-    console.log(cartItems)
+
 
     // remove function
     const handleRemove = (cartGame: string) => {
@@ -54,7 +54,7 @@ function Cart() {
 
                     {/* Item container with descriptions */}
                     <div className={styles.itemsSection}>
-                        {cartItems.map((item) => {
+                        {myCart.map((item) => {
                             return (
                                 <div className={styles.itemsContainer} key={item.id}>
                                     <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.game.icon})` }} onClick={() => navigate(`${item.game.link}`)}>
