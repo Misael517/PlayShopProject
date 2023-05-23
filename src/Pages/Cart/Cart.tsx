@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import img7 from '/images/gamesImg/GodOfWar/img7.jpg';
 
-interface Games {
+interface Game {
     id: number,
     name: string;
     icon: string;
@@ -21,17 +21,30 @@ interface Games {
     actualPrice: number;
 }
 
+interface Cart {
+    id: string;
+    game: Game;
+}
 
 function Cart() {
-    const [myList, setMyList] = useState<Games[]>([])
-    const [item, setItem] = useState<Games>(jsonData[0])
+    const [myList, setMyList] = useState<Cart[]>([])
+    const [item, setItem] = useState<Game>(jsonData[0])
+    const navigate = useNavigate()
 
 
-    const handleAdd = (myList: Games[]) => {
-        setMyList([item, ...myList])
+    // Add to cart function
+    const handleAdd = () => {
+        const newItem: Cart = {
+            id: crypto.randomUUID(),
+            game: item
+        }
+        setMyList([newItem, ...myList])
     }
 
-    const navigate = useNavigate()
+    // remove function
+    const handleRemove = (cartGame: string) => {
+        setMyList(myList.filter((cartItem) => cartItem.id !== cartGame));
+    };
 
     return (
         <>
@@ -40,39 +53,42 @@ function Cart() {
             </header>
             <main className={styles.main}>
 
-
+                {/* Input for testing */}
                 <div style={{ width: '100%', textAlign: 'center' }}>
                     <input style={{ color: 'black' }} type='text' placeholder='array testing' onChange={(e) => setItem(jsonData[parseInt(e.target.value)])} />
-                    <button style={{ color: 'black' }} onClick={() => handleAdd(myList)} >
+                    <button style={{ color: 'black' }} onClick={() => handleAdd()} >
                         Add
                     </button>
                 </div>
+
+                {/* Cart section */}
                 <section className={styles.cartSection}>
 
+                    {/* Item container with descriptions */}
                     <div className={styles.itemsSection}>
-                        {myList.map((item) => {
+                        {myList.map((item, key) => {
                             return (
-                                <div className={styles.itemsContainer}>
-                                    <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.icon})` }} key={item.id} onClick={() => navigate(`${item.link}`)}>
+                                <div className={styles.itemsContainer} key={item.id}>
+                                    <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.game.icon})` }} onClick={() => navigate(`${item.game.link}`)}>
 
                                     </div>
 
                                     <div className={styles.itemInfo}>
-                                        <h2>{item.name}</h2>
+                                        <h2>{item.game.name}</h2>
                                         <div className={styles.dataContainer} >
-                                            <p className={styles.itemData}>{item.Publisher}</p>
-                                            <p className={styles.itemData}>{item.Platforms}</p>
-                                            <p className={styles.itemData}>{item.Genre}</p>
+                                            <p className={styles.itemData}>{item.game.Publisher}</p>
+                                            <p className={styles.itemData}>{item.game.Platforms}</p>
+                                            <p className={styles.itemData}>{item.game.Genre}</p>
                                         </div>
 
                                         <div className={styles.itemPrice}>
-                                            <p><span className={item.isOnSale ? styles.discountColor : ''}>{item.isOnSale ? `-${item.discount}%` : ''}</span></p>
-                                            <p><span className={item.isOnSale ? styles.strikeThrough : ''}>{item.isOnSale ? `${item.price}%` : ''}</span></p>
-                                            <p>{item.isOnSale ? `$${item.actualPrice}` : (item.coomingSoon ? '...' : `$${item.price}`)}</p>
+                                            <p><span className={item.game.isOnSale ? styles.discountColor : ''}>{item.game.isOnSale ? `-${item.game.discount}%` : ''}</span></p>
+                                            <p><span className={item.game.isOnSale ? styles.strikeThrough : ''}>{item.game.isOnSale ? `${item.game.price}%` : ''}</span></p>
+                                            <p>{item.game.isOnSale ? `$${item.game.actualPrice}` : (item.game.coomingSoon ? '...' : `$${item.game.price}`)}</p>
                                         </div>
                                     </div>
 
-                                    <button className={styles.removeBtn}>remove</button>
+                                    <button className={styles.removeBtn} onClick={() => handleRemove(item.id)}>remove</button>
                                 </div>)
                         })}
                     </div>
