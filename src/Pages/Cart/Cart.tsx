@@ -31,19 +31,19 @@ interface Cart {
 
 function Cart() {
     const dispatch = useDispatch()
-    const myCart = useSelector((state: RootState) => state.cart.itemArr)
+    const myCart = useSelector((state: RootState) => state.cart.itemArr);
     const navigate = useNavigate()
 
-    // const currentCart = localStorage.getItem('myCart')
-    // let cartItems: Cart[] = [];
+    const currentCart = localStorage.getItem('myCart')
+    let cartItems: Cart[] = [];
 
-    // if (currentCart !== null) {
-    //     cartItems = JSON.parse(currentCart);
-    // }
+    if (currentCart !== null) {
+        cartItems = JSON.parse(currentCart);
+    }
 
-    // console.log(cartItems)
 
-    console.log(myCart)
+
+
     return (
         <>
             <header className={styles.header}>
@@ -57,7 +57,7 @@ function Cart() {
 
                     {/* Item container with descriptions */}
                     <div className={styles.itemsSection}>
-                        {myCart.map((item) => {
+                        {cartItems.map((item) => {
                             return (
                                 <div className={styles.itemsContainer} key={item.id}>
                                     <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.game.icon})` }} onClick={() => navigate(`${item.game.link}`)}>

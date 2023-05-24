@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import type { RootState } from '../../../app/store';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addItem } from '../../../app/Slices/CartSlice';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
@@ -69,10 +68,8 @@ const imgArr: showCase[] = [
 
 function Acc() {
     const [currentImg, setCurrentImg] = useState<number>(0)
-    const myCart = useSelector((state: RootState) => state.cart.itemArr)
     const dispatch = useDispatch()
 
-    console.log(myCart)
     return (
         <>
             {/* This is the navbar */}

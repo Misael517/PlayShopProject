@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, current, PayloadAction } from '@reduxjs/toolkit'
 
 // interfaces:
 interface Game {
@@ -54,6 +54,8 @@ export const cartSlice = createSlice({
 
                 ...state.cartItems
             ];
+
+            console.log(current(state))
 
             localStorage.setItem('myCart', JSON.stringify(state.itemArr));
         },
