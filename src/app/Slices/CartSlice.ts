@@ -64,9 +64,9 @@ export const cartSlice = createSlice({
                 state.cartItems = JSON.parse(currentCart);
             }
 
-            state.itemArr = state.cartItems.filter((cartItem) => cartItem.id !== action.payload.id);
-
-            localStorage.setItem('myCart', JSON.stringify(state.itemArr));
+            state.itemArr = state.itemArr.filter((cartItem) => cartItem.id !== action.payload.id);
+            state.cartItems = state.cartItems.filter((cartItem) => cartItem.id !== action.payload.id);
+            localStorage.setItem('myCart', JSON.stringify(state.cartItems));
         },
     }
 });
