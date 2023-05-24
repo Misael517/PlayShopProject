@@ -6,10 +6,10 @@ import CartReducer from "./Slices/CartSlice";
 
 export const store = configureStore({
     reducer: {
+        cart: CartReducer,
         switchGamesOnSale: CurrentGamesReducer,
         switchGamesCoomingSoon: CoomingSoonReducer,
-        switchGamesMostPopular: MostPopularReducer,
-        cart: CartReducer,
+        switchGamesMostPopular: MostPopularReducer
     }
 })
 

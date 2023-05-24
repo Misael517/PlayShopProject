@@ -1,9 +1,9 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { store } from './app/store.tsx';
-import { Provider } from 'react-redux';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import { BrowserRouter, Route, Routes, createBrowserRouter } from 'react-router-dom';
+import { store } from './app/store.tsx';
+import { Provider } from 'react-redux';
+import Home from './Pages/Home.tsx';
 import Discover from './Pages/Discover/Discover.tsx'
 import Cart from './Pages/Cart/Cart.tsx';
 import './index.css'
@@ -54,206 +54,61 @@ import ResidentEvil4 from './Pages/GamesPages/ResidentEvil4/ResidentEvil4.tsx';
 import Zelda from './Pages/GamesPages/Zelda/Zelda.tsx';
 import Redfall from './Pages/GamesPages/Redfall/Redfall.tsx';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: 'Error page',
-  },
-  {
-    path: "/Discover",
-    element: <Discover />
-  },
-  {
-    path: "/Profile",
-    element: ''
-  },
-  {
-    path: "/Cart",
-    element: <Cart />
-  },
-  {
-    path: "/TheWitcher3",
-    element: <TheWitcher3 />
-  },
-  {
-    path: "/Gta5",
-    element: <Gta5 />
-  },
-  {
-    path: "/EldenRing",
-    element: <EldenRing />
-  },
-  {
-    path: "/Stray",
-    element: <Stray />
-  },
-  {
-    path: "/HorizonForbiddenWest",
-    element: <HorizonForbidden />
-  },
-  {
-    path: "/APlagueTaleRequiem",
-    element: <PlagueRequiem />
-  },
-  {
-    path: "/TheCalistoProtocol",
-    element: <TheCalistoProtocol />
-  },
-  {
-    path: "/NeedForSpeedUnbound",
-    element: <NeeForSpeed />
-  },
-  {
-    path: "/GothamKnights",
-    element: <GothamKnights />
-  },
-  {
-    path: "/HighOnLife",
-    element: <HighOnLife />
-  },
-  {
-    path: "/SonicFrontiers",
-    element: <SonicFrontiers />
-  },
-  {
-    path: "/KirbyAndTheForgottenLand",
-    element: <Kirby />
-  },
-  {
-    path: "/DyingLight2",
-    element: <DyingLight2 />
-  },
-  {
-    path: "/GodOfWarRagnarok",
-    element: <GodOfWar />
-  },
-  {
-    path: "/Cyberpunk2077",
-    element: <Cyberpunk2077 />
-  },
-  {
-    path: "/KenaBridgeOfSpirits",
-    element: <Kena />
-  },
-  {
-    path: "/AssettoCorsaCompetizione",
-    element: <Acc />
-  },
-  {
-    path: "/ForzaHorizon5",
-    element: <Fh5 />
-  },
-  {
-    path: "/Destiny2",
-    element: <Destiny2 />
-  },
-  {
-    path: "/DoomEthernal",
-    element: <DoomEthernal />
-  },
-  {
-    path: "/HorizonZeroDawn",
-    element: <HorizonZero />
-  },
-  {
-    path: "/AssassinsCreedValhalla",
-    element: <Valhalla />
-  },
-  {
-    path: "/JediFallenOrder",
-    element: <JediFallenOrder />
-  },
-  {
-    path: "/MortalKombatX",
-    element: <MortalKombatX />
-  },
-  {
-    path: "/Stalker2",
-    element: <Stalker2 />
-  },
-  {
-    path: "/BlackMythWuKong",
-    element: <WuKong />
-  },
-  {
-    path: "/SuicideSquad",
-    element: <SuicideSquad />
-  },
-  {
-    path: "/RiseOfTheRonin",
-    element: <RiseOfTheRonin />
-  },
-  {
-    path: "/ForzaMotosport",
-    element: <ForzaMotosport />
-  },
-  {
-    path: "/Starfield",
-    element: <Starfield />
-  },
-  {
-    path: "/TheDayBefore",
-    element: <TheDayBefore />
-  },
-  {
-    path: "/RobocopRougeCity",
-    element: <Robocop />
-  },
-  {
-    path: "/LiesOfP",
-    element: <LiesOfP />
-  },
-  {
-    path: "/ImmortalsOfAveum",
-    element: <ImmortalsOfAveum />
-  },
-  {
-    path: "/FinalFantasyXVI",
-    element: <FinalFantasy />
-  },
-  {
-    path: "/Pikmin4",
-    element: <Pikmin4 />
-  },
-  {
-    path: "/VampireBloodLines2",
-    element: <BloodLines2 />
-  },
-  {
-    path: "/HogwartsLegacy",
-    element: <HogwartsLegacy />
-  },
-  {
-    path: "/AtomicHeart",
-    element: <AtomicHeart />
-  },
-  {
-    path: "/DeadSpace",
-    element: <DeadSpace />
-  },
-  {
-    path: "/JediSurvivor",
-    element: <JediSurvivor />
-  },
-  {
-    path: "/ResidentEvil4",
-    element: <ResidentEvil4 />
-  },
-  {
-    path: "/ZeldaTearsOfTheKingdom",
-    element: <Zelda />
-  },
-  {
-    path: "/Redfall",
-    element: <Redfall />
-  },
-])
-
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/Discover" element={<Discover />} />
+          <Route path="/Cart" element={<Cart />} />
+          <Route path="/Gta5" element={<Gta5 />} />
+          <Route path="EldenRing" element={<EldenRing />} />
+          <Route path="Stray" element={<Stray />} />
+          <Route path="/HorizonForbiddenWest" element={<HorizonForbidden />} />
+          <Route path="/APlagueTaleRequiem" element={<PlagueRequiem />} />
+          <Route path="/TheCalistoProtocol" element={<TheCalistoProtocol />} />
+          <Route path="/NeedForSpeedUnbound" element={<NeeForSpeed />} />
+          <Route path="/GothamKnights" element={<GothamKnights />} />
+          <Route path="/HighOnLife" element={<HighOnLife />} />
+          <Route path="/SonicFrontiers" element={<SonicFrontiers />} />
+          <Route path="/KirbyAndTheForgottenLand" element={<Kirby />} />
+          <Route path="/DyingLight2" element={<DyingLight2 />} />
+          <Route path="/TheWitcher3" element={<TheWitcher3 />} />
+          <Route path="/GodOfWarRagnarok" element={<GodOfWar />} />
+          <Route path="/Cyberpunk2077" element={<Cyberpunk2077 />} />
+          <Route path="/KenaBridgeOfSpirits" element={<Kena />} />
+          <Route path="/AssettoCorsaCompetizione" element={<Acc />} />
+          <Route path="/ForzaHorizon5" element={<Fh5 />} />
+          <Route path="/Destiny2" element={<Destiny2 />} />
+          <Route path="/DoomEthernal" element={<DoomEthernal />} />
+          <Route path="/HorizonZeroDawn" element={<HorizonZero />} />
+          <Route path="/AssassinsCreedValhalla" element={<Valhalla />} />
+          <Route path="/JediFallenOrder" element={<JediFallenOrder />} />
+          <Route path="/MortalKombatX" element={<MortalKombatX />} />
+          <Route path="/Stalker2" element={<Stalker2 />} />
+          <Route path="/BlackMythWuKong" element={<WuKong />} />
+          <Route path="/SuicideSquad" element={<SuicideSquad />} />
+          <Route path="/RiseOfTheRonin" element={<RiseOfTheRonin />} />
+          <Route path="/ForzaMotosport" element={<ForzaMotosport />} />
+          <Route path="/TheDayBefore" element={<TheDayBefore />} />
+          <Route path="/Starfield" element={<Starfield />} />
+          <Route path="/RobocopRougeCity" element={<Robocop />} />
+          <Route path="/LiesOfP" element={<LiesOfP />} />
+          <Route path="/ImmortalsOfAveum" element={<ImmortalsOfAveum />} />
+          <Route path="/FinalFantasyXVI" element={<FinalFantasy />} />
+          <Route path="/Pikmin4" element={<Pikmin4 />} />
+          <Route path="/VampireBloodLines2" element={<BloodLines2 />} />
+          <Route path="/HogwartsLegacy" element={<HogwartsLegacy />} />
+          <Route path="/AtomicHeart" element={<AtomicHeart />} />
+          <Route path="/DeadSpace" element={<DeadSpace />} />
+          <Route path="/JediSurvivor" element={<JediSurvivor />} />
+          <Route path="/ResidentEvil4" element={<ResidentEvil4 />} />
+          <Route path="/ZeldaTearsOfTheKingdom" element={<Zelda />} />
+          <Route path="/Redfall" element={<Redfall />}></Route>
+
+        </Routes>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>,
 )
