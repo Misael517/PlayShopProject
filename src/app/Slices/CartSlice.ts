@@ -1,4 +1,4 @@
-import { createSlice, current, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 // interfaces:
 interface Game {
@@ -14,23 +14,19 @@ interface Game {
     isOnSale: boolean;
     discount: number;
     actualPrice: number;
-}
-
-interface Item {
-    id: string;
-    game: Game;
+    itemAmount: number
 }
 
 interface initialState {
-    itemArr: Item[];
-    cartItems: Item[]
+    itemArr: Game[];
+    gameStorage: Game[];
 }
 
 
 // initialState:
 const initialState: initialState = {
     itemArr: [],
-    cartItems: []
+    gameStorage: [],
 }
 
 
@@ -39,40 +35,80 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addItem: (state, action: PayloadAction<Game>) => {
-            const currentCart = localStorage.getItem('myCart');
+            const localStor = localStorage.getItem('gamesCart');
 
-            if (currentCart) {
-                state.cartItems = JSON.parse(currentCart);
+            if (localStor) {
+                state.gameStorage = JSON.parse(localStor);
             }
 
+            const gameInCart = state.gameStorage.find((game) => game.id === action.payload.id)
 
-            state.itemArr = [
-                {
-                    id: crypto.randomUUID(),
-                    game: action.payload
-                },
+            if (gameInCart) {
+                gameInCart.itemAmount++
+                gameInCart.actualPrice = gameInCart.actualPrice * gameInCart.itemAmount
+                gameInCart.price = gameInCart.price * gameInCart.itemAmount
+            } else {
+                state.gameStorage = [action.payload, ...state.gameStorage]
+            }
 
-                ...state.cartItems
-            ];
+            state.itemArr = [...state.gameStorage]
 
-            console.log(current(state))
-
-            localStorage.setItem('myCart', JSON.stringify(state.itemArr));
+            localStorage.setItem('gamesCart', JSON.stringify(state.itemArr));
         },
-        removeItem: (state, action: PayloadAction<Item>) => {
-            const currentCart = localStorage.getItem('myCart');
+        removeItem: (state, action: PayloadAction<Game>) => {
+            const currentCart = localStorage.getItem('gamesCart');
 
             if (currentCart) {
-                state.cartItems = JSON.parse(currentCart);
+                state.gameStorage = JSON.parse(currentCart);
             }
 
             state.itemArr = state.itemArr.filter((cartItem) => cartItem.id !== action.payload.id);
-            state.cartItems = state.cartItems.filter((cartItem) => cartItem.id !== action.payload.id);
-            localStorage.setItem('myCart', JSON.stringify(state.cartItems));
+            state.gameStorage = state.gameStorage.filter((cartItem) => cartItem.id !== action.payload.id);
+            localStorage.setItem('gamesCart', JSON.stringify(state.gameStorage));
+        },
+        increaseAmount: (state, action: PayloadAction<Game>) => {
+            const localStor = localStorage.getItem('gamesCart');
+
+
+            if (localStor) {
+                state.gameStorage = JSON.parse(localStor);
+            }
+
+            const gameInCart = state.gameStorage.find((game) => game.id === action.payload.id)
+
+
+
+            if (gameInCart) {
+                gameInCart.itemAmount++
+
+                gameInCart.actualPrice = gameInCart.actualPrice * gameInCart.itemAmount
+                gameInCart.price = gameInCart.price + action.payload.price
+            }
+
+            state.itemArr = [...state.gameStorage]
+            localStorage.setItem('gamesCart', JSON.stringify(state.itemArr));
+        },
+        decreaseAmount: (state, action) => {
+            const localStor = localStorage.getItem('gamesCart');
+
+            if (localStor) {
+                state.gameStorage = JSON.parse(localStor);
+            }
+
+            const gameInCart = state.gameStorage.find((game) => game.id === action.payload)
+
+            if (gameInCart) {
+                gameInCart.itemAmount
+                gameInCart.actualPrice = gameInCart.actualPrice - gameInCart.itemAmount
+                gameInCart.price = gameInCart.price - gameInCart.itemAmount
+            }
+
+            state.itemArr = [...state.gameStorage]
+            localStorage.setItem('gamesCart', JSON.stringify(state.itemArr));
         },
     }
 });
 
 
-export const { addItem, removeItem } = cartSlice.actions
+export const { addItem, removeItem, increaseAmount, decreaseAmount } = cartSlice.actions
 export default cartSlice.reducer

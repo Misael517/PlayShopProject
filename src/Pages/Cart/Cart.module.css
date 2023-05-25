@@ -163,11 +163,11 @@
     font-size: 1.5vh;
 }
 
-.gamesSubtotal {
+.subtotalTitle {
     display: flex;
     font-weight: 400;
     margin-top: 3.5%;
-    margin-bottom: 5%;
+
 }
 
 .checkOutBtn {

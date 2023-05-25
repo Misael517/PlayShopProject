@@ -1,11 +1,10 @@
-import { removeItem } from '../../app/Slices/CartSlice';
+import { removeItem, increaseAmount, decreaseAmount } from '../../app/Slices/CartSlice';
 import type { RootState } from '../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styles from './Cart.module.css';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
-import jsonData from '../../assets/gamesInfo.json';
 import img7 from '/images/gamesImg/GodOfWar/img7.jpg';
 
 interface Game {
@@ -21,11 +20,7 @@ interface Game {
     isOnSale: boolean;
     discount: number;
     actualPrice: number;
-}
-
-interface Cart {
-    id: string;
-    game: Game;
+    itemAmount: number
 }
 
 
@@ -34,12 +29,29 @@ function Cart() {
     const myCart = useSelector((state: RootState) => state.cart.itemArr);
     const navigate = useNavigate()
 
-    const currentCart = localStorage.getItem('myCart')
-    let cartItems: Cart[] = [];
+    // Retrieve the local storage data
+    const currentCart = localStorage.getItem('gamesCart')
+    let cartItems: Game[] = [];
 
     if (currentCart !== null) {
         cartItems = JSON.parse(currentCart);
     }
+
+
+    // calculate the total price
+    function calculatePrice(price: number) {
+        cartItems.forEach((item) => {
+            if (item.isOnSale) {
+                price += item.actualPrice
+            } else if (item.isOnSale === false) {
+                price += item.price
+            }
+        })
+
+        return price
+    }
+
+    const subTotal = calculatePrice(0)
 
 
 
@@ -60,22 +72,26 @@ function Cart() {
                         {cartItems.map((item) => {
                             return (
                                 <div className={styles.itemsContainer} key={item.id}>
-                                    <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.game.icon})` }} onClick={() => navigate(`${item.game.link}`)}>
+                                    <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.icon})` }} onClick={() => navigate(`${item.link}`)}>
 
                                     </div>
 
                                     <div className={styles.itemInfo}>
-                                        <h2>{item.game.name}</h2>
+                                        <h2>{item.name}</h2>
                                         <div className={styles.dataContainer} >
-                                            <p className={styles.itemData}>{item.game.Publisher}</p>
-                                            <p className={styles.itemData}>{item.game.Platforms}</p>
-                                            <p className={styles.itemData}>{item.game.Genre}</p>
+                                            <p className={styles.itemData}>{item.Publisher}</p>
+                                            <p className={styles.itemData}>{item.Platforms}</p>
+                                            <p className={styles.itemData}>{item.Genre}</p>
                                         </div>
 
+                                        <button onClick={() => dispatch(decreaseAmount(item))}>Decrease</button>
+                                        <p>{item.itemAmount}</p>
+                                        <button onClick={() => dispatch(increaseAmount(item))}>Increase</button>
+
                                         <div className={styles.itemPrice}>
-                                            <p><span className={item.game.isOnSale ? styles.discountColor : ''}>{item.game.isOnSale ? `-${item.game.discount}%` : ''}</span></p>
-                                            <p><span className={item.game.isOnSale ? styles.strikeThrough : ''}>{item.game.isOnSale ? `${item.game.price}%` : ''}</span></p>
-                                            <p>{item.game.isOnSale ? `$${item.game.actualPrice}` : (item.game.coomingSoon ? '...' : `$${item.game.price}`)}</p>
+                                            <p><span className={item.isOnSale ? styles.discountColor : ''}>{item.isOnSale ? `-${item.discount}%` : ''}</span></p>
+                                            <p><span className={item.isOnSale ? styles.strikeThrough : ''}>{item.isOnSale ? `${item.price}` : ''}</span></p>
+                                            <p>{item.isOnSale ? `$${item.actualPrice}` : (item.coomingSoon ? '...' : `$${item.price}`)}</p>
                                         </div>
                                     </div>
 
@@ -90,11 +106,8 @@ function Cart() {
                         <div className={styles.checkOutInfo}>
 
                             <h3>Subtotal:</h3>
-                            <div className={styles.gamesSubtotal}>
-                                <p><span className={jsonData[13].isOnSale ? styles.discountColor : ''}>{jsonData[13].isOnSale ? `-${jsonData[13].discount}%` : ''}</span></p>
-                                <p><span className={jsonData[13].isOnSale ? styles.strikeThrough : ''}>{jsonData[13].isOnSale ? `${jsonData[13].price}%` : ''}</span></p>
-                                <p style={{ textAlign: 'center' }}>{jsonData[13].isOnSale ? `$${jsonData[13].actualPrice}` : (jsonData[13].coomingSoon ? '...' : `$${jsonData[13].price}`)}</p>
-                            </div>
+                            <p className={styles.subTotal}>{subTotal.toFixed(2)}</p>
+
                         </div>
                         <button className={styles.checkOutBtn}><a target="_blank" href={''}></a>Start check out</button>
                     </div>

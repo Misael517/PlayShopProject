@@ -1,6 +1,6 @@
 [
     {
-        "id": 0,
+        "id": 1,
         "name": "Grand Theft Auto",
         "icon": "/images/icons/icon1.jpg",
         "link": "/Gta5",
@@ -11,10 +11,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 1,
+        "id": 2,
         "name": "Elden Ring",
         "icon": "/images/icons/icon2.jpg",
         "link": "/EldenRing",
@@ -25,10 +26,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 2,
+        "id": 3,
         "name": "Stray",
         "icon": "/images/icons/icon3.jpg",
         "link": "/Stray",
@@ -39,10 +41,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 10,
-        "actualPrice": 10
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 3,
+        "id": 4,
         "name": "Horizon Forbidden West",
         "icon": "/images/icons/icon4.jpg",
         "link": "/HorizonForbiddenWest",
@@ -53,10 +56,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 4,
+        "id": 5,
         "name": "A Plague Tale Requiem",
         "icon": "/images/icons/icon5.jpg",
         "link": "/APlagueTaleRequiem",
@@ -67,10 +71,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 5,
+        "id": 6,
         "name": "The Calisto Protocol",
         "icon": "/images/icons/icon6.jpg",
         "link": "/TheCalistoProtocol",
@@ -81,10 +86,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 6,
+        "id": 7,
         "name": "Need For Speed Unbound",
         "icon": "/images/icons/icon7.jpg",
         "link": "/NeedForSpeedUnbound",
@@ -95,10 +101,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 7,
+        "id": 8,
         "name": "Gothan Knights",
         "icon": "/images/icons/icon8.jpg",
         "link": "/GothamKnights",
@@ -109,10 +116,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 8,
+        "id": 9,
         "name": "High On Life",
         "icon": "/images/icons/icon9.jpg",
         "link": "/HighOnLife",
@@ -123,10 +131,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 9,
+        "id": 10,
         "name": "Sonic Frontiers",
         "icon": "/images/icons/icon10.jpg",
         "link": "/SonicFrontiers",
@@ -137,10 +146,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 10,
+        "id": 11,
         "name": "Kirby and the forgotten land",
         "icon": "/images/icons/icon11.jpg",
         "link": "/KirbyAndTheForgottenLand",
@@ -151,10 +161,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 11,
+        "id": 12,
         "name": "Dying Light 2",
         "icon": "/images/icons/icon12.jpg",
         "link": "/DyingLight2",
@@ -165,10 +176,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 12,
+        "id": 13,
         "name": "The Witcher 3",
         "icon": "/images/icons/icon13.jpg",
         "link": "/TheWitcher3",
@@ -179,10 +191,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 13,
+        "id": 14,
         "name": "God of war Ragnarok",
         "icon": "/images/icons/icon14.jpg",
         "link": "/GodOfWarRagnarok",
@@ -193,10 +206,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 14,
+        "id": 15,
         "name": "Cyberpunk 2077",
         "icon": "/images/icons/icon15.jpg",
         "link": "/Cyberpunk2077",
@@ -207,10 +221,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 15,
+        "id": 16,
         "name": "Kena Bridge Of Spirits",
         "icon": "/images/icons/icon16.jpg",
         "link": "/KenaBridgeOfSpirits",
@@ -221,10 +236,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 16,
+        "id": 17,
         "name": "Assetto Corsa Competizione",
         "icon": "/images/icons/icon17.jpg",
         "link": "/AssettoCorsaCompetizione",
@@ -235,10 +251,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 17,
+        "id": 18,
         "name": "Forza Horizon 5",
         "icon": "/images/icons/icon18.jpg",
         "link": "/ForzaHorizon5",
@@ -249,10 +266,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 18,
+        "id": 19,
         "name": "Destiny 2",
         "icon": "/images/icons/icon19.jpg",
         "link": "/Destiny2",
@@ -263,10 +281,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 19,
+        "id": 20,
         "name": "Doom Ethernal",
         "icon": "/images/icons/icon20.jpg",
         "link": "/DoomEthernal",
@@ -277,10 +296,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 20,
+        "id": 21,
         "name": "Horizon Zero Dawn",
         "icon": "/images/icons/icon21.jpg",
         "link": "/HorizonZeroDawn",
@@ -291,10 +311,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 21,
+        "id": 22,
         "name": "Assassins Creed Valhalla",
         "icon": "/images/icons/icon22.jpg",
         "link": "/AssassinsCreedValhalla",
@@ -305,10 +326,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 22,
+        "id": 23,
         "name": "Jedi Fallen Order",
         "icon": "/images/icons/icon23.jpg",
         "link": "/JediFallenOrder",
@@ -319,10 +341,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 23,
+        "id": 24,
         "name": "Mortal Kombat X",
         "icon": "/images/icons/icon24.jpg",
         "link": "/MortalKombatX",
@@ -333,10 +356,11 @@
         "coomingSoon": false,
         "isOnSale": true,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 24,
+        "id": 25,
         "name": "Stalker 2",
         "icon": "/images/icons/icon25.jpg",
         "link": "/Stalker2",
@@ -347,10 +371,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 30
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 25,
+        "id": 26,
         "name": "Black Myth: Wukong",
         "icon": "/images/icons/icon26.jpg",
         "link": "/BlackMythWuKong",
@@ -361,10 +386,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 26,
+        "id": 27,
         "name": "Suicide Squad",
         "icon": "/images/icons/icon27.jpg",
         "link": "/SuicideSquad",
@@ -375,10 +401,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 27,
+        "id": 28,
         "name": "Rise Of The Ronin",
         "icon": "/images/icons/icon28.jpg",
         "link": "/RiseOfTheRonin",
@@ -389,10 +416,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 28,
+        "id": 29,
         "name": "Forza Motosport",
         "icon": "/images/icons/icon29.jpg",
         "link": "/ForzaMotosport",
@@ -403,10 +431,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 29,
+        "id": 30,
         "name": "Starfield",
         "icon": "/images/icons/icon30.jpg",
         "link": "/Starfield",
@@ -417,10 +446,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 30,
+        "id": 31,
         "name": "The Day Before",
         "icon": "/images/icons/icon31.jpg",
         "link": "/TheDayBefore",
@@ -431,10 +461,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 31,
+        "id": 32,
         "name": "Robocop Rogue City",
         "icon": "/images/icons/icon32.jpg",
         "link": "/RobocopRougeCity",
@@ -445,10 +476,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 32,
+        "id": 33,
         "name": "Lies Of P",
         "icon": "/images/icons/icon33.jpg",
         "link": "/LiesOfP",
@@ -459,10 +491,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 33,
+        "id": 34,
         "name": "Immortals Of Aveum",
         "icon": "/images/icons/icon34.jpg",
         "link": "/ImmortalsOfAveum",
@@ -473,10 +506,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 34,
+        "id": 35,
         "name": "Final Fantasy XVI",
         "icon": "/images/icons/icon35.jpg",
         "link": "/FinalFantasyXVI",
@@ -487,10 +521,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 35,
+        "id": 36,
         "name": "Pikmin 4",
         "icon": "/images/icons/icon36.jpg",
         "link": "/Pikmin4",
@@ -501,10 +536,11 @@
         "coomingSoon": true,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 36,
+        "id": 37,
         "name": "BloodLines 2",
         "icon": "/images/icons/icon37.jpg",
         "link": "/VampireBloodLines2",
@@ -515,10 +551,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 37,
+        "id": 38,
         "name": "Hogwarts Legacy",
         "icon": "/images/icons/icon38.jpg",
         "link": "/HogwartsLegacy",
@@ -529,10 +566,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 38,
+        "id": 39,
         "name": "Atomic Heart",
         "icon": "/images/icons/icon39.jpg",
         "link": "/AtomicHeart",
@@ -543,10 +581,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 39,
+        "id": 40,
         "name": "Dead Space Remake",
         "icon": "/images/icons/icon40.jpg",
         "link": "/DeadSpace",
@@ -557,10 +596,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 40,
+        "id": 41,
         "name": "Jedi Survivor",
         "icon": "/images/icons/icon41.jpg",
         "link": "/JediSurvivor",
@@ -571,10 +611,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 41,
+        "id": 42,
         "name": "Resident Evil 4 Remake",
         "icon": "/images/icons/icon42.jpg",
         "link": "/ResidentEvil4",
@@ -585,10 +626,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 42,
+        "id": 43,
         "name": "Zelda Tears of the Kingdom",
         "icon": "/images/icons/icon43.jpg",
         "link": "/ZeldaTearsOfTheKingdom",
@@ -599,10 +641,11 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     },
     {
-        "id": 43,
+        "id": 44,
         "name": "Redfall",
         "icon": "/images/icons/icon44.jpg",
         "link": "/Redfall",
@@ -613,6 +656,7 @@
         "coomingSoon": false,
         "isOnSale": false,
         "discount": 20,
-        "actualPrice": 40
+        "actualPrice": 40,
+        "itemAmount": 1
     }
 ]
