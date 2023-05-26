@@ -52,7 +52,7 @@ function Cart() {
         return price
     }
 
-    const subTotal = calculatePrice(0)
+    const total = calculatePrice(0)
 
 
 
@@ -106,8 +106,8 @@ function Cart() {
                         <img src={img7} className={styles.gamePortrait} />
                         <div className={styles.checkOutInfo}>
 
-                            <h3>Subtotal:</h3>
-                            <p className={styles.subTotal}>{subTotal.toFixed(2)}</p>
+                            <h3>Total:</h3>
+                            <p className={styles.subTotal}>{total.toFixed(2)}</p>
 
                         </div>
                         <button className={styles.checkOutBtn}><a target="_blank" href={''}></a>Start check out</button>

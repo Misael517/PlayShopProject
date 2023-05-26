@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import type { RootState } from "../../app/store";
+import { useDispatch, useSelector } from "react-redux";
+import { calculateAmount } from "../../app/Slices/CartSlice";
+import { useEffect } from 'react';
 import styles from './Navbar.module.css';
 import logo from './images/logo.png';
 import cartIcon from './images/cart.png';
@@ -26,25 +30,46 @@ interface Game {
 
 function Navbar() {
     const navigate = useNavigate()
+    const number = useSelector((state: RootState) => state.cart.itemArr)
+    const amount = useSelector((state: RootState) => state.cart.totalAmount)
+    const dispatch = useDispatch()
 
-    // Count all the items inside the cart
-    const currentCart = localStorage.getItem('gamesCart')
-    let cartItems: Game[] = [];
+    // // Count all the items inside the cart
+    // const currentCart = localStorage.getItem('gamesCart')
+    // let cartItems: Game[] = [];
 
-    if (currentCart !== null) {
-        cartItems = JSON.parse(currentCart);
+    // if (currentCart !== null) {
+    //     cartItems = JSON.parse(currentCart);
+    // }
+
+    // function countItems(items: Game[]) {
+    //     let count = 0
+
+    //     items.forEach((game) => {
+    //         count += game.itemAmount
+    //     });
+
+    //     return count
+    // }
+
+    // const currentAmount = countItems(cartItems)
+    // localStorage.setItem('cartAmout', JSON.stringify(currentAmount))
+
+    const test = localStorage.getItem('cartAmount')
+    let currentAmount = 0
+
+    if (test !== null) {
+        currentAmount = JSON.parse(test);
     }
 
-    function countItems(amount: number) {
-        cartItems.forEach((game) => {
-            amount += game.itemAmount
-        })
 
-        localStorage.setItem('cartAmout', JSON.stringify(amount))
-    }
+    useEffect(() => {
+        dispatch(calculateAmount())
+        localStorage.setItem('cartAmount', JSON.stringify(amount));
+    }, [number])
 
-    countItems(0)
-    const currentAmout = localStorage.getItem('cartAmout')
+
+
 
 
     return (
@@ -70,7 +95,7 @@ function Navbar() {
             <div className={styles.profileFrame}>
 
                 <div className={styles.cartContainer}>
-                    <p style={{ fontSize: '1vh' }}>{currentAmout}</p>
+                    <p style={{ fontSize: '1vh' }}>{currentAmount}</p>
                     <img src={cartIcon} className={styles.cart} onClick={() => navigate('/Cart')} />
                 </div>
 
