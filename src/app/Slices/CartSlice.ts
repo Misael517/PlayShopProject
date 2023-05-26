@@ -60,9 +60,15 @@ export const cartSlice = createSlice({
                 state.gameStorage = [action.payload, ...state.gameStorage]
             }
 
+            
+            
+
             state.itemArr = [...state.gameStorage]
 
             localStorage.setItem('gamesCart', JSON.stringify(state.itemArr));
+
+            state.totalAmount = state.gameStorage.reduce((count, game) => count + game.itemAmount, 0)
+            localStorage.setItem('cartAmount', JSON.stringify(state.totalAmount))
         },
 
 
@@ -77,6 +83,9 @@ export const cartSlice = createSlice({
             state.itemArr = state.itemArr.filter((cartItem) => cartItem.id !== action.payload.id);
             state.gameStorage = state.gameStorage.filter((cartItem) => cartItem.id !== action.payload.id);
             localStorage.setItem('gamesCart', JSON.stringify(state.gameStorage));
+
+            state.totalAmount = state.gameStorage.reduce((count, game) => count + game.itemAmount, 0)
+            localStorage.setItem('cartAmount', JSON.stringify(state.totalAmount))
         },
 
 
@@ -104,6 +113,9 @@ export const cartSlice = createSlice({
 
             state.itemArr = [...state.gameStorage]
             localStorage.setItem('gamesCart', JSON.stringify(state.itemArr));
+
+            state.totalAmount = state.gameStorage.reduce((count, game) => count + game.itemAmount, 0)
+            localStorage.setItem('cartAmount', JSON.stringify(state.totalAmount))
         },
 
 
@@ -132,11 +144,13 @@ export const cartSlice = createSlice({
 
             state.itemArr = [...state.gameStorage]
             localStorage.setItem('gamesCart', JSON.stringify(state.itemArr));
+
+            state.totalAmount = state.gameStorage.reduce((count, game) => count + game.itemAmount, 0)
+            localStorage.setItem('cartAmount', JSON.stringify(state.totalAmount))
         },
         calculateAmount: (state, action: PayloadAction<number>) => {
             
-            state.totalAmount = action.payload
-            localStorage.setItem('cartAmount', JSON.stringify(state.totalAmount))
+            
         }
     }
 });
