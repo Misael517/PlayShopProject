@@ -1,11 +1,12 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 
 
 const firebaseConfig = {
     apiKey: "AIzaSyDKBDHLU5ce24RBaqoYQkiv2iF5vSh0LVw",
     authDomain: "playshop-a9e8f.firebaseapp.com",
+    databaseURL: "https://playshop-a9e8f-default-rtdb.firebaseio.com/",
     projectId: "playshop-a9e8f",
     storageBucket: "playshop-a9e8f.appspot.com",
     messagingSenderId: "913614107784",
@@ -14,5 +15,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-export const dataBase = getFirestore(app);
+export const auth = getAuth(app)
+export const gamesDataBase = getDatabase();
+
+
+

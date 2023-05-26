@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../../app/Slices/CartSlice';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -66,6 +68,7 @@ const imgArr: showCase[] = [
 
 function Stray() {
     const [currentImg, setCurrentImg] = useState<number>(0)
+    const dispatch = useDispatch()
 
     return (
         <>
@@ -107,7 +110,7 @@ function Stray() {
                                 <p style={{ textAlign: 'center' }}>{jsonData[2].isOnSale ? `$${jsonData[2].actualPrice}` : (jsonData[2].coomingSoon ? '...' : `$${jsonData[2].price}`)}</p>
                             </div>
                         </div>
-                        <button className={styles.addBtn}><a target="_blank" href={''}></a>Add to cart</button>
+                        <button className={styles.addBtn} onClick={() => dispatch(addItem(jsonData[2]))}>Add to cart</button>
                     </div>
 
                     {/* This show details about the product */}

@@ -107,7 +107,7 @@ function FinalFantasy() {
                                 <p style={{ textAlign: 'center' }}>{jsonData[34].isOnSale ? `$${jsonData[34].actualPrice}` : (jsonData[34].coomingSoon ? '...' : `$${jsonData[34].price}`)}</p>
                             </div>
                         </div>
-                        <button className={styles.addBtn}><a target="_blank" href={''}></a>No available</button>
+                        <button className={styles.addBtn}>No available</button>
                     </div>
 
                     {/* This show details about the product */}

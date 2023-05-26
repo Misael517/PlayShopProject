@@ -132,12 +132,12 @@
     text-decoration: none;
     width: 100%;
     height: 5.4vh;
-    transition: 280ms;
+    transition: 170ms;
 }
 
 .addBtn:hover {
     background-color: rgb(179, 21, 0);
-    transition: 280ms;
+    transition: 170ms;
     cursor: pointer;
 }
 

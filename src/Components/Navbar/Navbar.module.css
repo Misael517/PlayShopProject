@@ -51,9 +51,15 @@
     background-color: rgb(0, 0, 0, 60%);
 }
 
+.cartContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.3em;
+    margin-right: 0.7em;
+}
+
 .cart {
     width: 1.1vw;
-    margin-right: 0.7em;
 }
 
 .cart:hover {

@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../../app/Slices/CartSlice';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -62,10 +64,9 @@ const imgArr: showCase[] = [
     },
 ]
 
-
-
 function Gta5() {
     const [currentImg, setCurrentImg] = useState<number>(0)
+    const dispatch = useDispatch()
 
     return (
         <>
@@ -107,7 +108,7 @@ function Gta5() {
                                 <p style={{ textAlign: 'center' }}>{jsonData[0].isOnSale ? `$${jsonData[0].actualPrice}` : (jsonData[0].coomingSoon ? '...' : `$${jsonData[0].price}`)}</p>
                             </div>
                         </div>
-                        <button className={styles.addBtn}><a target="_blank" href={''}></a>Add to cart</button>
+                        <button className={styles.addBtn} onClick={() => dispatch(addItem(jsonData[0]))}>Add to cart</button>
                     </div>
 
                     {/* This show details about the product */}

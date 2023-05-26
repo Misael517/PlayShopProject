@@ -20,7 +20,8 @@ interface Game {
     isOnSale: boolean;
     discount: number;
     actualPrice: number;
-    itemAmount: number
+    itemAmount: number;
+    cartPrice: number;
 }
 
 
@@ -42,9 +43,9 @@ function Cart() {
     function calculatePrice(price: number) {
         cartItems.forEach((item) => {
             if (item.isOnSale) {
-                price += item.actualPrice
+                price += item.cartPrice
             } else if (item.isOnSale === false) {
-                price += item.price
+                price += item.cartPrice
             }
         })
 
@@ -84,14 +85,14 @@ function Cart() {
                                             <p className={styles.itemData}>{item.Genre}</p>
                                         </div>
 
-                                        <button onClick={() => dispatch(decreaseAmount(item))}>Decrease</button>
-                                        <p>{item.itemAmount}</p>
-                                        <button onClick={() => dispatch(increaseAmount(item))}>Increase</button>
+                                        <div className={styles.amountContainer}>
+                                            <button className={styles.decreaseBtn} onClick={() => dispatch(decreaseAmount(item))}>-</button>
+                                            <p>{item.itemAmount}</p>
+                                            <button className={styles.increaseBtn} onClick={() => dispatch(increaseAmount(item))}>+</button>
+                                        </div>
 
                                         <div className={styles.itemPrice}>
-                                            <p><span className={item.isOnSale ? styles.discountColor : ''}>{item.isOnSale ? `-${item.discount}%` : ''}</span></p>
-                                            <p><span className={item.isOnSale ? styles.strikeThrough : ''}>{item.isOnSale ? `${item.price}` : ''}</span></p>
-                                            <p>{item.isOnSale ? `$${item.actualPrice}` : (item.coomingSoon ? '...' : `$${item.price}`)}</p>
+                                            <p>{item.isOnSale ? `$${item.cartPrice.toFixed(2)}` : (item.coomingSoon ? '...' : `$${item.cartPrice.toFixed(2)}`)}</p>
                                         </div>
                                     </div>
 

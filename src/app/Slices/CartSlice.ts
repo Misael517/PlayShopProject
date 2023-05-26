@@ -14,12 +14,14 @@ interface Game {
     isOnSale: boolean;
     discount: number;
     actualPrice: number;
-    itemAmount: number
+    itemAmount: number;
+    cartPrice: number;
 }
 
 interface initialState {
     itemArr: Game[];
     gameStorage: Game[];
+    amount: number
 }
 
 
@@ -27,6 +29,7 @@ interface initialState {
 const initialState: initialState = {
     itemArr: [],
     gameStorage: [],
+    amount: 0
 }
 
 
@@ -44,9 +47,13 @@ export const cartSlice = createSlice({
             const gameInCart = state.gameStorage.find((game) => game.id === action.payload.id)
 
             if (gameInCart) {
-                gameInCart.itemAmount++
-                gameInCart.actualPrice = gameInCart.actualPrice * gameInCart.itemAmount
-                gameInCart.price = gameInCart.price * gameInCart.itemAmount
+                if (gameInCart.isOnSale) {
+                    gameInCart.itemAmount++;
+                    gameInCart.cartPrice += gameInCart.actualPrice;
+                } else {
+                    gameInCart.itemAmount++;
+                    gameInCart.cartPrice += gameInCart.price;
+                }
             } else {
                 state.gameStorage = [action.payload, ...state.gameStorage]
             }
@@ -76,13 +83,14 @@ export const cartSlice = createSlice({
 
             const gameInCart = state.gameStorage.find((game) => game.id === action.payload.id)
 
-
-
             if (gameInCart) {
-                gameInCart.itemAmount++
-
-                gameInCart.actualPrice = gameInCart.actualPrice * gameInCart.itemAmount
-                gameInCart.price = gameInCart.price + action.payload.price
+                if (gameInCart.isOnSale) {
+                    gameInCart.itemAmount++;
+                    gameInCart.cartPrice += gameInCart.actualPrice;
+                } else {
+                    gameInCart.itemAmount++;
+                    gameInCart.cartPrice += gameInCart.price;
+                }
             }
 
             state.itemArr = [...state.gameStorage]
@@ -91,16 +99,23 @@ export const cartSlice = createSlice({
         decreaseAmount: (state, action) => {
             const localStor = localStorage.getItem('gamesCart');
 
+
             if (localStor) {
                 state.gameStorage = JSON.parse(localStor);
             }
 
-            const gameInCart = state.gameStorage.find((game) => game.id === action.payload)
+            const gameInCart = state.gameStorage.find((game) => game.id === action.payload.id)
 
             if (gameInCart) {
-                gameInCart.itemAmount
-                gameInCart.actualPrice = gameInCart.actualPrice - gameInCart.itemAmount
-                gameInCart.price = gameInCart.price - gameInCart.itemAmount
+                if (gameInCart.itemAmount > 1) {
+                    if (gameInCart.isOnSale) {
+                        gameInCart.itemAmount--;
+                        gameInCart.cartPrice -= gameInCart.actualPrice;
+                    } else {
+                        gameInCart.itemAmount--;
+                        gameInCart.cartPrice -= gameInCart.price;
+                    }
+                }
             }
 
             state.itemArr = [...state.gameStorage]
