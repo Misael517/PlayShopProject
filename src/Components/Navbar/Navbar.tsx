@@ -30,30 +30,37 @@ interface Game {
 
 function Navbar() {
     const navigate = useNavigate()
-    const number = useSelector((state: RootState) => state.cart.itemArr)
+    const myCart = useSelector((state: RootState) => state.cart.itemArr)
     const amount = useSelector((state: RootState) => state.cart.totalAmount)
     const dispatch = useDispatch()
 
     // // Count all the items inside the cart
-    // const currentCart = localStorage.getItem('gamesCart')
-    // let cartItems: Game[] = [];
+    const currentCart = localStorage.getItem('gamesCart')
+    let cartItems: Game[] = [];
 
-    // if (currentCart !== null) {
-    //     cartItems = JSON.parse(currentCart);
-    // }
+    if (currentCart !== null) {
+        cartItems = JSON.parse(currentCart);
+    }
 
-    // function countItems(items: Game[]) {
-    //     let count = 0
-
-    //     items.forEach((game) => {
-    //         count += game.itemAmount
-    //     });
-
-    //     return count
-    // }
+    
 
     // const currentAmount = countItems(cartItems)
     // localStorage.setItem('cartAmout', JSON.stringify(currentAmount))
+
+    
+    useEffect(() => {
+        function countItems(items: Game[]) {
+            let count = 0
+    
+            items.forEach((game) => {
+                count += game.itemAmount
+            });
+    
+            return count
+        }
+        dispatch(calculateAmount(countItems(cartItems)))
+    }, [myCart])
+
 
     const test = localStorage.getItem('cartAmount')
     let currentAmount = 0
@@ -61,15 +68,6 @@ function Navbar() {
     if (test !== null) {
         currentAmount = JSON.parse(test);
     }
-
-
-    useEffect(() => {
-        dispatch(calculateAmount())
-        localStorage.setItem('cartAmount', JSON.stringify(amount));
-    }, [number])
-
-
-
 
 
     return (

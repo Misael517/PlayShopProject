@@ -133,14 +133,9 @@ export const cartSlice = createSlice({
             state.itemArr = [...state.gameStorage]
             localStorage.setItem('gamesCart', JSON.stringify(state.itemArr));
         },
-        calculateAmount: (state) => {
-            const localStor = localStorage.getItem('gamesCart');
-
-            if (localStor) {
-                state.gameStorage = JSON.parse(localStor);
-            }
-
-            state.totalAmount = state.gameStorage.reduce((total, game) => total + game.itemAmount, 0);
+        calculateAmount: (state, action: PayloadAction<number>) => {
+            
+            state.totalAmount = action.payload
             localStorage.setItem('cartAmount', JSON.stringify(state.totalAmount))
         }
     }
