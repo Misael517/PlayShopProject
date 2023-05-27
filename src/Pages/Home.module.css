@@ -25,21 +25,21 @@
 
 .OnSaleSec {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
     height: 50vh;
 }
 
 .CoomingSec {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
     height: 50vh;
 }
 
 .PopularSec {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
     height: 50vh;
 }

@@ -1,6 +1,6 @@
 import styles from './Discover.module.css';
 import Navbar from '../../Components/Navbar/Navbar';
-import SearchBar from '../../Components/SearchBar/SearchBar';
+import GameList from '../../Components/GameList/GameList';
 import Footer from '../../Components/Footer/Footer';
 
 function Discover() {
@@ -11,7 +11,7 @@ function Discover() {
             </header>
             <main className={styles.main}>
                 <section className={styles.section1}>
-                    <SearchBar />
+                    <GameList />
                 </section>
             </main>
 
