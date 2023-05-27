@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import type { RootState } from "../../app/store";
-import { setItem, displayBar } from "../../app/Slices/SearchSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useState, useRef, useEffect } from "react";
 import styles from './Navbar.module.css';
 import logo from './images/logo.png';
 import cartIcon from './images/cart.png';
@@ -31,6 +30,7 @@ function Navbar() {
     const myCart = useSelector((state: RootState) => state.cart)
     const [currentItem, setCurrentItem] = useState<string>('')
     const [display, setDisplay] = useState<string>('none')
+    const componentRef = useRef<HTMLDivElement>(null)
     const navigate = useNavigate()
 
     // Get the items from the array in the local storage
@@ -46,6 +46,21 @@ function Navbar() {
         setDisplay('flex')
         setCurrentItem(e)
     }
+
+
+    // Close the bar when you click outside
+    const handleClickOutside = (event: MouseEvent) => {
+        if (componentRef.current && !componentRef.current.contains(event.target as Node)) {
+            setDisplay('none');
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    })
 
 
 
@@ -70,10 +85,9 @@ function Navbar() {
 
 
                 {/* Search Funcionality */}
-                <div className={styles.searchContainer}>
+                <div className={styles.searchContainer} ref={componentRef}>
                     <div className={styles.inputContainer}>
                         <input type='text' className={styles.searchInput} placeholder='Search Store' onChange={(e) => handleSearch(e.target.value)} />
-                        <button className={styles.filterBtn}>Search</button>
                     </div>
 
                     <div className={styles.gamesContainer} style={{ display: `${display}` }}>
