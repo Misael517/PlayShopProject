@@ -11,6 +11,7 @@ interface Game {
     id: number,
     name: string;
     icon: string;
+    searchIcon: string;
     Platforms: string,
     Publisher: string,
     Genre: string,

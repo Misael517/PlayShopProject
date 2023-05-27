@@ -11,44 +11,15 @@
     margin-bottom: 3vh;
 }
 
-.searchContainer {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
 
-.searchInput {
-    width: 30%;
-    height: 3.5vh;
-    border: 1.5px solid black;
-    color: black;
-    padding: 1vh;
-    font-size: 1.5vh;
-}
 
-.filterBtn {
-    background: rgb(0, 51, 70);
-    background: radial-gradient(circle, rgb(1, 81, 110) 0%, rgba(0, 61, 94, 0.8799894957983193) 100%);
-    border: none;
-    border-top-right-radius: 0.2em;
-    border-bottom-right-radius: 0.2em;
-    font-size: 1.7vh;
-    font-weight: 400;
-    color: white;
-    text-decoration: none;
-    width: 3.5vw;
-    height: 3.5vh;
-    transition: 200ms;
-}
 
-.filterBtn {
-    cursor: pointer;
-    transition: 200ms;
-}
+
+
+
 
 .gamesContainer {
     display: flex;
-    margin-top: 4vh;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
@@ -58,11 +29,9 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    position: relative;
     background-color: gray;
     background-position: center;
     background-size: cover;
-    top: 6vh;
     height: 18vw;
     width: 13%;
     margin: 0.5em;

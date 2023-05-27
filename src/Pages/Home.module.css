@@ -1,9 +1,10 @@
 .header {
     display: flex;
-    justify-content: right;
+    justify-content: space-evenly;
     width: 100%;
     position: absolute;
     z-index: 2;
+    background-color: rgb(0, 0, 0, 60%);
 }
 
 .main {

@@ -5,6 +5,7 @@ interface Game {
     id: number,
     name: string;
     icon: string;
+    searchIcon: string;
     Platforms: string,
     Publisher: string,
     Genre: string,
@@ -17,6 +18,7 @@ interface Game {
     itemAmount: number;
     cartPrice: number;
 }
+
 
 interface initialState {
     itemArr: Game[];
@@ -60,8 +62,8 @@ export const cartSlice = createSlice({
                 state.gameStorage = [action.payload, ...state.gameStorage]
             }
 
-            
-            
+
+
 
             state.itemArr = [...state.gameStorage]
 
@@ -148,13 +150,9 @@ export const cartSlice = createSlice({
             state.totalAmount = state.gameStorage.reduce((count, game) => count + game.itemAmount, 0)
             localStorage.setItem('cartAmount', JSON.stringify(state.totalAmount))
         },
-        calculateAmount: (state, action: PayloadAction<number>) => {
-            
-            
-        }
     }
 });
 
 
-export const { addItem, removeItem, increaseAmount, decreaseAmount, calculateAmount } = cartSlice.actions
+export const { addItem, removeItem, increaseAmount, decreaseAmount } = cartSlice.actions
 export default cartSlice.reducer

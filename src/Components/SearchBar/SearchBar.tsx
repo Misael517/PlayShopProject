@@ -2,11 +2,11 @@ import styles from './SearchBar.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-interface GamesFilter {
+interface Games {
     id: number,
     name: string;
     icon: string;
+    searchIcon: string;
     link?: string;
     Platforms: string;
     Publisher: string,
@@ -25,24 +25,16 @@ function SearchBar() {
 
     return (
         <>
-
-            <h1 className={styles.pageTitle}>Find any Video Game</h1>
-
-            <div className={styles.searchContainer}>
-                <input type='text' className={styles.searchInput} placeholder='search...' onChange={(e) => { setSearchItem(e.target.value) }}></input>
-                <button className={styles.filterBtn}>Filter</button>
-            </div>
-
             <div className={styles.gamesContainer}>
-                {jsonData.filter(({ name }) => {
+                {jsonData.filter((game) => {
                     if (searchItem === '') {
-                        return name
-                    } else if (name.toLocaleLowerCase().includes(searchItem.toLocaleLowerCase())) {
-                        return name
+                        return game.name
+                    } else if (game.name.toLocaleLowerCase().includes(searchItem.toLocaleLowerCase())) {
+                        return game.name
                     }
 
                 }
-                ).map((games: GamesFilter) => (
+                ).map((games: Games) => (
                     <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
 
 

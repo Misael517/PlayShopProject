@@ -98,6 +98,7 @@
 
 .decreaseBtn {
     width: 25%;
+    height: 100%;
     border: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -109,6 +110,7 @@
 
 .increaseBtn {
     width: 25%;
+    height: 100%;
     border: none;
     font-size: 1rem;
     border-top-right-radius: 10px;
