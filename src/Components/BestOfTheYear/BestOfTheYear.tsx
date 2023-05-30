@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import jsonData from '../../assets/gamesInfo.json';
 
 // game icons:
-import icon1 from './images/icon1.jpg';
-import icon2 from './images/icon2.jpg';
-import icon3 from './images/icon3.jpg';
-import icon4 from './images/icon4.jpg';
-import icon5 from './images/icon5.jpg';
-import icon6 from './images/icon6.jpg';
+import icon1 from '/images/bestOfTheYear/icon1.jpg';
+import icon2 from '/images/bestOfTheYear/icon2.jpg';
+import icon3 from '/images/bestOfTheYear/icon3.jpg';
+import icon4 from '/images/bestOfTheYear/icon4.jpg';
+import icon5 from '/images/bestOfTheYear/icon5.jpg';
+import icon6 from '/images/bestOfTheYear/icon6.jpg';
 
 interface GameContent {
     id: number;
@@ -27,14 +27,14 @@ const gamesContent: GameContent[] = [
 
 function BestOfTheYear() {
     const navigate = useNavigate()
-    
+
 
     return (
         <>
             <h2 className={styles.sectionName}>Best of the year</h2>
             <div className={styles.itemsGrid}>
                 {gamesContent.map((game) => (
-                    <div className={styles.itemsContent} key={game.id} style={{ backgroundImage: `url(${game.icon})` }} onClick={()=> navigate(`${game.link}`)}>
+                    <div className={styles.itemsContent} key={game.id} style={{ backgroundImage: `url(${game.icon})` }} onClick={() => navigate(`${game.link}`)}>
 
                     </div>
                 ))}

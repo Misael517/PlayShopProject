@@ -1,11 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { store } from './app/store.tsx';
 import { Provider } from 'react-redux';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
 import Home from './Pages/Home.tsx';
 import Discover from './Pages/Discover/Discover.tsx'
 import Cart from './Pages/Cart/Cart.tsx';
+import Auth from './Pages/Auth/Auth.tsx';
 import './index.css'
 
 // Video Games pages
@@ -62,6 +63,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route path="/" element={<Home />}></Route>
           <Route path="/Discover" element={<Discover />} />
           <Route path="/Cart" element={<Cart />} />
+          <Route path="/SignIn" element={<Auth />} />
           <Route path="/Gta5" element={<Gta5 />} />
           <Route path="EldenRing" element={<EldenRing />} />
           <Route path="Stray" element={<Stray />} />
@@ -106,7 +108,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route path="/ResidentEvil4" element={<ResidentEvil4 />} />
           <Route path="/ZeldaTearsOfTheKingdom" element={<Zelda />} />
           <Route path="/Redfall" element={<Redfall />}></Route>
-
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -4,9 +4,9 @@ import type { RootState } from "../../app/store";
 import { useSelector } from "react-redux";
 import { useState, useRef, useEffect } from "react";
 import styles from './Navbar.module.css';
-import logo from './images/logo.png';
-import cartIcon from './images/cart.png';
-import profilePic from './images/profile1.png';
+import logo from '/images/nav/logo.png';
+import cartIcon from '/images/nav/cart.png';
+import profilePic from '/images/nav/profile1.png';
 import jsonData from '../../assets/gamesInfo.json'
 interface Games {
     id: number,
@@ -120,7 +120,7 @@ function Navbar() {
                     </div>
 
                     <img src={profilePic} className={styles.profilePic} onClick={() => navigate('/Profile')} />
-                    <p className={styles.profileName} onClick={() => navigate('/Profile')}>UserName</p>
+                    <p className={styles.profileName} onClick={() => navigate('/SignIn')}>sing in</p>
                 </div>
             </nav >
         </>

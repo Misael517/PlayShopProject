@@ -97,7 +97,6 @@ function Acc() {
                     </div>
 
 
-
                     {/* This show things like the price and the add to cart button */}
                     <div className={styles.buyingSection}>
                         <img src={img7} className={styles.gamePortrait} />

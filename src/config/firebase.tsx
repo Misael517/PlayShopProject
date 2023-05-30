@@ -1,12 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getDatabase } from "firebase/database";
-
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDKBDHLU5ce24RBaqoYQkiv2iF5vSh0LVw",
     authDomain: "playshop-a9e8f.firebaseapp.com",
-    databaseURL: "https://playshop-a9e8f-default-rtdb.firebaseio.com/",
+    databaseURL: "https://playshop-a9e8f-default-rtdb.firebaseio.com",
     projectId: "playshop-a9e8f",
     storageBucket: "playshop-a9e8f.appspot.com",
     messagingSenderId: "913614107784",
@@ -15,8 +13,9 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app)
-export const gamesDataBase = getDatabase();
+const auth = getAuth(app)
 
-
+export function signup(email: string, password: string) {
+    return createUserWithEmailAndPassword(auth, email, password)
+}
 

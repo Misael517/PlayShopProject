@@ -4,29 +4,29 @@ import { useNavigate } from 'react-router-dom';
 import jsonData from '../../assets/gamesInfo.json';
 
 // game backgrounds:
-import game1 from './images/game1.jpg';
-import game2 from './images/game2.jpg';
-import game3 from './images/game3.jpg';
-import game4 from './images/game4.jpg';
-import game5 from './images/game5.jpg';
-import game6 from './images/game6.jpg';
+import game1 from '/images/newReleases/game1.jpg';
+import game2 from '/images/newReleases/game2.jpg';
+import game3 from '/images/newReleases/game3.jpg';
+import game4 from '/images/newReleases/game4.jpg';
+import game5 from '/images/newReleases/game5.jpg';
+import game6 from '/images/newReleases/game6.jpg';
 
 // game icons:
-import icon1 from './images/icon1.jpg';
-import icon2 from './images/icon2.jpg';
-import icon3 from './images/icon3.jpg';
-import icon4 from './images/icon4.jpg';
-import icon5 from './images/icon5.jpg';
-import icon6 from './images/icon6.jpg';
+import icon1 from '/images/newReleases/icon1.jpg';
+import icon2 from '/images/newReleases/icon2.jpg';
+import icon3 from '/images/newReleases/icon3.jpg';
+import icon4 from '/images/newReleases/icon4.jpg';
+import icon5 from '/images/newReleases/icon5.jpg';
+import icon6 from '/images/newReleases/icon6.jpg';
 
 
 // game logos:
-import logo1 from './images/GodOfWarLogo.png';
-import logo2 from './images/TheWitcherLogo.png';
-import logo3 from './images/ZeldaLogo.png';
-import logo4 from './images/KenaLogo.png';
-import logo5 from './images/RedfallLogo.png';
-import logo6 from './images/JediSurvivorLogo.png';
+import logo1 from '/images/newReleases/GodOfWarLogo.png';
+import logo2 from '/images/newReleases/TheWitcherLogo.png';
+import logo3 from '/images/newReleases/ZeldaLogo.png';
+import logo4 from '/images/newReleases/KenaLogo.png';
+import logo5 from '/images/newReleases/RedfallLogo.png';
+import logo6 from '/images/newReleases/JediSurvivorLogo.png';
 
 
 
