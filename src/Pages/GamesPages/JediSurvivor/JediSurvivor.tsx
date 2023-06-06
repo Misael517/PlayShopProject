@@ -1,9 +1,7 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addItem } from '../../../app/Slices/CartSlice';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
+import GameContent from '../../../Components/GameContent/GameContent';
 import jsonData from '../../../assets/gamesInfo.json';
 
 // Img imports
@@ -23,13 +21,13 @@ import thumb4 from "/images/gamesImg/JediSurvivor/imageThumbnail/thumb4.jpg";
 import thumb5 from "/images/gamesImg/JediSurvivor/imageThumbnail/thumb5.jpg";
 import thumb6 from "/images/gamesImg/JediSurvivor/imageThumbnail/thumb6.jpg";
 
-interface showCase {
+interface ShowCase {
     id: number;
     thumbnail: string;
     image: string;
 }
 
-const imgArr: showCase[] = [
+const imgArr: ShowCase[] = [
     {
         id: 0,
         thumbnail: thumb1,
@@ -50,7 +48,6 @@ const imgArr: showCase[] = [
         id: 3,
         thumbnail: thumb4,
         image: img4,
-
     },
     {
         id: 4,
@@ -66,9 +63,9 @@ const imgArr: showCase[] = [
 
 
 
+
 function JediSurvivor() {
-    const [currentImg, setCurrentImg] = useState<number>(0)
-    const dispatch = useDispatch()
+    const currentGame = jsonData[40]
 
     return (
         <>
@@ -79,57 +76,8 @@ function JediSurvivor() {
 
             {/* This is the main part of the body */}
             <main className={styles.main}>
-
-
                 <section className={styles.section1}>
-                    {/* This display the images of the current game */}
-                    <div className={styles.imgDisplay} style={{ backgroundImage: `url(${imgArr[currentImg].image}) ` }}>
-                    </div>
-
-                    <div className={styles.imgContainer}>
-                        {imgArr.map((img) => {
-                            return (
-                                <div key={img.id} className={styles.imgHolder}>
-                                    <img src={img.thumbnail} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} key={img.id} onClick={() => setCurrentImg(img.id)} />
-                                </div>
-                            )
-                        })}
-                    </div>
-
-
-
-                    {/* This show things like the price and the add to cart button */}
-                    <div className={styles.buyingSection}>
-                        <img src={img7} className={styles.gamePortrait} />
-                        <div className={styles.gamesInfo}>
-
-                            <h3>Starting at:</h3>
-                            <div className={styles.gamesPrice}>
-                                <p><span className={jsonData[40].isOnSale ? styles.discountColor : ''}>{jsonData[40].isOnSale ? `-${jsonData[40].discount}%` : ''}</span></p>
-                                <p><span className={jsonData[40].isOnSale ? styles.strikeThrough : ''}>{jsonData[40].isOnSale ? `${jsonData[40].price}%` : ''}</span></p>
-                                <p style={{ textAlign: 'center' }}>{jsonData[40].isOnSale ? `$${jsonData[40].actualPrice}` : (jsonData[40].coomingSoon ? '...' : `$${jsonData[40].price}`)}</p>
-                            </div>
-                        </div>
-                        <button className={styles.addBtn} onClick={() => dispatch(addItem(jsonData[40]))}>Add to cart</button>
-                    </div>
-
-                    {/* This show details about the product */}
-                    <div className={styles.detailsContainer}>
-                        <div>
-                            <h3 className={styles.detailsTitle}>Platforms</h3>
-                            <p className={styles.detailsContent}>{jsonData[40].Platforms}</p>
-                        </div>
-
-                        <div>
-                            <h3 className={styles.detailsTitle}>Publisher</h3>
-                            <p className={styles.detailsContent}>{jsonData[40].Publisher}</p>
-                        </div>
-
-                        <div>
-                            <h3 className={styles.detailsTitle}>Video Game Genre</h3>
-                            <p className={styles.detailsContent}>{jsonData[40].Genre}</p>
-                        </div>
-                    </div>
+                    <GameContent imgArr={imgArr} img7={img7} currentGame={currentGame} />
                 </section>
             </main>
 

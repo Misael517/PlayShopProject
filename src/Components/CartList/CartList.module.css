@@ -2,6 +2,7 @@
     display: flex;
     justify-content: flex-start;
     width: 67%;
+
     margin: 1em;
     flex-direction: column;
 }
@@ -181,8 +182,8 @@
     align-items: center;
     background-color: rgb(20, 20, 20);
     font-size: 1.65vh;
-    padding: 0.3em;
-    gap: 0.3em;
+    padding: 0.7em;
+    gap: 0.5em;
 }
 
 .subtotalTitle {
