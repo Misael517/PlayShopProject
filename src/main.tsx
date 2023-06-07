@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client'
 import Home from './Pages/Home.tsx';
 import Discover from './Pages/Discover/Discover.tsx'
 import Cart from './Pages/Cart/Cart.tsx';
-import Auth from './Pages/Auth/Auth.tsx';
+import Auth from './Pages/SingIn/SingIn.tsx';
 import './index.css'
 
 // Video Games pages

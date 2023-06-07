@@ -73,7 +73,7 @@ function Navbar() {
 
                 {/* Header logo */}
                 <div className={styles.navContainer}>
-                    <img src={logo} className={styles.logo} onClick={() => navigate("/")} />
+                    <img src={logo} className={styles.logo} onClick={() => navigate("/")} alt="PayShop Logo" />
 
                     <ul>
                         <li>
@@ -118,11 +118,11 @@ function Navbar() {
 
                     <div className={styles.cartContainer}>
                         <p style={{ fontSize: '1vh' }}>{currentAmount}</p>
-                        <img src={cartIcon} className={styles.cart} onClick={() => navigate('/Cart')} />
+                        <img src={cartIcon} className={styles.cart} onClick={() => navigate('/Cart')} alt="Cart Icon" />
                     </div>
 
-                    <img src={profilePic} className={styles.profilePic} onClick={() => navigate('/Profile')} />
-                    <p className={styles.profileName} onClick={() => navigate('/SignIn')}>{auth.currentUser ? 'DemoAccount' : 'sing in'}</p>
+                    <img src={profilePic} className={styles.profilePic} alt="Profile Picture" />
+                    <p className={styles.profileName} ><Link to={'/SignIn'}>{auth.currentUser ? 'DemoAccount' : 'sing in'}</Link></p>
                 </div>
             </nav >
         </>

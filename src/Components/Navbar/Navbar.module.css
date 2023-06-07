@@ -73,24 +73,6 @@
     box-shadow: none;
 }
 
-/* .filterBtn {
-    background: rgb(168, 1, 1);
-    border: none;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    font-size: 1.2vh;
-    font-weight: 400;
-    color: white;
-    text-decoration: none;
-    width: 2vw;
-    height: 2.6vh;
-    transition: 200ms;
-}
-
-.filterBtn {
-    cursor: pointer;
-    transition: 200ms;
-} */
 
 
 
@@ -191,15 +173,15 @@
     border-radius: 1rem;
 }
 
-.profilePic:hover {
-    cursor: pointer;
-}
-
 .profileName {
     font-size: 1.32vh;
     font-weight: 100;
 }
 
-.profileName {
+.profileName a {
+    text-decoration: none;
+}
+
+.profileName:hover {
     cursor: pointer;
 }
