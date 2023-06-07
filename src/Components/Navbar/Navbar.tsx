@@ -3,11 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import type { RootState } from "../../app/store";
 import { useSelector } from "react-redux";
 import { useState, useRef, useEffect } from "react";
+import { auth } from '../../config/firebase'
 import styles from './Navbar.module.css';
 import logo from '/images/nav/logo.png';
 import cartIcon from '/images/nav/cart.png';
 import profilePic from '/images/nav/profile1.png';
 import jsonData from '../../assets/gamesInfo.json'
+
 interface Games {
     id: number,
     name: string;
@@ -120,7 +122,7 @@ function Navbar() {
                     </div>
 
                     <img src={profilePic} className={styles.profilePic} onClick={() => navigate('/Profile')} />
-                    <p className={styles.profileName} onClick={() => navigate('/SignIn')}>sing in</p>
+                    <p className={styles.profileName} onClick={() => navigate('/SignIn')}>{auth.currentUser ? 'DemoAccount' : 'sing in'}</p>
                 </div>
             </nav >
         </>

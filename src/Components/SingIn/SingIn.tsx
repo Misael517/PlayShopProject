@@ -1,6 +1,6 @@
 import styles from './SingIn.module.css';
 import { auth } from '../../config/firebase'
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 interface Inputs {
@@ -11,8 +11,14 @@ interface Inputs {
 
 // Sing In function:
 const handleSingIn = async (email: string, password: string) => {
-    await createUserWithEmailAndPassword(auth, email, password)
+    try {
+        await signInWithEmailAndPassword(auth, email, password)
+    } catch (error){
+        console.log(error)
+    }
 }
+
+console.log(auth?.currentUser?.email)
 
 
 function SingIn() {
@@ -23,8 +29,9 @@ function SingIn() {
         <div className={styles.authContainer}>
             <form onSubmit={handleSubmit(onSubmit)}>
                 {/* Email input */}
-                <label htmlFor='email'>Email:</label>
-                <input
+                <div>
+                  <label htmlFor='email'>Email:</label>
+                    <input
                     placeholder={errors.email ? 'This field is required' : 'email'}
                     type='email'
                     id='email'
@@ -37,26 +44,31 @@ function SingIn() {
                         }
                     })}
                 />
+                </div>
 
                 {/* Password input */}
+                <div>
                 <label htmlFor='password'>Password:</label>
 
-                <input
-                    placeholder={errors.password ? 'This field is required' : 'password'}
-                    type='password'
-                    id='password'
-                    className={styles.inputField}
-                    {...register("password", {
-                        required: true,
-                        minLength: {
-                            value: 10,
-                            message: 'The min length is 20'
-                        }
-                    })}
-                />
+                 <input
+                   placeholder={errors.password ? 'This field is required' : 'password'}
+                   type='password'
+                   id='password'
+                   className={styles.inputField}
+                   {...register("password", {
+                   required: true,
+                   minLength: {
+                   value: 5,
+                message: 'The min length is 20'
+                 }
+               })}
+              />
+                </div>
 
 
-                <input type="submit" className={styles.submitButton} />
+                <div>
+                   <input type="submit" className={styles.submitButton} />
+                </div>
             </form>
         </div >
     )
