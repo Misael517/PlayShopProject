@@ -144,12 +144,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2;
     width: 7.5%;
     height: 4.8vh;
-    padding: 1em;
     padding-right: 0.8em;
-    background-color: rgb(0, 0, 0, 60%);
 }
 
 .cartContainer {
@@ -167,6 +164,9 @@
     cursor: pointer;
 }
 
+
+
+
 .profilePic {
     width: .95vw;
     margin-right: 0.8em;
@@ -183,5 +183,39 @@
 }
 
 .profileName:hover {
+    cursor: pointer;
+}
+
+
+
+
+
+.sessionFrame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    margin-right: 0.8em;
+}
+
+.singOutContainer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0, 0.95);
+    position: absolute;
+    z-index: 3;
+    top: 4.75vh;
+    height: 4vh;
+    width: 4.1vw;
+}
+
+.singOutBtn {
+    font-size: 1.32vh;
+    font-weight: 100;
+}
+
+.singOutBtn:hover {
     cursor: pointer;
 }

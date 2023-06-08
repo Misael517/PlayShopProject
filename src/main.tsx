@@ -63,7 +63,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <Route path="/" element={<Home />}></Route>
           <Route path="/Discover" element={<Discover />} />
           <Route path="/Cart" element={<Cart />} />
-          <Route path="/SignIn" element={<Auth />} />
+          <Route path="/SingIn" element={<Auth />} />
           <Route path="/Gta5" element={<Gta5 />} />
           <Route path="EldenRing" element={<EldenRing />} />
           <Route path="Stray" element={<Stray />} />

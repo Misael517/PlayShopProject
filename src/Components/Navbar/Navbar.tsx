@@ -28,12 +28,40 @@ interface Games {
     cartPrice: number;
 }
 
+
 function Navbar() {
     const myCart = useSelector((state: RootState) => state.cart)
     const [currentItem, setCurrentItem] = useState<string>('')
     const [display, setDisplay] = useState<string>('none')
+    const [showSingOut, setShowSingOut] = useState<string>('')
+    const [userStatus, setUserStatus] = useState('sing in');
     const componentRef = useRef<HTMLDivElement>(null)
+    const sessionRef = useRef<HTMLDivElement>(null)
     const navigate = useNavigate()
+
+    // Check if the userDemo name is stored in local storage
+    useEffect(() => {
+        const storedName = localStorage.getItem('userDemoName');
+        if (storedName) {
+            setUserStatus(storedName);
+        }
+    }, []);
+
+    // Sign Out function
+    const handleSignOut = async () => {
+        try {
+            await auth.signOut();
+            localStorage.setItem('userDemoName', 'sing in');
+            window.location.reload();
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+
+
+
+
 
     // Get the items from the array in the local storage
     const test = localStorage.getItem('cartAmount')
@@ -55,6 +83,10 @@ function Navbar() {
         if (componentRef.current && !componentRef.current.contains(event.target as Node)) {
             setDisplay('none');
         }
+
+        if (sessionRef.current && !sessionRef.current.contains(event.target as Node)) {
+            setShowSingOut('none')
+        }
     };
 
     useEffect(() => {
@@ -66,6 +98,8 @@ function Navbar() {
 
 
 
+
+
     return (
         <>
             {/* Nav bar */}
@@ -73,7 +107,7 @@ function Navbar() {
 
                 {/* Header logo */}
                 <div className={styles.navContainer}>
-                    <img src={logo} className={styles.logo} onClick={() => navigate("/")} alt="PayShop Logo" />
+                    <img src={logo} className={styles.logo} onClick={() => navigate("/")} alt="PlayShop Logo" />
 
                     <ul>
                         <li>
@@ -114,15 +148,20 @@ function Navbar() {
                 </div>
 
                 {/* Profile info */}
-                <div className={styles.profileFrame}>
+                <div className={styles.profileFrame} ref={sessionRef}>
+                    <img src={profilePic} className={styles.profilePic} alt="Profile Picture" />
+
+                    <div className={styles.sessionFrame}>
+                        <p className={styles.profileName} onClick={() => auth.currentUser ? setShowSingOut('flex') : navigate('/SingIn')}>{userStatus}</p>
+                        <div className={styles.singOutContainer} style={{ display: showSingOut }}>
+                            <p className={styles.singOutBtn} onClick={() => handleSignOut()}>sing out</p>
+                        </div>
+                    </div>
 
                     <div className={styles.cartContainer}>
                         <p style={{ fontSize: '1vh' }}>{currentAmount}</p>
                         <img src={cartIcon} className={styles.cart} onClick={() => navigate('/Cart')} alt="Cart Icon" />
                     </div>
-
-                    <img src={profilePic} className={styles.profilePic} alt="Profile Picture" />
-                    <p className={styles.profileName} ><Link to={'/SignIn'}>{auth.currentUser ? 'DemoAccount' : 'sing in'}</Link></p>
                 </div>
             </nav >
         </>

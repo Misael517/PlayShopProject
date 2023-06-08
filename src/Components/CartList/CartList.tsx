@@ -1,4 +1,4 @@
-import CartSlice, { removeItem, increaseAmount, decreaseAmount } from '../../app/Slices/CartSlice';
+import { removeItem, increaseAmount, decreaseAmount } from '../../app/Slices/CartSlice';
 import type { RootState } from '../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -94,14 +94,14 @@ function CartList() {
 
 
             <div className={styles.checkOutSection}>
-                <img src={img7} className={styles.gamePortrait} />
+                <img src={img7} className={styles.gamePortrait} alt='Shopping Image' />
                 <div className={styles.checkOutInfo}>
 
                     <h3>Total:</h3>
                     <p className={styles.subTotal}>{total.toFixed(2)}</p>
 
                 </div>
-                <button className={styles.checkOutBtn}><a target="_blank" href={''}></a>Start check out</button>
+                <button className={styles.checkOutBtn}>Start check out</button>
             </div>
 
         </>
