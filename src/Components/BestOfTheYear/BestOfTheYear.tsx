@@ -1,15 +1,9 @@
-import styles from './BestOfTheYear.module.css';
+import { memo, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { storage } from '../../config/firebase';
+import { ref, listAll, getDownloadURL } from 'firebase/storage';
+import styles from './BestOfTheYear.module.css';
 import jsonData from '../../assets/gamesInfo.json';
-import React, { memo } from 'react';
-
-// game icons:
-import icon1 from '/images/bestOfTheYear/icon1.jpg';
-import icon2 from '/images/bestOfTheYear/icon2.jpg';
-import icon3 from '/images/bestOfTheYear/icon3.jpg';
-import icon4 from '/images/bestOfTheYear/icon4.jpg';
-import icon5 from '/images/bestOfTheYear/icon5.jpg';
-import icon6 from '/images/bestOfTheYear/icon6.jpg';
 
 interface GameContent {
     id: number;
@@ -17,24 +11,55 @@ interface GameContent {
     icon: string;
 }
 
-const gamesContent: GameContent[] = [
-    { id: 0, link: jsonData[36].link, icon: icon1, },
-    { id: 1, link: jsonData[37].link, icon: icon2, },
-    { id: 2, link: jsonData[38].link, icon: icon3, },
-    { id: 3, link: jsonData[39].link, icon: icon4, },
-    { id: 4, link: jsonData[41].link, icon: icon5, },
-    { id: 5, link: jsonData[40].link, icon: icon6, },
-]
-
 function BestOfTheYear() {
     const navigate = useNavigate()
+    const [images, setImages] = useState<string[]>()
+
+    useEffect(() => {
+        const fetchImages = async () => {
+          try {
+            const bestOfTheYearRef = ref(storage, "/images/bestOfTheYear");
+            const response = await listAll(bestOfTheYearRef);
+    
+            const downloadPromises = response.items.map(async (item) => {
+              const url = await getDownloadURL(item);
+              return url;
+            });
+    
+            const imageUrls = await Promise.all(downloadPromises);
+            setImages(imageUrls);
+          } catch (error) {
+            console.error("Error fetching images:", error);
+          }
+        };
+    
+        fetchImages();
+      }, []);
+
+
+      const createArray = () => {
+        if (images) {
+            const content: GameContent[] = [
+                { id: 1, link: jsonData[36].link, icon: images[0], },
+                { id: 2, link: jsonData[37].link, icon: images[1], },
+                { id: 3, link: jsonData[38].link, icon: images[2], },
+                { id: 4, link: jsonData[39].link, icon: images[3], },
+                { id: 5, link: jsonData[41].link, icon: images[4], },
+                { id: 6, link: jsonData[40].link, icon: images[5], },
+            ]
+
+            return content
+        }    
+      }
+
+      const gamesContent = createArray()
 
 
     return (
         <>
             <h2 className={styles.sectionName}>Best of the year</h2>
             <div className={styles.itemsGrid}>
-                {gamesContent.map((game) => (
+                {gamesContent?.map((game) => (
                     <div className={styles.itemsContent} key={game.id} style={{ backgroundImage: `url(${game.icon})` }} onClick={() => navigate(`${game.link}`)}>
 
                     </div>
