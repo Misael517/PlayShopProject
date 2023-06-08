@@ -4,6 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import styles from './Auth.module.css';
 import logo from '/images/nav/logo.png';
+import React, { memo } from 'react';
 
 interface Inputs {
     email: string,
@@ -87,4 +88,6 @@ function Auth() {
     )
 }
 
-export default Auth
+const AuthMemo = memo(Auth)
+
+export default AuthMemo

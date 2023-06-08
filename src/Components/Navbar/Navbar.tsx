@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import type { RootState } from "../../app/store";
 import { useSelector } from "react-redux";
 import { useState, useRef, useEffect } from "react";
-import { auth } from '../../config/firebase'
+import { auth } from '../../config/firebase';
+import React, { memo } from 'react';
 import styles from './Navbar.module.css';
 import logo from '/images/nav/logo.png';
 import cartIcon from '/images/nav/cart.png';
@@ -74,7 +75,8 @@ function Navbar() {
     // Display the search bar each tiem it finds letters
     const handleSearch = (e: string) => {
         setDisplay('flex')
-        setCurrentItem(e)
+        const content = e
+        setCurrentItem(content)
     }
 
 
@@ -168,4 +170,6 @@ function Navbar() {
     )
 }
 
-export default Navbar
+const NavBarMemo = memo(Navbar)
+
+export default NavBarMemo

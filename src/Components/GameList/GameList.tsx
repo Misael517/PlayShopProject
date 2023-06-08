@@ -1,6 +1,7 @@
 import styles from './GameList.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 import { useNavigate } from 'react-router-dom';
+import React, { memo } from 'react';
 interface Games {
     id: number,
     name: string;
@@ -41,4 +42,6 @@ function GameList() {
     )
 }
 
-export default GameList
+const GameListMemo = memo(GameList)
+
+export default GameListMemo

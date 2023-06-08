@@ -1,12 +1,15 @@
 import styles from './Footer.module.css';
+import React, { memo } from 'react';
 
 
-function Navbar() {
+function Footer() {
     return (
         <>
-            <p style={{ textAlign: 'center', }}>Follow us: </p>
+            <p style={{ textAlign: 'center', }}>Follow us</p>
         </>
     )
 }
 
-export default Navbar
+const FooterMemo = memo(Footer)
+
+export default FooterMemo

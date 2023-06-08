@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -87,4 +88,6 @@ function ResidentEvil4() {
         </>)
 }
 
-export default ResidentEvil4
+const ResidentEvil4Memo = memo(ResidentEvil4)
+
+export default ResidentEvil4Memo

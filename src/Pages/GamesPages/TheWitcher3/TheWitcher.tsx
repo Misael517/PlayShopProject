@@ -3,6 +3,7 @@ import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
 import GameContent from '../../../Components/GameContent/GameContent';
 import jsonData from '../../../assets/gamesInfo.json';
+import { memo } from 'react';
 
 // Img imports
 import img1 from '/images/gamesImg/TheWitcher3/img1.jpg';
@@ -88,4 +89,6 @@ function TheWitcher3() {
         </>)
 }
 
-export default TheWitcher3
+const TheWitcher3Memo = memo(TheWitcher3)
+
+export default TheWitcher3Memo

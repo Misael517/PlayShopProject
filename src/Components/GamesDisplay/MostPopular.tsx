@@ -1,9 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import styles from './Styles/GamesDisplay.module.css';
-import jsonData from '../../assets/gamesInfo.json';
 import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/MostPopularSlice';
+import React, { memo } from 'react';
+import styles from './Styles/GamesDisplay.module.css';
+import jsonData from '../../assets/gamesInfo.json';
+
 
 
 // Interfaces:
@@ -182,7 +184,7 @@ function OnSale() {
         <>
             <h2 className={styles.sectionName}>Most Popular</h2>
 
-            <button className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={'/L.png'} className={styles.btnImgLeft} /></button>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={'/L.png'} className={styles.btnImgLeft} alt='Left Arrow' /></div>
 
             {gamesPopular[switchGames].games.map((games) => (
                 <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
@@ -197,10 +199,12 @@ function OnSale() {
                         </div>
                     </div>
                 </div>))}
-            <button className={styles.sectionBtn} onClick={() => dispatch(handleNext())}> <img src={'/R.png'} className={styles.btnImgRight} /> </button>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleNext())}> <img src={'/R.png'} className={styles.btnImgRight} alt='Right Arrow' /> </div>
         </>
     )
 }
 
-export default OnSale;
+const OnSaleMemo = memo(OnSale)
+
+export default OnSaleMemo
 

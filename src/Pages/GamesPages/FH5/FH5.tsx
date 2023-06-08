@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -88,4 +89,6 @@ function Fh5() {
         </>)
 }
 
-export default Fh5
+const Fh5Memo = memo(Fh5)
+
+export default Fh5Memo

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from './SingIn.module.css';
 import Auth from '../../Components/Auth/Auth';
 
@@ -9,4 +10,6 @@ function SingIn() {
     );
 }
 
-export default SingIn;
+const SingInMemo = memo(SingIn)
+
+export default SingInMemo

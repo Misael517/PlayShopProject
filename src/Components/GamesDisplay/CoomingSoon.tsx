@@ -1,9 +1,11 @@
-import { useNavigate } from 'react-router-dom';
-import styles from './Styles/GamesDisplay.module.css';
-import jsonData from '../../assets/gamesInfo.json';
 import type { RootState } from '../../app/store';
+import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/CoomingSoonSlice';
+import React, { memo } from 'react';
+import styles from './Styles/GamesDisplay.module.css';
+import jsonData from '../../assets/gamesInfo.json';
+
 
 // Interfaces:
 interface Games {
@@ -179,7 +181,7 @@ function CoomingSoon() {
         <>
             <h2 className={styles.sectionName}>Coming Soon</h2>
 
-            <button className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={'/L.png'} className={styles.btnImgLeft} /></button>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={'/L.png'} className={styles.btnImgLeft} alt='Left arrow' /></div>
 
             {gamesCooming[switchGames].games.map((games) => (
                 <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
@@ -194,10 +196,12 @@ function CoomingSoon() {
                         </div>
                     </div>
                 </div>))}
-            <button className={styles.sectionBtn} onClick={() => dispatch(handleNext())}><img src={'/R.png'} className={styles.btnImgRight} /></button>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleNext())}><img src={'/R.png'} className={styles.btnImgRight} alt='Right Arrow' /></div>
         </>
     )
 }
 
-export default CoomingSoon;
+const CoomingSoonMemo = memo(CoomingSoon)
+
+export default CoomingSoonMemo
 

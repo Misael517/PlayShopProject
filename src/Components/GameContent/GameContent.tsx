@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../app/Slices/CartSlice';
 import styles from './GameContent.module.css';
+import React, { memo } from 'react';
 
 interface GamesProps {
     imgArr: {
@@ -50,7 +51,7 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
                     {imgArr.map((img) => {
                         return (
                             <div key={img.id} className={styles.imgHolder}>
-                                <img src={img.thumbnail} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} key={img.id} onClick={() => setCurrentImg(img.id)} />
+                                <img src={img.thumbnail} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} key={img.id} onClick={() => setCurrentImg(img.id)} alt='Game image' />
                             </div>
                         )
                     })}
@@ -59,7 +60,7 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
 
                 {/* This show things like the price and the add to cart button */}
                 <div className={styles.buyingSection}>
-                    <img src={img7} className={styles.gamePortrait} />
+                    <img src={img7} className={styles.gamePortrait} alt='Game Portrait' />
                     <div className={styles.gamesInfo}>
 
                         <h3>Starting at:</h3>
@@ -93,4 +94,6 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
         </>)
 }
 
-export default GameContent
+const GameContentMemo = memo(GameContent)
+
+export default GameContentMemo

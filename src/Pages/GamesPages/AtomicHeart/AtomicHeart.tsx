@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -87,4 +88,6 @@ function AtomicHeart() {
         </>)
 }
 
-export default AtomicHeart
+const AtomicHeartMemo = memo(AtomicHeart)
+
+export default AtomicHeartMemo

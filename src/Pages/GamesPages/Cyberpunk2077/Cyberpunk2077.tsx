@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -88,4 +89,6 @@ function Cyberpunk2077() {
         </>)
 }
 
-export default Cyberpunk2077
+const Cyberpunk2077Memo = memo(Cyberpunk2077)
+
+export default Cyberpunk2077Memo

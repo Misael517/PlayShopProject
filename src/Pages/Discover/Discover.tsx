@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from './Discover.module.css';
 import Navbar from '../../Components/Navbar/Navbar';
 import GameList from '../../Components/GameList/GameList';
@@ -22,4 +23,6 @@ function Discover() {
     )
 }
 
-export default Discover
+const DiscoverMemo = memo(Discover)
+
+export default DiscoverMemo

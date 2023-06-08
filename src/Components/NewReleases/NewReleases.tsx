@@ -1,6 +1,7 @@
-import styles from './NewReleases.module.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import React, { memo } from 'react';
+import styles from './NewReleases.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
 // game backgrounds:
@@ -74,4 +75,6 @@ function NewReleases() {
     )
 }
 
-export default NewReleases
+const NewReleasesMemo = memo(NewReleases)
+
+export default NewReleasesMemo

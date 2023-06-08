@@ -1,8 +1,8 @@
+import { memo } from 'react';
 import styles from './Cart.module.css';
 import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/Footer';
 import CartList from '../../Components/CartList/CartList';
-
 
 function Cart() {
     return (
@@ -26,4 +26,6 @@ function Cart() {
     )
 }
 
-export default Cart
+const CartMemo = memo(Cart)
+
+export default CartMemo

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import GameContent from '../../../Components/GameContent/GameContent';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
@@ -88,4 +89,6 @@ function BloodLines2() {
         </>)
 }
 
-export default BloodLines2
+const BloodLines2Memo = memo(BloodLines2)
+
+export default BloodLines2Memo

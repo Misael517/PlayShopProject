@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styles from './CartList.module.css'
 import img7 from '/images/gamesImg/GodOfWar/img7.jpg';
+import React, { memo } from 'react';
 
 interface Game {
     id: number,
@@ -108,4 +109,6 @@ function CartList() {
     )
 }
 
-export default CartList
+const CartListMemo = memo(CartList)
+
+export default CartListMemo

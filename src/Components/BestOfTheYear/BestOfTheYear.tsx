@@ -1,6 +1,7 @@
 import styles from './BestOfTheYear.module.css';
 import { useNavigate } from 'react-router-dom';
 import jsonData from '../../assets/gamesInfo.json';
+import React, { memo } from 'react';
 
 // game icons:
 import icon1 from '/images/bestOfTheYear/icon1.jpg';
@@ -43,4 +44,6 @@ function BestOfTheYear() {
     )
 }
 
-export default BestOfTheYear
+const BestOfTheYearMemo = memo(BestOfTheYear)
+
+export default BestOfTheYearMemo

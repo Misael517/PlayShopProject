@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -87,4 +88,6 @@ function GodOfWar() {
         </>)
 }
 
-export default GodOfWar
+const GodOfWarMemo = memo(GodOfWar)
+
+export default GodOfWarMemo

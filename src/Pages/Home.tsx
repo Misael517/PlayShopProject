@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from './Home.module.css';
 import Navbar from '../Components/Navbar/Navbar';
 import NewReleases from '../Components/NewReleases/NewReleases';
@@ -37,4 +38,6 @@ function Home() {
     )
 }
 
-export default Home
+const HomeMemo = memo(Home)
+
+export default HomeMemo

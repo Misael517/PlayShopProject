@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -89,4 +90,6 @@ function Acc() {
         </>)
 }
 
-export default Acc
+const AccMemo = memo(Acc)
+
+export default AccMemo
