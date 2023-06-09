@@ -1,74 +1,65 @@
 import { memo } from 'react';
-import { getImages } from '../../../api/getImages';
-import { useQuery } from '@tanstack/react-query';
+import useGetImages from '../../../Hooks/useGettImages';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
 import jsonData from '../../../assets/gamesInfo.json';
 import GameContent from '../../../Components/GameContent/GameContent';
-
 interface ShowCase {
     id: number;
     thumbnail: string;
     image: string;
 }
 
-
 function Acc() {
     const currentGame = jsonData[16]
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('AccImg', '/images/gamesImg/Acc');
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('AccThumb', '/images/gamesImg/Acc/imageThumbnail');
 
-    // fetch the images from the storage
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useQuery(['AccImg'], () => {
-    return getImages('/images/gamesImg/Acc');
-  });
+    if (isImagesLoading || isThumbLoading) {
+        return <h2>Loading...</h2>;
+    }
 
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useQuery(['AccThumb'], () => {
-    return getImages('/images/gamesImg/Acc/imageThumbnail');
-  });
+    if (isImagesError || isThumbError) {
+        return <h2>Error</h2>;
+    }
 
-  if (isImagesLoading || isThumbLoading) {
-    return <h2>Loading...</h2>;
-  }
 
-  if (isImagesError || isThumbError) {
-    return <h2>Error</h2>;
-  }
+    const imgArr: ShowCase[] = [
+        {
+            id: 0,
+            thumbnail: thumb[0],
+            image: img[0]
+        },
+        {
+            id: 1,
+            thumbnail: thumb[1],
+            image: img[1]
+        },
+        {
+            id: 2,
+            thumbnail: thumb[2],
+            image: img[2]
 
-    
-const imgArr: ShowCase[] = [
-    {
-        id: 0,
-        thumbnail: thumb[0],
-        image: img[0]
-    },
-    {
-        id: 1,
-        thumbnail: thumb[1],
-        image: img[1]
-    },
-    {
-        id: 2,
-        thumbnail: thumb[2],
-        image: img[2]
+        },
+        {
+            id: 3,
+            thumbnail: thumb[3],
+            image: img[3]
 
-    },
-    {
-        id: 3,
-        thumbnail: thumb[3],
-        image: img[3]
+        },
+        {
+            id: 4,
+            thumbnail: thumb[4],
+            image: img[4]
+        },
+        {
+            id: 5,
+            thumbnail: thumb[5],
+            image: img[5]
+        },
+    ]
 
-    },
-    {
-        id: 4,
-        thumbnail: thumb[4],
-        image: img[4]
-    },
-    {
-        id: 5,
-        thumbnail: thumb[5],
-        image: img[5]
-    },
-]
 
     return (
         <>
@@ -80,7 +71,7 @@ const imgArr: ShowCase[] = [
             {/* This is the main part of the body */}
             <main className={styles.main}>
                 <section className={styles.section1}>
-                    <GameContent imgArr={imgArr} img7={`${img[6]}`} currentGame={currentGame} />
+                    <GameContent imgArr={imgArr} img7={img[6]} currentGame={currentGame} />
                 </section>
             </main>
 

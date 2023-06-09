@@ -3,8 +3,8 @@ import type { RootState } from '../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styles from './CartList.module.css'
-import img7 from '/images/gamesImg/GodOfWar/img7.jpg';
-import React, { memo } from 'react';
+// import img7 from '/images/gamesImg/GodOfWar/img7.jpg';
+import { memo } from 'react';
 
 interface Game {
     id: number,
@@ -95,7 +95,7 @@ function CartList() {
 
 
             <div className={styles.checkOutSection}>
-                <img src={img7} className={styles.gamePortrait} alt='Shopping Image' />
+                {/* <img src={img7} className={styles.gamePortrait} alt='Shopping Image' /> */}
                 <div className={styles.checkOutInfo}>
 
                     <h3>Total:</h3>

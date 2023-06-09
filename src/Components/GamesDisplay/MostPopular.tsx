@@ -3,8 +3,8 @@ import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/MostPopularSlice';
 import { memo } from 'react';
-import { getImages } from '../../api/getImages';
-import { useQuery } from '@tanstack/react-query';
+import usePreloadImages from '../../Hooks/usePreloadImage';
+import useGetImages from '../../Hooks/useGettImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -179,13 +179,17 @@ const gamesPopular: GamesPopular[] = [
 function OnSale() {
     const switchGames = useSelector((state: RootState,) => state.switchGamesMostPopular.value)
     const dispatch = useDispatch()
-
     const navigate = useNavigate()
 
-    // fetch the images from the storage
-    const { data: images, isLoading, isError } = useQuery(['iconsBtn'], () => {
-        return getImages('/')
-    });
+    const { data: images, isLoading, isError } = useGetImages('iconsBtn', '/')
+
+    // Preload the images
+    const icons = gamesPopular.map((items) => {
+        return items.games.map((game) => { return game.icon })
+    }).flat()
+
+    usePreloadImages(icons)
+    usePreloadImages(images)
 
     if (isLoading) {
         return <h2>Loading...</h2>;

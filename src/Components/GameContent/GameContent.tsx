@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../app/Slices/CartSlice';
+import { memo } from 'react';
 import styles from './GameContent.module.css';
-import React, { memo } from 'react';
+import usePreloadImages from '../../Hooks/usePreloadImage';
 
 interface GamesProps {
     imgArr: {
@@ -40,11 +41,17 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
     const [currentImg, setCurrentImg] = useState<number>(0)
     const dispatch = useDispatch()
 
+    const imgPreload = imgArr.map((game) => { return game.image })
+    const thumbPreload = imgArr.map((game) => { return game.image })
+    usePreloadImages(imgPreload)
+    usePreloadImages(thumbPreload)
+
     return (
         <>
             <section className={styles.section1}>
                 {/* This display the images of the current game */}
                 <div className={styles.imgDisplay} style={{ backgroundImage: `url(${imgArr[currentImg].image}) ` }}>
+
                 </div>
 
                 <div className={styles.imgContainer}>
@@ -60,7 +67,7 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
 
                 {/* This show things like the price and the add to cart button */}
                 <div className={styles.buyingSection}>
-                    <img src={img7} className={styles.gamePortrait} alt='Game Portrait' />
+                    <img src={img7} className={styles.gamePortrait} alt='Game Portrait' loading='lazy' />
                     <div className={styles.gamesInfo}>
 
                         <h3>Starting at:</h3>
