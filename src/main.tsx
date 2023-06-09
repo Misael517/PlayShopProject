@@ -121,7 +121,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="/Redfall" element={<Redfall />}></Route>
           </Routes>
         </BrowserRouter>
-        <ReactQueryDevtools />
       </QueryClientProvider>
     </Provider>
   </React.StrictMode >,
