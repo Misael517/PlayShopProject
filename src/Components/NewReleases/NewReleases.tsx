@@ -1,16 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import React, { memo } from 'react';
+import { memo } from 'react';
+import { getImages } from '../../api/getImages';
+import { useQuery } from '@tanstack/react-query';
 import styles from './NewReleases.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
-// game backgrounds:
-import game1 from '/images/newReleases/game1.jpg';
-import game2 from '/images/newReleases/game2.jpg';
-import game3 from '/images/newReleases/game3.jpg';
-import game4 from '/images/newReleases/game4.jpg';
-import game5 from '/images/newReleases/game5.jpg';
-import game6 from '/images/newReleases/game6.jpg';
 
 // game icons:
 import icon1 from '/images/newReleases/icon1.jpg';
@@ -46,13 +41,26 @@ function NewReleases() {
     const [currentGame, setCurrentGame] = useState<number>(0);
     const navigate = useNavigate()
 
+    // fetch the images from the storage
+    const { data: images, isLoading, isError } = useQuery(['newReleases'], async () => {
+        return getImages('/images/newReleases')
+    });
+
+    if (isLoading) {
+        return <h2>Loading...</h2>;
+    }
+
+    if (isError) {
+        return <h2>Error</h2>;
+    }
+
     const gamesContent: GameContent[] = [
-        { id: 0, logo: logo1, description: 'Embark on an epic and heartfelt journey as Kratos and Atreus.', link: jsonData[13].link, image: game1, icon: icon1, price: jsonData[13].actualPrice },
-        { id: 1, logo: logo2, description: 'One of the most acclaimed RPGs of all time Now ready for a new generation.', link: jsonData[12].link, image: game2, icon: icon2, price: jsonData[12].actualPrice },
-        { id: 2, logo: logo3, description: 'Explore the vast land and skies of Hyrule.', link: jsonData[42].link, image: game3, icon: icon3, price: jsonData[42].price },
-        { id: 3, logo: logo4, description: 'Untangle the past as Kena, in search of the sacred Mountain Shrine.', link: jsonData[15].link, image: game4, icon: icon4, price: jsonData[15].actualPrice },
-        { id: 4, logo: logo5, description: 'Ally with survivors against the creatures threatening to bleed the town dry.', link: jsonData[43].link, image: game5, icon: icon5, price: jsonData[43].price },
-        { id: 5, logo: logo6, description: 'Become a Jedi and Stand Against the Darkness.', link: jsonData[40].link, image: game6, icon: icon6, price: jsonData[40].price },
+        { id: 0, logo: logo1, description: 'Embark on an epic and heartfelt journey as Kratos and Atreus.', link: jsonData[13].link, image: images[6], icon: images[12], price: jsonData[13].actualPrice },
+        { id: 1, logo: logo2, description: 'One of the most acclaimed RPGs of all time Now ready for a new generation.', link: jsonData[12].link, image: images[7], icon: images[13], price: jsonData[12].actualPrice },
+        { id: 2, logo: logo3, description: 'Explore the vast land and skies of Hyrule.', link: jsonData[42].link, image: images[8], icon: images[14], price: jsonData[42].price },
+        { id: 3, logo: logo4, description: 'Untangle the past as Kena, in search of the sacred Mountain Shrine.', link: jsonData[15].link, image: images[9], icon: images[15], price: jsonData[15].actualPrice },
+        { id: 4, logo: logo5, description: 'Ally with survivors against the creatures threatening to bleed the town dry.', link: jsonData[43].link, image: images[10], icon: images[16], price: jsonData[43].price },
+        { id: 5, logo: logo6, description: 'Become a Jedi and Stand Against the Darkness.', link: jsonData[40].link, image: images[11], icon: images[17], price: jsonData[40].price },
     ]
 
     return (

@@ -15,7 +15,7 @@ function BestOfTheYear() {
     const navigate = useNavigate()
 
     // fetch the images with the storage
-    const { data: images, isLoading, isError } = useQuery(['bestOfTheYear'], async () => {
+    const { data: images, isLoading, isError } = useQuery(['bestOfTheYear'], () => {
         return getImages('/images/bestOfTheYear')
     });
 

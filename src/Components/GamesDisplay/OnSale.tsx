@@ -2,7 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/OnSaleSlice';
-import React, { memo } from 'react';
+import { memo } from 'react';
+import { getImages } from '../../api/getImages';
+import { useQuery } from '@tanstack/react-query';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -165,16 +167,28 @@ function OnSale() {
 
     const navigate = useNavigate();
 
+    // fetch the images from the storage
+    const { data: images, isLoading, isError } = useQuery(['iconsBtn'], async () => {
+        return getImages('/')
+    });
+
+    if (isLoading) {
+        return <h2>Loading...</h2>;
+    }
+
+    if (isError) {
+        return <h2>Error</h2>;
+    }
+
 
     return (
         <>
             <h2 className={styles.sectionName}>On Sale</h2>
 
-            <div className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={'/L.png'} className={styles.btnImgLeft} alt='Left Arrow' /></div>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={`${images[0]}`} className={styles.btnImgLeft} alt='Left Arrow' /></div>
 
             {gamesOnSale[switchGames].games.map((gamesSale) => (
                 <div className={styles.itemsContent} style={{ backgroundImage: `url(${gamesSale.icon})` }} key={gamesSale.id} onClick={() => navigate(`${gamesSale.link}`)}>
-
 
                     <div className={styles.gamesInfo}>
                         <h3>{gamesSale.name}</h3>
@@ -186,7 +200,7 @@ function OnSale() {
                     </div>
                 </div >))
             }
-            <div className={styles.sectionBtn} onClick={() => dispatch(handleNext())}> <img src={'/R.png'} className={styles.btnImgRight} alt='Right Arrow' /> </div>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleNext())}> <img src={`${images[1]}`} className={styles.btnImgRight} alt='Right Arrow' /> </div>
         </>
     )
 }

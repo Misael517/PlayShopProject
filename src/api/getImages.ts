@@ -5,9 +5,8 @@ export const getImages = async (imgsUrl: string) => {
     const imgsFolder = ref(storage, imgsUrl);
     const response = await listAll(imgsFolder);
 
-    const downloadPromises = response.items.map(async (item) => {
-        const url = await getDownloadURL(item);
-        return url;
+    const downloadPromises = response.items.map((item) => {
+        return getDownloadURL(item);
     });
 
     const imageUrls = await Promise.all(downloadPromises);

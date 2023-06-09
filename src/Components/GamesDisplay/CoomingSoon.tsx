@@ -2,9 +2,9 @@ import type { RootState } from '../../app/store';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/CoomingSoonSlice';
+import { memo } from 'react';
 import { getImages } from '../../api/getImages';
 import { useQuery } from '@tanstack/react-query';
-import { memo } from 'react';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -179,9 +179,9 @@ function CoomingSoon() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    // fetch the images with the storage
-    const { data: images, isLoading, isError } = useQuery(['icons'], async () => {
-        return getImages('/images/icons')
+    // fetch the images from the storage
+    const { data: images, isLoading, isError } = useQuery(['iconsBtn'], async () => {
+        return getImages('/')
     });
 
     if (isLoading) {
@@ -192,11 +192,12 @@ function CoomingSoon() {
         return <h2>Error</h2>;
     }
 
+
     return (
         <>
             <h2 className={styles.sectionName}>Coming Soon</h2>
 
-            <div className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={'/L.png'} className={styles.btnImgLeft} alt='Left arrow' /></div>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={`${images[0]}`} className={styles.btnImgLeft} alt='Left arrow' /></div>
 
             {gamesCooming[switchGames].games.map((games) => (
                 <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
@@ -209,7 +210,7 @@ function CoomingSoon() {
                         </div>
                     </div>
                 </div>))}
-            <div className={styles.sectionBtn} onClick={() => dispatch(handleNext())}><img src={'/R.png'} className={styles.btnImgRight} alt='Right Arrow' /></div>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleNext())}><img src={`${images[1]}`} className={styles.btnImgRight} alt='Right Arrow' /></div>
         </>
     )
 }
