@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import type { RootState } from "../../app/store";
 import { useSelector } from "react-redux";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, memo } from "react";
 import { auth } from '../../config/firebase';
-import React, { memo } from 'react';
 import styles from './Navbar.module.css';
 import logo from '/images/nav/logo.png';
 import cartIcon from '/images/nav/cart.png';
@@ -40,6 +38,8 @@ function Navbar() {
     const sessionRef = useRef<HTMLDivElement>(null)
     const navigate = useNavigate()
 
+
+
     // Check if the userDemo name is stored in local storage
     useEffect(() => {
         const storedName = localStorage.getItem('userDemoName');
@@ -61,9 +61,6 @@ function Navbar() {
 
 
 
-
-
-
     // Get the items from the array in the local storage
     const test = localStorage.getItem('cartAmount')
     let currentAmount = 0
@@ -72,11 +69,14 @@ function Navbar() {
         currentAmount = JSON.parse(test);
     }
 
+
+
+
+
     // Display the search bar each tiem it finds letters
     const handleSearch = (e: string) => {
         setDisplay('flex')
-        const content = e
-        setCurrentItem(content)
+        setCurrentItem(e)
     }
 
 

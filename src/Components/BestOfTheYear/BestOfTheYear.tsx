@@ -1,7 +1,7 @@
-import { memo, useEffect, useState } from 'react';
+import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { storage } from '../../config/firebase';
-import { ref, listAll, getDownloadURL } from 'firebase/storage';
+import { getImages } from '../../api/getImages';
+import { useQuery } from '@tanstack/react-query';
 import styles from './BestOfTheYear.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -13,31 +13,24 @@ interface GameContent {
 
 function BestOfTheYear() {
     const navigate = useNavigate()
-    const [images, setImages] = useState<string[]>()
 
-    useEffect(() => {
-        const fetchImages = async () => {
-          try {
-            const bestOfTheYearRef = ref(storage, "/images/bestOfTheYear");
-            const response = await listAll(bestOfTheYearRef);
-    
-            const downloadPromises = response.items.map(async (item) => {
-              const url = await getDownloadURL(item);
-              return url;
-            });
-    
-            const imageUrls = await Promise.all(downloadPromises);
-            setImages(imageUrls);
-          } catch (error) {
-            console.error("Error fetching images:", error);
-          }
-        };
-    
-        fetchImages();
-      }, []);
+    // fetch the images with the storage
+    const { data: images, isLoading, isError } = useQuery(['bestOfTheYear'], async () => {
+        return getImages('/images/bestOfTheYear')
+    });
+
+    if (isLoading) {
+        return <h2>Loading...</h2>;
+    }
+
+    if (isError) {
+        return <h2>Error</h2>;
+    }
 
 
-      const createArray = () => {
+
+    // Create an array of images 
+    const createArray = () => {
         if (images) {
             const content: GameContent[] = [
                 { id: 1, link: jsonData[36].link, icon: images[0], },
@@ -47,12 +40,11 @@ function BestOfTheYear() {
                 { id: 5, link: jsonData[41].link, icon: images[4], },
                 { id: 6, link: jsonData[40].link, icon: images[5], },
             ]
-
             return content
-        }    
-      }
+        }
+    }
 
-      const gamesContent = createArray()
+    const gamesContent = createArray()
 
 
     return (

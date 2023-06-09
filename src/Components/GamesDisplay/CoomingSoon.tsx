@@ -2,7 +2,9 @@ import type { RootState } from '../../app/store';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/CoomingSoonSlice';
-import React, { memo } from 'react';
+import { getImages } from '../../api/getImages';
+import { useQuery } from '@tanstack/react-query';
+import { memo } from 'react';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -24,6 +26,7 @@ interface GamesCooming {
     id: number,
     games: Games[],
 }
+
 
 const gamesCooming: GamesCooming[] = [
     {
@@ -174,8 +177,20 @@ const gamesCooming: GamesCooming[] = [
 function CoomingSoon() {
     const switchGames = useSelector((state: RootState) => state.switchGamesCoomingSoon.value)
     const dispatch = useDispatch()
-
     const navigate = useNavigate()
+
+    // fetch the images with the storage
+    const { data: images, isLoading, isError } = useQuery(['icons'], async () => {
+        return getImages('/images/icons')
+    });
+
+    if (isLoading) {
+        return <h2>Loading...</h2>;
+    }
+
+    if (isError) {
+        return <h2>Error</h2>;
+    }
 
     return (
         <>
@@ -185,8 +200,6 @@ function CoomingSoon() {
 
             {gamesCooming[switchGames].games.map((games) => (
                 <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
-
-
                     <div className={styles.gamesInfo}>
                         <h3>{games.name}</h3>
                         <div className={styles.gamesPrice}>
