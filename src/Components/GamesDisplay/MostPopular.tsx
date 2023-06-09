@@ -183,7 +183,7 @@ function OnSale() {
     const navigate = useNavigate()
 
     // fetch the images from the storage
-    const { data: images, isLoading, isError } = useQuery(['iconsBtn'], async () => {
+    const { data: images, isLoading, isError } = useQuery(['iconsBtn'], () => {
         return getImages('/')
     });
 

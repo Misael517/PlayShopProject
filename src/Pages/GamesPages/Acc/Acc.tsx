@@ -1,27 +1,11 @@
 import { memo } from 'react';
+import { getImages } from '../../../api/getImages';
+import { useQuery } from '@tanstack/react-query';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
 import jsonData from '../../../assets/gamesInfo.json';
 import GameContent from '../../../Components/GameContent/GameContent';
-
-// Img imports
-import img1 from '/images/gamesImg/Acc/img1.jpg';
-import img2 from '/images/gamesImg/Acc/img2.jpg';
-import img3 from '/images/gamesImg/Acc/img3.jpg';
-import img4 from '/images/gamesImg/Acc/img4.jpg';
-import img5 from '/images/gamesImg/Acc/img5.jpg';
-import img6 from '/images/gamesImg/Acc/img6.jpg';
-import img7 from '/images/gamesImg/Acc/img7.jpg';
-
-
-// thumbnails imports
-import thumb1 from "/images/gamesImg/Acc/imageThumbnail/thumb1.jpg";
-import thumb2 from "/images/gamesImg/Acc/imageThumbnail/thumb2.jpg";
-import thumb3 from "/images/gamesImg/Acc/imageThumbnail/thumb3.jpg";
-import thumb4 from "/images/gamesImg/Acc/imageThumbnail/thumb4.jpg";
-import thumb5 from "/images/gamesImg/Acc/imageThumbnail/thumb5.jpg";
-import thumb6 from "/images/gamesImg/Acc/imageThumbnail/thumb6.jpg";
 
 interface ShowCase {
     id: number;
@@ -29,45 +13,62 @@ interface ShowCase {
     image: string;
 }
 
+
+function Acc() {
+    const currentGame = jsonData[16]
+
+    // fetch the images from the storage
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useQuery(['AccImg'], () => {
+    return getImages('/images/gamesImg/Acc');
+  });
+
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useQuery(['AccThumb'], () => {
+    return getImages('/images/gamesImg/Acc/imageThumbnail');
+  });
+
+  if (isImagesLoading || isThumbLoading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (isImagesError || isThumbError) {
+    return <h2>Error</h2>;
+  }
+
+    
 const imgArr: ShowCase[] = [
     {
         id: 0,
-        thumbnail: thumb1,
-        image: img1
+        thumbnail: thumb[0],
+        image: img[0]
     },
     {
         id: 1,
-        thumbnail: thumb2,
-        image: img2
+        thumbnail: thumb[1],
+        image: img[1]
     },
     {
         id: 2,
-        thumbnail: thumb3,
-        image: img3
+        thumbnail: thumb[2],
+        image: img[2]
 
     },
     {
         id: 3,
-        thumbnail: thumb4,
-        image: img4,
+        thumbnail: thumb[3],
+        image: img[3]
 
     },
     {
         id: 4,
-        thumbnail: thumb5,
-        image: img5
+        thumbnail: thumb[4],
+        image: img[4]
     },
     {
         id: 5,
-        thumbnail: thumb6,
-        image: img6
+        thumbnail: thumb[5],
+        image: img[5]
     },
 ]
-
-
-
-function Acc() {
-    const currentGame = jsonData[16]
 
     return (
         <>
@@ -79,7 +80,7 @@ function Acc() {
             {/* This is the main part of the body */}
             <main className={styles.main}>
                 <section className={styles.section1}>
-                    <GameContent imgArr={imgArr} img7={img7} currentGame={currentGame} />
+                    <GameContent imgArr={imgArr} img7={`${img[6]}`} currentGame={currentGame} />
                 </section>
             </main>
 

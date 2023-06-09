@@ -14,7 +14,7 @@ interface GameContent {
 function BestOfTheYear() {
     const navigate = useNavigate()
 
-    // fetch the images with the storage
+    // fetch the images from the storage
     const { data: images, isLoading, isError } = useQuery(['bestOfTheYear'], () => {
         return getImages('/images/bestOfTheYear')
     });

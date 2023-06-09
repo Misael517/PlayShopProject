@@ -6,16 +6,6 @@ import { useQuery } from '@tanstack/react-query';
 import styles from './NewReleases.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
-
-// game icons:
-import icon1 from '/images/newReleases/icon1.jpg';
-import icon2 from '/images/newReleases/icon2.jpg';
-import icon3 from '/images/newReleases/icon3.jpg';
-import icon4 from '/images/newReleases/icon4.jpg';
-import icon5 from '/images/newReleases/icon5.jpg';
-import icon6 from '/images/newReleases/icon6.jpg';
-
-
 // game logos:
 import logo1 from '/images/newReleases/GodOfWarLogo.png';
 import logo2 from '/images/newReleases/TheWitcherLogo.png';
@@ -42,7 +32,7 @@ function NewReleases() {
     const navigate = useNavigate()
 
     // fetch the images from the storage
-    const { data: images, isLoading, isError } = useQuery(['newReleases'], async () => {
+    const { data: images, isLoading, isError } = useQuery(['newReleases'], () => {
         return getImages('/images/newReleases')
     });
 
