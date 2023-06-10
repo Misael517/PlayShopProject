@@ -1,34 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { memo } from 'react';
+import useGetImages from '../../Hooks/useGetImages';
+import usePreload
 import styles from './NewReleases.module.css';
 import jsonData from '../../assets/gamesInfo.json';
-
-// game backgrounds:
-import game1 from '/images/newReleases/game1.jpg';
-import game2 from '/images/newReleases/game2.jpg';
-import game3 from '/images/newReleases/game3.jpg';
-import game4 from '/images/newReleases/game4.jpg';
-import game5 from '/images/newReleases/game5.jpg';
-import game6 from '/images/newReleases/game6.jpg';
-
-// game icons:
-import icon1 from '/images/newReleases/icon1.jpg';
-import icon2 from '/images/newReleases/icon2.jpg';
-import icon3 from '/images/newReleases/icon3.jpg';
-import icon4 from '/images/newReleases/icon4.jpg';
-import icon5 from '/images/newReleases/icon5.jpg';
-import icon6 from '/images/newReleases/icon6.jpg';
-
-
-// game logos:
-import logo1 from '/images/newReleases/GodOfWarLogo.png';
-import logo2 from '/images/newReleases/TheWitcherLogo.png';
-import logo3 from '/images/newReleases/ZeldaLogo.png';
-import logo4 from '/images/newReleases/KenaLogo.png';
-import logo5 from '/images/newReleases/RedfallLogo.png';
-import logo6 from '/images/newReleases/JediSurvivorLogo.png';
-
 
 
 
@@ -46,13 +22,32 @@ function NewReleases() {
     const [currentGame, setCurrentGame] = useState<number>(0);
     const navigate = useNavigate()
 
+    const { data: images, isLoading, isError } = useGetImages('newReleases', '/images/newReleases/', 'game', '.jpg', 6)
+    const { data: logo, isLoading: logoIsLoading, isError: logoIsError } = useGetImages('newReleasesLogo', '/images/newReleases/', 'logo', '.png', 6);
+    const { data: icon, isLoading: iconIsLoading, isError: iconIsError } = useGetImages('newReleasesIcon', '/images/newReleases/', 'icon', '.jpg', 6)
+
+
+    // Preload the images
+    usePreloadImages(images);
+    usePreloadImages(logo);
+    usePreloadImages(icon);
+
+    if (isLoading || logoIsLoading || iconIsLoading) {
+        return <h2>Loading...</h2>;
+    }
+
+    if (isError || logoIsError || iconIsError) {
+        return <h2>Error</h2>;
+    }
+
+
     const gamesContent: GameContent[] = [
-        { id: 0, logo: logo1, description: 'Embark on an epic and heartfelt journey as Kratos and Atreus.', link: jsonData[13].link, image: game1, icon: icon1, price: jsonData[13].actualPrice },
-        { id: 1, logo: logo2, description: 'One of the most acclaimed RPGs of all time Now ready for a new generation.', link: jsonData[12].link, image: game2, icon: icon2, price: jsonData[12].actualPrice },
-        { id: 2, logo: logo3, description: 'Explore the vast land and skies of Hyrule.', link: jsonData[42].link, image: game3, icon: icon3, price: jsonData[42].price },
-        { id: 3, logo: logo4, description: 'Untangle the past as Kena, in search of the sacred Mountain Shrine.', link: jsonData[15].link, image: game4, icon: icon4, price: jsonData[15].actualPrice },
-        { id: 4, logo: logo5, description: 'Ally with survivors against the creatures threatening to bleed the town dry.', link: jsonData[43].link, image: game5, icon: icon5, price: jsonData[43].price },
-        { id: 5, logo: logo6, description: 'Become a Jedi and Stand Against the Darkness.', link: jsonData[40].link, image: game6, icon: icon6, price: jsonData[40].price },
+        { id: 0, logo: logo[0], description: 'Embark on an epic and heartfelt journey as Kratos and Atreus.', link: jsonData[13].link, image: images[0], icon: icon[0], price: jsonData[13].actualPrice },
+        { id: 1, logo: logo[1], description: 'One of the most acclaimed RPGs of all time Now ready for a new generation.', link: jsonData[12].link, image: images[1], icon: icon[1], price: jsonData[12].actualPrice },
+        { id: 2, logo: logo[2], description: 'Explore the vast land and skies of Hyrule.', link: jsonData[42].link, image: images[2], icon: icon[2], price: jsonData[42].price },
+        { id: 3, logo: logo[3], description: 'Untangle the past as Kena, in search of the sacred Mountain Shrine.', link: jsonData[15].link, image: images[3], icon: icon[3], price: jsonData[15].actualPrice },
+        { id: 4, logo: logo[4], description: 'Ally with survivors against the creatures threatening to bleed the town dry.', link: jsonData[43].link, image: images[4], icon: icon[4], price: jsonData[43].price },
+        { id: 5, logo: logo[5], description: 'Become a Jedi and Stand Against the Darkness.', link: jsonData[40].link, image: images[5], icon: icon[5], price: jsonData[40].price },
     ]
 
     return (
