@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useGetImages from '../../Hooks/useGettImages';
+import useGetImages from '../../Hooks/useGetImages';
 import styles from './BestOfTheYear.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 import usePreloadImages from '../../Hooks/usePreloadImage';
@@ -13,7 +13,7 @@ interface GameContent {
 
 function BestOfTheYear() {
     const navigate = useNavigate()
-    const { data: images, isLoading, isError } = useGetImages('bestOfTheYear', '/images/bestOfTheYear')
+    const { data: images, isLoading, isError } = useGetImages('bestOfTheYear', '/images/bestOfTheYear/', 'icon', '.jpg', 6)
 
     // Preload images
     usePreloadImages(images)

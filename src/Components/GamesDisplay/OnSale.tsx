@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/OnSaleSlice';
 import { memo } from 'react';
 import usePreloadImages from '../../Hooks/usePreloadImage';
-import useGetImages from '../../Hooks/useGettImages';
+import useGetImages from '../../Hooks/useGetImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -166,7 +166,7 @@ function OnSale() {
     const dispatch = useDispatch()
     const navigate = useNavigate();
 
-    const { data: images, isLoading, isError } = useGetImages('iconsBtn', '/')
+    const { data: images, isLoading, isError } = useGetImages('iconsBtn', '/images/', 'arrow', '.png', 2)
 
     // Preload the images
     const icons = gamesOnSale.map((items) => {

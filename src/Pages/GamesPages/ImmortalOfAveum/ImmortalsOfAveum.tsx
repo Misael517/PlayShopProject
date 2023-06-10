@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import useGetImages from '../../../Hooks/useGettImages';
+import useGetImages from '../../../Hooks/useGetImages';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
@@ -14,7 +14,7 @@ interface ShowCase {
 function ImmortalsOfAveum() {
     const currentGame = jsonData[33]
     const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('ImmortalsImg', '/images/gamesImg/ImmortalsOfAveum');
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('ImmortalsThumb', '/images/gamesImg/ImmortalsOfAveum');
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('ImmortalsThumb', '/images/gamesImg/ImmortalsOfAveum/imageThumbnail');
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

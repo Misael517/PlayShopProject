@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import useGetImages from '../../../Hooks/useGettImages';
+import useGetImages from '../../../Hooks/useGetImages';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
