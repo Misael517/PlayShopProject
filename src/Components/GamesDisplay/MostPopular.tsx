@@ -3,6 +3,7 @@ import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/MostPopularSlice';
 import { memo } from 'react';
+import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -177,8 +178,13 @@ const gamesPopular: GamesPopular[] = [
 function OnSale() {
     const switchGames = useSelector((state: RootState,) => state.switchGamesMostPopular.value)
     const dispatch = useDispatch()
-
     const navigate = useNavigate()
+
+    const icons: string[] = gamesPopular.map((items) => {
+        return items.games.map((game) => { return game.icon })
+    }).flat()
+
+    usePreloadImages(icons)
 
     return (
         <>

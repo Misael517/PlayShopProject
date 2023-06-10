@@ -61,9 +61,6 @@ function Navbar() {
 
 
 
-
-
-
     // Get the items from the array in the local storage
     const test = localStorage.getItem('cartAmount')
     let currentAmount = 0

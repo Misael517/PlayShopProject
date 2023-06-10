@@ -1,71 +1,63 @@
 import { memo } from 'react';
+import useGetImages from '../../../Hooks/useGetImages';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
-import GameContent from '../../../Components/GameContent/GameContent';
 import jsonData from '../../../assets/gamesInfo.json';
-
-// Img imports
-import img1 from '/images/gamesImg/EldenRing/img1.jpg';
-import img2 from '/images/gamesImg/EldenRing/img2.jpg';
-import img3 from '/images/gamesImg/EldenRing/img3.jpg';
-import img4 from '/images/gamesImg/EldenRing/img4.jpg';
-import img5 from '/images/gamesImg/EldenRing/img5.jpg';
-import img6 from '/images/gamesImg/EldenRing/img6.jpg';
-import img7 from '/images/gamesImg/EldenRing/img7.jpg';
-
-// thumbnails imports
-import thumb1 from "/images/gamesImg/EldenRing/imageThumbnail/thumb1.jpg";
-import thumb2 from "/images/gamesImg/EldenRing/imageThumbnail/thumb2.jpg";
-import thumb3 from "/images/gamesImg/EldenRing/imageThumbnail/thumb3.jpg";
-import thumb4 from "/images/gamesImg/EldenRing/imageThumbnail/thumb4.jpg";
-import thumb5 from "/images/gamesImg/EldenRing/imageThumbnail/thumb5.jpg";
-import thumb6 from "/images/gamesImg/EldenRing/imageThumbnail/thumb6.jpg";
-
+import GameContent from '../../../Components/GameContent/GameContent';
 interface ShowCase {
     id: number;
     thumbnail: string;
     image: string;
 }
 
-const imgArr: ShowCase[] = [
-    {
-        id: 0,
-        thumbnail: thumb1,
-        image: img1
-    },
-    {
-        id: 1,
-        thumbnail: thumb2,
-        image: img2
-    },
-    {
-        id: 2,
-        thumbnail: thumb3,
-        image: img3
-
-    },
-    {
-        id: 3,
-        thumbnail: thumb4,
-        image: img4,
-
-    },
-    {
-        id: 4,
-        thumbnail: thumb5,
-        image: img5
-    },
-    {
-        id: 5,
-        thumbnail: thumb6,
-        image: img6
-    },
-]
-
-
 function EldenRing() {
     const currentGame = jsonData[1]
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('EldenImg', '/images/gamesImg/EldenRing/', 'img', '.jpg', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('EldenThumb', '/images/gamesImg/EldenRing/imageThumbnail/', 'thumb', '.jpg', 6);
+
+    if (isImagesLoading || isThumbLoading) {
+        return <h2>Loading...</h2>;
+    }
+
+    if (isImagesError || isThumbError) {
+        return <h2>Error</h2>;
+    }
+
+    const imgArr: ShowCase[] = [
+        {
+            id: 0,
+            thumbnail: thumb[0],
+            image: img[0]
+        },
+        {
+            id: 1,
+            thumbnail: thumb[1],
+            image: img[1]
+        },
+        {
+            id: 2,
+            thumbnail: thumb[2],
+            image: img[2]
+
+        },
+        {
+            id: 3,
+            thumbnail: thumb[3],
+            image: img[3]
+
+        },
+        {
+            id: 4,
+            thumbnail: thumb[4],
+            image: img[4]
+        },
+        {
+            id: 5,
+            thumbnail: thumb[5],
+            image: img[5]
+        },
+    ]
 
     return (
         <>
@@ -77,7 +69,7 @@ function EldenRing() {
             {/* This is the main part of the body */}
             <main className={styles.main}>
                 <section className={styles.section1}>
-                    <GameContent imgArr={imgArr} img7={img7} currentGame={currentGame} />
+                    <GameContent imgArr={imgArr} img7={`${img[6]}`} currentGame={currentGame} />
                 </section>
             </main>
 

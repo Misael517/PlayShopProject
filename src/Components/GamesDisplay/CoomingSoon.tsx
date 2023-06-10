@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/CoomingSoonSlice';
 import { memo } from 'react';
 import styles from './Styles/GamesDisplay.module.css';
+import usePreloadImages from '../../Hooks/usePreloadImages';
 import jsonData from '../../assets/gamesInfo.json';
 
 
@@ -174,8 +175,13 @@ const gamesCooming: GamesCooming[] = [
 function CoomingSoon() {
     const switchGames = useSelector((state: RootState) => state.switchGamesCoomingSoon.value)
     const dispatch = useDispatch()
-
     const navigate = useNavigate()
+
+    const icons: string[] = gamesCooming.map((items) => {
+        return items.games.map((game) => { return game.icon })
+    }).flat()
+
+    usePreloadImages(icons)
 
     return (
         <>

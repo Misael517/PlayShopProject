@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { memo } from 'react';
 import useGetImages from '../../Hooks/useGetImages';
-import usePreload
+import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './NewReleases.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
