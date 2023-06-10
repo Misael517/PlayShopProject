@@ -2,7 +2,6 @@ import styles from './BestOfTheYear.module.css';
 import { useNavigate } from 'react-router-dom';
 import jsonData from '../../assets/gamesInfo.json';
 import { memo } from 'react';
-import useGetImages from '../../api/useGetImages';
 
 // game icons:
 import icon1 from '/images/bestOfTheYear/icon1.jpg';
@@ -29,9 +28,6 @@ const gamesContent: GameContent[] = [
 
 function BestOfTheYear() {
     const navigate = useNavigate()
-
-    useGetImages()
-
 
     return (
         <>

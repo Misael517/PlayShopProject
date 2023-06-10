@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
+    "@types/gapi": "^0.0.44",
     "axios": "^1.4.0",
     "firebase": "^9.22.0",
     "formik": "^2.2.9",
+    "googleapis": "^118.0.0",
     "react": "^18.2.0",
     "react-devtools": "^4.27.8",
     "react-dom": "^18.2.0",
