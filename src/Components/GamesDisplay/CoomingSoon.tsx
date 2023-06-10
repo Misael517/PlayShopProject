@@ -2,9 +2,7 @@ import type { RootState } from '../../app/store';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/CoomingSoonSlice';
-import { memo } from 'react';
-import usePreloadImages from '../../Hooks/usePreloadImage';
-import useGetImages from '../../Hooks/useGettImages';
+import React, { memo } from 'react';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -26,7 +24,6 @@ interface GamesCooming {
     id: number,
     games: Games[],
 }
-
 
 const gamesCooming: GamesCooming[] = [
     {
@@ -175,37 +172,21 @@ const gamesCooming: GamesCooming[] = [
 
 
 function CoomingSoon() {
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
     const switchGames = useSelector((state: RootState) => state.switchGamesCoomingSoon.value)
+    const dispatch = useDispatch()
 
-    const { data: images, isLoading, isError } = useGetImages('iconsBtn', '/')
-
-    // Preload the images
-    const icons = gamesCooming.map((items) => {
-        return items.games.map((game) => { return game.icon })
-    }).flat()
-
-    usePreloadImages(icons)
-    usePreloadImages(images)
-
-    if (isLoading) {
-        return <h2>Loading...</h2>;
-    }
-
-    if (isError) {
-        return <h2>Error</h2>;
-    }
-
+    const navigate = useNavigate()
 
     return (
         <>
             <h2 className={styles.sectionName}>Coming Soon</h2>
 
-            <div className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={`${images[0]}`} className={styles.btnImgLeft} alt='Left arrow' /></div>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={'/L.png'} className={styles.btnImgLeft} alt='Left arrow' /></div>
 
             {gamesCooming[switchGames].games.map((games) => (
                 <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
+
+
                     <div className={styles.gamesInfo}>
                         <h3>{games.name}</h3>
                         <div className={styles.gamesPrice}>
@@ -215,7 +196,7 @@ function CoomingSoon() {
                         </div>
                     </div>
                 </div>))}
-            <div className={styles.sectionBtn} onClick={() => dispatch(handleNext())}><img src={`${images[1]}`} className={styles.btnImgRight} alt='Right Arrow' /></div>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleNext())}><img src={'/R.png'} className={styles.btnImgRight} alt='Right Arrow' /></div>
         </>
     )
 }

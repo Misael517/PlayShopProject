@@ -2,9 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/OnSaleSlice';
-import { memo } from 'react';
-import usePreloadImages from '../../Hooks/usePreloadImage';
-import useGetImages from '../../Hooks/useGettImages';
+import React, { memo } from 'react';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -164,35 +162,19 @@ const gamesOnSale: GamesOnSale[] = [
 function OnSale() {
     const switchGames = useSelector((state: RootState) => state.switchGamesOnSale.value)
     const dispatch = useDispatch()
+
     const navigate = useNavigate();
-
-    const { data: images, isLoading, isError } = useGetImages('iconsBtn', '/')
-
-    // Preload the images
-    const icons = gamesOnSale.map((items) => {
-        return items.games.map((game) => { return game.icon })
-    }).flat()
-
-    usePreloadImages(icons)
-    usePreloadImages(images)
-
-    if (isLoading) {
-        return <h2>Loading...</h2>;
-    }
-
-    if (isError) {
-        return <h2>Error</h2>;
-    }
 
 
     return (
         <>
             <h2 className={styles.sectionName}>On Sale</h2>
 
-            <div className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={`${images[0]}`} className={styles.btnImgLeft} alt='Left Arrow' /></div>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleBack())}><img src={'/L.png'} className={styles.btnImgLeft} alt='Left Arrow' /></div>
 
             {gamesOnSale[switchGames].games.map((gamesSale) => (
                 <div className={styles.itemsContent} style={{ backgroundImage: `url(${gamesSale.icon})` }} key={gamesSale.id} onClick={() => navigate(`${gamesSale.link}`)}>
+
 
                     <div className={styles.gamesInfo}>
                         <h3>{gamesSale.name}</h3>
@@ -204,12 +186,10 @@ function OnSale() {
                     </div>
                 </div >))
             }
-            <div className={styles.sectionBtn} onClick={() => dispatch(handleNext())}> <img src={`${images[1]}`} className={styles.btnImgRight} alt='Right Arrow' /> </div>
+            <div className={styles.sectionBtn} onClick={() => dispatch(handleNext())}> <img src={'/R.png'} className={styles.btnImgRight} alt='Right Arrow' /> </div>
         </>
     )
 }
 
-const OnSaleMemo = memo(OnSale)
-
-export default OnSaleMemo;
+export default OnSale;
 

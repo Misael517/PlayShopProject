@@ -1,7 +1,7 @@
 import styles from './GameList.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 import { useNavigate } from 'react-router-dom';
-import { memo } from 'react';
+import React, { memo } from 'react';
 interface Games {
     id: number,
     name: string;

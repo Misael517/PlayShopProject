@@ -1,64 +1,72 @@
 import { memo } from 'react';
-import useGetImages from '../../../Hooks/useGettImages';
 import styles from '../Styles/pagesStyle.module.css';
 import Navbar from '../../../Components/Navbar/Navbar';
 import Footer from '../../../Components/Footer/Footer';
-import jsonData from '../../../assets/gamesInfo.json';
 import GameContent from '../../../Components/GameContent/GameContent';
+import jsonData from '../../../assets/gamesInfo.json';
+
+// Img imports
+import img1 from '/images/gamesImg/TheCalistoProtocol/img1.jpg';
+import img2 from '/images/gamesImg/TheCalistoProtocol/img2.jpg';
+import img3 from '/images/gamesImg/TheCalistoProtocol/img3.jpg';
+import img4 from '/images/gamesImg/TheCalistoProtocol/img4.jpg';
+import img5 from '/images/gamesImg/TheCalistoProtocol/img5.jpg';
+import img6 from '/images/gamesImg/TheCalistoProtocol/img6.jpg';
+import img7 from '/images/gamesImg/TheCalistoProtocol/img7.jpg';
+
+// thumbnails imports
+import thumb1 from "/images/gamesImg/TheCalistoProtocol/imageThumbnail/thumb1.jpg";
+import thumb2 from "/images/gamesImg/TheCalistoProtocol/imageThumbnail/thumb2.jpg";
+import thumb3 from "/images/gamesImg/TheCalistoProtocol/imageThumbnail/thumb3.jpg";
+import thumb4 from "/images/gamesImg/TheCalistoProtocol/imageThumbnail/thumb4.jpg";
+import thumb5 from "/images/gamesImg/TheCalistoProtocol/imageThumbnail/thumb5.jpg";
+import thumb6 from "/images/gamesImg/TheCalistoProtocol/imageThumbnail/thumb6.jpg";
+
 interface ShowCase {
     id: number;
     thumbnail: string;
     image: string;
 }
 
+const imgArr: ShowCase[] = [
+    {
+        id: 0,
+        thumbnail: thumb1,
+        image: img1
+    },
+    {
+        id: 1,
+        thumbnail: thumb2,
+        image: img2
+    },
+    {
+        id: 2,
+        thumbnail: thumb3,
+        image: img3
+
+    },
+    {
+        id: 3,
+        thumbnail: thumb4,
+        image: img4,
+
+    },
+    {
+        id: 4,
+        thumbnail: thumb5,
+        image: img5
+    },
+    {
+        id: 5,
+        thumbnail: thumb6,
+        image: img6
+    },
+]
+
+
+
 function TheCalistoProtocol() {
     const currentGame = jsonData[5]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('CalistoProtocolImg', '/images/gamesImg/TheCalistoProtocol');
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('CalistoProtocolThumb', '/images/gamesImg/TheCalistoProtocol/imageThumbnail');
-
-    if (isImagesLoading || isThumbLoading) {
-        return <h2>Loading...</h2>;
-    }
-
-    if (isImagesError || isThumbError) {
-        return <h2>Error</h2>;
-    }
-
-
-    const imgArr: ShowCase[] = [
-        {
-            id: 0,
-            thumbnail: thumb[0],
-            image: img[0]
-        },
-        {
-            id: 1,
-            thumbnail: thumb[1],
-            image: img[1]
-        },
-        {
-            id: 2,
-            thumbnail: thumb[2],
-            image: img[2]
-
-        },
-        {
-            id: 3,
-            thumbnail: thumb[3],
-            image: img[3]
-
-        },
-        {
-            id: 4,
-            thumbnail: thumb[4],
-            image: img[4]
-        },
-        {
-            id: 5,
-            thumbnail: thumb[5],
-            image: img[5]
-        },
-    ]
 
     return (
         <>
@@ -70,7 +78,7 @@ function TheCalistoProtocol() {
             {/* This is the main part of the body */}
             <main className={styles.main}>
                 <section className={styles.section1}>
-                    <GameContent imgArr={imgArr} img7={`${img[6]}`} currentGame={currentGame} />
+                    <GameContent imgArr={imgArr} img7={img7} currentGame={currentGame} />
                 </section>
             </main>
 

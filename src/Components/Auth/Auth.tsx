@@ -11,6 +11,9 @@ interface Inputs {
     password: string,
 }
 
+console.log(auth?.currentUser?.email)
+
+
 function Auth() {
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
