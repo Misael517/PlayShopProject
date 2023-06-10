@@ -3,17 +3,13 @@
 function useGetImages() {
 
     // const accessToken = 'c0150eab9ba190058b6ef257ee733459b9a5201b';
-    const clientID = '47be2fe88450e2e';
-    const galleryHash = 'YqvbQXb';
+    const myKey = 'e058d628bcbd4d968e31068a9c01c732';
 
     return (
 
-        fetch(`https://api.imgur.com/3/gallery/album/${galleryHash}`, {
+        fetch(`https://api.rawg.io/api/games?key=${myKey}`, {
             method: 'GET',
-            headers: {
-                Authorization: `Client-ID ${clientID}`
-            }
-        }).then((response) => response.json())
+        }).then((response) => response)
             .then((data) => console.log(data))
             .catch((err) => console.log(err))
     )
