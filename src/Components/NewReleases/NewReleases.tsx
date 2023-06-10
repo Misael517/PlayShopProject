@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import React, { memo } from 'react';
+import { memo } from 'react';
 import styles from './NewReleases.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 

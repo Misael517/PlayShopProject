@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/MostPopularSlice';
-import React, { memo } from 'react';
+import { memo } from 'react';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 

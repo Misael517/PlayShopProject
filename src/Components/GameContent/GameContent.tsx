@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../app/Slices/CartSlice';
 import styles from './GameContent.module.css';
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 interface GamesProps {
     imgArr: {

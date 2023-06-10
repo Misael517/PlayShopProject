@@ -4,7 +4,7 @@ import type { RootState } from "../../app/store";
 import { useSelector } from "react-redux";
 import { useState, useRef, useEffect } from "react";
 import { auth } from '../../config/firebase';
-import React, { memo } from 'react';
+import { memo } from 'react';
 import styles from './Navbar.module.css';
 import logo from '/images/nav/logo.png';
 import cartIcon from '/images/nav/cart.png';
@@ -31,7 +31,7 @@ interface Games {
 
 
 function Navbar() {
-    const myCart = useSelector((state: RootState) => state.cart)
+    useSelector((state: RootState) => state.cart)
     const [currentItem, setCurrentItem] = useState<string>('')
     const [display, setDisplay] = useState<string>('none')
     const [showSingOut, setShowSingOut] = useState<string>('')

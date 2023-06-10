@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import styles from './CartList.module.css'
 import img7 from '/images/gamesImg/GodOfWar/img7.jpg';
-import React, { memo } from 'react';
+import { memo } from 'react';
 
 interface Game {
     id: number,
@@ -27,7 +27,7 @@ interface Game {
 
 function CartList() {
     const dispatch = useDispatch()
-    const myCart = useSelector((state: RootState) => state.cart.itemArr);
+    useSelector((state: RootState) => state.cart.itemArr);
     const navigate = useNavigate()
 
     // Retrieve the local storage data

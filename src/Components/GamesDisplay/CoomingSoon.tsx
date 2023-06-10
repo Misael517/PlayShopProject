@@ -2,7 +2,7 @@ import type { RootState } from '../../app/store';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleNext, handleBack } from '../../app/Slices/CoomingSoonSlice';
-import React, { memo } from 'react';
+import { memo } from 'react';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
