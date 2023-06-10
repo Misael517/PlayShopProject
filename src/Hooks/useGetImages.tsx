@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 
 function useGetImages(queryKey: string, imagesDirectory: string, name: string, format: string, numb: number) {
 
-  const getImages = () => {
+  function getImages() {
     const images: string[] = []
     for (let i = 1; i <= numb; i++) {
       const url = `${imagesDirectory}${name}${i}${format}`
@@ -11,10 +11,10 @@ function useGetImages(queryKey: string, imagesDirectory: string, name: string, f
     }
 
     return images;
-  };
+  }
 
 
-  return useQuery([queryKey], () => getImages());
+  return useQuery({ queryKey: [queryKey], queryFn: getImages });
 }
 
 export default useGetImages;
