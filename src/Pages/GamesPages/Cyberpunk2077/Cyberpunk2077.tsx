@@ -15,8 +15,8 @@ interface ShowCase {
 
 function Cyberpunk2077() {
     const currentGame = jsonData[14]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('CyberpukImg', '/images/gamesImg/Cyberpunk2077/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('CyberpunkThumb', '/images/gamesImg/Cyberpunk2077/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('CyberpukImg', '/images/gamesImg/Cyberpunk2077/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('CyberpunkThumb', '/images/gamesImg/Cyberpunk2077/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

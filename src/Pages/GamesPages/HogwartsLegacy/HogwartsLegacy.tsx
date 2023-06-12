@@ -13,8 +13,8 @@ interface ShowCase {
 
 function HogwartsLegacy() {
     const currentGame = jsonData[37]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('HogwartsImg', '/images/gamesImg/HogwartsLegacy/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('HogwartsThumb', '/images/gamesImg/HogwartsLegacy/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('HogwartsImg', '/images/gamesImg/HogwartsLegacy/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('HogwartsThumb', '/images/gamesImg/HogwartsLegacy/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

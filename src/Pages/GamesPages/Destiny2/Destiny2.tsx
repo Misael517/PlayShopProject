@@ -14,8 +14,8 @@ interface ShowCase {
 
 function Destiny2() {
     const currentGame = jsonData[18]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('Destiny2Img', '/images/gamesImg/Destiny2/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('Destiny2Thumb', '/images/gamesImg/Destiny2/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('Destiny2Img', '/images/gamesImg/Destiny2/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('Destiny2Thumb', '/images/gamesImg/Destiny2/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

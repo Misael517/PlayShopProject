@@ -13,8 +13,8 @@ interface ShowCase {
 
 function HorizonForbidden() {
     const currentGame = jsonData[3]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('HorizonForbiddenImg', '/images/gamesImg/HorizonForbidden/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('HorizonForbiddenThumb', '/images/gamesImg/HorizonForbidden/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('HorizonForbiddenImg', '/images/gamesImg/HorizonForbidden/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('HorizonForbiddenThumb', '/images/gamesImg/HorizonForbidden/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

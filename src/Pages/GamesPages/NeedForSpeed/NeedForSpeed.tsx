@@ -13,8 +13,8 @@ interface ShowCase {
 
 function NeeForSpeed() {
     const currentGame = jsonData[6]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('NFSImg', '/images/gamesImg/NeedForSpeed/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('NFSThumb', '/images/gamesImg/NeedForSpeed/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('NFSImg', '/images/gamesImg/NeedForSpeed/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('NFSThumb', '/images/gamesImg/NeedForSpeed/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

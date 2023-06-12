@@ -13,8 +13,8 @@ interface ShowCase {
 
 function Stalker2() {
     const currentGame = jsonData[24]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('Stalker2Img', '/images/gamesImg/Stalker2/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('Stalker2Thumb', '/images/gamesImg/Stalker2/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('Stalker2Img', '/images/gamesImg/Stalker2/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('Stalker2Thumb', '/images/gamesImg/Stalker2/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

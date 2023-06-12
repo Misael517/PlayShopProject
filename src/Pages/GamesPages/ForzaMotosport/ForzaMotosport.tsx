@@ -13,8 +13,8 @@ interface ShowCase {
 
 function ForzaMotosport() {
     const currentGame = jsonData[28]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('ForzaMImg', '/images/gamesImg/ForzaMotosport/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('ForzaMThumb', '/images/gamesImg/ForzaMotosport/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('ForzaMImg', '/images/gamesImg/ForzaMotosport/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('ForzaMThumb', '/images/gamesImg/ForzaMotosport/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

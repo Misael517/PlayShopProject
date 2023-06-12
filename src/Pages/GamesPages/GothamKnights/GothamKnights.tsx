@@ -13,8 +13,8 @@ interface ShowCase {
 
 function GothamKnights() {
     const currentGame = jsonData[7]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('GothamImg', '/images/gamesImg/GothamKnights/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('GthamThumb', '/images/gamesImg/GothamKnights/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('GothamImg', '/images/gamesImg/GothamKnights/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('GthamThumb', '/images/gamesImg/GothamKnights/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

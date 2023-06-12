@@ -15,7 +15,7 @@ interface GameContent {
 function BestOfTheYear() {
     const navigate = useNavigate()
 
-    const { data: images, isLoading, isError } = useGetImages('bestOfTheYear', '/images/bestOfTheYear/', 'icon', '.jpg', 6)
+    const { data: images, isLoading, isError } = useGetImages('bestOfTheYear', '/images/bestOfTheYear/', 'icon', '.webp', 6)
 
     // Preload Images
     usePreloadImages(images)

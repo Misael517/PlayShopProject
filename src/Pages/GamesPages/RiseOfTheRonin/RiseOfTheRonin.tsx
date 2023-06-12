@@ -13,8 +13,8 @@ interface ShowCase {
 
 function RiseOfTheRonin() {
     const currentGame = jsonData[27]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('RiseOfTheRoninImg', '/images/gamesImg/RiseOfTheRonin/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('RiseOfTheRoninThumb', '/images/gamesImg/RiseOfTheRonin/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('RiseOfTheRoninImg', '/images/gamesImg/RiseOfTheRonin/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('RiseOfTheRoninThumb', '/images/gamesImg/RiseOfTheRonin/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

@@ -14,8 +14,8 @@ interface ShowCase {
 
 function DyingLight2() {
     const currentGame = jsonData[11]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('DyingLightImg', '/images/gamesImg/DyingLight2/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('DyingLightThumb', '/images/gamesImg/DyingLight2/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('DyingLightImg', '/images/gamesImg/DyingLight2/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('DyingLightThumb', '/images/gamesImg/DyingLight2/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

@@ -13,8 +13,8 @@ interface ShowCase {
 
 function PlagueRequiem() {
     const currentGame = jsonData[4]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('PlagueRequiemImg', '/images/gamesImg/PlagueRequiem/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('PlagueRequiemThumb', '/images/gamesImg/PlagueRequiem/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('PlagueRequiemImg', '/images/gamesImg/PlagueRequiem/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('PlagueRequiemThumb', '/images/gamesImg/PlagueRequiem/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

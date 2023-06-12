@@ -13,8 +13,8 @@ interface ShowCase {
 
 function Kena() {
     const currentGame = jsonData[15]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('KenaImg', '/images/gamesImg/Kena/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('KenaThumb', '/images/gamesImg/Kena/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('KenaImg', '/images/gamesImg/Kena/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('KenaThumb', '/images/gamesImg/Kena/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

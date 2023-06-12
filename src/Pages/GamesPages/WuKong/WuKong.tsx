@@ -13,8 +13,8 @@ interface ShowCase {
 
 function WuKong() {
     const currentGame = jsonData[25]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('WuKongImg', '/images/gamesImg/WuKong/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('WuKongThumb', '/images/gamesImg/WuKong/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('WuKongImg', '/images/gamesImg/WuKong/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('WuKongThumb', '/images/gamesImg/WuKong/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

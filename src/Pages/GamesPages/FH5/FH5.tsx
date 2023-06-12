@@ -13,8 +13,8 @@ interface ShowCase {
 
 function Fh5() {
     const currentGame = jsonData[17]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('Fh5Img', '/images/gamesImg/FH5/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('Fh5Thumb', '/images/gamesImg/FH5/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('Fh5Img', '/images/gamesImg/FH5/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('Fh5Thumb', '/images/gamesImg/FH5/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

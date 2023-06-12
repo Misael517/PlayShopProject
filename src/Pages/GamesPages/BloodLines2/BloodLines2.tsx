@@ -15,8 +15,8 @@ interface ShowCase {
 
 function BloodLines2() {
     const currentGame = jsonData[36]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('BloodLinesImg', '/images/gamesImg/BloodLines2/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('BloodLinesThumb', '/images/gamesImg/BloodLines2/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('BloodLinesImg', '/images/gamesImg/BloodLines2/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('BloodLinesThumb', '/images/gamesImg/BloodLines2/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

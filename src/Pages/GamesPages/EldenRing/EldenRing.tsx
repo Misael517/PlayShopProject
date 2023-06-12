@@ -13,8 +13,8 @@ interface ShowCase {
 
 function EldenRing() {
     const currentGame = jsonData[1]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('EldenImg', '/images/gamesImg/EldenRing/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('EldenThumb', '/images/gamesImg/EldenRing/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('EldenImg', '/images/gamesImg/EldenRing/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('EldenThumb', '/images/gamesImg/EldenRing/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

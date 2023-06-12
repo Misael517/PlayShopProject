@@ -13,8 +13,8 @@ interface ShowCase {
 
 function SonicFrontiers() {
     const currentGame = jsonData[9]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('SonicFrontiersImg', '/images/gamesImg/SonicFrontiers/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('SonicFrontiersThumb', '/images/gamesImg/SonicFrontiers/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('SonicFrontiersImg', '/images/gamesImg/SonicFrontiers/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('SonicFrontiersThumb', '/images/gamesImg/SonicFrontiers/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

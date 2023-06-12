@@ -15,8 +15,8 @@ interface ShowCase {
 
 function DoomEthernal() {
     const currentGame = jsonData[19]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('DoomImg', '/images/gamesImg/DoomEthernal/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('DoomThumb', '/images/gamesImg/DoomEthernal/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('DoomImg', '/images/gamesImg/DoomEthernal/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('DoomThumb', '/images/gamesImg/DoomEthernal/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

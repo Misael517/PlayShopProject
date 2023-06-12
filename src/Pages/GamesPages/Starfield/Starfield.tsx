@@ -13,8 +13,8 @@ interface ShowCase {
 
 function Starfield() {
     const currentGame = jsonData[29]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('StarfieldImg', '/images/gamesImg/Starfield/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('StarfieldThumb', '/images/gamesImg/Starfield/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('StarfieldImg', '/images/gamesImg/Starfield/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('StarfieldThumb', '/images/gamesImg/Starfield/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

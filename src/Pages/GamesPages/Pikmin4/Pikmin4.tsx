@@ -13,8 +13,8 @@ interface ShowCase {
 
 function Pikmin4() {
     const currentGame = jsonData[35]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('Pikmin4Img', '/images/gamesImg/Pikmin4/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('Pikmin4Thumb', '/images/gamesImg/Pikmin4/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('Pikmin4Img', '/images/gamesImg/Pikmin4/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('Pikmin4Thumb', '/images/gamesImg/Pikmin4/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

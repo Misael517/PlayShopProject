@@ -13,8 +13,8 @@ interface ShowCase {
 
 function JediFallenOrder() {
     const currentGame = jsonData[22]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('JediFallenImg', '/images/gamesImg/JediFallenOrder/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('JediFallenThumb', '/images/gamesImg/JediFallenOrder/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('JediFallenImg', '/images/gamesImg/JediFallenOrder/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('JediFallenThumb', '/images/gamesImg/JediFallenOrder/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

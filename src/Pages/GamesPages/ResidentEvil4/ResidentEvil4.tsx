@@ -13,8 +13,8 @@ interface ShowCase {
 
 function ResidentEvil4() {
     const currentGame = jsonData[41]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('ResidentEvil4Img', '/images/gamesImg/ResidentEvil4/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('ResidentEvil4Thumb', '/images/gamesImg/ResidentEvil4/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('ResidentEvil4Img', '/images/gamesImg/ResidentEvil4/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('ResidentEvil4Thumb', '/images/gamesImg/ResidentEvil4/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

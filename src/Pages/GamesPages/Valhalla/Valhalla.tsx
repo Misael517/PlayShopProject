@@ -13,8 +13,8 @@ interface ShowCase {
 
 function Valhalla() {
     const currentGame = jsonData[21]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('ValhallaImg', '/images/gamesImg/Valhalla/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('ValhallaThumb', '/images/gamesImg/Valhalla/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('ValhallaImg', '/images/gamesImg/Valhalla/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('ValhallaThumb', '/images/gamesImg/Valhalla/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

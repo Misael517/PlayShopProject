@@ -13,8 +13,8 @@ interface ShowCase {
 
 function Zelda() {
     const currentGame = jsonData[42]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('ZeldaImg', '/images/gamesImg/Zelda/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('ZeldaThumb', '/images/gamesImg/Zelda/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('ZeldaImg', '/images/gamesImg/Zelda/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('ZeldaThumb', '/images/gamesImg/Zelda/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

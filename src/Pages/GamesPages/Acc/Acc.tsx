@@ -13,8 +13,8 @@ interface ShowCase {
 
 function Acc() {
     const currentGame = jsonData[16]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('AccImg', '/images/gamesImg/Acc/', 'img', '.jpg', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('AccThumb', '/images/gamesImg/Acc/imageThumbnail/', 'thumb', '.jpg', 6);
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('AccImg', '/images/gamesImg/Acc/', 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('AccThumb', '/images/gamesImg/Acc/imageThumbnail/', 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;

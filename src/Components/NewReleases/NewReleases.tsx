@@ -22,7 +22,7 @@ function NewReleases() {
     const [currentGame, setCurrentGame] = useState<number>(0);
     const navigate = useNavigate()
 
-    const { data: images, isLoading, isError } = useGetImages('newReleases', '/images/newReleases/', 'game', '.jpg', 6)
+    const { data: images, isLoading, isError } = useGetImages('newReleases', '/images/newReleases/', 'game', '.webp', 6)
     const { data: logo, isLoading: logoIsLoading, isError: logoIsError } = useGetImages('newReleasesLogo', '/images/newReleases/', 'logo', '.png', 6);
     const { data: icon, isLoading: iconIsLoading, isError: iconIsError } = useGetImages('newReleasesIcon', '/images/newReleases/', 'icon', '.jpg', 6)
 
