@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { memo } from 'react';
 import { addItem } from '../../app/Slices/CartSlice';
 import styles from './GameContent.module.css';
-import { memo } from 'react';
+import usePreloadImages from '../../Hooks/usePreloadImages';
 
 interface GamesProps {
     imgArr: {
@@ -39,6 +40,13 @@ interface Game {
 function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Game) {
     const [currentImg, setCurrentImg] = useState<number>(0)
     const dispatch = useDispatch()
+
+    const preloadImages: string[] = imgArr.map((images) => {
+        return images.image
+    })
+
+    usePreloadImages(preloadImages)
+
 
     return (
         <>

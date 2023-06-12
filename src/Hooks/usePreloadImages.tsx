@@ -1,13 +1,27 @@
 import { useEffect } from "react";
 
-function usePreloadImages(img: string[] | undefined) {
-
+const usePreloadImages = (images: string[] | undefined) => {
     useEffect(() => {
-        img?.forEach((imgURL) => {
-            const imgElement = new Image();
-            imgElement.src = imgURL;
-        });
-    }, [img]);
-}
 
-export default usePreloadImages
+        const imgURL = images?.map((src) => {
+            const img = new Image();
+            img.src = src;
+            return img
+        });
+
+        return () => {
+            imgURL?.forEach((element) => {
+                element.src = ''
+                element.onload = null;
+                element.onerror = null;
+                element.onabort = null;
+                element.remove();
+            })
+        }
+
+    });
+
+    return null;
+};
+
+export default usePreloadImages;

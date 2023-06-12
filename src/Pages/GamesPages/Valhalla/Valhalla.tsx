@@ -1,10 +1,12 @@
-import { memo } from 'react';
+import { memo, lazy, Suspense } from 'react';
 import useGetImages from '../../../Hooks/useGetImages';
 import styles from '../Styles/pagesStyle.module.css';
-import Navbar from '../../../Components/Navbar/Navbar';
-import Footer from '../../../Components/Footer/Footer';
 import jsonData from '../../../assets/gamesInfo.json';
-import GameContent from '../../../Components/GameContent/GameContent';
+
+const GameContent = lazy(() => import('../../../Components/GameContent/GameContent'))
+const Navbar = lazy(() => import('../../../Components/Navbar/Navbar'))
+const Footer = lazy(() => import('../../../Components/Footer/Footer'))
+
 interface ShowCase {
     id: number;
     thumbnail: string;
@@ -64,19 +66,25 @@ function Valhalla() {
         <>
             {/* This is the navbar */}
             <header className={styles.header}>
-                <Navbar />
+                <Suspense>
+                    <Navbar />
+                </Suspense>
             </header>
 
             {/* This is the main part of the body */}
             <main className={styles.main}>
                 <section className={styles.section1}>
-                    <GameContent imgArr={imgArr} img7={`${img[6]}`} currentGame={currentGame} />
+                    <Suspense>
+                        <GameContent imgArr={imgArr} img7={img[6]} currentGame={currentGame} />
+                    </Suspense>
                 </section>
             </main>
 
             {/* This is the footer, the end of the page */}
             <footer className={styles.footer}>
-                <Footer />
+                <Suspense>
+                    <Footer />
+                </Suspense>
             </footer>
         </>)
 }

@@ -1,38 +1,53 @@
-import { memo } from 'react';
+import { memo, lazy, Suspense } from 'react';
 import styles from './Home.module.css';
-import Navbar from '../Components/Navbar/Navbar';
-import NewReleases from '../Components/NewReleases/NewReleases';
-import OnSale from '../Components/GamesDisplay/OnSale';
-import MostPopular from '../Components/GamesDisplay/MostPopular';
-import CoomingSoon from '../Components/GamesDisplay/CoomingSoon';
-import BestOfTheYear from '../Components/BestOfTheYear/BestOfTheYear';
-import Footer from '../Components/Footer/Footer';
+
+const Navbar = lazy(() => import('../Components/Navbar/Navbar'))
+const NewReleases = lazy(() => import('../Components/NewReleases/NewReleases'))
+const MostPopular = lazy(() => import('../Components/GamesDisplay/MostPopular'))
+const OnSale = lazy(() => import('../Components/GamesDisplay/OnSale'))
+const CoomingSoon = lazy(() => import('../Components/GamesDisplay/CoomingSoon'))
+const BestOfTheYear = lazy(() => import('../Components/BestOfTheYear/BestOfTheYear'))
+const Footer = lazy(() => import('../Components/Footer/Footer'))
 
 function Home() {
     return (
         <>
             <header className={styles.header}>
-                <Navbar />
+                <Suspense >
+                    <Navbar />
+                </Suspense>
             </header>
             <main className={styles.main}>
                 <section className={styles.ReleasesSec}>
-                    <NewReleases />
+                    <Suspense>
+                        <NewReleases />
+                    </Suspense>
                 </section>
                 <section className={styles.OnSaleSec}>
-                    <OnSale />
+                    <Suspense>
+                        <OnSale />
+                    </Suspense>
                 </section>
                 <section className={styles.PopularSec}>
-                    <MostPopular />
+                    <Suspense>
+                        <MostPopular />
+                    </Suspense>
                 </section>
                 <section className={styles.CoomingSec}>
-                    <CoomingSoon />
+                    <Suspense>
+                        <CoomingSoon />
+                    </Suspense>
                 </section>
                 <section className={styles.BestSec}>
-                    <BestOfTheYear />
+                    <Suspense>
+                        <BestOfTheYear />
+                    </Suspense>
                 </section>
             </main>
             <footer className={styles.footer}>
-                <Footer />
+                <Suspense>
+                    <Footer />
+                </Suspense>
             </footer>
         </>
     )
