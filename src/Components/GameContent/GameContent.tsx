@@ -41,12 +41,19 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
     const [currentImg, setCurrentImg] = useState<number>(0)
     const dispatch = useDispatch()
 
+    const addImg: string[] = [img7]
+
     const preloadImages: string[] = imgArr.map((images) => {
         return images.image
     })
 
-    usePreloadImages(preloadImages)
+    const preloadThumb: string[] = imgArr.map((images) => {
+        return images.thumbnail
+    })
 
+    usePreloadImages(preloadImages)
+    usePreloadImages(preloadThumb)
+    usePreloadImages(addImg)
 
     return (
         <>
