@@ -57,55 +57,53 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
 
     return (
         <>
-            <section className={styles.section1}>
-                {/* This display the images of the current game */}
-                <div className={styles.imgDisplay} style={{ backgroundImage: `url(${imgArr[currentImg].image}) ` }}>
-                </div>
+            {/* This display the images of the current game */}
+            <div className={styles.imgDisplay} style={{ backgroundImage: `url(${imgArr[currentImg].image}) ` }}>
+            </div>
 
-                <div className={styles.imgContainer}>
-                    {imgArr.map((img) => {
-                        return (
-                            <div key={img.id} className={styles.imgHolder}>
-                                <img src={img.thumbnail} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} key={img.id} onClick={() => setCurrentImg(img.id)} alt='Game image' />
-                            </div>
-                        )
-                    })}
-                </div>
-
-
-                {/* This show things like the price and the add to cart button */}
-                <div className={styles.buyingSection}>
-                    <img src={img7} className={styles.gamePortrait} alt='Game Portrait' />
-                    <div className={styles.gamesInfo}>
-
-                        <h3>Starting at:</h3>
-                        <div className={styles.gamesPrice}>
-                            <p><span className={currentGame.isOnSale ? styles.discountColor : ''}>{currentGame.isOnSale ? `-${currentGame.discount}%` : ''}</span></p>
-                            <p><span className={currentGame.isOnSale ? styles.strikeThrough : ''}>{currentGame.isOnSale ? `${currentGame.price}%` : ''}</span></p>
-                            <p style={{ textAlign: 'center' }}>{currentGame.isOnSale ? `$${currentGame.actualPrice}` : (currentGame.coomingSoon ? '...' : `$${currentGame.price}`)}</p>
+            <div className={styles.imgContainer}>
+                {imgArr.map((img) => {
+                    return (
+                        <div key={img.id} className={styles.imgHolder}>
+                            <img src={img.thumbnail} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} key={img.id} onClick={() => setCurrentImg(img.id)} alt='Game image' />
                         </div>
-                    </div>
-                    <button className={styles.addBtn} onClick={() => currentGame.coomingSoon ? '' : dispatch(addItem(currentGame))}>{currentGame.coomingSoon ? 'No Available' : 'Add to cart'}</button>
-                </div>
+                    )
+                })}
+            </div>
 
-                {/* This show details about the product */}
-                <div className={styles.detailsContainer}>
-                    <div>
-                        <h3 className={styles.detailsTitle}>Platforms</h3>
-                        <p className={styles.detailsContent}>{currentGame.Platforms}</p>
-                    </div>
 
-                    <div>
-                        <h3 className={styles.detailsTitle}>Publisher</h3>
-                        <p className={styles.detailsContent}>{currentGame.Publisher}</p>
-                    </div>
+            {/* This show things like the price and the add to cart button */}
+            <div className={styles.buyingSection}>
+                <img src={img7} className={styles.gamePortrait} alt='Game Portrait' />
+                <div className={styles.gamesInfo}>
 
-                    <div>
-                        <h3 className={styles.detailsTitle}>Video Game Genre</h3>
-                        <p className={styles.detailsContent}>{currentGame.Genre}</p>
+                    <h3>Starting at:</h3>
+                    <div className={styles.gamesPrice}>
+                        <p><span className={currentGame.isOnSale ? styles.discountColor : ''}>{currentGame.isOnSale ? `-${currentGame.discount}%` : ''}</span></p>
+                        <p><span className={currentGame.isOnSale ? styles.strikeThrough : ''}>{currentGame.isOnSale ? `${currentGame.price}%` : ''}</span></p>
+                        <p style={{ textAlign: 'center' }}>{currentGame.isOnSale ? `$${currentGame.actualPrice}` : (currentGame.coomingSoon ? '...' : `$${currentGame.price}`)}</p>
                     </div>
                 </div>
-            </section>
+                <button className={styles.addBtn} onClick={() => currentGame.coomingSoon ? '' : dispatch(addItem(currentGame))}>{currentGame.coomingSoon ? 'No Available' : 'Add to cart'}</button>
+            </div>
+
+            {/* This show details about the product */}
+            <div className={styles.detailsContainer}>
+                <div>
+                    <h3 className={styles.detailsTitle}>Platforms</h3>
+                    <p className={styles.detailsContent}>{currentGame.Platforms}</p>
+                </div>
+
+                <div>
+                    <h3 className={styles.detailsTitle}>Publisher</h3>
+                    <p className={styles.detailsContent}>{currentGame.Publisher}</p>
+                </div>
+
+                <div>
+                    <h3 className={styles.detailsTitle}>Video Game Genre</h3>
+                    <p className={styles.detailsContent}>{currentGame.Genre}</p>
+                </div>
+            </div>
         </>)
 }
 
