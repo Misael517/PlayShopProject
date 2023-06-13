@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { memo } from 'react';
 import { addItem } from '../../app/Slices/CartSlice';
-import styles from './GameContent.module.css';
+import styles from './GameContent.module.css'
 import usePreloadImages from '../../Hooks/usePreloadImages';
 
 interface GamesProps {
@@ -59,6 +59,20 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
         <>
             {/* This display the images of the current game */}
             <div className={styles.imgDisplay} style={{ backgroundImage: `url(${imgArr[currentImg].image}) ` }}>
+                {/* This show things like the price and the add to cart button */}
+                <div className={styles.buyingSection}>
+                    <img src={img7} className={styles.gamePortrait} alt='Game Portrait' />
+                    <div className={styles.gamesInfo}>
+
+                        <h3>Starting at:</h3>
+                        <div className={styles.gamesPrice}>
+                            <p><span className={currentGame.isOnSale ? styles.discountColor : ''}>{currentGame.isOnSale ? `-${currentGame.discount}%` : ''}</span></p>
+                            <p><span className={currentGame.isOnSale ? styles.strikeThrough : ''}>{currentGame.isOnSale ? `${currentGame.price}%` : ''}</span></p>
+                            <p style={{ textAlign: 'center' }}>{currentGame.isOnSale ? `$${currentGame.actualPrice}` : (currentGame.coomingSoon ? '...' : `$${currentGame.price}`)}</p>
+                        </div>
+                    </div>
+                    <button className={styles.addBtn} onClick={() => currentGame.coomingSoon ? '' : dispatch(addItem(currentGame))}>{currentGame.coomingSoon ? 'No Available' : 'Add to cart'}</button>
+                </div>
             </div>
 
             <div className={styles.imgContainer}>
@@ -71,21 +85,6 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
                 })}
             </div>
 
-
-            {/* This show things like the price and the add to cart button */}
-            <div className={styles.buyingSection}>
-                <img src={img7} className={styles.gamePortrait} alt='Game Portrait' />
-                <div className={styles.gamesInfo}>
-
-                    <h3>Starting at:</h3>
-                    <div className={styles.gamesPrice}>
-                        <p><span className={currentGame.isOnSale ? styles.discountColor : ''}>{currentGame.isOnSale ? `-${currentGame.discount}%` : ''}</span></p>
-                        <p><span className={currentGame.isOnSale ? styles.strikeThrough : ''}>{currentGame.isOnSale ? `${currentGame.price}%` : ''}</span></p>
-                        <p style={{ textAlign: 'center' }}>{currentGame.isOnSale ? `$${currentGame.actualPrice}` : (currentGame.coomingSoon ? '...' : `$${currentGame.price}`)}</p>
-                    </div>
-                </div>
-                <button className={styles.addBtn} onClick={() => currentGame.coomingSoon ? '' : dispatch(addItem(currentGame))}>{currentGame.coomingSoon ? 'No Available' : 'Add to cart'}</button>
-            </div>
 
             {/* This show details about the product */}
             <div className={styles.detailsContainer}>
