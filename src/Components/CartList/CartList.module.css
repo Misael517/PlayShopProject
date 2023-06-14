@@ -232,3 +232,246 @@
     color: rgba(0, 0, 0, 0.3);
     font-size: 8vh;
 }
+
+
+/* Phones */
+@media (orientation: portrait) and (min-width: 280px) and (max-width: 600px) {
+
+    .itemsSection {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+
+        margin: 1em;
+        flex-direction: column;
+    }
+
+    /* Item array section */
+    .itemsContainer {
+        display: flex;
+        background-color: rgb(20, 20, 20);
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
+        border-radius: 8px;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        width: 95vw;
+        height: 23.2vh;
+    }
+
+    .itemIcon {
+        display: flex;
+        background-position: center;
+        background-size: contain;
+        height: 22vh;
+        width: 38vw;
+        margin: 1.3vw;
+        border-radius: 8px;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
+        transition: 200ms;
+    }
+
+    .itemIcon:hover {
+        cursor: pointer;
+    }
+
+    .itemInfo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        font-size: 1.1vh;
+        font-weight: 100;
+        margin-top: 0.8vh;
+        margin-left: 0.5em;
+        height: 100%;
+        width: 40%;
+        color: white;
+    }
+
+    .dataContainer {
+        font-size: 1.11vh;
+        font-weight: 100;
+        margin-bottom: 4.4em;
+        text-align: left;
+        width: 100%;
+    }
+
+    .itemData {
+        margin-top: 0.25em;
+        margin-bottom: 0.25em;
+    }
+
+    .amountContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 75%;
+        border-radius: 5px;
+        background-color: rgb(0, 0, 0);
+        font-weight: 400;
+        margin-bottom: 1vh;
+    }
+
+    .decreaseBtn {
+        width: 25%;
+        height: 100%;
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        font-size: 2vh;
+        font-weight: 400;
+        background-color: rgb(0, 56, 77);
+        transition: 100ms;
+    }
+
+    .increaseBtn {
+        width: 25%;
+        height: 100%;
+        border: none;
+        font-size: 2vh;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-weight: 400;
+        background-color: rgb(0, 56, 77);
+        transition: 100ms;
+    }
+
+    .decreaseBtn:hover {
+        cursor: pointer;
+        background-color: rgb(0, 76, 104);
+        transition: 100ms;
+    }
+
+    .increaseBtn:hover {
+        cursor: pointer;
+        background-color: rgb(0, 76, 104);
+        transition: 100ms;
+    }
+
+    .itemPrice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 3vh;
+        width: 75%;
+        gap: 0.3em;
+        font-size: 1.5vh;
+        font-weight: 400;
+        border-radius: 3.5px;
+        background-color: rgb(179, 21, 0)
+    }
+
+    .discountColor {
+        background-color: rgb(0, 71, 97);
+        padding: 6px;
+        border-radius: 4px;
+    }
+
+    .strikeThrough {
+        text-decoration: line-through;
+        color: rgb(206, 206, 206);
+    }
+
+    .removeBtn {
+        background-color: rgb(168, 1, 1);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        font-size: 1.2vh;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 1.1vw;
+        margin-left: 2%;
+        border: none;
+        transition: 200ms;
+    }
+
+    .removeBtn:hover {
+        cursor: pointer;
+        transition: 200ms;
+        color: rgb(196, 196, 196);
+        background-color: rgb(110, 13, 0);
+    }
+
+
+
+
+
+
+
+    /* Checkout section */
+    .checkOutSection {
+        display: none;
+        align-items: center;
+        width: 22%;
+        height: 70%;
+        flex-direction: column;
+        margin-top: 1.5em;
+    }
+
+    .gamePortrait {
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    .checkOutInfo {
+        display: flex;
+        flex-direction: column;
+        height: 7%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(20, 20, 20);
+        font-size: 1.65vh;
+        padding: 0.7em;
+        gap: 0.5em;
+    }
+
+    .subtotalTitle {
+        display: flex;
+        font-weight: 400;
+    }
+
+    .checkOutBtn {
+        background-color: rgb(0, 51, 70);
+        border: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        font-size: 2.5vh;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+        width: 100%;
+        height: 5.5vh;
+        transition: 200ms;
+    }
+
+    .checkOutBtn:hover {
+        background-color: rgb(0, 76, 104);
+        transition: 200ms;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+    }
+
+
+
+
+    .emptyContainer {
+        display: flex;
+        background-color: rgba(20, 20, 20, 0.05);
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        height: 90vh;
+    }
+
+    .emptyTitle {
+        font-weight: 100;
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 8vh;
+    }
+}

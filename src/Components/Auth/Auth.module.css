@@ -89,3 +89,193 @@ label {
     border-radius: 6px;
     font-size: 1.2vh;
 }
+
+/* Phones */
+@media (orientation: portrait) and (min-width: 280px) and (max-width: 600px) {
+    .authContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 51vh;
+        width: 90vw;
+        background-color: rgb(48, 48, 48);
+        border-radius: 1.3em;
+        box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+        width: 30vw;
+        margin-top: 0vh;
+    }
+
+    .logo:hover {
+        cursor: pointer;
+    }
+
+
+    .fieldContainer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 1vh;
+    }
+
+    label {
+        font-weight: 100;
+        font-size: 1.9vh;
+        margin-bottom: 0.5vh;
+    }
+
+    .inputField {
+        color: black;
+        font-size: 1.5vh;
+        height: 3.5vh;
+        width: 65vw;
+        border: solid rgba(0, 0, 0, 0.0);
+        border-radius: 4px;
+        outline: none;
+        box-shadow: none;
+    }
+
+
+
+
+
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 8%;
+    }
+
+    .submitButton {
+        font-weight: 400;
+        font-size: 1.65vh;
+        outline: none;
+        width: 42%;
+        height: 3.2vh;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+        border: solid rgba(0, 0, 0, 0.0);
+        border-radius: 3px;
+        background-color: rgb(0, 82, 112);
+        transition: 150ms;
+    }
+
+    .submitButton:hover {
+        cursor: pointer;
+        transition: 150ms;
+        background-color: rgb(168, 1, 1);
+    }
+
+
+
+    .demoContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1vh;
+        margin-top: 3vh;
+        background-color: rgba(168, 1, 1, 0.3);
+        padding: 3%;
+        border-radius: 3px;
+        font-size: 1.4vh;
+    }
+}
+
+/* Tablet: */
+@media (orientation: portrait) and (min-height: 1024px) and (max-height: 1368px) {
+    .authContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 51vh;
+        width: 90vw;
+        background-color: rgb(48, 48, 48);
+        border-radius: 1.3em;
+        box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+        width: 30vw;
+        margin-top: 0vh;
+    }
+
+    .logo:hover {
+        cursor: pointer;
+    }
+
+
+    .fieldContainer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 1vh;
+    }
+
+    label {
+        font-weight: 100;
+        font-size: 1.9vh;
+        margin-bottom: 0.5vh;
+    }
+
+    .inputField {
+        color: black;
+        font-size: 1.8vh;
+        height: 3.5vh;
+        width: 65vw;
+        border: solid rgba(0, 0, 0, 0.0);
+        border-radius: 4px;
+        outline: none;
+        box-shadow: none;
+    }
+
+
+
+
+
+    .buttonContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 2.5vh;
+    }
+
+    .submitButton {
+        font-weight: 400;
+        font-size: 2vh;
+        outline: none;
+        width: 37%;
+        height: 4vh;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+        border: solid rgba(0, 0, 0, 0.0);
+        border-radius: 3px;
+        background-color: rgb(0, 82, 112);
+        transition: 150ms;
+    }
+
+    .submitButton:hover {
+        cursor: pointer;
+        transition: 150ms;
+        background-color: rgb(168, 1, 1);
+    }
+
+
+
+    .demoContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1vh;
+        margin-top: 3vh;
+        background-color: rgba(168, 1, 1, 0.3);
+        padding: 2%;
+        border-radius: 3px;
+        font-size: 1.4vh;
+    }
+}

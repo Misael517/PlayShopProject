@@ -41,8 +41,12 @@ function BestOfTheYear() {
 
 
     return (
-        <>
-            <h2 className={styles.sectionName}>Best of the year</h2>
+        <div>
+
+            <div className={styles.alingTitle}>
+                <h2 className={styles.sectionName}>Best of the year</h2>
+            </div>
+
             <div className={styles.itemsGrid}>
                 {gamesContent.map((game) => (
                     <div className={styles.itemsContent} key={game.id} style={{ backgroundImage: `url(${game.icon})` }} onClick={() => navigate(`${game.link}`)}>
@@ -50,7 +54,7 @@ function BestOfTheYear() {
                     </div>
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 

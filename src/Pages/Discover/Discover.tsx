@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import styles from './Discover.module.css';
 import Navbar from '../../Components/Navbar/Navbar';
-import GameList from '../../Components/GameList/GameList';
+import GameList from '../../Components/GamesList/GameList';
 import Footer from '../../Components/Footer/Footer';
 
 function Discover() {

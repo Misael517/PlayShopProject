@@ -207,7 +207,7 @@
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        height: 70vh;
+        height: 78vh;
         width: 100%;
         background-size: cover;
         background-position: 30%;
@@ -219,7 +219,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 20vh;
+        margin-bottom: 15vh;
         align-items: center;
         flex-direction: column;
         padding: 5%;
@@ -255,7 +255,7 @@
         z-index: 3;
         width: 10vw;
         left: 40.5vw;
-        top: 48vh;
+        top: 51vh;
         background: rgb(161, 19, 0);
         border: none;
         border-radius: 0.3rem;
@@ -275,7 +275,7 @@
         z-index: 3;
         width: 6vw;
         left: 26vw;
-        top: 48vh;
+        top: 51vh;
     }
 
     .btnImgRight {
@@ -284,7 +284,7 @@
         z-index: 3;
         width: 6vw;
         right: 26vw;
-        top: 48vh;
+        top: 51vh;
     }
 
 
