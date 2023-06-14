@@ -53,13 +53,21 @@ function NewReleases() {
     return (
         <>
             <div className={styles.itemsDisplay} style={{ backgroundImage: `url(${gamesContent[currentGame].image})` }}>
+
+                <div onClick={() => currentGame > 0 ? setCurrentGame(currentGame - 1) : ''}><img src={'/L.png'} className={styles.btnImgLeft} alt='Left arrow' />
+                </div>
+
                 <div className={styles.itemsFrame}>
                     <img className={styles.itemslogo} src={gamesContent[currentGame].logo} alt="Game Logo" />
                     <p className={styles.itemDesc}>{gamesContent[currentGame].description}</p>
                     <p className={styles.itemPrice}>Starting at: ${gamesContent[currentGame].price}</p>
                     <button className={styles.buyBtn} onClick={() => navigate(`${gamesContent[currentGame].link}`)}>Buy</button>
                 </div>
+
+                <div onClick={() => currentGame < 5 ? setCurrentGame(currentGame + 1) : ''}><img src={'/R.png'} className={styles.btnImgRight} alt='Right arrow' /></div>
             </div>
+
+
 
             {gamesContent.map((game) => (
                 <div className={`${styles.itemsContent} ${currentGame === game.id ? styles.selectedGame : ''}`} key={game.id} style={{ backgroundImage: `url(${game.icon})` }} onClick={() => setCurrentGame(game.id)}>

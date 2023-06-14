@@ -289,7 +289,7 @@
         justify-content: center;
         height: 50vh;
         background-size: cover;
-        background-position: center;
+        background-position: -60vw;
         transition: 200ms;
     }
 
@@ -297,8 +297,8 @@
         display: flex;
         justify-content: center;
         position: initial;
-        margin-top: 4vh;
-        margin-bottom: 4vh;
+        margin-top: 3.5vh;
+        margin-bottom: 3.5vh;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
@@ -324,21 +324,22 @@
 
 
 
-
-
     .buyingSection {
         display: flex;
         position: absolute;
-        top: 12.5vh;
-        left: 10vw;
+        top: 12vh;
+        left: 6vw;
         justify-content: flex-start;
         flex-direction: column;
         width: 45%;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
     }
 
     .gamePortrait {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+        opacity: 100%;
     }
 
     .gamesInfo {

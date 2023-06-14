@@ -9,7 +9,7 @@ export const store = configureStore({
         cart: CartReducer,
         switchGamesOnSale: CurrentGamesReducer,
         switchGamesCoomingSoon: CoomingSoonReducer,
-        switchGamesMostPopular: MostPopularReducer
+        switchGamesMostPopular: MostPopularReducer,
     }
 })
 
