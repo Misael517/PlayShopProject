@@ -43,33 +43,6 @@ function OnSale() {
     };
 
 
-
-    // const handleClickLeft = () => {
-    //     const scrollContainer = scrollContainerRef.current;
-    //     const scrollItem = scrollitemRef.current
-
-    //     if (scrollContainer && scrollItem) {
-    //         const visibleWidth = scrollContainer.clientWidth;
-    //         const scrollAmount = visibleWidth / 6;
-
-    //         scrollContainer.scrollLeft -= scrollAmount;
-    //     }
-    // };
-
-
-    // const handleClickRight = () => {
-    //     const scrollContainer = scrollContainerRef.current;
-    //     const scrollItem = scrollitemRef.current
-
-    //     if (scrollContainer && scrollItem) {
-    //         const visibleWidth = scrollContainer.clientWidth;
-    //         const scrollAmount = visibleWidth / 6;
-
-    //         scrollContainer.scrollLeft += scrollAmount;
-    //     }
-    // };
-
-
     return (
         <div className={styles.carousel}>
 

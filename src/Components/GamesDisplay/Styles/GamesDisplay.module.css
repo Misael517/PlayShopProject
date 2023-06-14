@@ -22,7 +22,6 @@
     letter-spacing: 0.3rem;
     padding: 0.3em;
     border: 3px solid rgb(0, 0, 0);
-    color: black;
     border-radius: 0.2em;
 }
 
@@ -83,7 +82,7 @@
 }
 
 .itemsContainer::-webkit-scrollbar {
-    visibility: hidden;
+    display: none;
 }
 
 .itemsContent {
@@ -99,37 +98,44 @@
     margin-top: 0.55vw;
     margin-bottom: 0.55vw;
     border-radius: 15px;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 2.6px 2.6px 2.6px 2.6px rgba(0, 0, 0, 0.6);
     flex-shrink: 0;
     transition: 250ms;
 }
 
 .itemsContent:hover {
     cursor: pointer;
-    transform: scale(1.02);
+    transform: scale(1.015);
     transition: 250ms;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.8);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.7);
 }
 
 .gamesInfo {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 0%;
+    gap: 1.3%;
     height: 19.5%;
     width: 100%;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-    justify-content: flex-end;
-    align-items: center;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
     background-color: rgb(0, 9, 12);
     font-size: 1.4vh;
 }
 
+.gamesInfo h3 {
+    margin-bottom: 4%;
+}
+
 .gamesPrice {
     display: flex;
-    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    gap: 4%;
     font-weight: 400;
-    margin-top: 5.5%;
+    margin-top: 0%;
     margin-bottom: 2%;
 }
 
@@ -148,102 +154,248 @@
 /* Phones */
 @media (orientation: portrait) and (min-width: 280px) and (max-width: 600px) {
 
-    .sectionName {
-        position: absolute;
-        z-index: 2;
-        left: 5vw;
-        text-transform: uppercase;
-        font-size: 2.1vh;
-        font-weight: 400;
-        letter-spacing: 0.3rem;
-        padding: 0.3em;
-        border: 3px solid rgb(0, 0, 0);
-        color: black;
-        border-radius: 0.2em;
-    }
-
-    .sectionBtn {
+    .carousel {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 11.2%;
-        height: 5vh;
-        width: 2.5vw;
-        font-size: 1.4vh;
-        background: rgb(0, 51, 70);
-        background: radial-gradient(circle, rgb(1, 81, 110) 0%, rgba(0, 61, 94, 0.8799894957983193) 100%);
-        border: none;
-        border-radius: 8rem;
+        height: 66vh;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .alingTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5vh;
+    }
+
+
+    .sectionName {
+        color: black;
+        text-transform: uppercase;
+        font-size: 2.7vh;
         font-weight: 400;
-        color: white;
-        text-decoration: none;
-        transition: 200ms;
+        letter-spacing: 0.3rem;
+        padding: 0.3em;
+        border: 2.5px solid rgb(0, 0, 0);
+        border-radius: 0.2em;
     }
 
-    .sectionBtn:hover {
-        transform: scale(1.03);
-        transition: 200ms;
-        cursor: pointer;
+    .btnContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .btnImgLeft {
-        width: 1.8vh;
-        margin-right: 0.25vw;
+    .sectionBtn {
+        display: none;
     }
 
-    .btnImgRight {
-        width: 1.8vh;
-        margin-left: 0.25vw;
+
+
+
+
+
+    .itemsContainer {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        width: 100%;
+        overflow-x: scroll;
+    }
+
+    .itemsContainer::-webkit-scrollbar {
+        display: none;
     }
 
     .itemsContent {
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        position: relative;
         background-position: center;
         background-size: cover;
-        top: 6vh;
-        height: 36vh;
-        width: 100%;
-        margin: 0.5em;
-        border-radius: 15px;
-        box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
-        transition: 200ms;
+        height: 83vw;
+        width: 59vw;
+        margin-right: 0.45vh;
+        margin-left: 0.45vh;
+        margin-top: 0.55vh;
+        margin-bottom: 0.55vh;
+        border-radius: 7px;
+        box-shadow: 1.3px 1.3px 1.3px 1.3px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+        transition: 250ms;
     }
 
     .itemsContent:hover {
         cursor: pointer;
-        transform: scale(1.015);
-        transition: 200ms;
-        box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.7);
+        transform: scale(1.02);
+        transition: 250ms;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.8);
     }
 
     .gamesInfo {
         display: flex;
         flex-direction: column;
-        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        padding: 0%;
+        gap: 1.3%;
         height: 19.5%;
         width: 100%;
-        border-bottom-right-radius: 15px;
-        border-bottom-left-radius: 15px;
-        justify-content: flex-end;
-        align-items: center;
+        border-bottom-right-radius: 7px;
+        border-bottom-left-radius: 7px;
         background-color: rgb(0, 9, 12);
-        font-size: 1.4vh;
+        font-size: 1.83vh;
+    }
+
+    .gamesInfo h3 {
+        margin-bottom: 4%;
     }
 
     .gamesPrice {
         display: flex;
-        gap: 8px;
+        align-items: center;
+        justify-content: center;
+        gap: 4%;
         font-weight: 400;
-        margin-top: 5.5%;
+        margin-top: 0%;
         margin-bottom: 2%;
     }
 
     .discountColor {
         background-color: rgb(0, 108, 122);
-        padding: 6px;
+        padding: 4px;
+        border-radius: 2px;
+    }
+
+    .strikeThrough {
+        text-decoration: line-through;
+        color: rgb(206, 206, 206);
+    }
+}
+
+
+/* Tablet   */
+@media (orientation: portrait) and (min-height: 1024px) and (max-height: 1368px) {
+    .carousel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 55vh;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .alingTitle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5vh;
+    }
+
+
+    .sectionName {
+        color: black;
+        text-transform: uppercase;
+        font-size: 2.5vh;
+        font-weight: 400;
+        letter-spacing: 0.3rem;
+        padding: 0.3em;
+        border: 2.5px solid rgb(0, 0, 0);
+        border-radius: 0.2em;
+    }
+
+    .btnContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sectionBtn {
+        display: none;
+    }
+
+
+
+
+
+
+    .itemsContainer {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+        align-items: center;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        width: 100%;
+        overflow-x: scroll;
+    }
+
+    .itemsContainer::-webkit-scrollbar {
+        display: none;
+    }
+
+    .itemsContent {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-position: center;
+        background-size: cover;
+        height: 58vw;
+        width: 40vw;
+        margin-right: 0.45vh;
+        margin-left: 0.45vh;
+        margin-top: 0.55vh;
+        margin-bottom: 0.55vh;
+        border-radius: 7px;
+        box-shadow: 1.3px 1.3px 1.3px 1.3px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+        transition: 250ms;
+    }
+
+    .itemsContent:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+        transition: 250ms;
+        box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .gamesInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0%;
+        gap: 1.3%;
+        height: 19.5%;
+        width: 100%;
+        border-bottom-right-radius: 7px;
+        border-bottom-left-radius: 7px;
+        background-color: rgb(0, 9, 12);
+        font-size: 1.75vh;
+    }
+
+    .gamesInfo h3 {
+        margin-bottom: 4%;
+    }
+
+    .gamesPrice {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4%;
+        font-weight: 400;
+        margin-top: 0%;
+        margin-bottom: 2%;
+    }
+
+    .discountColor {
+        background-color: rgb(0, 108, 122);
+        padding: 4px;
         border-radius: 2px;
     }
 
