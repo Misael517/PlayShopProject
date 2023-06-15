@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 45vh;
+    height: 46vh;
     flex-direction: column;
 }
 
@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 82.5vw;
+    width: 99%;
 }
 
 
@@ -19,10 +19,10 @@
     text-transform: uppercase;
     font-size: 1.85vh;
     font-weight: 400;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.3em;
     padding: 0.3em;
     border: 3px solid rgb(0, 0, 0);
-    border-radius: 0.2em;
+    border-radius: 5px;
 }
 
 .btnContainer {
@@ -36,8 +36,8 @@
     justify-content: center;
     align-items: center;
     margin: 0.15vw;
-    height: 3.8vh;
-    width: 2vw;
+    height: 2.76em;
+    width: 2.8em;
     font-size: 1.4vh;
     background: rgb(0, 51, 70);
     background: radial-gradient(circle, rgb(1, 81, 110) 0%, rgba(0, 61, 94, 0.8799894957983193) 100%);
@@ -76,7 +76,8 @@
     flex-direction: row;
     overflow: scroll;
     scroll-behavior: smooth;
-    width: 83.4vw;
+    height: 100%;
+    width: 84.3vw;
     transition: transform 0.3s ease-in-out;
     overflow-x: scroll;
 }
@@ -91,8 +92,8 @@
     align-items: flex-end;
     background-position: center;
     background-size: cover;
-    height: 36vh;
-    width: 13vw;
+    height: 87.4%;
+    width: 15.53%;
     margin-right: 0.45vw;
     margin-left: 0.45vw;
     margin-top: 0.55vw;

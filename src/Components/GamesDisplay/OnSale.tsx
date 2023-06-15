@@ -10,7 +10,6 @@ const gamesOnSale = jsonData.slice(12, 24)
 
 function OnSale() {
     const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-    const scrollitemRef = useRef<HTMLDivElement | null>(null);
     const navigate = useNavigate();
 
     const icons: string[] = gamesOnSale.map((items) => {
@@ -62,7 +61,7 @@ function OnSale() {
 
             <div ref={scrollContainerRef} className={styles.itemsContainer}>
                 {gamesOnSale.map((gamesSale) => (
-                    <div className={styles.itemsContent} ref={scrollitemRef} style={{ backgroundImage: `url(${gamesSale.icon})` }} key={gamesSale.id} onClick={() => navigate(`${gamesSale.link}`)}>
+                    <div className={styles.itemsContent} style={{ backgroundImage: `url(${gamesSale.icon})` }} key={gamesSale.id} onClick={() => navigate(`${gamesSale.link}`)}>
                         <div className={styles.gamesInfo}>
                             <h3>{gamesSale.name}</h3>
                             <div className={styles.gamesPrice}>

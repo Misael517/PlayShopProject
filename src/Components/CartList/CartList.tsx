@@ -65,21 +65,25 @@ function CartList() {
                             </div>
 
                             <div className={styles.itemInfo}>
-                                <h2>{item.name}</h2>
-                                <div className={styles.dataContainer} >
-                                    <p className={styles.itemData}>{item.Publisher}</p>
-                                    <p className={styles.itemData}>{item.Platforms}</p>
-                                    <p className={styles.itemData}>{item.Genre}</p>
+                                <div>
+                                    <h2>{item.name}</h2>
+                                    <div className={styles.dataContainer} >
+                                        <p className={styles.itemData}>{item.Publisher}</p>
+                                        <p className={styles.itemData}>{item.Platforms}</p>
+                                        <p className={styles.itemData}>{item.Genre}</p>
+                                    </div>
                                 </div>
 
-                                <div className={styles.amountContainer}>
-                                    <button className={styles.decreaseBtn} onClick={() => dispatch(decreaseAmount(item))}>-</button>
-                                    <p>{item.itemAmount}</p>
-                                    <button className={styles.increaseBtn} onClick={() => dispatch(increaseAmount(item))}>+</button>
-                                </div>
+                                <div className={styles.priceAmount}>
+                                    <div className={styles.amountContainer}>
+                                        <button className={styles.decreaseBtn} onClick={() => dispatch(decreaseAmount(item))}>-</button>
+                                        <p>{item.itemAmount}</p>
+                                        <button className={styles.increaseBtn} onClick={() => dispatch(increaseAmount(item))}>+</button>
+                                    </div>
 
-                                <div className={styles.itemPrice}>
-                                    <p>{item.isOnSale ? `$${item.cartPrice.toFixed(2)}` : (item.coomingSoon ? '...' : `$${item.cartPrice.toFixed(2)}`)}</p>
+                                    <div className={styles.itemPrice}>
+                                        <p>{item.isOnSale ? `$${item.cartPrice.toFixed(2)}` : (item.coomingSoon ? '...' : `$${item.cartPrice.toFixed(2)}`)}</p>
+                                    </div>
                                 </div>
                             </div>
 
