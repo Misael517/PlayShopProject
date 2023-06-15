@@ -251,7 +251,7 @@
 
 
 /* Mobile */
-@media (min-width: 280px) and (max-width: 599px) {
+@media (min-width: 100px) and (max-width: 599px) {
     .itemsSection {
         width: 100%;
         margin: 1em;
