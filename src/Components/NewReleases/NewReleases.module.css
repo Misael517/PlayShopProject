@@ -14,20 +14,20 @@
 .itemsFrame {
     display: flex;
     justify-content: center;
-    margin-bottom: 6vh;
+    margin-bottom: 11vh;
     align-items: center;
     flex-direction: column;
-    padding: 2%;
+    padding: 2em;
     width: 40%;
 }
 
 .itemslogo {
-    width: 10vw;
-    margin-bottom: 2vh;
+    width: 27%;
+    margin-bottom: 0.5vh;
 }
 
 .itemDesc {
-    font-size: 1.9vh;
+    font-size: 2vh;
     font-weight: 100;
 }
 

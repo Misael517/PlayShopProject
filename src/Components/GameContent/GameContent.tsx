@@ -59,6 +59,7 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
         <>
             {/* This display the images of the current game */}
             <div className={styles.imgDisplay} style={{ backgroundImage: `url(${imgArr[currentImg].image}) ` }}>
+
                 {/* This show things like the price and the add to cart button */}
                 <div className={styles.buyingSection}>
                     <img src={img7} className={styles.gamePortrait} alt='Game Portrait' />
