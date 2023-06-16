@@ -44,8 +44,11 @@
     cursor: pointer;
 }
 
+
+
+
 /* Phones */
-@media (min-width: 100px) and (max-width: 599px) {
+@media (min-width: 100px) and (max-width: 767px) {
 
     .alingTitle {
         display: flex;
@@ -58,7 +61,7 @@
     .sectionName {
         color: black;
         text-transform: uppercase;
-        font-size: 2.7vh;
+        font-size: 1.1rem;
         font-weight: 400;
         letter-spacing: 0.3rem;
         padding: 0.3em;
@@ -102,7 +105,7 @@
 
 
 /* Tablet   */
-@media (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .alingTitle {
         display: flex;
         align-items: center;
@@ -114,21 +117,21 @@
     .sectionName {
         color: black;
         text-transform: uppercase;
-        font-size: 2.7vh;
+        font-size: 1.25rem;
         font-weight: 400;
         letter-spacing: 0.3rem;
         padding: 0.3em;
         border: 2.5px solid rgb(0, 0, 0);
         border-radius: 0.2em;
-        margin-bottom: 5vh;
+        margin-bottom: 4.3vh;
     }
 
     .itemsGrid {
         display: grid;
         align-content: center;
         justify-content: center;
-        grid-template-rows: 38vh 38vh 38vh 38vh;
-        grid-template-columns: 95vw;
+        grid-template-rows: 35vh 35vh 35vh 35vh;
+        grid-template-columns: 86vw;
         width: 100%;
         gap: 1%;
     }

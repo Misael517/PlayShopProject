@@ -63,7 +63,7 @@
 
 
 /* Phones */
-@media (min-width: 100px) and (max-width: 599px) {
+@media (min-width: 100px) and (max-width: 767px) {
     .gamesContainer {
         display: flex;
         justify-content: center;
@@ -76,8 +76,8 @@
         align-items: flex-end;
         background-position: center;
         background-size: cover;
-        height: 16em;
-        width: 11.6em;
+        height: 75vw;
+        width: 55.8vw;
         margin: 0.5vh;
         border-radius: 7px;
         box-shadow: 1.3px 1.3px 1.3px 1.3px rgba(0, 0, 0, 0.5);
@@ -87,7 +87,7 @@
 
     .itemsContent:hover {
         cursor: pointer;
-        transform: scale(1);
+        transform: none;
         transition: 250ms;
         box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.8);
     }
@@ -97,14 +97,14 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 0%;
-        gap: 1.3%;
-        height: 4em;
+        padding: 0.38em;
+        gap: 0%;
+        height: auto;
         width: 100%;
         border-bottom-right-radius: 7px;
         border-bottom-left-radius: 7px;
         background-color: rgb(0, 9, 12);
-        font-size: 0.74rem;
+        font-size: 0.83rem;
     }
 
     .gamesInfo h3 {
@@ -135,8 +135,12 @@
 
 
 
+
+
+
+
 /* Tablet   */
-@media (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .gamesContainer {
         display: flex;
         justify-content: center;
@@ -149,8 +153,8 @@
         align-items: flex-end;
         background-position: center;
         background-size: cover;
-        height: 17em;
-        width: 12.4em;
+        height: 36vw;
+        width: 26.85vw;
         margin: 0.5vh;
         border-radius: 7px;
         box-shadow: 1.3px 1.3px 1.3px 1.3px rgba(0, 0, 0, 0.5);
@@ -160,24 +164,25 @@
 
     .itemsContent:hover {
         cursor: pointer;
-        transform: scale(1);
+        transform: scale(1.015);
         transition: 250ms;
-        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.8);
+        box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.7);
     }
+
 
     .gamesInfo {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 0%;
-        gap: 1.3%;
-        height: 4.1em;
+        padding: 0.38em;
+        gap: 0%;
+        height: auto;
         width: 100%;
         border-bottom-right-radius: 7px;
         border-bottom-left-radius: 7px;
         background-color: rgb(0, 9, 12);
-        font-size: 0.79rem;
+        font-size: 0.83rem;
     }
 
     .gamesInfo h3 {
@@ -196,7 +201,7 @@
 
     .discountColor {
         background-color: rgb(0, 108, 122);
-        padding: 0.2em;
+        padding: 3.5px;
         border-radius: 2px;
     }
 

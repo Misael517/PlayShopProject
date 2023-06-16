@@ -103,7 +103,7 @@ function CartList() {
                 <div className={styles.checkOutInfo}>
 
                     <h3>Total:</h3>
-                    <p className={styles.subTotal}>{total.toFixed(2)}</p>
+                    <p className={styles.subTotal}>${total.toFixed(2)}</p>
 
                 </div>
                 <button className={styles.checkOutBtn}>Start check out</button>

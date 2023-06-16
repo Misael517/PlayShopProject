@@ -2,7 +2,6 @@
     display: flex;
     justify-content: flex-start;
     width: 67%;
-
     margin: 1em;
     flex-direction: column;
 }
@@ -80,7 +79,8 @@
     border-radius: 13px;
     background-color: rgb(0, 0, 0);
     font-weight: 400;
-    margin-bottom: 1rem;
+    font-size: 2vh;
+    margin-bottom: 0.4em;
 }
 
 .decreaseBtn {
@@ -89,7 +89,7 @@
     border: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    font-size: 1rem;
+    font-size: 2vh;
     font-weight: 400;
     background-color: rgb(0, 56, 77);
     transition: 100ms;
@@ -99,7 +99,7 @@
     width: 25%;
     height: 100%;
     border: none;
-    font-size: 1rem;
+    font-size: 2vh;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     font-weight: 400;
@@ -123,12 +123,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4.5vh;
-    width: 60%;
-    gap: 0.3em;
+    height: 3.8vh;
+    width: 40%;
+    gap: 0em;
     font-size: 1.85vh;
     font-weight: 400;
-    border-radius: 15px;
+    border-radius: 10px;
     background-color: rgb(179, 21, 0)
 }
 
@@ -173,7 +173,7 @@
 .checkOutSection {
     display: flex;
     align-items: center;
-    width: 22%;
+    width: 20%;
     height: 70%;
     flex-direction: column;
     margin-top: 1.5em;
@@ -187,7 +187,7 @@
 
 .checkOutInfo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 7%;
     width: 100%;
     justify-content: center;
@@ -250,10 +250,16 @@
 
 
 
+
+
+
+
+
+
 /* Mobile */
-@media (min-width: 100px) and (max-width: 599px) {
+@media(min-width: 100px) and (max-width: 767px) {
     .itemsSection {
-        width: 100%;
+        width: 90%;
         margin: 1em;
     }
 
@@ -264,23 +270,24 @@
         margin-top: 0.2em;
         margin-bottom: 0.3em;
         width: 100%;
-        height: 160px;
+        height: 100%;
         justify-content: none;
     }
 
     .itemIcon {
         background-size: cover;
-        height: 151px;
-        width: 7.2em;
+        height: 10.5em;
+        width: 7.85em;
         margin: 0.25em;
         border-radius: 7px;
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
     }
 
+
     .itemInfo {
-        font-size: 0.48rem;
+        font-size: 0.4rem;
         font-weight: 100;
-        margin-top: 0%;
+        margin-top: 1em;
         margin-right: auto;
         height: 100%;
         width: 50%;
@@ -288,16 +295,16 @@
     }
 
     .dataContainer {
-        font-size: 0.58rem;
+        font-size: 0.6rem;
         font-weight: 100;
         width: 100%;
-        margin-top: 0.5em;
-        margin-bottom: 25%;
+        margin-top: 0.3em;
+        margin-bottom: 55%;
     }
 
     .itemData {
         margin-top: 0%;
-        margin-bottom: 3.2%;
+        margin-bottom: 0.4em;
     }
 
     .amountContainer {
@@ -305,7 +312,7 @@
         border-radius: 5px;
         margin-top: 0%;
         margin-bottom: .78vh;
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
 
     .decreaseBtn {
@@ -313,13 +320,13 @@
         height: 100%;
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
-        font-size: 0.65rem;
+        font-size: 0.7rem;
     }
 
     .increaseBtn {
         width: 25%;
         height: 100%;
-        font-size: 0.65rem;
+        font-size: 0.7rem;
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
     }
@@ -328,7 +335,7 @@
         height: 1.6em;
         width: 8em;
         gap: 0.3em;
-        font-size: 0.58rem;
+        font-size: 0.7rem;
         border-radius: 3.5px;
         text-align: center;
     }
@@ -350,31 +357,32 @@
 
     /* Checkout section */
     .checkOutSection {
-        display: none;
+        display: flex;
         align-items: center;
-        width: 22%;
+        width: 50%;
         height: 70%;
         flex-direction: column;
-        margin-top: 1.5em;
+        margin-top: 0em;
+        margin-bottom: 1.2em;
     }
 
     .gamePortrait {
-        width: 100%;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        display: none;
     }
 
     .checkOutInfo {
         display: flex;
-        flex-direction: column;
-        height: 7%;
+        height: 5.5vh;
         width: 100%;
         justify-content: center;
         align-items: center;
         background-color: rgb(20, 20, 20);
-        font-size: 1.65vh;
+        font-size: 0.7rem;
         padding: 0.7em;
         gap: 0.5em;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        flex-direction: row;
     }
 
     .subtotalTitle {
@@ -385,9 +393,9 @@
     .checkOutBtn {
         background-color: rgb(0, 51, 70);
         border: none;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        font-size: 2.5vh;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-size: 0.8rem;
         font-weight: 600;
         text-transform: uppercase;
         color: white;
@@ -430,11 +438,16 @@
 
 
 
+
+
+
 /* Tablet */
-@media (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .itemsSection {
-        width: 100%;
+        width: 70%;
+        margin: 0em;
         margin: 1em;
+        justify-content: center;
     }
 
     /* Item array section */
@@ -528,11 +541,14 @@
 
 
 
+
+
     /* Checkout section */
     .checkOutSection {
-        display: none;
+        display: flex;
         align-items: center;
-        width: 22%;
+        width: 35%;
+        margin-right: 1em;
         height: 70%;
         flex-direction: column;
         margin-top: 1.5em;
@@ -546,13 +562,13 @@
 
     .checkOutInfo {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         height: 7%;
         width: 100%;
         justify-content: center;
         align-items: center;
         background-color: rgb(20, 20, 20);
-        font-size: 1.65vh;
+        font-size: 1.2rem;
         padding: 0.7em;
         gap: 0.5em;
     }
@@ -567,13 +583,13 @@
         border: none;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-        font-size: 2.5vh;
+        font-size: 1.45rem;
         font-weight: 600;
         text-transform: uppercase;
         color: white;
         text-decoration: none;
         width: 100%;
-        height: 5.5vh;
+        height: 2em;
         transition: 200ms;
     }
 

@@ -5,7 +5,7 @@ import { memo } from 'react';
 function Footer() {
     return (
         <>
-            <p style={{ textAlign: 'center', }}>Follow us</p>
+            <p style={{ textAlign: 'center', fontSize: '1rem' }}>Follow us</p>
         </>
     )
 }

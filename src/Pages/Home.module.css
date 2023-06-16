@@ -60,7 +60,7 @@
 }
 
 /* Phones */
-@media (orientation: portrait) and (min-width: 280px) and (max-width: 600px) {
+@media (min-width: 100px) and (max-width: 767px) {
 
     .ReleasesSec {
         display: flex;
@@ -107,12 +107,12 @@
 
 
     .footer {
-        margin-top: 73vh;
+        margin-top: 75vh;
     }
 }
 
 /* Tablet   */
-@media (orientation: portrait) and (min-height: 1024px) and (max-height: 1368px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .ReleasesSec {
         display: flex;
         justify-content: center;
@@ -157,6 +157,6 @@
 
 
     .footer {
-        margin-top: 100vh;
+        margin-top: 84vh;
     }
 }

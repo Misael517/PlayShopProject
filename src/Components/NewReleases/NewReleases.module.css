@@ -104,7 +104,7 @@
 
 
 /* Phones */
-@media (min-width: 100px) and (max-width: 599px) {
+@media (min-width: 100px) and (max-width: 767px) {
 
     .itemsDisplay {
         display: flex;
@@ -133,12 +133,12 @@
     }
 
     .itemslogo {
-        width: 55%;
+        width: 37%;
     }
 
     .itemDesc {
         text-align: center;
-        font-size: 1.25rem;
+        font-size: 1.2rem;
         font-weight: 100;
     }
 
@@ -156,16 +156,16 @@
     .buyBtn {
         position: absolute;
         z-index: 3;
-        width: 30%;
+        width: 25%;
         margin-left: 50%;
         margin-right: 50%;
-        top: 62.4vh;
+        top: 61.6vh;
         height: auto;
         background: rgb(161, 19, 0);
         border: none;
         border-radius: 0.3rem;
         font-size: 1.63rem;
-        padding: 0.15em;
+        padding: 0.30em;
         font-weight: 600;
         color: white;
         text-decoration: none;
@@ -179,7 +179,7 @@
         position: absolute;
         z-index: 3;
         width: 1.8em;
-        left: 20vw;
+        left: 22.5vw;
         top: 63vh;
     }
 
@@ -188,7 +188,7 @@
         position: absolute;
         z-index: 3;
         width: 1.8em;
-        right: 20vw;
+        right: 22.5vw;
         top: 63vh;
     }
 
@@ -204,18 +204,17 @@
 
 
 /* Tablets */
-@media (min-width: 600px) and (max-width: 1024px) {
-
+@media (min-width: 768px) and (max-width: 1024px) {
     .itemsDisplay {
         display: flex;
-        z-index: 1;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        height: 80vh;
+        flex-direction: column;
+        height: 75vh;
         width: 100%;
+        background-position: 40%;
         background-size: cover;
-        background-position: 25%;
         transition: 300ms;
     }
 
@@ -223,78 +222,89 @@
     .itemsFrame {
         display: flex;
         justify-content: center;
-        align-items: center;
-        margin-bottom: 16em;
+        margin-bottom: 9vh;
         align-items: center;
         flex-direction: column;
         padding: 1em;
-        height: 10em;
-        width: 95%;
+        width: 100%;
     }
 
     .itemslogo {
-        width: 35%;
+        width: 30%;
+        margin-bottom: 0.5em;
     }
 
     .itemDesc {
-        text-align: center;
-        font-size: 1.8rem;
+        font-size: 1.49rem;
         font-weight: 100;
     }
 
     .itemPrice {
-        margin-top: 0.8em;
-        font-size: 1.6rem;
+        margin-top: 0.5em;
+        font-size: 1.4rem;
         font-weight: 400;
     }
 
 
-
-
-
-
     .buyBtn {
-        position: absolute;
-        z-index: 3;
-        width: 30%;
-        margin-left: 50%;
-        margin-right: 50%;
-        top: 52.4vh;
-        height: auto;
-        background: rgb(161, 19, 0);
+        background: rgb(0, 51, 70);
+        background: radial-gradient(circle, rgb(1, 81, 110) 0%, rgba(0, 61, 94, 0.8799894957983193) 100%);
         border: none;
         border-radius: 0.3rem;
-        font-size: 2rem;
-        padding: 0.15em;
+        font-size: 1.9rem;
         font-weight: 600;
         color: white;
         text-decoration: none;
+        margin-top: .3em;
+        width: 15%;
+        padding: 0.1em;
+        height: auto;
         transition: 200ms;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+    }
+
+    .buyBtn:hover {
+        transform: scale(1.03);
+        transition: 200ms;
+        border-radius: 0.3rem;
+        cursor: pointer;
     }
 
 
-    .btnImgLeft {
-        display: block;
-        position: absolute;
-        z-index: 3;
-        width: 2.2em;
-        left: 24vw;
-        top: 53vh;
-    }
 
-    .btnImgRight {
-        display: block;
-        position: absolute;
-        z-index: 3;
-        width: 2.2em;
-        right: 24vw;
-        top: 53vh;
-    }
+
 
 
 
     .itemsContent {
+        position: relative;
+        background-color: gray;
+        background-size: cover;
+        top: 71vh;
+        height: 7.3%;
+        width: 14.8%;
+        margin: 0.5em;
+        transition: 200ms;
+        border-radius: 8px;
+        z-index: 2;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .4);
+    }
+
+    .itemsContent:hover {
+        cursor: pointer;
+        transition: 150ms;
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .selectedGame {
+        transform: scale(1.06);
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .btnImgLeft {
+        display: none;
+    }
+
+    .btnImgRight {
         display: none;
     }
 
