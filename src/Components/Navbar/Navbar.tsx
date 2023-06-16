@@ -9,7 +9,8 @@ import styles from './Navbar.module.css';
 import logo from '/images/nav/logo.png';
 import cartIcon from '/images/nav/cart.png';
 import profilePic from '/images/nav/profile1.png';
-import jsonData from '../../assets/gamesInfo.json'
+import jsonData from '../../assets/gamesInfo.json';
+import navMobile from '/navIcon.png';
 
 interface Games {
     id: number,
@@ -144,6 +145,10 @@ function Navbar() {
                                 </div>
                             </div>))}
                     </div>
+                </div>
+
+                <div className={styles.navMobileContainer}>
+                    <img src={navMobile} alt="navbar" className={styles.navIcon} />
                 </div>
 
                 {/* Profile info */}
