@@ -420,7 +420,7 @@
         background-color: rgba(20, 20, 20, 0.05);
         justify-content: center;
         align-items: center;
-        border-radius: 15px;
+        border-radius: 10px;
         margin-top: 0.5em;
         margin-bottom: 0.5em;
         height: 90vh;
@@ -429,7 +429,7 @@
     .emptyTitle {
         font-weight: 100;
         color: rgba(0, 0, 0, 0.3);
-        font-size: 8vh;
+        font-size: 3.8vh;
     }
 }
 
@@ -617,6 +617,6 @@
     .emptyTitle {
         font-weight: 100;
         color: rgba(0, 0, 0, 0.3);
-        font-size: 8vh;
+        font-size: 3.5vh;
     }
 }
