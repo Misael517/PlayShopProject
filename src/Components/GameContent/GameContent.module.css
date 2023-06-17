@@ -194,12 +194,15 @@
         justify-content: flex-start;
         flex-direction: column;
         width: 63%;
+        height: auto;
     }
 
     .gamePortrait {
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
+        height: 100%;
     }
+
 
     .gamesInfo {
         display: flex;
