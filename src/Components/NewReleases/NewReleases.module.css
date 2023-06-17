@@ -124,7 +124,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 6em;
+        margin-bottom: 10em;
         align-items: center;
         flex-direction: column;
         padding: 1em;
@@ -133,18 +133,18 @@
     }
 
     .itemslogo {
-        width: 37%;
+        width: max(min(11em), 40%);
     }
 
     .itemDesc {
         text-align: center;
-        font-size: 1.2rem;
+        font-size: max(min(1.1rem), 4.2vw);
         font-weight: 100;
     }
 
     .itemPrice {
-        margin-top: 0.8em;
-        font-size: 1.15rem;
+        margin-top: 0.5em;
+        font-size: max(min(1.02rem), 3.65vw);
         font-weight: 400;
     }
 
@@ -156,11 +156,11 @@
     .buyBtn {
         position: absolute;
         z-index: 3;
-        width: 25%;
         margin-left: 50%;
         margin-right: 50%;
-        top: 61.6vh;
-        height: auto;
+        top: max(min(1rem), 49vh);
+        height: max(3rem, 5vh);
+        width: max(min(4rem), 22vw);
         background: rgb(161, 19, 0);
         border: none;
         border-radius: 0.3rem;
@@ -179,8 +179,8 @@
         position: absolute;
         z-index: 3;
         width: 1.8em;
-        left: 22.5vw;
-        top: 63vh;
+        left: max(min(1rem), 25vw);
+        top: max(min(1rem), 50.5vh);
     }
 
     .btnImgRight {
@@ -188,8 +188,8 @@
         position: absolute;
         z-index: 3;
         width: 1.8em;
-        right: 22.5vw;
-        top: 63vh;
+        right: max(min(1rem), 25vw);
+        top: max(min(1rem), 50.5vh);
     }
 
 
