@@ -18,22 +18,22 @@
     align-items: center;
     flex-direction: column;
     padding: 2em;
-    width: 40%;
+    width: min(100%, 67em);
 }
 
 .itemslogo {
-    width: 27%;
+    width: min(40%, 15.5em);
     margin-bottom: 0.5vh;
 }
 
 .itemDesc {
-    font-size: 2vh;
+    font-size: min(2vw, 1.8em);
     font-weight: 100;
 }
 
 .itemPrice {
     margin-top: 0.5em;
-    font-size: 2vh;
+    font-size: min(1.8vw, 1.6em);
     font-weight: 400;
 }
 
@@ -48,7 +48,7 @@
     color: white;
     text-decoration: none;
     margin-top: .3em;
-    width: 5.5vw;
+    width: min(10vw, 4em);
     height: 5vh;
     transition: 200ms;
 }
@@ -104,7 +104,7 @@
 
 
 /* Phones */
-@media (min-width: 100px) and (max-width: 767px) {
+@media (orientation: portrait) and (min-width: 100px) and (max-width: 767px) {
 
     .itemsDisplay {
         display: flex;
@@ -133,18 +133,18 @@
     }
 
     .itemslogo {
-        width: max(min(11em), 40%);
+        width: max(11em, 40%);
     }
 
     .itemDesc {
         text-align: center;
-        font-size: max(min(1.1rem), 4.2vw);
+        font-size: max(1.1rem, 4.2vw);
         font-weight: 100;
     }
 
     .itemPrice {
         margin-top: 0.5em;
-        font-size: max(min(1.02rem), 3.65vw);
+        font-size: max(1.02rem, 3.65vw);
         font-weight: 400;
     }
 
@@ -158,9 +158,9 @@
         z-index: 3;
         margin-left: 50%;
         margin-right: 50%;
-        top: max(min(1rem), 49vh);
+        top: max(1rem, 49vh);
         height: max(3rem, 5vh);
-        width: max(min(4rem), 22vw);
+        width: max(4rem, 22vw);
         background: rgb(161, 19, 0);
         border: none;
         border-radius: 0.3rem;
@@ -179,8 +179,8 @@
         position: absolute;
         z-index: 3;
         width: 1.8em;
-        left: max(min(1rem), 25vw);
-        top: max(min(1rem), 50.5vh);
+        left: max(1rem, 25vw);
+        top: max(1rem, 50.5vh);
     }
 
     .btnImgRight {
@@ -188,8 +188,8 @@
         position: absolute;
         z-index: 3;
         width: 1.8em;
-        right: max(min(1rem), 25vw);
-        top: max(min(1rem), 50.5vh);
+        right: max(1rem, 25vw);
+        top: max(1rem, 50.5vh);
     }
 
 
@@ -199,6 +199,111 @@
     }
 
 }
+
+
+
+
+
+
+
+/* Phones */
+@media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
+
+    .itemsDisplay {
+        display: flex;
+        z-index: 1;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        height: 80vh;
+        width: 100%;
+        background-size: cover;
+        background-position: 25%;
+        transition: 300ms;
+    }
+
+
+    .itemsFrame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10em;
+        align-items: center;
+        flex-direction: column;
+        padding: 1em;
+        height: 10em;
+        width: 95%;
+    }
+
+    .itemslogo {
+        width: max(11em, 40%);
+    }
+
+    .itemDesc {
+        text-align: center;
+        font-size: max(1.1rem, 4.2vw);
+        font-weight: 100;
+    }
+
+    .itemPrice {
+        margin-top: 0.5em;
+        font-size: max(1.02rem, 3.65vw);
+        font-weight: 400;
+    }
+
+
+
+
+
+
+    .buyBtn {
+        position: absolute;
+        z-index: 3;
+        margin-left: 50%;
+        margin-right: 50%;
+        top: max(1rem, 60vh);
+        height: max(3rem, 5vh);
+        width: max(4rem, 22vw);
+        background: rgb(161, 19, 0);
+        border: none;
+        border-radius: 0.3rem;
+        font-size: 1.63rem;
+        padding: 0.30em;
+        font-weight: 600;
+        color: white;
+        text-decoration: none;
+        transition: 200ms;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+    }
+
+
+    .btnImgLeft {
+        display: block;
+        position: absolute;
+        z-index: 3;
+        width: 1.8em;
+        left: max(1rem, 25vw);
+        top: max(1rem, 62vh);
+    }
+
+    .btnImgRight {
+        display: block;
+        position: absolute;
+        z-index: 3;
+        width: 1.8em;
+        right: max(1rem, 25vw);
+        top: max(1rem, 62vh);
+    }
+
+
+
+    .itemsContent {
+        display: none;
+    }
+
+}
+
+
 
 
 
@@ -230,18 +335,18 @@
     }
 
     .itemslogo {
-        width: 30%;
+        width: max(11em, 27%);
         margin-bottom: 0.5em;
     }
 
     .itemDesc {
-        font-size: 1.49rem;
+        font-size: max(1.35rem, 2.8vw);
         font-weight: 100;
     }
 
     .itemPrice {
         margin-top: 0.5em;
-        font-size: 1.4rem;
+        font-size: max(1.2rem, 2.3vw);
         font-weight: 400;
     }
 
@@ -251,14 +356,14 @@
         background: radial-gradient(circle, rgb(1, 81, 110) 0%, rgba(0, 61, 94, 0.8799894957983193) 100%);
         border: none;
         border-radius: 0.3rem;
-        font-size: 1.9rem;
+        font-size: 2rem;
         font-weight: 600;
         color: white;
         text-decoration: none;
-        margin-top: .3em;
-        width: 15%;
+        margin-top: .5em;
+        height: max(1rem, 8vh);
+        width: max(4rem, 13vw);
         padding: 0.1em;
-        height: auto;
         transition: 200ms;
     }
 
@@ -280,8 +385,8 @@
         background-color: gray;
         background-size: cover;
         top: 71vh;
-        height: 7.3%;
-        width: 14.8%;
+        height: max(3.7rem, 6vh);
+        width: max(1rem, 14.8%);
         margin: 0.5em;
         transition: 200ms;
         border-radius: 8px;

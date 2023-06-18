@@ -5,7 +5,7 @@ const Navbar = lazy(() => import('../Components/Navbar/Navbar'))
 const NewReleases = lazy(() => import('../Components/NewReleases/NewReleases'))
 const MostPopular = lazy(() => import('../Components/GamesDisplay/MostPopular'))
 const OnSale = lazy(() => import('../Components/GamesDisplay/OnSale'))
-const CoomingSoon = lazy(() => import('../Components/GamesDisplay/CoomingSoon'))
+const CoomingSoon = lazy(() => import('../Components/GamesDisplay/ComingSoon'))
 const BestOfTheYear = lazy(() => import('../Components/BestOfTheYear/BestOfTheYear'))
 const Footer = lazy(() => import('../Components/Footer/Footer'))
 

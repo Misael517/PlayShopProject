@@ -8,7 +8,7 @@ import jsonData from '../../assets/gamesInfo.json';
 const gamesCooming = jsonData.slice(24, 36)
 
 
-function CoomingSoon() {
+function ComingSoon() {
     const scrollContainerRef = useRef<HTMLDivElement | null>(null);
     const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ function CoomingSoon() {
     return (
         <div className={styles.carousel}>
             <div className={styles.alingTitle}>
-                <h2 className={styles.sectionName}>Cooming </h2>
+                <h2 className={styles.sectionName}>Coming </h2>
 
                 <div className={styles.btnContainer}>
                     <div className={styles.sectionBtn} onClick={handleClickLeft}>
@@ -70,7 +70,7 @@ function CoomingSoon() {
     )
 }
 
-const CoomingSoonMemo = memo(CoomingSoon)
+const ComingSoonMemo = memo(ComingSoon)
 
-export default CoomingSoonMemo
+export default ComingSoonMemo
 
