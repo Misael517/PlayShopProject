@@ -215,10 +215,10 @@
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        height: 80vh;
+        height: 85vh;
         width: 100%;
         background-size: cover;
-        background-position: 25%;
+        background-position: 1%;
         transition: 300ms;
     }
 
@@ -231,23 +231,24 @@
         align-items: center;
         flex-direction: column;
         padding: 1em;
-        height: 10em;
+        height: auto;
         width: 95%;
+        margin-top: 11vh;
     }
 
     .itemslogo {
-        width: max(11em, 40%);
+        width: max(1em, 20%);
     }
 
     .itemDesc {
         text-align: center;
-        font-size: max(1.1rem, 4.2vw);
+        font-size: max(1rem, 2vw);
         font-weight: 100;
     }
 
     .itemPrice {
         margin-top: 0.5em;
-        font-size: max(1.02rem, 3.65vw);
+        font-size: max(1rem, 2vw);
         font-weight: 400;
     }
 
@@ -261,7 +262,7 @@
         z-index: 3;
         margin-left: 50%;
         margin-right: 50%;
-        top: max(1rem, 60vh);
+        top: max(1rem, 55vh);
         height: max(3rem, 5vh);
         width: max(4rem, 22vw);
         background: rgb(161, 19, 0);
@@ -283,7 +284,7 @@
         z-index: 3;
         width: 1.8em;
         left: max(1rem, 25vw);
-        top: max(1rem, 62vh);
+        top: max(1rem, 58vh);
     }
 
     .btnImgRight {
@@ -292,7 +293,7 @@
         z-index: 3;
         width: 1.8em;
         right: max(1rem, 25vw);
-        top: max(1rem, 62vh);
+        top: max(1rem, 58vh);
     }
 
 
