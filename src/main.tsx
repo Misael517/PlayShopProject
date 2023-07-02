@@ -7,7 +7,7 @@ import ReactDOM from 'react-dom/client'
 import Home from './Pages/Home.tsx';
 import Discover from './Pages/Discover/Discover.tsx'
 import Cart from './Pages/Cart/Cart.tsx';
-import Auth from './Pages/SingIn/SingIn.tsx';
+import Auth from './Pages/SignIn/SingIn.tsx';
 import './index.css'
 
 const queryClient = new QueryClient({
@@ -73,7 +73,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="/" element={<Home />}></Route>
             <Route path="/Discover" element={<Discover />} />
             <Route path="/Cart" element={<Cart />} />
-            <Route path="/SingIn" element={<Auth />} />
+            <Route path="/SignIn" element={<Auth />} />
             <Route path="/Gta5" element={<Gta5 />} />
             <Route path="EldenRing" element={<EldenRing />} />
             <Route path="Stray" element={<Stray />} />

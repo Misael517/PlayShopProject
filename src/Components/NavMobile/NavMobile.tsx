@@ -7,7 +7,7 @@ import { auth } from '../../config/firebase';
 import SearchBar from "../SearchBar/SearchBar";
 import logo from '/images/nav/logo.png';
 import cartIcon from '/images/nav/cart.png';
-import profilePic from '/images/nav/profile1.png';
+import profilePic from '/images/nav/Profile.jpg';
 import navMobile from '/navIcon.png';
 import signOutIcon from '/images/nav/signout.png'
 import styles from './NavMobile.module.css'

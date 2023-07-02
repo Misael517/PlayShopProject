@@ -42,16 +42,11 @@ function BestOfTheYear() {
 
     return (
         <div>
+            <h2 className={styles.sectionName}>Best of the year</h2>
 
-            <div className={styles.alingTitle}>
-                <h2 className={styles.sectionName}>Best of the year</h2>
-            </div>
-
-            <div className={styles.itemsGrid}>
+            <div className={styles.itemsContainer}>
                 {gamesContent.map((game) => (
-                    <div className={styles.itemsContent} key={game.id} style={{ backgroundImage: `url(${game.icon})` }} onClick={() => navigate(`${game.link}`)}>
-
-                    </div>
+                    <img src={game.icon} className={styles.itemIcon} key={game.id} alt='Game image' onClick={() => navigate(`${game.link}`)}></img>
                 ))}
             </div>
         </div>

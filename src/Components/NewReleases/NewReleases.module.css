@@ -1,63 +1,83 @@
 .itemsDisplay {
     display: flex;
-    position: absolute;
-    z-index: 1;
     justify-content: center;
-    flex-direction: column;
-    height: 80vh;
+    align-items: center;
     width: 100%;
+    background-position: center;
     background-size: cover;
-    transition: 300ms;
+    transition: 200ms;
+    height: 42vw;
+    position: relative;
 }
+
+.itemsDisplay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #000 6.25%, rgba(0, 0, 0, 0.98) 22.40%, rgba(0, 0, 0, 0.90) 35.42%, rgba(0, 0, 0, 0.73) 47.40%, rgba(0, 0, 0, 0.48) 59.90%, rgba(0, 0, 0, 0.00) 83.33%);
+}
+
+
 
 
 .itemsFrame {
     display: flex;
-    justify-content: center;
-    margin-bottom: 11vh;
-    align-items: center;
     flex-direction: column;
-    padding: 2em;
-    width: min(100%, 67em);
+    justify-content: center;
+    align-items: center;
+    gap: calc(0.85vw + .1em);
+    z-index: 2;
+    position: absolute;
+    margin-right: 48%;
+    margin-bottom: 2%;
 }
 
 .itemslogo {
-    width: min(40%, 15.5em);
-    margin-bottom: 0.5vh;
+    width: 61%;
 }
 
 .itemDesc {
-    font-size: min(2vw, 1.8em);
+    display: flex;
+    width: 50%;
+    max-width: 37.8125rem;
+    flex-direction: column;
+    color: #FFF;
+    text-align: center;
+    font-size: calc(1.39vw + .25rem);
     font-weight: 100;
+    line-height: calc(2vw + .15rem);
+    letter-spacing: 0.0125vw;
 }
 
-.itemPrice {
-    margin-top: 0.5em;
-    font-size: min(1.8vw, 1.6em);
-    font-weight: 400;
-}
+
 
 
 .buyBtn {
-    background: rgb(0, 51, 70);
-    background: radial-gradient(circle, rgb(1, 81, 110) 0%, rgba(0, 61, 94, 0.8799894957983193) 100%);
-    border: none;
-    border-radius: 0.3rem;
-    font-size: 3vh;
+    display: flex;
+    padding: 0.315em 1em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.25em;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: #0084D1;
+    color: #FFF;
+    text-align: center;
+    font-size: calc(1vw + 0.45rem);
     font-weight: 600;
-    color: white;
     text-decoration: none;
-    margin-top: .3em;
-    width: min(10vw, 4em);
-    height: 5vh;
+    text-transform: uppercase;
     transition: 200ms;
 }
 
 .buyBtn:hover {
     transform: scale(1.03);
     transition: 200ms;
-    border-radius: 0.3rem;
+    border-radius: 0.3em;
     cursor: pointer;
+    background: #005c91;
 }
 
 
@@ -65,31 +85,40 @@
 
 
 
+.thumbContainer {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 91%;
+    gap: 0.6%;
+}
 
-.itemsContent {
-    position: relative;
-    background-color: gray;
+.itemsThumbnail {
+    width: 12.5%;
     background-size: cover;
-    top: 72vh;
-    height: 13.5vh;
-    width: 13%;
-    margin: 0.5em;
-    transition: 200ms;
-    border-radius: 10px;
+    transition: 170ms;
     z-index: 2;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .4);
+    border-radius: 0.45vw;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.32);
 }
 
-.itemsContent:hover {
+.itemsThumbnail:hover {
     cursor: pointer;
-    transition: 150ms;
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+    transition: 170ms;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
 }
 
 .selectedGame {
-    transform: scale(1.06);
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+    transition: 170ms;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
 }
+
+
+
+
 
 .btnImgLeft {
     display: none;

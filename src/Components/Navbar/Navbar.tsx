@@ -9,14 +9,15 @@ import styles from './Navbar.module.css';
 import SearchBar from "../SearchBar/SearchBar";
 import logo from '/images/nav/logo.png';
 import cartIcon from '/images/nav/cart.png';
-import profilePic from '/images/nav/profile1.png';
+import profilePic from '/images/nav/Profile.jpg';
 import NavMobile from "../NavMobile/NavMobile";
 
 
 function Navbar() {
     useSelector((state: RootState) => state.cart)
-    const [showSingOut, setShowSingOut] = useState<string>('');
-    const [userStatus, setUserStatus] = useState('sing in');
+    const [showSignOut, setShowSignOut] = useState<string>('');
+    const [showSignIn, setShowSignIn] = useState('');
+    const [userSettings, setUserSettings] = useState('');
     const sessionRef = useRef<HTMLDivElement>(null);
     const navigate = useNavigate();
 
@@ -24,7 +25,7 @@ function Navbar() {
     // Close the sign out button when you click outside
     const handleClickOutside = (event: MouseEvent) => {
         if (sessionRef.current && !sessionRef.current.contains(event.target as Node)) {
-            setShowSingOut('none');
+            setShowSignOut('none');
         }
     };
 
@@ -39,10 +40,17 @@ function Navbar() {
 
     // Check if the userDemo name is stored in local storage
     useEffect(() => {
-        const storedName = localStorage.getItem('userDemoName');
-        if (storedName) {
-            setUserStatus(storedName);
+        const currentUser = localStorage.getItem('profileSettings');
+        const storedSession = localStorage.getItem('signIn');
+
+        if (currentUser) {
+            setUserSettings(currentUser);
         }
+
+        if (storedSession) {
+            setShowSignIn(storedSession);
+        }
+
     }, []);
 
 
@@ -50,12 +58,14 @@ function Navbar() {
     const handleSignOut = async () => {
         try {
             await auth.signOut();
-            localStorage.setItem('userDemoName', 'Sing in');
+            localStorage.setItem('profileSettings', 'none');
+            localStorage.setItem('signIn', 'flex');
             window.location.reload();
         } catch (error) {
             console.log(error);
         }
     };
+
 
     // Get the items from the array in the local storage
     const test = localStorage.getItem('cartAmount')
@@ -72,11 +82,11 @@ function Navbar() {
             {/* Nav bar */}
             < nav className={styles.navbar}>
 
-                {/* Header logo desktop*/}
-                <div className={styles.navContainer}>
+                <div className={styles.navFrame}>
                     <img src={logo} className={styles.logo} onClick={() => navigate("/")} alt="PlayShop Logo" />
 
-                    <ul>
+                    {/* Header logo desktop*/}
+                    <ul className={styles.linksContainer}>
                         <li>
                             <Link to={`/`}>Home</Link>
                         </li>
@@ -90,19 +100,21 @@ function Navbar() {
                 <SearchBar />
 
                 {/* Profile info desktop*/}
-                <div className={styles.profileFrame} >
-                    <img src={profilePic} className={styles.profilePic} alt="Profile Picture" />
-
-                    <div className={styles.sessionFrame}>
-                        <p className={styles.profileName} onClick={() => auth.currentUser ? setShowSingOut('flex') : navigate('/SingIn')}>{userStatus}</p>
-                        <div className={styles.singOutContainer} style={{ display: showSingOut }}>
-                            <p className={styles.singOutBtn} onClick={() => handleSignOut()}>sing out</p>
-                        </div>
+                <div className={styles.userFrame} >
+                    <div className={styles.cartContainer}>
+                        <p style={{ fontSize: 'calc(0.5vw + .2rem)' }}>{currentAmount}</p>
+                        <img src={cartIcon} className={styles.cart} onClick={() => navigate('/Cart')} alt="Cart Icon" />
                     </div>
 
-                    <div className={styles.cartContainer}>
-                        <p style={{ fontSize: '1vh' }}>{currentAmount}</p>
-                        <img src={cartIcon} className={styles.cart} onClick={() => navigate('/Cart')} alt="Cart Icon" />
+                    <div className={styles.sessionFrame}>
+                        <a className={styles.profileName} style={{ display: showSignIn }} onClick={() => navigate('/SignIn')}>Sign In</a>
+                        <div className={styles.profilePic} style={{ display: userSettings, backgroundImage: `url(${profilePic})` }} onClick={() => auth.currentUser ? setShowSignOut('flex') : ''}>
+                        </div>
+
+
+                        <div className={styles.signOutContainer} style={{ display: showSignOut }}>
+                            <p className={styles.signOutBtn} onClick={() => handleSignOut()}>sign out</p>
+                        </div>
                     </div>
                 </div>
             </nav >

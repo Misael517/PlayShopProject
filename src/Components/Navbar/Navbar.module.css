@@ -1,20 +1,35 @@
 .navbar {
     display: flex;
+    width: 100%;
+    padding-top: calc(0.4vw + 0.3em);
+    padding-bottom: calc(0.4vw + 0.3em);
+    padding-left: calc(0.4vw + 1em);
+    padding-right: calc(0.4vw + 1em);
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: min(6.4vh, 4em);
+    background: #050505;
 }
 
-.navContainer {
+
+.navFrame {
     display: flex;
+    justify-content: center;
     align-items: center;
+    gap: 1em;
+}
+
+
+.linksContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
 }
 
 .navbar ul li {
     display: inline-block;
-    margin-left: 0.7em;
-    font-size: max(0.73vw, 1rem);
+    color: #FFF;
+    font-size: calc(0.62vw + .25rem);
     font-weight: 100;
 }
 
@@ -23,14 +38,14 @@
 }
 
 .navbar ul li a:hover {
-    color: rgb(0, 128, 197);
-    border-bottom: 0.1rem solid rgb(0, 128, 197);
+    color: #0084D1;
+    border-bottom: 0.1em solid #0084D1;
     cursor: pointer;
 }
 
+
 .logo {
-    width: max(2.8vw, 4em);
-    margin-left: 0.6em;
+    width: calc(2.25vw + .6rem);
 }
 
 .logo:hover {
@@ -43,13 +58,10 @@
 
 
 
-.profileFrame {
+.userFrame {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: fit-content;
-    height: 4.8vh;
-    padding-right: 0.8em;
+    gap: 1em;
 }
 
 .cartContainer {
@@ -59,7 +71,7 @@
 }
 
 .cart {
-    width: max(1.1vw, 1.6em);
+    width: 1.18vw;
 }
 
 .cart:hover {
@@ -70,13 +82,18 @@
 
 
 .profilePic {
-    width: max(1.1vw, 1.6em);
-    margin-right: 0.8em;
-    border-radius: 1rem;
+    display: none;
+    background-size: cover;
+    background-position: center;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 2.5em;
+    cursor: pointer;
 }
 
 .profileName {
-    font-size: max(0.65vw, 0.95rem);
+    color: #FFF;
+    font-size: calc(0.62vw + .25rem);
     font-weight: 100;
 }
 
@@ -85,6 +102,7 @@
 }
 
 .profileName:hover {
+    color: #0084D1;
     cursor: pointer;
 }
 
@@ -98,29 +116,30 @@
     align-items: center;
     flex-direction: column;
     z-index: 2;
-    margin-right: 0.8em;
 }
 
-.singOutContainer {
+.signOutContainer {
     display: none;
     justify-content: center;
     align-items: center;
-    background-color: rgb(0, 0, 0, 0.95);
+    background: #050505;
     position: absolute;
     z-index: 3;
-    top: 4.75vh;
+    top: 5vh;
     height: 4vh;
     width: 4.1vw;
 }
 
-.singOutBtn {
-    font-size: max(0.65vw, 0.95rem);
+.signOutBtn {
+    font-size: calc(0.62vw + .25rem);
     font-weight: 100;
 }
 
-.singOutBtn:hover {
+.signOutBtn:hover {
     cursor: pointer;
 }
+
+
 
 
 

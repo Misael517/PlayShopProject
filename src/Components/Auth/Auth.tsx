@@ -20,7 +20,8 @@ function Auth() {
     const handleSingIn = async (email: string, password: string) => {
         try {
             await signInWithEmailAndPassword(auth, email, password)
-            localStorage.setItem('userDemoName', 'UserDemo')
+            localStorage.setItem('profileSettings', 'flex')
+            localStorage.setItem('signIn', 'none')
             navigate('/')
         } catch (error) {
             console.log(error)

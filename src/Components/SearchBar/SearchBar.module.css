@@ -18,11 +18,10 @@
     border: none;
     color: white;
     font-weight: 400;
-    padding: 1vh;
+    padding: 1rem;
     font-size: max(1.2vh, 0.9em);
     border-radius: 20px;
     outline: none;
-    border: none;
     background-color: rgba(56, 56, 56, 0.6);
     box-shadow: none;
 }

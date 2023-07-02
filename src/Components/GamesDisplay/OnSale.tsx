@@ -43,10 +43,8 @@ function OnSale() {
 
 
     return (
-        <div className={styles.carousel}>
-
-
-            <div className={styles.alingTitle}>
+        <>
+            <div className={styles.itemsHeader}>
                 <h2 className={styles.sectionName}>On Sale</h2>
 
                 <div className={styles.btnContainer}>
@@ -59,22 +57,25 @@ function OnSale() {
                 </div>
             </div>
 
-            <div ref={scrollContainerRef} className={styles.itemsContainer}>
+
+            <div ref={scrollContainerRef} className={styles.itemsCarousel}>
                 {gamesOnSale.map((gamesSale) => (
-                    <div className={styles.itemsContent} style={{ backgroundImage: `url(${gamesSale.icon})` }} key={gamesSale.id} onClick={() => navigate(`${gamesSale.link}`)}>
+                    <div className={styles.itemsContent} key={gamesSale.id} onClick={() => navigate(`${gamesSale.link}`)}>
+                        <img src={gamesSale.icon} className={styles.itemIcon} alt='Game Icon'></img>
+
                         <div className={styles.gamesInfo}>
-                            <h3>{gamesSale.name}</h3>
+                            <h3 className={styles.gameName}>{gamesSale.name}</h3>
                             <div className={styles.gamesPrice}>
-                                <p><span className={gamesSale.isOnSale ? styles.discountColor : ''}>{gamesSale.isOnSale ? `-${gamesSale.discount}%` : ''}</span></p>
-                                <p><span className={gamesSale.isOnSale ? styles.strikeThrough : ''}>{gamesSale.isOnSale ? `${gamesSale.price}%` : ''}</span></p>
-                                <p>{gamesSale.isOnSale ? `$${gamesSale.actualPrice}` : `$${gamesSale.price}`}</p>
+                                <p className={styles.discountColor} style={{ display: gamesSale.isOnSale ? 'inline-block' : 'none' }}>{gamesSale.isOnSale ? `-${gamesSale.discount}%` : ''}</p>
+                                <p className={styles.strikeThrough} style={{ display: gamesSale.isOnSale ? 'inline-block' : 'none' }}>{gamesSale.isOnSale ? `${gamesSale.price}%` : ''}</p>
+                                <p style={{ textAlign: 'center' }}>{gamesSale.isOnSale ? `$${gamesSale.actualPrice}` : (gamesSale.coomingSoon ? '...' : `$${gamesSale.price}`)}</p>
                             </div>
                         </div>
 
                     </div >))
                 }
             </div>
-        </div>
+        </>
     )
 }
 
