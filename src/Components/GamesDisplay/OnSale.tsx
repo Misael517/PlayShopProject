@@ -71,9 +71,7 @@ function OnSale() {
                                 <p style={{ textAlign: 'center' }}>{gamesSale.isOnSale ? `$${gamesSale.actualPrice}` : (gamesSale.coomingSoon ? '...' : `$${gamesSale.price}`)}</p>
                             </div>
                         </div>
-
-                    </div >))
-                }
+                    </div >))}
             </div>
         </>
     )

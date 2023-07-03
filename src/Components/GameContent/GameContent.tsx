@@ -63,27 +63,32 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
                 {/* This show things like the price and the add to cart button */}
                 <div className={styles.buyingSection}>
                     <img src={img7} className={styles.gamePortrait} alt='Game Portrait' />
-                    <div className={styles.gamesInfo}>
 
+                    <div className={styles.gamesInfo}>
                         <h3>Starting at:</h3>
                         <div className={styles.gamesPrice}>
-                            <p><span className={currentGame.isOnSale ? styles.discountColor : ''}>{currentGame.isOnSale ? `-${currentGame.discount}%` : ''}</span></p>
-                            <p><span className={currentGame.isOnSale ? styles.strikeThrough : ''}>{currentGame.isOnSale ? `${currentGame.price}%` : ''}</span></p>
-                            <p style={{ textAlign: 'center' }}>{currentGame.isOnSale ? `$${currentGame.actualPrice}` : (currentGame.coomingSoon ? '...' : `$${currentGame.price}`)}</p>
+                            <div className={styles.gamesPrice}>
+                                <p className={styles.discountColor} style={{ display: currentGame.isOnSale ? 'inline-block' : 'none' }}>{currentGame.isOnSale ? `-${currentGame.discount}%` : ''}</p>
+                                <p className={styles.strikeThrough} style={{ display: currentGame.isOnSale ? 'inline-block' : 'none' }}>{currentGame.isOnSale ? `${currentGame.price}%` : ''}</p>
+                                <p style={{ textAlign: 'center' }}>{currentGame.isOnSale ? `$${currentGame.actualPrice}` : (currentGame.coomingSoon ? '...' : `$${currentGame.price}`)}</p>
+                            </div>
                         </div>
                     </div>
                     <button className={styles.addBtn} onClick={() => currentGame.coomingSoon ? '' : dispatch(addItem(currentGame))}>{currentGame.coomingSoon ? 'No Available' : 'Add to cart'}</button>
                 </div>
-            </div>
 
-            <div className={styles.imgContainer}>
-                {imgArr.map((img) => {
-                    return (
-                        <div key={img.id} className={styles.imgHolder}>
-                            <img src={img.thumbnail} className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`} key={img.id} onClick={() => setCurrentImg(img.id)} alt='Game image' />
-                        </div>
-                    )
-                })}
+                <div className={styles.imgContainer}>
+                    {imgArr.map((img) => {
+                        return (
+                            <img
+                                src={img.thumbnail}
+                                className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`}
+                                key={img.id} onClick={() => setCurrentImg(img.id)}
+                                alt='Game thumbnail'
+                            />
+                        )
+                    })}
+                </div>
             </div>
 
 

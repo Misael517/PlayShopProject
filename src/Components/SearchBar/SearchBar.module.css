@@ -1,9 +1,10 @@
 .searchContainer {
     display: flex;
     flex-direction: column;
-    width: max(22%, 30em);
+    width: 22%;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .inputContainer {
@@ -14,13 +15,13 @@
 
 .searchInput {
     width: 100%;
-    height: max(1.4vw, 2.3em);
+    height: 1.5vw;
     border: none;
     color: white;
     font-weight: 400;
-    padding: 1rem;
-    font-size: max(1.2vh, 0.9em);
-    border-radius: 20px;
+    padding: 1em;
+    font-size: calc(.35vw + .5rem);
+    border-radius: 10em;
     outline: none;
     background-color: rgba(56, 56, 56, 0.6);
     box-shadow: none;
@@ -36,57 +37,50 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    top: min(2.9em, 5%);
-    width: max(22vw, 30em);
-    height: fit-content;
-    background-color: rgba(0, 0, 0, 0.90);
-    border-radius: 10px;
-    position: absolute;
-    z-index: 2;
+    top: 100%;
+    width: 22vw;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 0.6vw;
+    overflow: hidden;
+    z-index: 3;
 }
 
 .itemFrame {
     display: flex;
     justify-content: flex-start;
-    background-position: center;
-    margin: 0.13em;
-    height: max(5.5em, 8vh);
+    margin: 0.27%;
+    height: 4.1vw;
     width: 100%;
     transition: 200ms;
     background-color: rgb(168, 1, 1);
-    border-radius: 10px;
 }
 
 .itemFrame:hover {
     cursor: pointer;
-    transform: scale(1.015);
     transition: 200ms;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.7);
+    opacity: 85%;
 }
 
 
 .itemsContent {
     display: flex;
     justify-content: center;
-    background-position: center;
+    background-position: top;
     background-size: cover;
     width: 40%;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
     transition: 200ms;
 }
 
 
-.gamesInfo {
+.gamesInfo h3 {
     display: flex;
     height: 100%;
-    width: 39%;
     margin-left: 1vw;
     justify-content: flex-start;
     align-items: center;
-    font-weight: 100;
-    font-size: max(0.8vh, 0.75em);
+    font-size: calc(0.5vw + .25rem);
+    font-weight: 400;
 }
 
 

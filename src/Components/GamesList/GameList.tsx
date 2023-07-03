@@ -26,12 +26,14 @@ function GameList() {
         <>
             <div className={styles.gamesContainer}>
                 {jsonData.map((games: Games) => (
-                    <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.icon})` }} key={games.id} onClick={() => navigate(`${games.link}`)}>
+                    <div className={styles.itemsContent} key={games.id} onClick={() => navigate(`${games.link}`)}>
+                        <img src={games.icon} className={styles.itemIcon} alt='Game Icon'></img>
+
                         <div className={styles.gamesInfo}>
-                            <h3>{games.name}</h3>
+                            <h3 className={styles.gameName}>{games.name}</h3>
                             <div className={styles.gamesPrice}>
-                                <p><span className={games.isOnSale ? styles.discountColor : ''}>{games.isOnSale ? `-${games.discount}%` : ''}</span></p>
-                                <p><span className={games.isOnSale ? styles.strikeThrough : ''}>{games.isOnSale ? `${games.price}%` : ''}</span></p>
+                                <p className={styles.discountColor} style={{ display: games.isOnSale ? 'inline-block' : 'none' }}>{games.isOnSale ? `-${games.discount}%` : ''}</p>
+                                <p className={styles.strikeThrough} style={{ display: games.isOnSale ? 'inline-block' : 'none' }}>{games.isOnSale ? `${games.price}%` : ''}</p>
                                 <p style={{ textAlign: 'center' }}>{games.isOnSale ? `$${games.actualPrice}` : (games.coomingSoon ? '...' : `$${games.price}`)}</p>
                             </div>
                         </div>

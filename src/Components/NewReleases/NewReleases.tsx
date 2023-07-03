@@ -43,7 +43,7 @@ function NewReleases() {
     const gamesContent: GameContent[] = [
         {
             id: 0, logo: logo[0],
-            description: 'Embark on an epic and heartfelt journey as Kratos and Atreus.',
+            description: 'Embark on an epic and heartfelt journey as Kratos and Atreus',
             link: jsonData[13].link,
             image: images[0], icon: icon[0],
             price: jsonData[13].actualPrice
@@ -51,21 +51,21 @@ function NewReleases() {
         {
             id: 1,
             logo: logo[1],
-            description: 'One of the most acclaimed RPGs of all time Now ready for a new generation.',
+            description: 'One of the best RPGs of all time Now ready for a new generation',
             link: jsonData[12].link, image: images[1], icon: icon[1],
             price: jsonData[12].actualPrice
         },
         {
             id: 2,
             logo: logo[2],
-            description: 'Explore the vast land and skies of Hyrule.',
+            description: 'Explore the vast land and skies of Hyrule playing as Link',
             link: jsonData[42].link, image: images[2], icon: icon[2],
             price: jsonData[42].price
         },
         {
             id: 3,
             logo: logo[3],
-            description: 'Untangle the past as Kena, in search of the sacred Mountain Shrine.',
+            description: 'Untangle the past as Kena, in search of the Mountain Shrine',
             link: jsonData[15].link, image:
                 images[3], icon: icon[3],
             price: jsonData[15].actualPrice
@@ -73,7 +73,7 @@ function NewReleases() {
         {
             id: 4,
             logo: logo[4],
-            description: 'Ally with survivors against the creatures threatening to bleed the town dry.',
+            description: 'Defeat with survivors the creatures threatening to bleed the town dry',
             link: jsonData[43].link,
             image: images[4],
             icon: icon[4],
@@ -82,7 +82,7 @@ function NewReleases() {
         {
             id: 5,
             logo: logo[5],
-            description: 'Become a Jedi and Stand Against the Darkness.',
+            description: 'Get ready to become a Jedi and Stand Against the Darkness',
             link: jsonData[40].link,
             image: images[5],
             icon: icon[5],

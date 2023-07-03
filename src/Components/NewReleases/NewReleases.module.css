@@ -7,20 +7,7 @@
     background-size: cover;
     transition: 200ms;
     height: 42vw;
-    position: relative;
 }
-
-.itemsDisplay::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, #000 6.25%, rgba(0, 0, 0, 0.98) 22.40%, rgba(0, 0, 0, 0.90) 35.42%, rgba(0, 0, 0, 0.73) 47.40%, rgba(0, 0, 0, 0.48) 59.90%, rgba(0, 0, 0, 0.00) 83.33%);
-}
-
-
 
 
 .itemsFrame {
@@ -29,7 +16,6 @@
     justify-content: center;
     align-items: center;
     gap: calc(0.85vw + .1em);
-    z-index: 2;
     position: absolute;
     margin-right: 48%;
     margin-bottom: 2%;
@@ -41,8 +27,7 @@
 
 .itemDesc {
     display: flex;
-    width: 50%;
-    max-width: 37.8125rem;
+    max-width: 50%;
     flex-direction: column;
     color: #FFF;
     text-align: center;
@@ -73,7 +58,6 @@
 }
 
 .buyBtn:hover {
-    transform: scale(1.03);
     transition: 200ms;
     border-radius: 0.3em;
     cursor: pointer;

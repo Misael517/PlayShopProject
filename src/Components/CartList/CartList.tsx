@@ -57,56 +57,60 @@ function CartList() {
     return (
         <>
             {/* Item container with descriptions */}
-            <div className={styles.itemsSection}>
-                {cartItems.length > 0 ? cartItems.map((item) => {
-                    return (
-                        <div className={styles.itemsContainer} key={item.id}>
-                            <div className={styles.itemIcon} style={{ backgroundImage: `url(${item.icon})` }} onClick={() => navigate(`${item.link}`)}>
-                            </div>
-
-                            <div className={styles.itemInfo}>
-                                <div>
-                                    <h2>{item.name}</h2>
-                                    <div className={styles.dataContainer} >
-                                        <p className={styles.itemData}>{item.Publisher}</p>
-                                        <p className={styles.itemData}>{item.Platforms}</p>
-                                        <p className={styles.itemData}>{item.Genre}</p>
-                                    </div>
-                                </div>
-
-                                <div className={styles.priceAmount}>
-                                    <div className={styles.amountContainer}>
-                                        <button className={styles.decreaseBtn} onClick={() => dispatch(decreaseAmount(item))}>-</button>
-                                        <p>{item.itemAmount}</p>
-                                        <button className={styles.increaseBtn} onClick={() => dispatch(increaseAmount(item))}>+</button>
-                                    </div>
-
-                                    <div className={styles.itemPrice}>
-                                        <p>{item.isOnSale ? `$${item.cartPrice.toFixed(2)}` : (item.coomingSoon ? '...' : `$${item.cartPrice.toFixed(2)}`)}</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <button className={styles.removeBtn} onClick={() => dispatch(removeItem(item))}>remove</button>
-                        </div>)
-                }) : (
-                    <div className={styles.emptyContainer}>
-
-                        <h1 className={styles.emptyTitle}>Your PlayShop Cart is empty</h1>
-                    </div>
-                )}
+            <div className={styles.titleFrame}>
+                <h1>Shopping Cart</h1>
             </div>
 
+            <div className={styles.cartContainer}>
+                <div className={styles.itemsSection}>
+                    {cartItems.length > 0 ? cartItems.map((item) => {
+                        return (
+                            <div className={styles.itemsContainer} key={item.id}>
+                                <img className={styles.itemIcon} src={item.icon} onClick={() => navigate(`${item.link}`)} alt='Game icoin' />
+                                <div className={styles.itemInfo}>
+                                    <div>
+                                        <h2>{item.name}</h2>
+                                        <div className={styles.dataContainer} >
+                                            <p className={styles.itemData}>{item.Publisher}</p>
+                                            <p className={styles.itemData}>{item.Platforms}</p>
+                                            <p className={styles.itemData}>{item.Genre}</p>
+                                        </div>
+                                    </div>
 
-            <div className={styles.checkOutSection}>
-                <img src={img7} className={styles.gamePortrait} alt='Shopping Image' />
-                <div className={styles.checkOutInfo}>
+                                    <div className={styles.priceAmount}>
+                                        <div className={styles.amountContainer}>
+                                            <button className={styles.decreaseBtn} onClick={() => dispatch(decreaseAmount(item))}>-</button>
+                                            <p>{item.itemAmount}</p>
+                                            <button className={styles.increaseBtn} onClick={() => dispatch(increaseAmount(item))}>+</button>
+                                        </div>
 
-                    <h3>Total:</h3>
-                    <p className={styles.subTotal}>${total.toFixed(2)}</p>
+                                        <div className={styles.itemPrice}>
+                                            <p>{item.isOnSale ? `$${item.cartPrice.toFixed(2)}` : (item.coomingSoon ? '...' : `$${item.cartPrice.toFixed(2)}`)}</p>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <button className={styles.removeBtn} onClick={() => dispatch(removeItem(item))}>remove</button>
+                            </div>)
+                    }) : (
+                        <div className={styles.emptyContainer}>
+
+                            <h1 className={styles.emptyTitle}>Your PlayShop Cart is empty</h1>
+                        </div>
+                    )}
                 </div>
-                <button className={styles.checkOutBtn}>Start check out</button>
+
+
+                <div className={styles.checkOutSection}>
+                    <img src={img7} className={styles.gamePortrait} alt='Shopping Image' />
+                    <div className={styles.checkOutInfo}>
+
+                        <h3>Total:</h3>
+                        <p className={styles.subTotal}>${total.toFixed(2)}</p>
+
+                    </div>
+                    <button className={styles.checkOutBtn}>Start check out</button>
+                </div>
             </div>
 
         </>

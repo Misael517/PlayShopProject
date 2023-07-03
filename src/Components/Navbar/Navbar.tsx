@@ -38,7 +38,7 @@ function Navbar() {
     }, []);
 
 
-    // Check if the userDemo name is stored in local storage
+    // Check if the 'profileSettings' is stored in local storage
     useEffect(() => {
         const currentUser = localStorage.getItem('profileSettings');
         const storedSession = localStorage.getItem('signIn');
@@ -106,7 +106,7 @@ function Navbar() {
                         <img src={cartIcon} className={styles.cart} onClick={() => navigate('/Cart')} alt="Cart Icon" />
                     </div>
 
-                    <div className={styles.sessionFrame}>
+                    <div className={styles.sessionFrame} ref={sessionRef}>
                         <a className={styles.profileName} style={{ display: showSignIn }} onClick={() => navigate('/SignIn')}>Sign In</a>
                         <div className={styles.profilePic} style={{ display: userSettings, backgroundImage: `url(${profilePic})` }} onClick={() => auth.currentUser ? setShowSignOut('flex') : ''}>
                         </div>

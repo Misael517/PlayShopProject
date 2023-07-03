@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 0.7vw;
 }
 
 
@@ -23,7 +23,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 0.7vw;
 }
 
 .navbar ul li {
@@ -61,13 +61,14 @@
 .userFrame {
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 0.7vw;
+    position: relative;
 }
 
 .cartContainer {
     display: flex;
     flex-direction: row-reverse;
-    gap: 0.3em;
+    gap: 0.2vw;
 }
 
 .cart {
@@ -85,8 +86,8 @@
     display: none;
     background-size: cover;
     background-position: center;
-    height: 2.5em;
-    width: 2.5em;
+    height: 1.65vw;
+    width: 1.65vw;
     border-radius: 2.5em;
     cursor: pointer;
 }
@@ -125,9 +126,10 @@
     background: #050505;
     position: absolute;
     z-index: 3;
-    top: 5vh;
-    height: 4vh;
-    width: 4.1vw;
+    top: 2.2vw;
+    height: 1.8vw;
+    width: 4vw;
+    right: 0;
 }
 
 .signOutBtn {
@@ -136,8 +138,10 @@
 }
 
 .signOutBtn:hover {
+    color: #0084D1;
     cursor: pointer;
 }
+
 
 
 
