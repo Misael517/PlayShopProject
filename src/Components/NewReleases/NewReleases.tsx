@@ -96,20 +96,24 @@ function NewReleases() {
         <>
             <div className={styles.itemsDisplay} style={{ backgroundImage: `url(${gamesContent[currentGame].image})` }}>
 
-                <div onClick={() => currentGame > 0 ? setCurrentGame(currentGame - 1) : ''}>
-                    <img src={'/L.png'} className={styles.btnImgLeft} alt='Left arrow' />
-                </div>
-
                 <div className={styles.itemsFrame}>
                     <img className={styles.itemslogo} src={gamesContent[currentGame].logo} alt="Game Logo" />
                     <p className={styles.itemDesc}>{gamesContent[currentGame].description}</p>
-                    <a className={styles.buyBtn} href={gamesContent[currentGame].link}>Buy Now</a>
-                </div>
 
-                <div onClick={() => currentGame < 5 ? setCurrentGame(currentGame + 1) : ''}>
-                    <img src={'/R.png'} className={styles.btnImgRight} alt='Right arrow' />
+                    <div className={styles.btnMobileFrame}>
+                        <div onClick={() => currentGame > 0 ? setCurrentGame(currentGame - 1) : ''}>
+                            <img src={'/L.png'} className={styles.btnImgLeft} alt='Left arrow' />
+                        </div>
+
+                        <a className={styles.buyBtn} href={gamesContent[currentGame].link}>Buy Now</a>
+
+                        <div onClick={() => currentGame < 5 ? setCurrentGame(currentGame + 1) : ''}>
+                            <img src={'/R.png'} className={styles.btnImgRight} alt='Right arrow' />
+                        </div>
+                    </div>
                 </div>
             </div>
+
 
 
 
