@@ -24,7 +24,7 @@ function Navbar() {
 
     // Close the sign out button when you click outside
     const handleClickOutside = (event: MouseEvent) => {
-        if (sessionRef.current && !sessionRef.current.contains(event.target as Node)) {
+        if (sessionRef.current && showSignOut === 'flex' && !sessionRef.current.contains(event.target as Node)) {
             setShowSignOut('none');
         }
     };
@@ -35,7 +35,7 @@ function Navbar() {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, []);
+    });
 
 
     // Check if the 'profileSettings' is stored in local storage
@@ -107,10 +107,12 @@ function Navbar() {
                     </div>
 
                     <div className={styles.sessionFrame} ref={sessionRef}>
-                        <a className={styles.profileName} style={{ display: showSignIn }} onClick={() => navigate('/SignIn')}>Sign In</a>
-                        <div className={styles.profilePic} style={{ display: userSettings, backgroundImage: `url(${profilePic})` }} onClick={() => auth.currentUser ? setShowSignOut('flex') : ''}>
+                        <a className={styles.signInBtn} style={{ display: showSignIn }} onClick={() => navigate('/SignIn')}>Sign In</a>
+                        <div
+                            className={styles.profilePic}
+                            style={{ display: userSettings, backgroundImage: `url(${profilePic})` }}
+                            onClick={() => showSignOut === 'none' ? setShowSignOut('flex') : setShowSignOut('none')}>
                         </div>
-
 
                         <div className={styles.signOutContainer} style={{ display: showSignOut }}>
                             <p className={styles.signOutBtn} onClick={() => handleSignOut()}>sign out</p>

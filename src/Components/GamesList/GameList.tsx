@@ -26,8 +26,8 @@ function GameList() {
         <>
             <div className={styles.gamesContainer}>
                 {jsonData.map((games: Games) => (
-                    <div className={styles.itemsContent} key={games.id} onClick={() => navigate(`${games.link}`)}>
-                        <img src={games.icon} className={styles.itemIcon} alt='Game Icon'></img>
+                    <div className={styles.itemsContent} key={games.id}>
+                        <img src={games.icon} className={styles.itemIcon} onClick={() => navigate(`${games.link}`)} alt='Game Icon'></img>
 
                         <div className={styles.gamesInfo}>
                             <h3 className={styles.gameName}>{games.name}</h3>

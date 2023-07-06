@@ -14,11 +14,29 @@ import styles from './NavMobile.module.css'
 function NavMobile() {
     useSelector((state: RootState) => state.cart)
     useSelector((state: RootState) => state.cart)
-    const mobileNavRef = useRef<HTMLLIElement>(null)
     const [displayMobile, setDisplayMobile] = useState('none');
     const [showSignIn, setShowSignIn] = useState('');
     const [userSettings, setUserSettings] = useState('');
+    const navIconRef = useRef<HTMLImageElement>(null)
     const navigate = useNavigate();
+
+
+
+    // Close the sign out button when you click outside
+    const handleClickOutside = (event: MouseEvent) => {
+
+        if (navIconRef.current && displayMobile === 'flex' && !navIconRef.current.contains(event.target as Node)) {
+            setDisplayMobile('none');
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    });
 
 
     // Check if the 'profileSettings' is stored in local storage
@@ -61,7 +79,7 @@ function NavMobile() {
     return (
         <>
             {/* nav mobile */}
-            <nav className={styles.navResponsive}>
+            <nav className={styles.navResponsive} ref={navIconRef}>
 
                 {/*Logo Mobile*/}
                 <img src={logo} className={styles.logo} onClick={() => navigate("/")} alt="PlayShop Logo" />
@@ -75,13 +93,13 @@ function NavMobile() {
                         <li>
                             <Link to={`/Discover`}>Discover</Link>
                         </li>
-                        <li className={styles.userFrame} ref={mobileNavRef} style={{ display: displayMobile }}>
+                        <li className={styles.cartFrame}>
                             <div className={styles.cartContainer}>
                                 <Link to={`/Cart`}>Cart</Link>
 
-                                <div className={styles.cartAmount}>
+                                <div className={styles.amountDisplay}>
                                     <img src={cartIcon} className={styles.cart} onClick={() => navigate('/Cart')} alt="Cart Icon" />
-                                    <p style={{ fontSize: 'calc(2vw + .2rem)' }}>{currentAmount}</p>
+                                    <p className={styles.cartAmount}>{currentAmount}</p>
                                 </div>
                             </div>
                         </li>
@@ -91,7 +109,7 @@ function NavMobile() {
                         <div className={styles.profileContainer}>
                             <div className={styles.profilePic} style={{ display: userSettings, backgroundImage: `url(${profilePic})` }}></div>
                             <a className={styles.signOutBtn} style={{ display: userSettings }} onClick={() => handleSignOut()}>sign out</a>
-                            <a className={styles.signInBtn} style={{ display: showSignIn }} href="'/SignIn'">Sign In</a>
+                            <a className={styles.signInBtn} style={{ display: showSignIn }} href='/SignIn'>Sign In</a>
                         </div>
                     </div>
                 </div>
@@ -101,9 +119,11 @@ function NavMobile() {
 
 
 
-                <img src={navMobile}
+                <img
+                    src={navMobile}
                     alt="navbar"
-                    className={styles.navIcon} onClick={() => displayMobile === 'flex' ? setDisplayMobile('none') : setDisplayMobile('flex')}
+                    className={styles.navIcon}
+                    onClick={() => displayMobile === 'flex' ? setDisplayMobile('none') : setDisplayMobile('flex')}
                 />
 
             </nav>

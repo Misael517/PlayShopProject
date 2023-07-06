@@ -105,7 +105,7 @@ function CartList() {
                     <img src={img7} className={styles.gamePortrait} alt='Shopping Image' />
                     <div className={styles.checkOutInfo}>
 
-                        <h3>Total:</h3>
+                        <h4>Total:</h4>
                         <p className={styles.subTotal}>${total.toFixed(2)}</p>
 
                     </div>

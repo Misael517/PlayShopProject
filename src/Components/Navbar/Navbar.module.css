@@ -46,6 +46,7 @@
 
 .logo {
     width: calc(2.25vw + .6rem);
+    aspect-ratio: 1 / 0.6;
 }
 
 .logo:hover {
@@ -73,6 +74,7 @@
 
 .cart {
     width: 1.18vw;
+    aspect-ratio: 1 / 1;
 }
 
 .cart:hover {
@@ -92,17 +94,17 @@
     cursor: pointer;
 }
 
-.profileName {
+.signInBtn {
     color: #FFF;
     font-size: calc(0.62vw + .25rem);
     font-weight: 100;
 }
 
-.profileName a {
+.signInBtn a {
     text-decoration: none;
 }
 
-.profileName:hover {
+.signInBtn:hover {
     color: #0084D1;
     cursor: pointer;
 }
@@ -128,7 +130,7 @@
     z-index: 3;
     top: 2.2vw;
     height: 1.8vw;
-    width: 4vw;
+    width: 100%;
     right: 0;
 }
 
@@ -138,7 +140,6 @@
 }
 
 .signOutBtn:hover {
-    color: #0084D1;
     cursor: pointer;
 }
 
@@ -164,7 +165,7 @@
 
 
 /* Tablet: */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     .navbar {
         display: none;
     }

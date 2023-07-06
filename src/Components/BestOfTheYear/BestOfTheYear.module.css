@@ -4,6 +4,7 @@
     color: #1A1A1A;
     text-align: center;
     font-size: calc(1.25vw + .5rem);
+    font-display: swap;
     padding: 1%;
     font-weight: 600;
 }
@@ -18,7 +19,8 @@
 }
 
 .itemIcon {
-    width: 32.6%;
+    width: 27vw;
+    aspect-ratio: 1 / 0.58;
     border-radius: 1.2em;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
     transition: 200ms;
@@ -110,7 +112,7 @@
 
 
 /* Tablet   */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     .sectionName {
         display: flex;
         flex-direction: column;

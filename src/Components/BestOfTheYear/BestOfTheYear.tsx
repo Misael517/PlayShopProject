@@ -41,7 +41,7 @@ function BestOfTheYear() {
 
 
     return (
-        <div>
+        <>
             <h2 className={styles.sectionName}>Best of the year</h2>
 
             <div className={styles.itemsContainer}>
@@ -49,7 +49,7 @@ function BestOfTheYear() {
                     <img src={game.icon} className={styles.itemIcon} key={game.id} alt='Game image' onClick={() => navigate(`${game.link}`)}></img>
                 ))}
             </div>
-        </div>
+        </>
     )
 }
 

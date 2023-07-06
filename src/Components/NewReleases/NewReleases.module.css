@@ -7,6 +7,7 @@
     background-size: cover;
     transition: 200ms;
     height: 42vw;
+    aspect-ratio: 1 / 0.425;
 }
 
 
@@ -18,18 +19,22 @@
     gap: calc(0.85vw + .1em);
     margin-right: 48%;
     margin-bottom: 2%;
+    width: 61%;
 }
 
 .itemslogo {
     width: 61%;
+    aspect-ratio: 1 / 0.3;
 }
 
 .itemDesc {
     display: flex;
     max-width: 50%;
     flex-direction: column;
+    font-display: swap;
     color: #FFF;
     text-align: center;
+    font-display: swap;
     font-size: calc(1.39vw + .25rem);
     font-weight: 100;
     line-height: calc(2vw + .15rem);
@@ -49,6 +54,7 @@
     background: #0084D1;
     color: #FFF;
     text-align: center;
+    font-display: swap;
     font-size: calc(1vw + 0.45rem);
     font-weight: 600;
     text-decoration: none;
@@ -85,6 +91,7 @@
     z-index: 2;
     border-radius: 0.45vw;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.32);
+    aspect-ratio: 1.8 / 1;
 }
 
 .itemsThumbnail:hover {
@@ -149,11 +156,14 @@
         gap: calc(2vw + 0.75em);
         margin-right: 0%;
         margin-bottom: 0%;
+        width: 89%;
     }
 
     .itemslogo {
-        width: 90%;
+        width: 100%;
+        aspect-ratio: 1 / 0.3;
     }
+
 
 
     .itemDesc {
@@ -161,6 +171,7 @@
         max-width: 90%;
         flex-direction: column;
         color: #FFF;
+        font-display: swap;
         text-align: center;
         font-size: calc(3vw + 0.5rem);
         font-weight: 100;
@@ -184,7 +195,9 @@
         border-radius: 0.3rem;
         font-size: calc(1vw + 1rem);
         padding: 3.3%;
+        font-display: swap;
         width: 42vw;
+        max-width: 42vw;
         font-weight: 600;
         color: white;
         text-decoration: none;
@@ -203,11 +216,13 @@
     .btnImgLeft {
         display: block;
         width: 8vw;
+        aspect-ratio: 0.7 / 1;
     }
 
     .btnImgRight {
         display: block;
         width: 8vw;
+        aspect-ratio: 0.7 / 1;
     }
 
 
@@ -226,6 +241,7 @@
 
 /* Phones */
 @media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
+
 
     .thumbContainer {
         display: none;
@@ -246,16 +262,19 @@
 
     .itemsFrame {
         display: flex;
+        position: relative;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: calc(2vw + 0.75em);
         margin-right: 0%;
         margin-bottom: 0%;
+        width: 100%;
     }
 
     .itemslogo {
-        width: 90%;
+        width: 100%;
+        aspect-ratio: 1 / 0.3;
     }
 
 
@@ -264,6 +283,7 @@
         max-width: 90%;
         flex-direction: column;
         color: #FFF;
+        font-display: swap;
         text-align: center;
         font-size: calc(3vw + 0.5rem);
         font-weight: 100;
@@ -287,7 +307,9 @@
         border-radius: 0.3rem;
         font-size: calc(1vw + 1rem);
         padding: 3.3%;
+        font-display: swap;
         width: 42vw;
+        max-width: 42vw;
         font-weight: 600;
         color: white;
         text-decoration: none;
@@ -306,11 +328,13 @@
     .btnImgLeft {
         display: block;
         width: 8vw;
+        aspect-ratio: 0.7 / 1;
     }
 
     .btnImgRight {
         display: block;
         width: 8vw;
+        aspect-ratio: 0.7 / 1;
     }
 
 
@@ -326,7 +350,7 @@
 
 
 /* Tablets */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     .thumbContainer {
         display: none;
     }
@@ -337,6 +361,7 @@
         justify-content: center;
         align-items: center;
         height: 121vw;
+        min-height: 121vw;
         width: 100%;
         background-size: cover;
         background-position: 40%;
@@ -352,10 +377,12 @@
         gap: calc(1.8vw + 0.8em);
         margin-right: 0%;
         margin-bottom: 0%;
+        width: 90%;
     }
 
     .itemslogo {
-        width: 70%;
+        width: 90%;
+        aspect-ratio: 1 / 0.3;
     }
 
 

@@ -2,7 +2,6 @@
     display: none;
 }
 
-
 /* Phones */
 @media (min-width: 100px) and (max-width: 767px) {
     .navbar {
@@ -26,11 +25,13 @@
 
     .navIcon {
         width: 9%;
+        aspect-ratio: 1 / 1;
     }
 
 
     .logo {
         width: 15%;
+        aspect-ratio: 1 / 0.59;
     }
 
     .logo:hover {
@@ -46,6 +47,7 @@
         top: 100%;
         right: 0%;
         align-items: center;
+        width: 100%;
         z-index: 2;
         background: #050505;
         border-top: 0.75vw solid rgba(56, 56, 56, 0.6);
@@ -58,15 +60,16 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        margin: 5.5vw;
         gap: 5vw;
-        padding-top: 4vw;
     }
 
     .navResponsive ul li {
         display: inline-block;
         color: #FFF;
-        font-size: calc(1.5vw + .6rem);
+        font-size: calc(1.6vw + .6rem);
+        font-display: swap;
         font-weight: 400;
     }
 
@@ -80,7 +83,7 @@
 
 
 
-    .userFrame {
+    .cartFrame {
         display: flex;
         align-items: center;
         position: relative;
@@ -94,7 +97,7 @@
         gap: 1.5vw;
     }
 
-    .cartAmount {
+    .amountDisplay {
         display: flex;
         justify-content: center;
         gap: 0.5vw;
@@ -102,6 +105,11 @@
 
     .cart {
         width: 4.6vw;
+        aspect-ratio: 1 / 0.59;
+    }
+
+    .cartAmount {
+        font-size: calc(1vw + 0.6rem);
     }
 
 
@@ -119,17 +127,6 @@
         cursor: pointer;
     }
 
-    .signInBtn {
-        color: #FFF;
-        font-size: calc(1.5vw + .6rem);
-    }
-
-    .signInBtn a {
-        text-decoration: none;
-    }
-
-
-
 
 
     .sessionFrame {
@@ -137,14 +134,14 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        z-index: 2;
     }
 
 
 
     .sessionFrame a {
-        font-size: calc(1.5vw + .6rem);
+        font-size: calc(1.6vw + .6rem);
         font-weight: 400;
+        font-display: swap;
         text-decoration: none;
     }
 
@@ -155,24 +152,14 @@
         border-top: 0.75vw solid rgba(56, 56, 56, 0.6);
         align-items: center;
         width: 100vw;
-        margin-top: 5vw;
         padding: 3vw;
         gap: 2vw;
-    }
-
-
-    .signOutBtn {
-        font-size: calc(1.5vw + .6rem);
     }
 }
 
 
-
-
-
-
-/* Tablet: */
-@media (min-width: 768px) and (max-width: 1024px) {
+/* Phones */
+@media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
     .navbar {
         display: none;
     }
@@ -182,10 +169,172 @@
         display: flex;
         position: relative;
         width: 100%;
-        padding-top: calc(1vw + 0.3em);
-        padding-bottom: calc(1vw + 0.3em);
+        padding-top: calc(0.4vw + 0.3em);
+        padding-bottom: calc(0.4vw + 0.3em);
         padding-left: calc(1vw + 1em);
-        padding-right: calc(1vw + 1em);
+        padding-right: calc(0.4vw + 1em);
+        justify-content: space-between;
+        align-items: center;
+        background: #050505;
+    }
+
+
+    .navIcon {
+        width: 9%;
+        aspect-ratio: 1 / 1;
+    }
+
+
+    .logo {
+        width: 15%;
+        aspect-ratio: 1 / 0.59;
+    }
+
+    .logo:hover {
+        cursor: pointer;
+    }
+
+
+    .navFrame {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        align-items: center;
+        width: 100%;
+        z-index: 2;
+        background: #050505;
+        border-top: 0.75vw solid rgba(56, 56, 56, 0.6);
+        border-bottom: 0.75vw solid rgba(56, 56, 56, 0.6);
+        width: 100%;
+    }
+
+
+    .linksContainer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 5.5vw;
+        gap: 5vw;
+    }
+
+    .navResponsive ul li {
+        display: inline-block;
+        color: #FFF;
+        font-size: calc(1.6vw + .6rem);
+        font-display: swap;
+        font-weight: 400;
+    }
+
+    .navResponsive ul li a {
+        text-decoration: none;
+    }
+
+
+
+
+
+
+
+    .cartFrame {
+        display: flex;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+    }
+
+    .cartContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5vw;
+    }
+
+    .amountDisplay {
+        display: flex;
+        justify-content: center;
+        gap: 0.5vw;
+    }
+
+    .cart {
+        width: 4.6vw;
+        aspect-ratio: 1 / 0.59;
+    }
+
+    .cartAmount {
+        font-size: calc(1vw + 0.6rem);
+    }
+
+
+
+
+
+
+    .profilePic {
+        display: none;
+        background-size: cover;
+        background-position: center;
+        height: 8vw;
+        width: 8vw;
+        border-radius: 2.5em;
+        cursor: pointer;
+    }
+
+
+
+    .sessionFrame {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+
+    .sessionFrame a {
+        font-size: calc(1.6vw + .6rem);
+        font-weight: 400;
+        font-display: swap;
+        text-decoration: none;
+    }
+
+
+    .profileContainer {
+        display: flex;
+        justify-content: center;
+        border-top: 0.75vw solid rgba(56, 56, 56, 0.6);
+        align-items: center;
+        width: 100vw;
+        padding: 3vw;
+        gap: 2vw;
+    }
+}
+
+
+
+
+
+
+
+
+/* Tablet: */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .navbar {
+        display: none;
+    }
+
+
+    .navResponsive {
+        display: flex;
+        position: relative;
+        width: 100%;
+        padding-top: calc(1vw + 0.35em);
+        padding-bottom: calc(1vw + 0.35em);
+        padding-left: calc(1vw + 1.05em);
+        padding-right: calc(1vw + 1.05em);
         justify-content: space-between;
         align-items: center;
         background: #050505;
@@ -199,17 +348,18 @@
 
     .logo {
         width: 9%;
+        aspect-ratio: 1 / .58;
     }
 
 
     .navFrame {
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         position: absolute;
         top: 100%;
         right: 0%;
-        align-items: flex-start;
         z-index: 2;
         background: #050505;
         border-top: 0.75vw solid rgba(56, 56, 56, 0.6);
@@ -220,12 +370,11 @@
 
     .linksContainer {
         display: flex;
-        margin-left: 3%;
         justify-content: center;
         flex-direction: column;
         align-items: flex-start;
+        margin: 4vw;
         gap: 3.5vw;
-        padding-top: 3vw;
     }
 
     .navResponsive ul li {
@@ -233,6 +382,7 @@
         color: #FFF;
         font-size: calc(1.7vw + .6rem);
         font-weight: 400;
+        font-display: swap;
     }
 
     .navResponsive ul li a {
@@ -245,7 +395,7 @@
 
 
 
-    .userFrame {
+    .cartFrame {
         display: flex;
         align-items: center;
         position: relative;
@@ -259,14 +409,20 @@
         gap: 1.5vw;
     }
 
-    .cartAmount {
+    .amountDisplay {
         display: flex;
         justify-content: center;
         gap: 0.5vw;
     }
 
     .cart {
-        width: 4.6vw;
+        width: 3.8vw;
+        aspect-ratio: 1 / 0.9;
+    }
+
+    .cartAmount {
+        font-size: calc(1vw + 0.6rem);
+        font-display: swap;
     }
 
 
@@ -284,17 +440,6 @@
         cursor: pointer;
     }
 
-    .signInBtn {
-        color: #FFF;
-        font-size: calc(1.5vw + .6rem);
-    }
-
-    .signInBtn a {
-        text-decoration: none;
-    }
-
-
-
 
 
     .sessionFrame {
@@ -302,7 +447,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        z-index: 2;
     }
 
 
@@ -310,6 +454,7 @@
     .sessionFrame a {
         font-size: calc(1.7vw + .6rem);
         font-weight: 400;
+        font-display: swap;
         text-decoration: none;
     }
 
@@ -320,13 +465,7 @@
         border-top: 0.75vw solid rgba(56, 56, 56, 0.6);
         align-items: center;
         width: 100vw;
-        margin-top: 3vw;
         padding: 2vw;
         gap: 2vw;
-    }
-
-
-    .signOutBtn {
-        font-size: calc(1.5vw + .6rem);
     }
 }

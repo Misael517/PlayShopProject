@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 .main {
@@ -18,6 +17,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    aspect-ratio: 1 / 0.42;
     position: relative;
     margin-bottom: 4%;
 }
@@ -26,6 +26,7 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+    aspect-ratio: 1 / 0.2;
 }
 
 
@@ -33,6 +34,7 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+    aspect-ratio: 1 / 0.2;
 }
 
 
@@ -40,6 +42,7 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+    aspect-ratio: 1 / 0.2;
 }
 
 
@@ -49,6 +52,7 @@
     align-items: center;
     justify-content: center;
     width: 83.52vw;
+    max-width: 83.52vw;
     margin-bottom: 4%;
 }
 
@@ -116,7 +120,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 15vw;
+        height: 12vw;
         background: #000;
     }
 }
@@ -176,7 +180,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 15vw;
+        height: 12vw;
         background: #000;
     }
 }
@@ -186,7 +190,7 @@
 
 
 /* Tablet   */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     .main {
         gap: 13.5vw;
         min-height: 100vh;
@@ -236,7 +240,7 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 10vw;
+        height: 9.3vw;
         background: #000;
     }
 

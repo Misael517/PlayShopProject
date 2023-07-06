@@ -92,6 +92,22 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
             </div>
 
 
+            {/* Image thumbnails on mobile */}
+            <div className={styles.imgContainerMobile}>
+                {imgArr.map((img) => {
+                    return (
+                        <img
+                            src={img.thumbnail}
+                            className={`${styles.imgItemsMobile} ${currentImg === img.id ? styles.selectedImg : ''}`}
+                            key={img.id}
+                            alt='Game thumbnail'
+                        />
+                    )
+                })}
+            </div>
+
+
+
             {/* This show details about the product */}
             <div className={styles.detailsContainer}>
                 <div>
