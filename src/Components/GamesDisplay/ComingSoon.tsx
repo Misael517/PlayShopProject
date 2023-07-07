@@ -1,4 +1,5 @@
 import { memo, useRef } from 'react';
+import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -8,6 +9,14 @@ const gamesComing = jsonData.slice(24, 36)
 
 function ComingSoon() {
     const scrollContainerRef = useRef<HTMLUListElement | null>(null);
+
+    const icons: string[] = gamesComing.map((items) => {
+        return items.icon
+    })
+
+    usePreloadImages(icons.slice(7, 12))
+
+
 
     const handleClickLeft = () => {
         const scrollContainer = scrollContainerRef.current;
