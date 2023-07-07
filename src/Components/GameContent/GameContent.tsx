@@ -28,7 +28,7 @@ interface Game {
         Genre: string,
         link?: string;
         price: number;
-        coomingSoon: boolean;
+        comingSoon: boolean;
         isOnSale: boolean;
         discount: number;
         actualPrice: number;
@@ -58,23 +58,50 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
     return (
         <>
             {/* This display the images of the current game */}
-            <div className={styles.imgDisplay} style={{ backgroundImage: `url(${imgArr[currentImg].image}) ` }}>
+            <div
+                className={styles.imgDisplay}
+                style={{ backgroundImage: `url(${imgArr[currentImg].image}) ` }}
+                aria-label='current game background image'
+            >
 
                 {/* This show things like the price and the add to cart button */}
                 <div className={styles.buyingSection}>
                     <img src={img7} className={styles.gamePortrait} alt='Game Portrait' />
 
+                    {/* Game details */}
                     <div className={styles.gamesInfo}>
                         <h3>Starting at:</h3>
+
+
                         <div className={styles.gamesPrice}>
                             <div className={styles.gamesPrice}>
-                                <p className={styles.discountColor} style={{ display: currentGame.isOnSale ? 'inline-block' : 'none' }}>{currentGame.isOnSale ? `-${currentGame.discount}%` : ''}</p>
-                                <p className={styles.strikeThrough} style={{ display: currentGame.isOnSale ? 'inline-block' : 'none' }}>{currentGame.isOnSale ? `${currentGame.price}%` : ''}</p>
-                                <p style={{ textAlign: 'center' }}>{currentGame.isOnSale ? `$${currentGame.actualPrice}` : (currentGame.coomingSoon ? '...' : `$${currentGame.price}`)}</p>
+                                <p
+                                    className={styles.discountColor}
+                                    style={{ display: currentGame.isOnSale ? 'inline-block' : 'none' }}>
+                                    {currentGame.isOnSale ? `-${currentGame.discount}%` : ''}
+                                </p>
+
+                                <p
+                                    className={styles.strikeThrough}
+                                    style={{ display: currentGame.isOnSale ? 'inline-block' : 'none' }}>
+                                    {currentGame.isOnSale ? `${currentGame.price}%` : ''}
+                                </p>
+
+                                <p
+                                    style={{ textAlign: 'center' }}>
+                                    {currentGame.isOnSale ? `$${currentGame.actualPrice}` : (currentGame.comingSoon ? '...' : `$${currentGame.price}`)}
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <button className={styles.addBtn} onClick={() => currentGame.coomingSoon ? '' : dispatch(addItem(currentGame))}>{currentGame.coomingSoon ? 'No Available' : 'Add to cart'}</button>
+
+
+                    <button
+                        className={styles.addBtn}
+                        aria-label='Add to cart items'
+                        onClick={() => currentGame.comingSoon ? '' : dispatch(addItem(currentGame))}>
+                        {currentGame.comingSoon ? 'No Available' : 'Add to cart'}
+                    </button>
                 </div>
 
                 <div className={styles.imgContainer}>
@@ -83,8 +110,11 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
                             <img
                                 src={img.thumbnail}
                                 className={`${styles.imgItems} ${currentImg === img.id ? styles.selectedImg : ''}`}
-                                key={img.id} onClick={() => setCurrentImg(img.id)}
+                                key={img.id}
+                                onClick={() => setCurrentImg(img.id)}
                                 alt='Game thumbnail'
+                                role='button'
+                                tabIndex={0}
                             />
                         )
                     })}

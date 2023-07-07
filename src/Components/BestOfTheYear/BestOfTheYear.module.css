@@ -19,8 +19,9 @@
 }
 
 .itemIcon {
-    width: 27vw;
-    aspect-ratio: 1 / 0.58;
+    height: 16vw;
+    width: 28vw;
+    aspect-ratio: 1 / 1;
     border-radius: 1.2em;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
     transition: 200ms;
@@ -63,6 +64,8 @@
         box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
         transition: 200ms;
         margin-bottom: 3%;
+        height: 47vw;
+        aspect-ratio: 2 / 1;
     }
 
     .itemIcon:hover {
@@ -100,6 +103,8 @@
         box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
         transition: 200ms;
         margin-bottom: 3%;
+        height: 47vw;
+        aspect-ratio: 2 / 1;
     }
 
     .itemIcon:hover {
@@ -138,6 +143,8 @@
         box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
         transition: 200ms;
         margin-bottom: 3%;
+        height: 47vw;
+        aspect-ratio: 2 / 1;
     }
 
     .itemIcon:hover {

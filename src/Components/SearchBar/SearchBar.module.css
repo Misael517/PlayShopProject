@@ -28,6 +28,11 @@
 }
 
 
+.searchInput:focus {
+    box-shadow: 0 0 0.1vw 0 rgba(255, 255, 255, 0.5);
+}
+
+
 
 
 
@@ -62,12 +67,14 @@
 }
 
 
-.itemsContent {
+.itemsImage {
     display: flex;
     justify-content: center;
     background-position: top;
     background-size: cover;
     width: 40%;
+    height: 4.1vw;
+    aspect-ratio: 1 / 1;
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
     transition: 200ms;
 }
@@ -163,7 +170,7 @@
         display: flex;
         justify-content: flex-start;
         margin: 0.27%;
-        height: 18.1vw;
+        height: 13vw;
         width: 100%;
         transition: 200ms;
         background-color: rgb(168, 1, 1);
@@ -176,14 +183,16 @@
     }
 
 
-    .itemsContent {
+    .itemsImage {
         display: flex;
         justify-content: center;
         background-position: top;
         background-size: cover;
-        width: 50%;
+        width: 47%;
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
         transition: 200ms;
+        height: 13vw;
+        aspect-ratio: 1 / 1;
     }
 
 
@@ -255,7 +264,7 @@
         display: flex;
         justify-content: flex-start;
         margin: 0.27%;
-        height: 18.1vw;
+        height: 13vw;
         width: 100%;
         transition: 200ms;
         background-color: rgb(168, 1, 1);
@@ -268,14 +277,16 @@
     }
 
 
-    .itemsContent {
+    .itemsImage {
         display: flex;
         justify-content: center;
         background-position: top;
         background-size: cover;
-        width: 50%;
+        width: 47%;
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
         transition: 200ms;
+        height: 13vw;
+        aspect-ratio: 1 / 1;
     }
 
 
@@ -348,7 +359,7 @@
         display: flex;
         justify-content: flex-start;
         margin: 0.27%;
-        height: 14vw;
+        height: 16vw;
         width: 100%;
         transition: 200ms;
         background-color: rgb(168, 1, 1);
@@ -361,7 +372,7 @@
     }
 
 
-    .itemsContent {
+    .itemsImage {
         display: flex;
         justify-content: center;
         background-position: top;
@@ -369,6 +380,8 @@
         width: 50%;
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.25);
         transition: 200ms;
+        height: 16vw;
+        aspect-ratio: 1 / 1;
     }
 
 

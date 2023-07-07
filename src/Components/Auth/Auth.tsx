@@ -30,7 +30,10 @@ function Auth() {
 
     return (
         <div className={styles.authContainer}>
-            <img src={logo} className={styles.logo} onClick={() => navigate("/")} alt="PayShop Logo" />
+
+            <a href="/" tabIndex={0} aria-label="Playshop logo" role="link">
+                <img src={logo} className={styles.logo} alt="PlayShop logo" />
+            </a>
 
             <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -73,7 +76,7 @@ function Auth() {
 
 
                 <div className={styles.buttonContainer}>
-                    <input type="submit" className={styles.submitButton} value='Sing In' />
+                    <input type="submit" className={styles.submitButton} value='Sign In' aria-label='Sign in button' />
                 </div>
             </form>
 

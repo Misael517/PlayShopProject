@@ -82,8 +82,14 @@ function NavMobile() {
             <nav className={styles.navResponsive} ref={navIconRef}>
 
                 {/*Logo Mobile*/}
-                <img src={logo} className={styles.logo} onClick={() => navigate("/")} alt="PlayShop Logo" />
-
+                <img src={logo}
+                    className={styles.logo}
+                    onClick={() => navigate("/")}
+                    alt="PlayShop Logo"
+                    role="link"
+                    tabIndex={0}
+                    aria-label="Playshop Logo"
+                />
 
                 <div className={styles.navFrame} style={{ display: displayMobile }}>
                     <ul className={styles.linksContainer}>
@@ -108,7 +114,7 @@ function NavMobile() {
                     <div className={styles.sessionFrame}>
                         <div className={styles.profileContainer}>
                             <div className={styles.profilePic} style={{ display: userSettings, backgroundImage: `url(${profilePic})` }}></div>
-                            <a className={styles.signOutBtn} style={{ display: userSettings }} onClick={() => handleSignOut()}>sign out</a>
+                            <button className={styles.signOutBtn} style={{ display: userSettings }} onClick={() => handleSignOut()}>sign out</button>
                             <a className={styles.signInBtn} style={{ display: showSignIn }} href='/SignIn'>Sign In</a>
                         </div>
                     </div>
@@ -124,6 +130,9 @@ function NavMobile() {
                     alt="navbar"
                     className={styles.navIcon}
                     onClick={() => displayMobile === 'flex' ? setDisplayMobile('none') : setDisplayMobile('flex')}
+                    role="button"
+                    aria-label="Navigation menu Button"
+                    tabIndex={0}
                 />
 
             </nav>

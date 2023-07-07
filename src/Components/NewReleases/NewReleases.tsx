@@ -21,8 +21,8 @@ function NewReleases() {
     const [currentGame, setCurrentGame] = useState<number>(0);
 
     const { data: images, isLoading, isError } = useGetImages('newReleases', '/images/newReleases/', 'game', '.webp', 6)
-    const { data: logo, isLoading: logoIsLoading, isError: logoIsError } = useGetImages('newReleasesLogo', '/images/newReleases/', 'logo', '.png', 6);
-    const { data: icon, isLoading: iconIsLoading, isError: iconIsError } = useGetImages('newReleasesIcon', '/images/newReleases/', 'icon', '.jpg', 6)
+    const { data: logo, isLoading: logoIsLoading, isError: logoIsError } = useGetImages('newReleasesLogo', '/images/newReleases/', 'logo', '.webp', 6);
+    const { data: icon, isLoading: iconIsLoading, isError: iconIsError } = useGetImages('newReleasesIcon', '/images/newReleases/', 'icon', '.webp', 6)
 
 
     // Preload the images
@@ -94,37 +94,77 @@ function NewReleases() {
 
     return (
         <>
-            <div className={styles.itemsDisplay} style={{ backgroundImage: `url(${gamesContent[currentGame].image})` }}>
 
+            {/* background image of the selected video game */}
+            <div
+                className={styles.itemsDisplay}
+                style={{ backgroundImage: `url(${gamesContent[currentGame].image})` }}
+                aria-label="Current game background image"
+            >
+
+
+                {/* Video games logo/description container */}
                 <div className={styles.itemsFrame}>
-                    <img className={styles.itemslogo} src={gamesContent[currentGame].logo} alt="Game Logo" />
-                    <p className={styles.itemDesc}>{gamesContent[currentGame].description}</p>
 
-                    <div className={styles.btnMobileFrame}>
-                        <div onClick={() => currentGame > 0 ? setCurrentGame(currentGame - 1) : ''}>
+                    {/* Current video game logo */}
+                    <img className={styles.itemslogo}
+                        src={gamesContent[currentGame].logo}
+                        alt="Game Logo"
+                        aria-label="Current video game logo"
+                    />
+
+                    {/* Current Video game description */}
+                    <p
+                        className={styles.itemDesc}
+                        aria-label="Current video game description"
+                    >
+                        {gamesContent[currentGame].description}
+                    </p>
+
+
+
+                    {/* next and back button for the mobile version */}
+                    <div className={styles.btnMobileFrame} >
+
+                        {/* Back button */}
+                        <div onClick={() => currentGame > 0 ? setCurrentGame(currentGame - 1) : ''}
+                            role='button' tabIndex={0} aria-label="Back button">
+
                             <img src={'/L.png'} className={styles.btnImgLeft} alt='Left arrow' />
                         </div>
 
+
+                        {/* BUY NOW button */}
                         <a className={styles.buyBtn} href={gamesContent[currentGame].link}>Buy Now</a>
 
-                        <div onClick={() => currentGame < 5 ? setCurrentGame(currentGame + 1) : ''}>
+
+                        {/* Next button */}
+                        <div
+                            onClick={() => currentGame < 5 ? setCurrentGame(currentGame + 1) : ''}
+                            role='button' tabIndex={0} aria-label="Next button"
+                        >
                             <img src={'/R.png'} className={styles.btnImgRight} alt='Right arrow' />
                         </div>
+
                     </div>
                 </div>
             </div>
 
 
 
-
+            {/* Video games thumbnails container*/}
             <div className={styles.thumbContainer}>
                 {gamesContent.map((game) => (
                     <img
                         className={`${styles.itemsThumbnail} ${currentGame === game.id ? styles.selectedGame : ''}`}
                         key={game.id}
                         style={{ backgroundImage: `url(${game.icon})` }}
-                        src={game.icon} onClick={() => setCurrentGame(game.id)}
+                        src={game.icon}
+                        onClick={() => setCurrentGame(game.id)}
                         alt='Game tumbnail'
+                        role='button'
+                        tabIndex={0}
+                        aria-label="Video game thumbnail"
                     />
                 ))}
             </div>

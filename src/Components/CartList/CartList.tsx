@@ -16,7 +16,7 @@ interface Game {
     Genre: string,
     link?: string;
     price: number;
-    coomingSoon: boolean;
+    comingSoon: boolean;
     isOnSale: boolean;
     discount: number;
     actualPrice: number;
@@ -63,10 +63,22 @@ function CartList() {
 
             <div className={styles.cartContainer}>
                 <div className={styles.itemsSection}>
+
+                    {/* Shows the items added to the cart */}
                     {cartItems.length > 0 ? cartItems.map((item) => {
                         return (
                             <div className={styles.itemsContainer} key={item.id}>
-                                <img className={styles.itemIcon} src={item.icon} onClick={() => navigate(`${item.link}`)} alt='Game icoin' />
+
+                                <img
+                                    className={styles.itemIcon}
+                                    src={item.icon}
+                                    onClick={() => navigate(`${item.link}`)}
+                                    alt={`${item.name} icon`}
+                                    tabIndex={0}
+                                    role='link'
+                                />
+
+                                {/* Item details */}
                                 <div className={styles.itemInfo}>
                                     <div>
                                         <h2>{item.name}</h2>
@@ -77,24 +89,38 @@ function CartList() {
                                         </div>
                                     </div>
 
+                                    {/* Calculate the price and the amount of items */}
                                     <div className={styles.priceAmount}>
                                         <div className={styles.amountContainer}>
-                                            <button className={styles.decreaseBtn} onClick={() => dispatch(decreaseAmount(item))}>-</button>
+                                            <button
+                                                className={styles.decreaseBtn}
+                                                onClick={() => dispatch(decreaseAmount(item))}>
+                                                -
+                                            </button>
+
                                             <p>{item.itemAmount}</p>
-                                            <button className={styles.increaseBtn} onClick={() => dispatch(increaseAmount(item))}>+</button>
+
+                                            <button
+                                                className={styles.increaseBtn}
+                                                onClick={() => dispatch(increaseAmount(item))}>
+                                                +
+                                            </button>
                                         </div>
 
+                                        {/* Shows the item price */}
                                         <div className={styles.itemPrice}>
-                                            <p>{item.isOnSale ? `$${item.cartPrice.toFixed(2)}` : (item.coomingSoon ? '...' : `$${item.cartPrice.toFixed(2)}`)}</p>
+                                            <p>{item.isOnSale ? `$${item.cartPrice.toFixed(2)}` : (item.comingSoon ? '...' : `$${item.cartPrice.toFixed(2)}`)}</p>
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* Remove the item */}
                                 <button className={styles.removeBtn} onClick={() => dispatch(removeItem(item))}>remove</button>
                             </div>)
                     }) : (
-                        <div className={styles.emptyContainer}>
 
+                        // Appears when there is nothing in the cart
+                        <div className={styles.emptyContainer}>
                             <h1 className={styles.emptyTitle}>Your PlayShop Cart is empty</h1>
                         </div>
                     )}

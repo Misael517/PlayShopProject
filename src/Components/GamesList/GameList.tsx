@@ -1,6 +1,5 @@
 import styles from './GameList.module.css';
 import jsonData from '../../assets/gamesInfo.json';
-import { useNavigate } from 'react-router-dom';
 import { memo } from 'react';
 interface Games {
     id: number,
@@ -20,14 +19,21 @@ interface Games {
 
 
 function GameList() {
-    const navigate = useNavigate()
 
     return (
         <>
             <div className={styles.gamesContainer}>
                 {jsonData.map((games: Games) => (
                     <div className={styles.itemsContent} key={games.id}>
-                        <img src={games.icon} className={styles.itemIcon} onClick={() => navigate(`${games.link}`)} alt='Game Icon'></img>
+                        <a href={`${games.link}`}>
+                            <img
+                                src={games.icon}
+                                className={styles.itemIcon}
+                                alt='Game Icon'
+                                aria-label={`${games.name} icon`}
+                            >
+                            </img>
+                        </a>
 
                         <div className={styles.gamesInfo}>
                             <h3 className={styles.gameName}>{games.name}</h3>

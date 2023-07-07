@@ -83,7 +83,9 @@ function Navbar() {
             < nav className={styles.navbar}>
 
                 <div className={styles.navFrame}>
-                    <img src={logo} className={styles.logo} onClick={() => navigate("/")} alt="PlayShop Logo" />
+                    <a href="/" tabIndex={0} aria-label="Playshop logo" role="link">
+                        <img src={logo} className={styles.logo} alt="PlayShop logo" />
+                    </a>
 
                     {/* Header logo desktop*/}
                     <ul className={styles.linksContainer}>
@@ -103,11 +105,26 @@ function Navbar() {
                 <div className={styles.userFrame} >
                     <div className={styles.cartContainer}>
                         <p style={{ fontSize: 'calc(0.5vw + .2rem)' }}>{currentAmount}</p>
-                        <img src={cartIcon} className={styles.cart} onClick={() => navigate('/Cart')} alt="Cart Icon" />
+                        <img
+                            src={cartIcon}
+                            className={styles.cart}
+                            onClick={() => navigate('/Cart')}
+                            alt="Cart Icon"
+                            tabIndex={0}
+                            role="button"
+                            aria-label="Go to Cart"
+                        />
                     </div>
 
                     <div className={styles.sessionFrame} ref={sessionRef}>
-                        <a className={styles.signInBtn} style={{ display: showSignIn }} onClick={() => navigate('/SignIn')}>Sign In</a>
+                        <a
+                            className={styles.signInBtn}
+                            style={{ display: showSignIn }}
+                            href='/SignIn'
+                            tabIndex={0}
+                        >
+                            Sign In
+                        </a>
                         <div
                             className={styles.profilePic}
                             style={{ display: userSettings, backgroundImage: `url(${profilePic})` }}
@@ -115,7 +132,7 @@ function Navbar() {
                         </div>
 
                         <div className={styles.signOutContainer} style={{ display: showSignOut }}>
-                            <p className={styles.signOutBtn} onClick={() => handleSignOut()}>sign out</p>
+                            <button className={styles.signOutBtn} onClick={() => handleSignOut()} tabIndex={0}>sign out</button>
                         </div>
                     </div>
                 </div>

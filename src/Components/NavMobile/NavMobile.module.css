@@ -31,7 +31,7 @@
 
     .logo {
         width: 15%;
-        aspect-ratio: 1 / 0.59;
+        aspect-ratio: 1 / 0;
     }
 
     .logo:hover {
@@ -105,7 +105,7 @@
 
     .cart {
         width: 4.6vw;
-        aspect-ratio: 1 / 0.59;
+        aspect-ratio: 1 / 0;
     }
 
     .cartAmount {
@@ -113,8 +113,9 @@
     }
 
 
-
-
+    .signInBtn {
+        text-decoration: none;
+    }
 
 
     .profilePic {
@@ -142,7 +143,6 @@
         font-size: calc(1.6vw + .6rem);
         font-weight: 400;
         font-display: swap;
-        text-decoration: none;
     }
 
 
@@ -155,6 +155,15 @@
         padding: 3vw;
         gap: 2vw;
     }
+
+
+    .signOutBtn {
+        font-size: calc(1.6vw + .6rem);
+        font-weight: 400;
+        border: none;
+        background: #050505;
+    }
+
 }
 
 
@@ -187,7 +196,7 @@
 
     .logo {
         width: 15%;
-        aspect-ratio: 1 / 0.59;
+        aspect-ratio: 1 / 0;
     }
 
     .logo:hover {
@@ -261,7 +270,7 @@
 
     .cart {
         width: 4.6vw;
-        aspect-ratio: 1 / 0.59;
+        aspect-ratio: 1 / 0;
     }
 
     .cartAmount {
@@ -269,8 +278,9 @@
     }
 
 
-
-
+    .signInBtn {
+        text-decoration: none;
+    }
 
 
     .profilePic {
@@ -298,7 +308,6 @@
         font-size: calc(1.6vw + .6rem);
         font-weight: 400;
         font-display: swap;
-        text-decoration: none;
     }
 
 
@@ -311,6 +320,15 @@
         padding: 3vw;
         gap: 2vw;
     }
+
+
+    .signOutBtn {
+        font-size: calc(1.6vw + .6rem);
+        font-weight: 400;
+        border: none;
+        background: #050505;
+    }
+
 }
 
 
@@ -348,7 +366,7 @@
 
     .logo {
         width: 9%;
-        aspect-ratio: 1 / .58;
+        aspect-ratio: 1 / 0;
     }
 
 
@@ -417,7 +435,7 @@
 
     .cart {
         width: 3.8vw;
-        aspect-ratio: 1 / 0.9;
+        aspect-ratio: 1 / 0;
     }
 
     .cartAmount {
@@ -427,6 +445,9 @@
 
 
 
+    .signInBtn {
+        text-decoration: none;
+    }
 
 
 
@@ -467,5 +488,12 @@
         width: 100vw;
         padding: 2vw;
         gap: 2vw;
+    }
+
+    .signOutBtn {
+        font-size: calc(1.7vw + .6rem);
+        font-weight: 400;
+        border: none;
+        background: #050505;
     }
 }

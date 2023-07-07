@@ -45,8 +45,9 @@
 
 
 .logo {
+    height: 1.5vw;
     width: calc(2.25vw + .6rem);
-    aspect-ratio: 1 / 0.6;
+    aspect-ratio: 1 / 1;
 }
 
 .logo:hover {
@@ -73,7 +74,8 @@
 }
 
 .cart {
-    width: 1.18vw;
+    height: 0.8;
+    width: 1.15vw;
     aspect-ratio: 1 / 1;
 }
 
@@ -94,23 +96,6 @@
     cursor: pointer;
 }
 
-.signInBtn {
-    color: #FFF;
-    font-size: calc(0.62vw + .25rem);
-    font-weight: 100;
-}
-
-.signInBtn a {
-    text-decoration: none;
-}
-
-.signInBtn:hover {
-    color: #0084D1;
-    cursor: pointer;
-}
-
-
-
 
 
 .sessionFrame {
@@ -120,6 +105,25 @@
     flex-direction: column;
     z-index: 2;
 }
+
+.signInBtn {
+    color: #FFF;
+    font-size: calc(0.62vw + .25rem);
+    font-weight: 100;
+}
+
+.signInBtn {
+    text-decoration: none;
+}
+
+.signInBtn:hover {
+    border-bottom: 1px solid #0084D1;
+    color: #0084D1;
+    cursor: pointer;
+}
+
+
+
 
 .signOutContainer {
     display: none;
@@ -137,6 +141,8 @@
 .signOutBtn {
     font-size: calc(0.62vw + .25rem);
     font-weight: 100;
+    border: none;
+    background: #050505;
 }
 
 .signOutBtn:hover {
@@ -147,10 +153,6 @@
 
 
 
-
-.navResponsive {
-    display: none;
-}
 
 
 

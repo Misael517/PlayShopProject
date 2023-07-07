@@ -5,7 +5,7 @@ import { memo } from 'react';
 function Footer() {
     return (
         <>
-            <p className={styles.FooterT}></p>
+            <p className={styles.Footer}></p>
         </>
     )
 }

@@ -17,32 +17,30 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    aspect-ratio: 1 / 0.42;
     position: relative;
     margin-bottom: 4%;
+    height: 42vw;
+    aspect-ratio: 1 / 1;
 }
 
 .OnSaleSec {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    aspect-ratio: 1 / 0.2;
 }
 
 
 .PopularSec {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    aspect-ratio: 1 / 0.2;
 }
 
 
 .CoomingSec {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    aspect-ratio: 1 / 0.2;
 }
 
 
@@ -51,8 +49,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 83.52vw;
-    max-width: 83.52vw;
+    width: 86vw;
+    max-width: 86vw;
     margin-bottom: 4%;
 }
 
@@ -83,6 +81,8 @@
         width: 100%;
         position: relative;
         margin-bottom: 0%;
+        height: 150vw;
+        aspect-ratio: 1 / 1;
     }
 
     .OnSaleSec {
@@ -143,6 +143,8 @@
         width: 100%;
         position: relative;
         margin-bottom: 0%;
+        height: 150vw;
+        aspect-ratio: 1 / 1;
     }
 
     .OnSaleSec {
@@ -204,6 +206,8 @@
         width: 100%;
         position: relative;
         margin-bottom: 0%;
+        height: 121vw;
+        aspect-ratio: 1 / 1;
     }
 
     .OnSaleSec {

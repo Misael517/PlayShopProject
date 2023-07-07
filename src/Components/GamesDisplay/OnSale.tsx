@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 import { memo, useRef } from 'react';
 import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
@@ -9,14 +8,14 @@ const gamesOnSale = jsonData.slice(12, 24)
 
 
 function OnSale() {
-    const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-    const navigate = useNavigate();
+    const scrollContainerRef = useRef<HTMLUListElement | null>(null);
 
     const icons: string[] = gamesOnSale.map((items) => {
         return items.icon
     })
 
     usePreloadImages(icons)
+
 
 
     const handleClickLeft = () => {
@@ -42,37 +41,91 @@ function OnSale() {
     };
 
 
+
     return (
         <>
+
+            {/* Aricle header */}
             <div className={styles.itemsHeader}>
                 <h2 className={styles.sectionName}>On Sale</h2>
 
+                {/* Article buttons */}
                 <div className={styles.btnContainer}>
-                    <div className={styles.sectionBtn} onClick={handleClickLeft}>
-                        <img src={'/L.png'} className={styles.btnImgLeft} alt='Left Arrow' />
+
+                    {/* Carousel back button */}
+                    <div
+                        className={styles.sectionBtn}
+                        onClick={handleClickLeft}
+                        role='button'
+                        aria-label='carousel back button'
+                        tabIndex={0}
+                    >
+                        <img src={'/L.png'} className={styles.btnImgLeft} alt='Back Arrow' />
                     </div>
-                    <div className={styles.sectionBtn} onClick={handleClickRight}>
-                        <img src={'/R.png'} className={styles.btnImgRight} alt='Right Arrow' />
+
+
+                    {/* Carousel next button */}
+                    <div
+                        className={styles.sectionBtn}
+                        onClick={handleClickRight}
+                        role='button'
+                        aria-label='carousel next button'
+                        tabIndex={0}
+                    >
+                        <img src={'/R.png'} className={styles.btnImgRight} alt='Next Arrow' />
                     </div>
+
                 </div>
             </div>
 
 
-            <div ref={scrollContainerRef} className={styles.itemsCarousel}>
-                {gamesOnSale.map((gamesSale) => (
-                    <div className={styles.itemsContent} key={gamesSale.id} onClick={() => navigate(`${gamesSale.link}`)}>
-                        <img src={gamesSale.icon} className={styles.itemIcon} alt='Game Icon'></img>
 
-                        <div className={styles.gamesInfo}>
+
+
+            {/* Items carousel */}
+            <ul className={styles.itemsCarousel} ref={scrollContainerRef}>
+
+                {gamesOnSale.map((gamesSale) => (
+                    <li className={styles.itemsContent} key={gamesSale.id}>
+
+                        <a href={`${gamesSale.link}`}>
+                            <img
+                                src={gamesSale.icon}
+                                className={styles.itemIcon}
+                                alt={`${gamesSale.name} icon`}
+                                aria-label={`${gamesSale.name} icon`}
+                            >
+                            </img>
+                        </a>
+
+                        {/* Game details */}
+                        < div className={styles.gamesInfo} >
                             <h3 className={styles.gameName}>{gamesSale.name}</h3>
+
                             <div className={styles.gamesPrice}>
-                                <p className={styles.discountColor} style={{ display: gamesSale.isOnSale ? 'inline-block' : 'none' }}>{gamesSale.isOnSale ? `-${gamesSale.discount}%` : ''}</p>
-                                <p className={styles.strikeThrough} style={{ display: gamesSale.isOnSale ? 'inline-block' : 'none' }}>{gamesSale.isOnSale ? `${gamesSale.price}%` : ''}</p>
-                                <p style={{ textAlign: 'center' }}>{gamesSale.isOnSale ? `$${gamesSale.actualPrice}` : (gamesSale.coomingSoon ? '...' : `$${gamesSale.price}`)}</p>
+                                <p
+                                    className={styles.discountColor}
+                                    style={{ display: gamesSale.isOnSale ? 'inline-block' : 'none' }}
+                                >
+                                    {gamesSale.isOnSale ? `-${gamesSale.discount}%` : ''}
+                                </p>
+
+
+                                <p
+                                    className={styles.strikeThrough}
+                                    style={{ display: gamesSale.isOnSale ? 'inline-block' : 'none' }}
+                                >
+                                    {gamesSale.isOnSale ? `${gamesSale.price}%` : ''}
+                                </p>
+
+
+                                <p style={{ textAlign: 'center' }}>
+                                    {gamesSale.isOnSale ? `$${gamesSale.actualPrice}` : (gamesSale.comingSoon ? '...' : `$${gamesSale.price}`)}
+                                </p>
                             </div>
                         </div>
-                    </div >))}
-            </div>
+                    </li >))}
+            </ul >
         </>
     )
 }

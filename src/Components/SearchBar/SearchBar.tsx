@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import jsonData from '../../assets/gamesInfo.json';
 import styles from './SearchBar.module.css';
+import usePreloadImages from '../../Hooks/usePreloadImages';
 
 
 interface Games {
@@ -31,6 +32,16 @@ function SearchBar() {
     const componentRef = useRef<HTMLDivElement>(null)
 
 
+    const preloadIcons: string[] = jsonData.map((images) => {
+        return images.searchIcon
+    })
+
+    usePreloadImages(preloadIcons)
+
+    // Generate an ID for the search bar
+    const searchBarID = crypto.randomUUID()
+
+
     // Display the search bar each tiem it finds letters
     const handleSearch = (e: string) => {
         setDisplay('flex')
@@ -51,15 +62,23 @@ function SearchBar() {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    })
+    }, [])
 
     return (
         <>
             {/* Search Funcionality */}
             <div className={styles.searchContainer} ref={componentRef}>
-                <div className={styles.inputContainer}>
-                    <input type='text' className={styles.searchInput} placeholder='Search Store' onChange={(e) => handleSearch(e.target.value)} />
-                </div>
+                <label className={styles.inputContainer} htmlFor={searchBarID}>
+                    <input
+                        type='text'
+                        id={searchBarID}
+                        className={styles.searchInput}
+                        name='searchBar'
+                        placeholder='Search Store'
+                        onChange={(e) => handleSearch(e.target.value)}
+                        aria-label="Search store's items"
+                    />
+                </label>
 
                 <div className={styles.gamesContainer} style={{ display: `${display}` }}>
                     {jsonData.filter((game) => {
@@ -71,13 +90,22 @@ function SearchBar() {
 
                     }
                     ).splice(0, 4).map((games: Games) => (
-                        <div className={styles.itemFrame} key={games.id} onClick={() => navigate(`${games.link ? games.link : ''}`)}>
+                        <div
+                            className={styles.itemFrame}
+                            key={games.id}
+                            onClick={() => navigate(`${games.link ? games.link : ''}`)}
+                            role='button'
+                            aria-label={`${games.name} page button`}
+                            tabIndex={0}
+                        >
 
-                            <div className={styles.itemsContent} style={{ backgroundImage: `url(${games.searchIcon})` }}></div>
+                            <img className={styles.itemsImage} src={`${games.searchIcon}`} alt={`${games.name} search icon`} >
+                            </img>
 
                             <div className={styles.gamesInfo}>
                                 <h3>{games.name}</h3>
                             </div>
+
                         </div>))}
                 </div>
             </div>

@@ -2,13 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     background-position: center;
     background-size: cover;
-    transition: 200ms;
     height: 42vw;
-    aspect-ratio: 1 / 0.425;
+    width: 100%;
+    transition: 200ms;
 }
+
 
 
 .itemsFrame {
@@ -23,8 +23,9 @@
 }
 
 .itemslogo {
+    height: 9vw;
     width: 61%;
-    aspect-ratio: 1 / 0.3;
+    aspect-ratio: 1 / 1;
 }
 
 .itemDesc {
@@ -85,13 +86,14 @@
 }
 
 .itemsThumbnail {
+    height: 7vw;
     width: 12.5%;
     background-size: cover;
     transition: 170ms;
     z-index: 2;
     border-radius: 0.45vw;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.32);
-    aspect-ratio: 1.8 / 1;
+    aspect-ratio: 1 / 1;
 }
 
 .itemsThumbnail:hover {
@@ -160,8 +162,9 @@
     }
 
     .itemslogo {
+        height: 24vw;
         width: 100%;
-        aspect-ratio: 1 / 0.3;
+        aspect-ratio: 1 / 1;
     }
 
 
@@ -186,7 +189,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 8vw;
+        gap: 7vw;
     }
 
     .buyBtn {
@@ -215,14 +218,14 @@
 
     .btnImgLeft {
         display: block;
-        width: 8vw;
-        aspect-ratio: 0.7 / 1;
+        width: 6.3vw;
+        aspect-ratio: 0 / 1;
     }
 
     .btnImgRight {
         display: block;
-        width: 8vw;
-        aspect-ratio: 0.7 / 1;
+        width: 6.3vw;
+        aspect-ratio: 0 / 1;
     }
 
 
@@ -269,13 +272,15 @@
         gap: calc(2vw + 0.75em);
         margin-right: 0%;
         margin-bottom: 0%;
-        width: 100%;
+        width: 89%;
     }
 
     .itemslogo {
+        height: 24vw;
         width: 100%;
-        aspect-ratio: 1 / 0.3;
+        aspect-ratio: 1 / 1;
     }
+
 
 
     .itemDesc {
@@ -298,7 +303,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 8vw;
+        gap: 7vw;
     }
 
     .buyBtn {
@@ -327,14 +332,14 @@
 
     .btnImgLeft {
         display: block;
-        width: 8vw;
-        aspect-ratio: 0.7 / 1;
+        width: 6.3vw;
+        aspect-ratio: 0 / 1;
     }
 
     .btnImgRight {
         display: block;
-        width: 8vw;
-        aspect-ratio: 0.7 / 1;
+        width: 6.3vw;
+        aspect-ratio: 0 / 1;
     }
 
 
@@ -381,8 +386,9 @@
     }
 
     .itemslogo {
+        height: 22vw;
         width: 90%;
-        aspect-ratio: 1 / 0.3;
+        aspect-ratio: 1 / 1;
     }
 
 
@@ -412,7 +418,7 @@
         background: #0084D1;
         border: none;
         border-radius: 0.3em;
-        font-size: calc(1vw + 1rem);
+        font-size: calc(1.5vw + 1rem);
         padding: 3.3%;
         width: 30vw;
         font-weight: 600;
@@ -432,12 +438,13 @@
 
     .btnImgLeft {
         display: block;
-        width: 5.2vw;
+        width: 4.3vw;
     }
 
     .btnImgRight {
         display: block;
-        width: 5.2vw;
+        width: 4.3vw;
+        aspect-ratio: 0 / 1;
     }
 
 

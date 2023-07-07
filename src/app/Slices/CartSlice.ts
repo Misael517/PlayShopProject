@@ -11,7 +11,7 @@ export interface Game {
     Genre: string,
     link?: string;
     price: number;
-    coomingSoon: boolean;
+    comingSoon: boolean;
     isOnSale: boolean;
     discount: number;
     actualPrice: number;
