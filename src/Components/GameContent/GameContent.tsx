@@ -66,7 +66,7 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
 
                 {/* This show things like the price and the add to cart button */}
                 <div className={styles.buyingSection}>
-                    <img src={img7} className={styles.gamePortrait} alt='Game Portrait' />
+                    <img src={img7} className={styles.gamePortrait} alt='Game Portrait' loading='lazy' />
 
                     {/* Game details */}
                     <div className={styles.gamesInfo}>
@@ -113,6 +113,7 @@ function GameContent({ imgArr, img7, currentGame }: GamesProps & ImageProps & Ga
                                 key={img.id}
                                 onClick={() => setCurrentImg(img.id)}
                                 alt='Game thumbnail'
+                                loading='lazy'
                                 role='button'
                                 tabIndex={0}
                             />

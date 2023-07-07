@@ -1,5 +1,4 @@
 import { memo, useRef } from 'react';
-import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -9,15 +8,6 @@ const gamesComing = jsonData.slice(24, 36)
 
 function ComingSoon() {
     const scrollContainerRef = useRef<HTMLUListElement | null>(null);
-
-    const icons: string[] = gamesComing.map((items) => {
-        return items.icon
-    })
-
-    usePreloadImages(icons)
-
-
-
 
     const handleClickLeft = () => {
         const scrollContainer = scrollContainerRef.current;
@@ -56,7 +46,7 @@ function ComingSoon() {
                         aria-label='carousel back button'
                         tabIndex={0}
                     >
-                        <img src={'/L.png'} className={styles.btnImgLeft} alt='Back Arrow' />
+                        <img src={'/L.png'} className={styles.btnImgLeft} alt='Back Arrow' loading='lazy' />
                     </div>
 
 
@@ -68,7 +58,7 @@ function ComingSoon() {
                         aria-label='carousel next button'
                         tabIndex={0}
                     >
-                        <img src={'/R.png'} className={styles.btnImgRight} alt='Next Arrow' />
+                        <img src={'/R.png'} className={styles.btnImgRight} alt='Next Arrow' loading='lazy' />
                     </div>
                 </div>
             </div>
@@ -88,6 +78,7 @@ function ComingSoon() {
                                 className={styles.itemIcon}
                                 alt={`${games.name} icon`}
                                 aria-label={`${games.name} icon`}
+                                loading='lazy'
                             >
                             </img>
                         </a>

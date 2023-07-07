@@ -111,6 +111,7 @@ function NewReleases() {
                         src={gamesContent[currentGame].logo}
                         alt="Game Logo"
                         aria-label="Current video game logo"
+                        loading='lazy'
                     />
 
                     {/* Current Video game description */}
@@ -130,7 +131,7 @@ function NewReleases() {
                         <div onClick={() => currentGame > 0 ? setCurrentGame(currentGame - 1) : ''}
                             role='button' tabIndex={0} aria-label="Back button">
 
-                            <img src={'/L.png'} className={styles.btnImgLeft} alt='Left arrow' />
+                            <img src={'/L.png'} className={styles.btnImgLeft} alt='Left arrow' loading='lazy' />
                         </div>
 
 
@@ -143,7 +144,7 @@ function NewReleases() {
                             onClick={() => currentGame < 5 ? setCurrentGame(currentGame + 1) : ''}
                             role='button' tabIndex={0} aria-label="Next button"
                         >
-                            <img src={'/R.png'} className={styles.btnImgRight} alt='Right arrow' />
+                            <img src={'/R.png'} className={styles.btnImgRight} alt='Right arrow' loading='lazy' />
                         </div>
 
                     </div>
@@ -165,6 +166,7 @@ function NewReleases() {
                         role='button'
                         tabIndex={0}
                         aria-label="Video game thumbnail"
+                        loading='lazy'
                     />
                 ))}
             </div>

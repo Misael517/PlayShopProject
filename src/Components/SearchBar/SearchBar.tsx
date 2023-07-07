@@ -99,7 +99,12 @@ function SearchBar() {
                             tabIndex={0}
                         >
 
-                            <img className={styles.itemsImage} src={`${games.searchIcon}`} alt={`${games.name} search icon`} >
+                            <img
+                                className={styles.itemsImage}
+                                src={`${games.searchIcon}`}
+                                alt={`${games.name} search icon`}
+                                loading='lazy'
+                            >
                             </img>
 
                             <div className={styles.gamesInfo}>

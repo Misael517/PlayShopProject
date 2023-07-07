@@ -1,5 +1,4 @@
 import { memo, useRef } from 'react';
-import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -10,15 +9,6 @@ const gamesPopular = jsonData.slice(0, 12)
 
 function MostPopular() {
     const scrollContainerRef = useRef<HTMLUListElement | null>(null);
-
-    const icons: string[] = gamesPopular.map((items) => {
-        return items.icon
-    })
-
-    usePreloadImages(icons)
-
-
-
 
     const handleClickLeft = () => {
         const scrollContainer = scrollContainerRef.current;
@@ -57,7 +47,7 @@ function MostPopular() {
                         aria-label='carousel back button'
                         tabIndex={0}
                     >
-                        <img src={'/L.png'} className={styles.btnImgLeft} alt='Back Arrow' />
+                        <img src={'/L.png'} className={styles.btnImgLeft} alt='Back Arrow' loading='lazy' />
                     </div>
 
 
@@ -68,7 +58,7 @@ function MostPopular() {
                         role='button'
                         aria-label='carousel next button' tabIndex={0}
                     >
-                        <img src={'/R.png'} className={styles.btnImgRight} alt='Next Arrow' />
+                        <img src={'/R.png'} className={styles.btnImgRight} alt='Next Arrow' loading='lazy' />
                     </div>
                 </div>
             </div>
@@ -91,6 +81,7 @@ function MostPopular() {
                                 className={styles.itemIcon}
                                 alt={`${games.name} icon`}
                                 aria-label={`${games.name} icon`}
+                                loading='lazy'
                             >
                             </img>
                         </a>

@@ -74,6 +74,7 @@ function CartList() {
                                     src={item.icon}
                                     onClick={() => navigate(`${item.link}`)}
                                     alt={`${item.name} icon`}
+                                    loading='lazy'
                                     tabIndex={0}
                                     role='link'
                                 />
@@ -128,11 +129,11 @@ function CartList() {
 
 
                 <div className={styles.checkOutSection}>
-                    <img src={img7} className={styles.gamePortrait} alt='Shopping Image' />
+                    <img src={img7} className={styles.gamePortrait} alt='Shopping Image' loading='lazy' />
                     <div className={styles.checkOutInfo}>
 
-                        <h4>Total:</h4>
-                        <p className={styles.subTotal}>${total.toFixed(2)}</p>
+                        <h2 className={styles.totalTitle}>Total:</h2>
+                        <p>${total.toFixed(2)}</p>
 
                     </div>
                     <button className={styles.checkOutBtn}>Start check out</button>

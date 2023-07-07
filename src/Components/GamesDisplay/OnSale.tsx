@@ -1,5 +1,4 @@
 import { memo, useRef } from 'react';
-import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
@@ -10,14 +9,6 @@ const gamesOnSale = jsonData.slice(12, 24)
 
 function OnSale() {
     const scrollContainerRef = useRef<HTMLUListElement | null>(null);
-
-    const icons: string[] = gamesOnSale.map((items) => {
-        return items.icon
-    })
-
-    usePreloadImages(icons)
-
-
 
     const handleClickLeft = () => {
         const scrollContainer = scrollContainerRef.current;
@@ -61,7 +52,7 @@ function OnSale() {
                         aria-label='carousel back button'
                         tabIndex={0}
                     >
-                        <img src={'/L.png'} className={styles.btnImgLeft} alt='Back Arrow' />
+                        <img src={'/L.png'} className={styles.btnImgLeft} alt='Back Arrow' loading='lazy' />
                     </div>
 
 
@@ -73,7 +64,7 @@ function OnSale() {
                         aria-label='carousel next button'
                         tabIndex={0}
                     >
-                        <img src={'/R.png'} className={styles.btnImgRight} alt='Next Arrow' />
+                        <img src={'/R.png'} className={styles.btnImgRight} alt='Next Arrow' loading='lazy' />
                     </div>
 
                 </div>
@@ -95,6 +86,7 @@ function OnSale() {
                                 className={styles.itemIcon}
                                 alt={`${gamesSale.name} icon`}
                                 aria-label={`${gamesSale.name} icon`}
+                                loading='lazy'
                             >
                             </img>
                         </a>

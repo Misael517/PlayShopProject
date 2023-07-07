@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import styles from './BestOfTheYear.module.css';
 import useGetImages from '../../Hooks/useGetImages';
-import usePreloadImages from '../../Hooks/usePreloadImages';
 import jsonData from '../../assets/gamesInfo.json';
 
 
@@ -15,9 +14,6 @@ interface GameContent {
 function BestOfTheYear() {
 
     const { data: images, isLoading, isError } = useGetImages('bestOfTheYear', '/images/bestOfTheYear/', 'icon', '.webp', 6)
-
-    // Preload Images
-    usePreloadImages(images)
 
     if (isLoading) {
         return <h2>Loading...</h2>
@@ -53,6 +49,7 @@ function BestOfTheYear() {
                             key={game.id}
                             alt={`${game.name} icon`}
                             aria-label={`${game.name} icon`}
+                            loading='lazy'
                         >
                         </img>
                     </a>
