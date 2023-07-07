@@ -4,6 +4,7 @@ import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
 
+// items array
 const gamesOnSale = jsonData.slice(12, 24)
 
 

@@ -3,7 +3,7 @@ import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
-
+// items array
 const gamesComing = jsonData.slice(24, 36)
 
 

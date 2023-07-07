@@ -1,18 +1,14 @@
 import { memo, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
 
 
-
-
-
+// items array
 const gamesPopular = jsonData.slice(0, 12)
 
 
 function MostPopular() {
-    const navigate = useNavigate()
     const scrollContainerRef = useRef<HTMLUListElement | null>(null);
 
     const icons: string[] = gamesPopular.map((items) => {

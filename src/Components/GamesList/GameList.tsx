@@ -11,7 +11,7 @@ interface Games {
     Publisher: string,
     Genre: string;
     price: number;
-    coomingSoon: boolean;
+    comingSoon: boolean;
     isOnSale: boolean;
     discount: number;
     actualPrice: number;
@@ -40,7 +40,7 @@ function GameList() {
                             <div className={styles.gamesPrice}>
                                 <p className={styles.discountColor} style={{ display: games.isOnSale ? 'inline-block' : 'none' }}>{games.isOnSale ? `-${games.discount}%` : ''}</p>
                                 <p className={styles.strikeThrough} style={{ display: games.isOnSale ? 'inline-block' : 'none' }}>{games.isOnSale ? `${games.price}%` : ''}</p>
-                                <p style={{ textAlign: 'center' }}>{games.isOnSale ? `$${games.actualPrice}` : (games.coomingSoon ? '...' : `$${games.price}`)}</p>
+                                <p style={{ textAlign: 'center' }}>{games.isOnSale ? `$${games.actualPrice}` : (games.comingSoon ? '...' : `$${games.price}`)}</p>
                             </div>
                         </div>
                     </div>))}
