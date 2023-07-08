@@ -13,8 +13,8 @@
         display: flex;
         position: relative;
         width: 100%;
-        padding-top: calc(0.4vw + 0.3em);
-        padding-bottom: calc(0.4vw + 0.3em);
+        padding-top: calc(1vw + 0.45em);
+        padding-bottom: calc(1vw + 0.45em);
         padding-left: calc(1vw + 1em);
         padding-right: calc(0.4vw + 1em);
         justify-content: space-between;
@@ -178,8 +178,8 @@
         display: flex;
         position: relative;
         width: 100%;
-        padding-top: calc(0.4vw + 0.3em);
-        padding-bottom: calc(0.4vw + 0.3em);
+        padding-top: calc(1vw + 0.45em);
+        padding-bottom: calc(1vw + 0.45em);
         padding-left: calc(1vw + 1em);
         padding-right: calc(0.4vw + 1em);
         justify-content: space-between;
@@ -348,8 +348,8 @@
         display: flex;
         position: relative;
         width: 100%;
-        padding-top: calc(1vw + 0.35em);
-        padding-bottom: calc(1vw + 0.35em);
+        padding-top: calc(1vw + 0.55em);
+        padding-bottom: calc(1vw + 0.55em);
         padding-left: calc(1vw + 1.05em);
         padding-right: calc(1vw + 1.05em);
         justify-content: space-between;

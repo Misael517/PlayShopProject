@@ -121,7 +121,7 @@
     .searchContainer {
         display: flex;
         flex-direction: column;
-        width: 60%;
+        width: 66%;
         align-items: center;
         justify-content: center;
         position: relative;
@@ -214,7 +214,7 @@
     .searchContainer {
         display: flex;
         flex-direction: column;
-        width: 60%;
+        width: 66%;
         align-items: center;
         justify-content: center;
         position: relative;
