@@ -2,9 +2,10 @@ import { removeItem, increaseAmount, decreaseAmount } from '../../app/Slices/Car
 import type { RootState } from '../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { memo } from 'react';
 import styles from './CartList.module.css'
 import img7 from '/images/gamesImg/GodOfWar/img7.webp';
-import { memo } from 'react';
+
 
 interface Game {
     id: number,
@@ -30,6 +31,7 @@ function CartList() {
     useSelector((state: RootState) => state.cart.itemArr);
     const navigate = useNavigate()
 
+
     // Retrieve the local storage data
     const currentCart = localStorage.getItem('gamesCart')
     let cartItems: Game[] = [];
@@ -53,6 +55,9 @@ function CartList() {
     }
 
     const total = calculatePrice(0)
+
+
+
 
     return (
         <>

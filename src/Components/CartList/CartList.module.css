@@ -36,6 +36,7 @@
     background-color: rgb(20, 20, 20);
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
     overflow: hidden;
+    height: 16.22VW;
     width: 100%;
     border-radius: .6vw;
     margin: 0%;
@@ -44,8 +45,8 @@
 
 .itemIcon {
     margin: 0.6%;
-    aspect-ratio: 337 / 464;
     width: 11.4vw;
+    aspect-ratio: 337 / 464;
     border-radius: 4%;
     box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
     transition: 100ms;
@@ -221,7 +222,7 @@
 .checkOutBtn {
     background: #0084D1;
     border: none;
-    font-size: calc(1vw + .6rem);
+    font-size: calc(1vw + .4rem);
     font-weight: 600;
     text-transform: uppercase;
     color: white;
@@ -307,6 +308,7 @@
         background-color: rgb(20, 20, 20);
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
         overflow: hidden;
+        height: 48.5VW;
         width: 100%;
         border-radius: 2.5vw;
         margin-top: 0%;
@@ -549,6 +551,7 @@
         background-color: rgb(20, 20, 20);
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
         overflow: hidden;
+        height: 48.5VW;
         width: 100%;
         border-radius: 2.5vw;
         margin-top: 0%;
@@ -796,6 +799,7 @@
         background-color: rgb(20, 20, 20);
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
         overflow: hidden;
+        height: 43VW;
         width: 100%;
         border-radius: 1.8vw;
         margin-top: 0%;
