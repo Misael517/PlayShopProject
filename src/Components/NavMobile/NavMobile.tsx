@@ -113,9 +113,28 @@ function NavMobile() {
 
                     <div className={styles.sessionFrame}>
                         <div className={styles.profileContainer}>
-                            <div className={styles.profilePic} style={{ display: userSettings, backgroundImage: `url(${profilePic})` }}></div>
-                            <button className={styles.signOutBtn} style={{ display: userSettings }} onClick={() => handleSignOut()}>sign out</button>
-                            <a className={styles.signInBtn} style={{ display: showSignIn }} href='/SignIn'>Sign In</a>
+                            <div
+                                className={styles.profilePic}
+                                style={{ display: userSettings, backgroundImage: `url(${profilePic})` }}
+                                role="img"
+                                aria-label="Profile picture">
+                            </div>
+
+                            <button
+                                className={styles.signOutBtn}
+                                style={{ display: userSettings }}
+                                onClick={() => handleSignOut()}
+                            >
+                                sign out
+                            </button>
+
+                            <a
+                                className={styles.signInBtn}
+                                style={{ display: showSignIn }}
+                                href='/SignIn'
+                            >
+                                Sign In
+                            </a>
                         </div>
                     </div>
                 </div>

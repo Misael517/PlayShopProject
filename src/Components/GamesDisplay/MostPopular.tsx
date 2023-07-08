@@ -15,7 +15,7 @@ function MostPopular() {
         return items.icon
     })
 
-    usePreloadImages(icons.slice(7, 12))
+    usePreloadImages(icons)
 
 
 

@@ -31,7 +31,7 @@
 
     .logo {
         width: 15%;
-        aspect-ratio: 1 / 0;
+        aspect-ratio: 16 / 9;
     }
 
     .logo:hover {
@@ -105,7 +105,7 @@
 
     .cart {
         width: 4.6vw;
-        aspect-ratio: 1 / 0;
+        aspect-ratio: 98 / 93;
     }
 
     .cartAmount {
@@ -196,7 +196,7 @@
 
     .logo {
         width: 15%;
-        aspect-ratio: 1 / 0;
+        aspect-ratio: 16 / 9;
     }
 
     .logo:hover {
@@ -270,7 +270,7 @@
 
     .cart {
         width: 4.6vw;
-        aspect-ratio: 1 / 0;
+        aspect-ratio: 98 / 93;
     }
 
     .cartAmount {
@@ -328,7 +328,6 @@
         border: none;
         background: #050505;
     }
-
 }
 
 
@@ -361,12 +360,13 @@
 
     .navIcon {
         width: 5.5%;
+        aspect-ratio: 1 / 1;
     }
 
 
     .logo {
         width: 9%;
-        aspect-ratio: 1 / 0;
+        aspect-ratio: 16 / 9;
     }
 
 
@@ -435,7 +435,7 @@
 
     .cart {
         width: 3.8vw;
-        aspect-ratio: 1 / 0;
+        aspect-ratio: 98 / 93;
     }
 
     .cartAmount {

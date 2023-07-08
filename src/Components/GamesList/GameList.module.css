@@ -19,11 +19,10 @@
 
 .itemIcon {
     border-radius: 4%;
-    width: 12vw;
-    aspect-ratio: 1 / 1.4;
+    width: 11.3vw;
+    aspect-ratio: 337 / 464;
     box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
     transition: 100ms;
-    align-self: stretch;
 }
 
 .itemIcon:hover {
@@ -75,6 +74,10 @@
 
 
 
+
+
+
+
 /* Phones */
 @media (min-width: 100px) and (max-width: 767px) {
     .gamesContainer {
@@ -97,9 +100,8 @@
 
     .itemIcon {
         border-radius: 4%;
-        width: 60vw;
-        aspect-ratio: 1 / 1.4;
-        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
+        width: 59.02vw;
+        aspect-ratio: 337 / 464;
         transition: 100ms;
     }
 
@@ -113,7 +115,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: calc(0.28vw + 0.1em);
+        gap: calc(0.32vw + 0.1em);
         align-self: stretch;
         border-radius: 1.5vw;
         background: #1A1A1A;
@@ -123,7 +125,10 @@
         color: #FFF;
         text-align: center;
         font-weight: 400;
-        font-size: calc(1vw + .48rem);
+        font-size: calc(50.5% + 0.4rem);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .gamesPrice {
@@ -133,7 +138,7 @@
         gap: 10%;
         color: #FFF;
         text-align: center;
-        font-size: calc(1vw + .48rem);
+        font-size: calc(50% + 0.4rem);
     }
 
     .discountColor {
@@ -171,9 +176,8 @@
 
     .itemIcon {
         border-radius: 4%;
-        width: 60vw;
-        aspect-ratio: 1 / 1.4;
-        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
+        width: 59.02vw;
+        aspect-ratio: 337 / 464;
         transition: 100ms;
     }
 
@@ -187,7 +191,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: calc(0.28vw + 0.1em);
+        gap: calc(0.32vw + 0.1em);
         align-self: stretch;
         border-radius: 1.5vw;
         background: #1A1A1A;
@@ -197,7 +201,10 @@
         color: #FFF;
         text-align: center;
         font-weight: 400;
-        font-size: calc(1vw + .48rem);
+        font-size: calc(50.5% + 0.4rem);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .gamesPrice {
@@ -207,7 +214,7 @@
         gap: 10%;
         color: #FFF;
         text-align: center;
-        font-size: calc(1vw + .48rem);
+        font-size: calc(50% + 0.4rem);
     }
 
     .discountColor {
@@ -249,8 +256,8 @@
     .itemIcon {
         border-radius: 4%;
         box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
-        width: 30vw;
-        aspect-ratio: 1 / 1.4;
+        width: 30.4vw;
+        aspect-ratio: 337 / 464;
         transition: 100ms;
     }
 

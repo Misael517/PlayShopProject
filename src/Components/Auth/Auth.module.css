@@ -14,7 +14,7 @@
 
 .logo {
     width: 6vw;
-    aspect-ratio: 1 / 0.6;
+    aspect-ratio: 16 / 9;
 }
 
 .logo:hover {
@@ -115,6 +115,7 @@ label {
 
     .logo {
         width: 20vw;
+        aspect-ratio: 16 / 9;
     }
 
     .logo:hover {
@@ -213,6 +214,7 @@ label {
 
     .logo {
         width: 20vw;
+        aspect-ratio: 16 / 9;
     }
 
     .logo:hover {
@@ -316,6 +318,7 @@ label {
 
     .logo {
         width: 19vw;
+        aspect-ratio: 16 / 9;
     }
 
     .logo:hover {

@@ -21,8 +21,7 @@
 
 .imgItems {
     width: 12.5%;
-    height: 7vw;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 9;
     background-size: cover;
     transition: 170ms;
     z-index: 2;
@@ -50,7 +49,7 @@
 .buyingSection {
     display: flex;
     position: absolute;
-    top: 17%;
+    top: 16%;
     left: 10vw;
     justify-content: flex-start;
     flex-direction: column;
@@ -61,9 +60,7 @@
 
 
 .gamePortrait {
-    height: 11.1vw;
-    width: 100%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 10;
 }
 
 
@@ -206,9 +203,7 @@
     }
 
     .gamePortrait {
-        height: 40.5vw;
-        width: 100%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 16 / 10;
     }
 
     .gamesInfo {
@@ -283,10 +278,9 @@
 
 
     .imgItemsMobile {
-        height: 50vw;
-        width: 90%;
+        width: 90.72vw;
+        aspect-ratio: 16 / 9;
         background-size: cover;
-        aspect-ratio: 1 / 1;
         transition: 170ms;
         border-radius: 2.5vw;
         box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
@@ -374,9 +368,9 @@
     }
 
     .gamePortrait {
-        height: 40.5vw;
+        height: 41vw;
         width: 100%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 16 / 10;
     }
 
     .gamesInfo {
@@ -451,10 +445,9 @@
 
 
     .imgItemsMobile {
-        height: 50vw;
-        width: 90%;
+        width: 90.72vw;
+        aspect-ratio: 16 / 9;
         background-size: cover;
-        aspect-ratio: 1 / 1;
         transition: 170ms;
         border-radius: 2.5vw;
         box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
@@ -547,9 +540,7 @@
 
 
     .gamePortrait {
-        height: 32vw;
-        width: 100%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 16 / 10;
     }
 
     .gamesInfo {
@@ -624,9 +615,8 @@
 
 
     .imgItemsMobile {
-        width: 90%;
-        height: 50.5vw;
-        aspect-ratio: 1 / 1;
+        width: 83.2vw;
+        aspect-ratio: 16 / 9;
         background-size: cover;
         transition: 170ms;
         border-radius: 2.5vw;

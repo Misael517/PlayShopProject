@@ -45,9 +45,8 @@
 
 
 .logo {
-    height: 1.5vw;
     width: calc(2.25vw + .6rem);
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 16 / 9;
 }
 
 .logo:hover {
@@ -74,9 +73,8 @@
 }
 
 .cart {
-    height: 0.8;
     width: 1.15vw;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 98 / 93;
 }
 
 .cart:hover {
@@ -92,6 +90,7 @@
     background-position: center;
     height: 1.65vw;
     width: 1.65vw;
+    aspect-ratio: 16/9;
     border-radius: 2.5em;
     cursor: pointer;
 }

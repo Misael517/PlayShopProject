@@ -128,7 +128,10 @@ function Navbar() {
                         <div
                             className={styles.profilePic}
                             style={{ display: userSettings, backgroundImage: `url(${profilePic})` }}
-                            onClick={() => showSignOut === 'none' ? setShowSignOut('flex') : setShowSignOut('none')}>
+                            onClick={() => showSignOut === 'none' ? setShowSignOut('flex') : setShowSignOut('none')}
+                            role="button"
+                            aria-label="Show sign out button"
+                        >
                         </div>
 
                         <div className={styles.signOutContainer} style={{ display: showSignOut }}>

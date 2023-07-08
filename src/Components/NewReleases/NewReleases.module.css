@@ -23,9 +23,8 @@
 }
 
 .itemslogo {
-    height: 9vw;
     width: 61%;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 515 / 148;
 }
 
 .itemDesc {
@@ -86,14 +85,13 @@
 }
 
 .itemsThumbnail {
-    height: 7vw;
-    width: 12.5%;
     background-size: cover;
     transition: 170ms;
     z-index: 2;
     border-radius: 0.45vw;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.32);
-    aspect-ratio: 1 / 1;
+    width: 12.5%;
+    aspect-ratio: 16 / 9;
 }
 
 .itemsThumbnail:hover {
@@ -144,7 +142,7 @@
         height: 150vw;
         width: 100%;
         background-size: cover;
-        background-position: 45%;
+        background-position: 40%;
         transition: 300ms;
     }
 
@@ -162,9 +160,8 @@
     }
 
     .itemslogo {
-        height: 24vw;
         width: 100%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 515 / 148;
     }
 
 
@@ -219,13 +216,13 @@
     .btnImgLeft {
         display: block;
         width: 6.3vw;
-        aspect-ratio: 0 / 1;
+        aspect-ratio: 164 / 245;
     }
 
     .btnImgRight {
         display: block;
         width: 6.3vw;
-        aspect-ratio: 0 / 1;
+        aspect-ratio: 164 / 245;
     }
 
 
@@ -258,7 +255,7 @@
         height: 150vw;
         width: 100%;
         background-size: cover;
-        background-position: 45%;
+        background-position: 40%;
         transition: 300ms;
     }
 
@@ -276,9 +273,8 @@
     }
 
     .itemslogo {
-        height: 24vw;
         width: 100%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 515 / 148;
     }
 
 
@@ -333,13 +329,13 @@
     .btnImgLeft {
         display: block;
         width: 6.3vw;
-        aspect-ratio: 0 / 1;
+        aspect-ratio: 164 / 245;
     }
 
     .btnImgRight {
         display: block;
         width: 6.3vw;
-        aspect-ratio: 0 / 1;
+        aspect-ratio: 164 / 245;
     }
 
 
@@ -369,7 +365,7 @@
         min-height: 121vw;
         width: 100%;
         background-size: cover;
-        background-position: 40%;
+        background-position: 35%;
         transition: 300ms;
     }
 
@@ -388,7 +384,7 @@
     .itemslogo {
         height: 22vw;
         width: 90%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 515 / 148;
     }
 
 
@@ -439,12 +435,13 @@
     .btnImgLeft {
         display: block;
         width: 4.3vw;
+        aspect-ratio: 164 / 245;
     }
 
     .btnImgRight {
         display: block;
         width: 4.3vw;
-        aspect-ratio: 0 / 1;
+        aspect-ratio: 164 / 245;
     }
 
 

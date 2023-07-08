@@ -19,9 +19,8 @@
 }
 
 .itemIcon {
-    height: 16vw;
     width: 28vw;
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 719 / 410;
     border-radius: 1.2em;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
     transition: 200ms;
@@ -59,13 +58,12 @@
     }
 
     .itemIcon {
-        width: 100%;
         border-radius: 0.7em;
         box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
         transition: 200ms;
         margin-bottom: 3%;
-        height: 47vw;
-        aspect-ratio: 2 / 1;
+        width: 100%;
+        aspect-ratio: 719 / 410;
     }
 
     .itemIcon:hover {
@@ -98,13 +96,12 @@
     }
 
     .itemIcon {
-        width: 100%;
         border-radius: 0.7em;
         box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
         transition: 200ms;
         margin-bottom: 3%;
-        height: 47vw;
-        aspect-ratio: 2 / 1;
+        width: 100%;
+        aspect-ratio: 719 / 410;
     }
 
     .itemIcon:hover {
@@ -138,13 +135,12 @@
     }
 
     .itemIcon {
-        width: 100%;
         border-radius: 0.7em;
         box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.5);
         transition: 200ms;
         margin-bottom: 3%;
-        height: 47vw;
-        aspect-ratio: 2 / 1;
+        width: 100%;
+        aspect-ratio: 719 / 410;
     }
 
     .itemIcon:hover {
