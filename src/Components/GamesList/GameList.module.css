@@ -101,8 +101,8 @@
     .itemIcon {
         border-radius: 4%;
         width: 58vw;
+        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
         aspect-ratio: 337 / 464;
-        transition: 100ms;
     }
 
     .itemIcon:hover {
@@ -111,11 +111,11 @@
 
     .gamesInfo {
         display: flex;
-        padding: 3%;
+        padding: 3.5%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: calc(0.32vw + 0.1em);
+        gap: calc(0.5vw + 0.1em);
         align-self: stretch;
         border-radius: 1.5vw;
         background: #1A1A1A;
@@ -135,7 +135,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10%;
+        gap: 6.5%;
         color: #FFF;
         text-align: center;
         font-size: calc(50% + 0.4rem);
@@ -177,8 +177,8 @@
     .itemIcon {
         border-radius: 4%;
         width: 58vw;
+        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
         aspect-ratio: 337 / 464;
-        transition: 100ms;
     }
 
     .itemIcon:hover {
@@ -187,11 +187,11 @@
 
     .gamesInfo {
         display: flex;
-        padding: 3%;
+        padding: 3.5%;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: calc(0.32vw + 0.1em);
+        gap: calc(0.5vw + 0.1em);
         align-self: stretch;
         border-radius: 1.5vw;
         background: #1A1A1A;
@@ -211,7 +211,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10%;
+        gap: 6.5%;
         color: #FFF;
         text-align: center;
         font-size: calc(50% + 0.4rem);

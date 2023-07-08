@@ -105,16 +105,16 @@ label {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vw;
-        width: 85vw;
+        height: 130vw;
+        width: 87vw;
         background-color: rgb(48, 48, 48);
         border-radius: 4vw;
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
-        gap: 6.8vw;
+        gap: 10vw;
     }
 
     .logo {
-        width: 20vw;
+        width: 22.5vw;
         aspect-ratio: 16 / 9;
     }
 
@@ -132,18 +132,18 @@ label {
 
     label {
         font-weight: 400;
-        font-size: calc(2vw + .5rem);
-        margin-bottom: 1.8%;
+        font-size: calc(2vw + .6rem);
+        margin-bottom: 2%;
     }
 
     .inputField {
         color: black;
-        font-size: calc(1vw + 0.6rem);
+        font-size: calc(1.55vw + 0.65rem);
         padding: 1.5%;
-        height: 7.5vw;
-        width: 70vw;
+        height: 9.5vw;
+        width: 75vw;
         border: solid rgba(0, 0, 0, 0.0);
-        border-radius: 1.5vw;
+        border-radius: 2.3vw;
         outline: none;
         box-shadow: none;
     }
@@ -157,15 +157,15 @@ label {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-top: 5%;
+        margin-top: 4%;
     }
 
     .submitButton {
         font-weight: 400;
-        font-size: calc(1vw + 0.6rem);
+        font-size: calc(1.3vw + 0.7rem);
         outline: none;
-        width: 20vw;
-        height: 7.5vw;
+        width: 24vw;
+        height: 8.5vw;
         box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
         border: solid rgba(0, 0, 0, 0.0);
         border-radius: 1.1vw;
@@ -189,8 +189,8 @@ label {
         gap: 2vw;
         background-color: rgba(168, 1, 1, 0.3);
         padding: 3%;
-        border-radius: 1vw;
-        font-size: calc(1vw + 0.5rem);
+        border-radius: 2vw;
+        font-size: calc(1.1vw + 0.55rem);
     }
 }
 
@@ -204,16 +204,16 @@ label {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vw;
-        width: 85vw;
+        height: 130vw;
+        width: 87vw;
         background-color: rgb(48, 48, 48);
         border-radius: 4vw;
         box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
-        gap: 6.8vw;
+        gap: 10vw;
     }
 
     .logo {
-        width: 20vw;
+        width: 22.5vw;
         aspect-ratio: 16 / 9;
     }
 
@@ -231,18 +231,18 @@ label {
 
     label {
         font-weight: 400;
-        font-size: calc(2vw + .5rem);
-        margin-bottom: 1.8%;
+        font-size: calc(2vw + .6rem);
+        margin-bottom: 2%;
     }
 
     .inputField {
         color: black;
-        font-size: calc(1vw + 0.6rem);
+        font-size: calc(1.55vw + 0.65rem);
         padding: 1.5%;
-        height: 7.5vw;
-        width: 70vw;
+        height: 9.5vw;
+        width: 75vw;
         border: solid rgba(0, 0, 0, 0.0);
-        border-radius: 1.5vw;
+        border-radius: 2.3vw;
         outline: none;
         box-shadow: none;
     }
@@ -256,15 +256,15 @@ label {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-top: 5%;
+        margin-top: 4%;
     }
 
     .submitButton {
         font-weight: 400;
-        font-size: calc(1vw + 0.6rem);
+        font-size: calc(1.3vw + 0.7rem);
         outline: none;
-        width: 20vw;
-        height: 7.5vw;
+        width: 24vw;
+        height: 8.5vw;
         box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
         border: solid rgba(0, 0, 0, 0.0);
         border-radius: 1.1vw;
@@ -288,8 +288,8 @@ label {
         gap: 2vw;
         background-color: rgba(168, 1, 1, 0.3);
         padding: 3%;
-        border-radius: 1vw;
-        font-size: calc(1vw + 0.5rem);
+        border-radius: 2vw;
+        font-size: calc(1.1vw + 0.55rem);
     }
 }
 
@@ -308,7 +308,7 @@ label {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vw;
+        height: 105vw;
         width: 85vw;
         background-color: rgb(48, 48, 48);
         border-radius: 4vw;
