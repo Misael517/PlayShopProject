@@ -139,11 +139,11 @@ label {
     .inputField {
         color: black;
         font-size: calc(1.55vw + 0.65rem);
-        padding: 1.5%;
+        padding: 2.5%;
         height: 9.5vw;
         width: 75vw;
         border: solid rgba(0, 0, 0, 0.0);
-        border-radius: 2.3vw;
+        border-radius: 2.5vw;
         outline: none;
         box-shadow: none;
     }
@@ -238,11 +238,11 @@ label {
     .inputField {
         color: black;
         font-size: calc(1.55vw + 0.65rem);
-        padding: 1.5%;
+        padding: 2.5%;
         height: 9.5vw;
         width: 75vw;
         border: solid rgba(0, 0, 0, 0.0);
-        border-radius: 2.3vw;
+        border-radius: 2.5vw;
         outline: none;
         box-shadow: none;
     }
