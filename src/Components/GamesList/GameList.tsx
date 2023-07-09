@@ -1,6 +1,8 @@
+import { memo } from 'react';
+import { useDispatch } from 'react-redux';
+import { setContentID } from '../../app/Slices/GamesPageSlice';
 import styles from './GameList.module.css';
 import jsonData from '../../assets/gamesInfo.json';
-import { memo } from 'react';
 interface Games {
     id: number,
     name: string;
@@ -19,6 +21,7 @@ interface Games {
 
 
 function GameList() {
+    const dispatch = useDispatch()
 
     return (
         <>
@@ -31,6 +34,9 @@ function GameList() {
                                 className={styles.itemIcon}
                                 alt='Game Icon'
                                 aria-label={`${games.name} icon`}
+                                onClick={() => dispatch(setContentID(games.id))}
+                                role='button'
+                                tabIndex={0}
                             >
                             </img>
                         </a>

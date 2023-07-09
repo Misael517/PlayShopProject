@@ -1,11 +1,15 @@
 import { memo, lazy, Suspense } from 'react';
-import useGetImages from '../../../Hooks/useGetImages';
-import styles from '../Styles/pagesStyle.module.css';
-import jsonData from '../../../assets/gamesInfo.json';
+import { RootState } from '../../app/store';
+import { useSelector } from 'react-redux';
+import useGetImages from '../../Hooks/useGetImages';
+import styles from './GamesPage.module.css';
+import jsonData from '../../assets/gamesInfo.json';
 
-const GameContent = lazy(() => import('../../../Components/GameContent/GameContent'))
-const Navbar = lazy(() => import('../../../Components/Navbar/Navbar'))
-const Footer = lazy(() => import('../../../Components/Footer/Footer'))
+const GameContent = lazy(() => import('../../Components/GameContent/GameContent'))
+const Navbar = lazy(() => import('../../Components/Navbar/Navbar'))
+const Footer = lazy(() => import('../../Components/Footer/Footer'))
+
+
 
 interface ShowCase {
     id: number;
@@ -13,10 +17,20 @@ interface ShowCase {
     image: string;
 }
 
-function DeadSpace() {
-    const currentGame = jsonData[39]
-    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages('DeadSpaceImg', '/images/gamesImg/DeadSpace/', 'img', '.webp', 7);
-    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages('DeadSpaceThumb', '/images/gamesImg/DeadSpace/imageThumbnail/', 'thumb', '.webp', 6);
+// Get the number of the current game that is going to be displayed
+const currentIndex = Number(sessionStorage.getItem('currentContent'))
+
+// Save the value from the session storage
+const currentGame = jsonData[currentIndex]
+
+
+
+function GamesPages() {
+    useSelector((state: RootState) => state.gamesPages.contentID);
+
+    // Save the images in cache
+    const { data: img, isLoading: isImagesLoading, isError: isImagesError } = useGetImages(`${currentGame.name}Img`, `/images/gamesImg${currentGame.link}/`, 'img', '.webp', 7);
+    const { data: thumb, isLoading: isThumbLoading, isError: isThumbError } = useGetImages(`${currentGame.name}Thumb`, `/images/gamesImg/${currentGame.link}/imageThumbnail/`, 'thumb', '.webp', 6);
 
     if (isImagesLoading || isThumbLoading) {
         return <h2>Loading...</h2>;
@@ -62,6 +76,7 @@ function DeadSpace() {
         },
     ]
 
+
     return (
         <>
             {/* This is the navbar */}
@@ -89,6 +104,6 @@ function DeadSpace() {
         </>)
 }
 
-const DeadSpaceMemo = memo(DeadSpace)
+const GamesPagesMemo = memo(GamesPages)
 
-export default DeadSpaceMemo
+export default GamesPagesMemo

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setContentID } from '../../app/Slices/GamesPageSlice';
 import jsonData from '../../assets/gamesInfo.json';
 import styles from './SearchBar.module.css';
 import usePreloadImages from '../../Hooks/usePreloadImages';
@@ -28,18 +29,22 @@ interface Games {
 function SearchBar() {
     const [currentItem, setCurrentItem] = useState<string>('')
     const [display, setDisplay] = useState<string>('none')
-    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const componentRef = useRef<HTMLDivElement>(null)
 
 
+    // Preload icons
     const preloadIcons: string[] = jsonData.map((images) => {
         return images.searchIcon
     })
 
     usePreloadImages(preloadIcons)
 
+
+
     // Generate an ID for the search bar
     const searchBarID = crypto.randomUUID()
+
 
 
     // Display the search bar each tiem it finds letters
@@ -63,6 +68,9 @@ function SearchBar() {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [])
+
+
+
 
     return (
         <>
@@ -90,13 +98,13 @@ function SearchBar() {
 
                     }
                     ).splice(0, 4).map((games: Games) => (
-                        <div
+                        <a
                             className={styles.itemFrame}
                             key={games.id}
-                            onClick={() => navigate(`${games.link ? games.link : ''}`)}
-                            role='button'
+                            onClick={() => dispatch(setContentID(games.id))}
                             aria-label={`${games.name} page button`}
                             tabIndex={0}
+                            href={`${games.link}`}
                         >
 
                             <img
@@ -111,7 +119,7 @@ function SearchBar() {
                                 <h3>{games.name}</h3>
                             </div>
 
-                        </div>))}
+                        </a>))}
                 </div>
             </div>
 

@@ -1,7 +1,10 @@
 import { memo, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { setContentID } from '../../app/Slices/GamesPageSlice';
 import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
+
 
 
 // items array
@@ -9,6 +12,7 @@ const gamesOnSale = jsonData.slice(12, 24)
 
 
 function OnSale() {
+    const dispatch = useDispatch()
     const scrollContainerRef = useRef<HTMLUListElement | null>(null);
 
     const icons: string[] = gamesOnSale.map((items) => {
@@ -96,6 +100,7 @@ function OnSale() {
                                 alt={`${gamesSale.name} icon`}
                                 aria-label={`${gamesSale.name} icon`}
                                 loading='lazy'
+                                onClick={() => dispatch(setContentID(gamesSale.id))}
                             >
                             </img>
                         </a>

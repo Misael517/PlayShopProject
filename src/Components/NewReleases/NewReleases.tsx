@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { memo } from 'react';
+import { useDispatch } from 'react-redux';
+import { setContentID } from '../../app/Slices/GamesPageSlice';
 import useGetImages from '../../Hooks/useGetImages';
 import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './NewReleases.module.css';
@@ -9,6 +11,7 @@ import jsonData from '../../assets/gamesInfo.json';
 
 interface GameContent {
     id: number;
+    index: number;
     logo: string;
     description: string;
     link?: string;
@@ -18,6 +21,7 @@ interface GameContent {
 }
 
 function NewReleases() {
+    const dispatch = useDispatch()
     const [currentGame, setCurrentGame] = useState<number>(0);
 
     const { data: images, isLoading, isError } = useGetImages('newReleases', '/images/newReleases/', 'game', '.webp', 6)
@@ -42,36 +46,48 @@ function NewReleases() {
 
     const gamesContent: GameContent[] = [
         {
-            id: 0, logo: logo[0],
+            id: 0,
+            logo: logo[0],
+            index: jsonData[13].id,
             description: 'Embark on an epic and heartfelt journey as Kratos and Atreus',
             link: jsonData[13].link,
-            image: images[0], icon: icon[0],
+            image: images[0],
+            icon: icon[0],
             price: jsonData[13].actualPrice
         },
         {
             id: 1,
+            index: jsonData[12].id,
             logo: logo[1],
             description: 'One of the best RPGs of all time Now ready for a new generation',
-            link: jsonData[12].link, image: images[1], icon: icon[1],
+            link: jsonData[12].link,
+            image: images[1],
+            icon: icon[1],
             price: jsonData[12].actualPrice
         },
         {
             id: 2,
+            index: jsonData[42].id,
             logo: logo[2],
             description: 'Explore the vast land and skies of Hyrule playing as Link',
-            link: jsonData[42].link, image: images[2], icon: icon[2],
+            link: jsonData[42].link,
+            image: images[2],
+            icon: icon[2],
             price: jsonData[42].price
         },
         {
             id: 3,
+            index: jsonData[15].id,
             logo: logo[3],
             description: 'Untangle the past as Kena, in search of the Mountain Shrine',
-            link: jsonData[15].link, image:
-                images[3], icon: icon[3],
+            link: jsonData[15].link,
+            image: images[3],
+            icon: icon[3],
             price: jsonData[15].actualPrice
         },
         {
             id: 4,
+            index: jsonData[43].id,
             logo: logo[4],
             description: 'Defeat with survivors the creatures threatening to bleed the town dry',
             link: jsonData[43].link,
@@ -81,6 +97,7 @@ function NewReleases() {
         },
         {
             id: 5,
+            index: jsonData[40].id,
             logo: logo[5],
             description: 'Get ready to become a Jedi and Stand Against the Darkness',
             link: jsonData[40].link,
@@ -128,15 +145,21 @@ function NewReleases() {
                     <div className={styles.btnMobileFrame} >
 
                         {/* Back button */}
-                        <div onClick={() => currentGame > 0 ? setCurrentGame(currentGame - 1) : ''}
-                            role='button' tabIndex={0} aria-label="Back button">
+                        <div
+                            onClick={() => currentGame > 0 ? setCurrentGame(currentGame - 1) : ''}
+                            role='button' tabIndex={0} aria-label="Back button"
+                        >
 
                             <img src={'/L.png'} className={styles.btnImgLeft} alt='Left arrow' loading='lazy' />
                         </div>
 
 
                         {/* BUY NOW button */}
-                        <a className={styles.buyBtn} href={gamesContent[currentGame].link}>Buy Now</a>
+                        <a href={gamesContent[currentGame].link}>
+                            <button type='button' className={styles.buyBtn} onClick={() => dispatch(setContentID(gamesContent[currentGame].index))}>
+                                Buy Now
+                            </button>
+                        </a>
 
 
                         {/* Next button */}

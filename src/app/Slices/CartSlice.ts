@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 // interfaces:
 export interface Game {
-    id: number,
+    id: number;
     name: string;
     icon: string;
     searchIcon: string;

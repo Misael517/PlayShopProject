@@ -58,6 +58,7 @@
     width: 100%;
     transition: 200ms;
     background-color: rgb(168, 1, 1);
+    text-decoration: none;
 }
 
 .itemFrame:hover {
@@ -87,6 +88,7 @@
     align-items: center;
     font-size: calc(0.5vw + .25rem);
     font-weight: 400;
+    text-decoration: none;
 }
 
 

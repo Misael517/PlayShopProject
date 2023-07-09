@@ -1,4 +1,6 @@
 import { memo, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { setContentID } from '../../app/Slices/GamesPageSlice';
 import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
@@ -8,6 +10,7 @@ const gamesComing = jsonData.slice(24, 36)
 
 
 function ComingSoon() {
+    const dispatch = useDispatch()
     const scrollContainerRef = useRef<HTMLUListElement | null>(null);
 
     const icons: string[] = gamesComing.map((items) => {
@@ -88,6 +91,7 @@ function ComingSoon() {
                                 alt={`${games.name} icon`}
                                 aria-label={`${games.name} icon`}
                                 loading='lazy'
+                                onClick={() => dispatch(setContentID(games.id))}
                             >
                             </img>
                         </a>

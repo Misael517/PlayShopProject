@@ -22,6 +22,10 @@
     width: 61%;
 }
 
+.itemsFrame a {
+    text-decoration: none;
+}
+
 .itemslogo {
     width: 61%;
     aspect-ratio: 515 / 148;

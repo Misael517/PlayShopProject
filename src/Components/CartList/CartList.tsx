@@ -1,10 +1,10 @@
 import { removeItem, increaseAmount, decreaseAmount } from '../../app/Slices/CartSlice';
+import { setContentID } from '../../app/Slices/GamesPageSlice';
 import type { RootState } from '../../app/store';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { memo } from 'react';
 import styles from './CartList.module.css'
-import img7 from '/images/gamesImg/GodOfWar/img7.webp';
+import img7 from '/images/gamesImg/GodOfWarRagnarok/img7.webp';
 
 
 interface Game {
@@ -29,7 +29,6 @@ interface Game {
 function CartList() {
     const dispatch = useDispatch()
     useSelector((state: RootState) => state.cart.itemArr);
-    const navigate = useNavigate()
 
 
     // Retrieve the local storage data
@@ -59,6 +58,7 @@ function CartList() {
 
 
 
+
     return (
         <>
             {/* Item container with descriptions */}
@@ -74,15 +74,16 @@ function CartList() {
                         return (
                             <div className={styles.itemsContainer} key={item.id}>
 
-                                <img
-                                    className={styles.itemIcon}
-                                    src={item.icon}
-                                    onClick={() => navigate(`${item.link}`)}
-                                    alt={`${item.name} icon`}
-                                    loading='lazy'
-                                    tabIndex={0}
-                                    role='link'
-                                />
+                                <a href={`${item.link}`} key={item.id} className={styles.link}>
+                                    <img
+                                        className={styles.itemIcon}
+                                        src={item.icon}
+                                        alt={`${item.name} icon`}
+                                        onClick={() => dispatch(setContentID(item.id))}
+                                        role='button'
+                                        tabIndex={0}
+                                    />
+                                </a>
 
                                 {/* Item details */}
                                 <div className={styles.itemInfo}>

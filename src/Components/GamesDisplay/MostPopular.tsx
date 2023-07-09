@@ -1,4 +1,6 @@
 import { memo, useRef } from 'react';
+import { useDispatch } from 'react-redux';
+import { setContentID } from '../../app/Slices/GamesPageSlice';
 import usePreloadImages from '../../Hooks/usePreloadImages';
 import styles from './Styles/GamesDisplay.module.css';
 import jsonData from '../../assets/gamesInfo.json';
@@ -9,6 +11,7 @@ const gamesPopular = jsonData.slice(0, 12)
 
 
 function MostPopular() {
+    const dispatch = useDispatch()
     const scrollContainerRef = useRef<HTMLUListElement | null>(null);
 
     const icons: string[] = gamesPopular.map((items) => {
@@ -91,6 +94,7 @@ function MostPopular() {
                                 alt={`${games.name} icon`}
                                 aria-label={`${games.name} icon`}
                                 loading='lazy'
+                                onClick={() => dispatch(setContentID(games.id))}
                             >
                             </img>
                         </a>
