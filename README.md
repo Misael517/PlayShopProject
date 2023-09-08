@@ -57,9 +57,9 @@ in video games. It includes a catalog of 40+ items.
 
 -- How to start it --
 
-1- Download the repository from [GitHub URL].
+1- Download the repository from GitHub.
 
-2- Install the necessary dependencies using [package manager].
+2- Install the necessary dependencies.
 
 3- Run the aplication.
 
