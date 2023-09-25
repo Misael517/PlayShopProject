@@ -11,8 +11,8 @@ experience, and expertise when it comes to front end development.
 
 -- Overview --
 
-This online store is a platform designed to provide a friendy experience for customers interested
-in video games. It includes a catalog of 40+ items.
+This online store is a platform designed to provide a friendly experience for customers interested in video games. 
+It includes a catalog of 40+ items.
 
 
 
