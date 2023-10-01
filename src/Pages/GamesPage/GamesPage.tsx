@@ -8,6 +8,7 @@ import jsonData from '../../assets/gamesInfo.json';
 const GameContent = lazy(() => import('../../Components/GameContent/GameContent'))
 const Navbar = lazy(() => import('../../Components/Navbar/Navbar'))
 const Footer = lazy(() => import('../../Components/Footer/Footer'))
+// const ReviewsFeed = lazy(() => import('../../Components/ReviewFeed/ReviewsFeed'))
 
 
 
@@ -22,7 +23,6 @@ const currentIndex = Number(sessionStorage.getItem('currentContent'))
 
 // Save the value from the session storage
 const currentGame = jsonData[currentIndex]
-
 
 
 function GamesPages() {
@@ -78,7 +78,7 @@ function GamesPages() {
 
 
     return (
-        <>
+        <Suspense>
             {/* This is the navbar */}
             <header className={styles.header}>
                 <Suspense>
@@ -89,10 +89,11 @@ function GamesPages() {
             {/* This is the main part of the body */}
             <main className={styles.main}>
                 <section className={styles.section1}>
-                    <Suspense>
-                        <GameContent imgArr={imgArr} img7={img[6]} currentGame={currentGame} />
-                    </Suspense>
+                    <GameContent imgArr={imgArr} img7={img[6]} currentGame={currentGame} />
                 </section>
+                {/* <section className={styles.section2}>
+                    <ReviewsFeed />
+                </section> */}
             </main>
 
             {/* This is the footer, the end of the page */}
@@ -101,7 +102,8 @@ function GamesPages() {
                     <Footer />
                 </Suspense>
             </footer>
-        </>)
+        </Suspense>
+    )
 }
 
 const GamesPagesMemo = memo(GamesPages)

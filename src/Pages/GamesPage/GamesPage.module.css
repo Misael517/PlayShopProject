@@ -6,6 +6,9 @@
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
+    gap: 8vw;
     margin-bottom: 1.5vw;
     min-height: 100vh;
     margin-bottom: 3vw;
@@ -13,8 +16,17 @@
 
 .section1 {
     display: flex;
+    align-items: center;
     flex-direction: column;
     gap: 8vw;
+}
+
+.section2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1vw;
 }
 
 
