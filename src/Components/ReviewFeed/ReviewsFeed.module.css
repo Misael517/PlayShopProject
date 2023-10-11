@@ -1,7 +1,35 @@
-.reviewsTitle {
-    color: black;
+.reviewsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    background-color: rgb(175, 175, 175);
 }
 
-.reviewsStatus {
+
+.reviewsTitle {
     color: black;
+    font-size: 1.2vw;
+    font-weight: 400;
+}
+
+.starsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+.reviewsRating {
+    font-size: 2.6vw;
+    color: black;
+    margin-right: 5%;
+}
+
+.stars {
+    background-color: rgb(255, 166, 0);
+    height: 3.4vw;
+    width: 4vw;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
 }

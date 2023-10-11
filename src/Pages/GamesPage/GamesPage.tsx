@@ -8,7 +8,7 @@ import jsonData from '../../assets/gamesInfo.json';
 const GameContent = lazy(() => import('../../Components/GameContent/GameContent'))
 const Navbar = lazy(() => import('../../Components/Navbar/Navbar'))
 const Footer = lazy(() => import('../../Components/Footer/Footer'))
-// const ReviewsFeed = lazy(() => import('../../Components/ReviewFeed/ReviewsFeed'))
+const ReviewsFeed = lazy(() => import('../../Components/ReviewFeed/ReviewsFeed'))
 
 
 
@@ -91,9 +91,9 @@ function GamesPages() {
                 <section className={styles.section1}>
                     <GameContent imgArr={imgArr} img7={img[6]} currentGame={currentGame} />
                 </section>
-                {/* <section className={styles.section2}>
+                <section className={styles.section2}>
                     <ReviewsFeed />
-                </section> */}
+                </section>
             </main>
 
             {/* This is the footer, the end of the page */}
