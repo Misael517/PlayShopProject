@@ -1,667 +1,547 @@
 .imgDisplay {
-    height: 35vw;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: 200ms;
-    position: relative;
-    aspect-ratio: 1 / 1;
+  height: 35vw;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: 200ms;
+  position: relative;
 }
 
 .imgContainer {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    top: 89%;
-    gap: 0.6%;
-    width: 100%;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  top: 89%;
+  gap: 0.6%;
+  width: 100%;
 }
 
-
 .imgItems {
-    width: 12.5%;
-    aspect-ratio: 16 / 9;
-    background-size: cover;
-    transition: 170ms;
-    z-index: 2;
-    border-radius: 0.45vw;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.32);
+  width: 12.5%;
+  aspect-ratio: 16 / 9;
+  background-size: cover;
+  transition: 170ms;
+  z-index: 2;
+  border-radius: 18px;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.32);
 }
 
 .imgItems:hover {
-    cursor: pointer;
-    transition: 170ms;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transition: 170ms;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
 }
 
 .selectedImg {
-    transform: scale(1.05);
-    transition: 170ms;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+  transition: 170ms;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
 }
-
-
-
-
-
 
 .buyingSection {
-    display: flex;
-    position: absolute;
-    top: 16%;
-    left: 10vw;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 18%;
-    border-radius: 0.6vw;
-    overflow: hidden;
+  display: flex;
+  position: absolute;
+  top: 16%;
+  left: 10vw;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 18%;
+  border-radius: 28px;
+  overflow: hidden;
 }
-
 
 .gamePortrait {
-    aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 10;
 }
 
-
 .gamesInfo {
+  display: flex;
+  flex-direction: column;
+  height: 8%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(20, 20, 20);
+  padding: 0.7vw;
+  gap: 0.45vw;
+}
+
+.gamesInfo h3 {
+  font-weight: 400;
+  font-display: swap;
+  font-size: calc(0.6vw + 0.5rem);
+}
+
+.gamesInfo p {
+  font-size: calc(0.5vw + 0.42rem);
+  font-display: swap;
+}
+
+.gamesPrice {
+  display: flex;
+  font-display: swap;
+  gap: 6%;
+  font-weight: 400;
+}
+
+.discountColor {
+  color: #0084d1;
+  font-weight: 600;
+  font-display: swap;
+}
+
+.strikeThrough {
+  text-decoration: line-through;
+  color: rgb(206, 206, 206);
+  font-display: swap;
+}
+
+.addBtn {
+  background: #0084d1;
+  border: none;
+  font-size: calc(1vw + 0.4vw);
+  font-weight: 600;
+  font-display: swap;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  height: 2.75vw;
+  min-height: 2.75vw;
+  transition: 170ms;
+}
+
+.addBtn:hover {
+  background: #004b77;
+  transition: 170ms;
+  cursor: pointer;
+}
+
+.imgContainerMobile {
+  display: none;
+}
+
+/* Phones: */
+@media (min-width: 100px) and (max-width: 767px) {
+  .imgItems {
+    display: none;
+  }
+
+  .imgDisplay {
+    height: 100vw;
+    background-size: cover;
+    background-position: 30%;
+    transition: 200ms;
+    position: relative;
+    aspect-ratio: 1 / 1;
+  }
+
+  .buyingSection {
+    display: flex;
+    position: inherit;
+    top: 15%;
+    left: 19.5%;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 65%;
+    border-radius: 3.5vw;
+    overflow: hidden;
+  }
+
+  .gamePortrait {
+    aspect-ratio: 16 / 10;
+  }
+
+  .gamesInfo {
     display: flex;
     flex-direction: column;
-    height: 8%;
     width: 100%;
     justify-content: center;
     align-items: center;
     background-color: rgb(20, 20, 20);
-    padding: 0.7vw;
-    gap: 0.45vw;
-}
+    padding: 2vw;
+    gap: 1.2vw;
+  }
 
-.gamesInfo h3 {
+  .gamesInfo h3 {
     font-weight: 400;
-    font-display: swap;
-    font-size: calc(0.6vw + .5rem);
-}
+    font-size: calc(1.1vw + 0.7rem);
+  }
 
-.gamesInfo p {
-    font-size: calc(0.5vw + .42rem);
-    font-display: swap;
-}
+  .gamesInfo p {
+    font-size: calc(1vw + 0.615rem);
+  }
 
-.gamesPrice {
+  .gamesPrice {
     display: flex;
-    font-display: swap;
     gap: 6%;
     font-weight: 400;
-}
+  }
 
-.discountColor {
-    color: #0084D1;
+  .discountColor {
+    color: #0084d1;
     font-weight: 600;
-    font-display: swap;
-}
+  }
 
-
-.strikeThrough {
+  .strikeThrough {
     text-decoration: line-through;
     color: rgb(206, 206, 206);
-    font-display: swap;
-}
+  }
 
-.addBtn {
-    background: #0084D1;
+  .addBtn {
+    background: #0084d1;
     border: none;
-    font-size: calc(1vw + .4vw);
+    font-size: calc(2.2vw + 0.9rem);
     font-weight: 600;
-    font-display: swap;
     text-transform: uppercase;
     color: white;
     text-decoration: none;
-    height: 2.75vw;
-    min-height: 2.75vw;
+    height: 13vw;
     transition: 170ms;
-}
+  }
 
-.addBtn:hover {
+  .addBtn:hover {
     background: #004b77;
     transition: 170ms;
     cursor: pointer;
-}
+  }
 
-
-
-
-
-
-.detailsContainer {
+  .imgContainerMobile {
     display: flex;
+    flex-direction: column;
+    position: inherit;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+  }
+
+  .imgItemsMobile {
+    width: 90.72vw;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    transition: 170ms;
+    border-radius: 2.5vw;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .imgItemsMobile:hover {
+    cursor: pointer;
+    transition: 170ms;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .selectedImg {
+    transform: scale(1);
+    transition: 170ms;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
+
+  .detailsContainer {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
-}
+    gap: 6vw;
+  }
 
-.detailsTitle {
+  .detailsTitle {
     text-transform: uppercase;
     text-align: center;
-    color: rgba(56, 56, 56, 0.9);
-    font-size: calc(1rem + 1.3vw);
-    font-display: swap;
-}
+    color: #c51700;
+    font-size: calc(1rem + 2.5vw);
+  }
 
-.detailsContent {
+  .detailsContent {
     text-transform: uppercase;
     text-align: center;
     font-weight: 400;
     color: black;
-    font-display: swap;
-    font-size: calc(0.2rem + 1vw);
-    margin-top: 0.2vw;
+    font-size: calc(0.7rem + 1.2vw);
+    margin-top: 0.8vw;
+  }
 }
-
-
-.imgContainerMobile {
-    display: none;
-}
-
-
-
-
-
-/* Phones: */
-@media (min-width: 100px) and (max-width: 767px) {
-
-    .imgItems {
-        display: none;
-    }
-
-
-
-
-
-    .imgDisplay {
-        height: 100vw;
-        background-size: cover;
-        background-position: 30%;
-        transition: 200ms;
-        position: relative;
-        aspect-ratio: 1 / 1;
-    }
-
-
-
-
-
-    .buyingSection {
-        display: flex;
-        position: inherit;
-        top: 15%;
-        left: 19.5%;
-        justify-content: flex-start;
-        flex-direction: column;
-        width: 65%;
-        border-radius: 3.5vw;
-        overflow: hidden;
-    }
-
-    .gamePortrait {
-        aspect-ratio: 16 / 10;
-    }
-
-    .gamesInfo {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(20, 20, 20);
-        padding: 2vw;
-        gap: 1.2vw;
-    }
-
-    .gamesInfo h3 {
-        font-weight: 400;
-        font-size: calc(1.1vw + .7rem);
-    }
-
-    .gamesInfo p {
-        font-size: calc(1vw + .615rem);
-    }
-
-    .gamesPrice {
-        display: flex;
-        gap: 6%;
-        font-weight: 400;
-    }
-
-    .discountColor {
-        color: #0084D1;
-        font-weight: 600;
-    }
-
-
-    .strikeThrough {
-        text-decoration: line-through;
-        color: rgb(206, 206, 206);
-    }
-
-    .addBtn {
-        background: #0084D1;
-        border: none;
-        font-size: calc(2.2vw + .9rem);
-        font-weight: 600;
-        text-transform: uppercase;
-        color: white;
-        text-decoration: none;
-        height: 13vw;
-        transition: 170ms;
-    }
-
-    .addBtn:hover {
-        background: #004b77;
-        transition: 170ms;
-        cursor: pointer;
-    }
-
-
-
-
-
-
-
-    .imgContainerMobile {
-        display: flex;
-        flex-direction: column;
-        position: inherit;
-        justify-content: center;
-        align-items: center;
-        gap: 4vw;
-    }
-
-
-    .imgItemsMobile {
-        width: 90.72vw;
-        aspect-ratio: 16 / 9;
-        background-size: cover;
-        transition: 170ms;
-        border-radius: 2.5vw;
-        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-    }
-
-    .imgItemsMobile:hover {
-        cursor: pointer;
-        transition: 170ms;
-        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-    }
-
-    .selectedImg {
-        transform: scale(1);
-        transition: 170ms;
-        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-    }
-
-
-
-
-
-
-    .detailsContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
-        gap: 6vw;
-    }
-
-    .detailsTitle {
-        text-transform: uppercase;
-        text-align: center;
-        color: #c51700;
-        font-size: calc(1rem + 2.5vw);
-    }
-
-    .detailsContent {
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: 400;
-        color: black;
-        font-size: calc(0.7rem + 1.2vw);
-        margin-top: 0.8vw;
-    }
-}
-
-
-
 
 /* Phones */
 @media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
-    .imgItems {
-        display: none;
-    }
+  .imgItems {
+    display: none;
+  }
 
+  .imgDisplay {
+    height: 100vw;
+    background-size: cover;
+    background-position: 30%;
+    transition: 200ms;
+    position: relative;
+    aspect-ratio: 1 / 1;
+  }
 
+  .buyingSection {
+    display: flex;
+    position: inherit;
+    top: 15%;
+    left: 19.5%;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 65%;
+    border-radius: 3.5vw;
+    overflow: hidden;
+  }
 
+  .gamePortrait {
+    height: 41vw;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+  }
 
+  .gamesInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+    padding: 2vw;
+    gap: 1.2vw;
+  }
 
-    .imgDisplay {
-        height: 100vw;
-        background-size: cover;
-        background-position: 30%;
-        transition: 200ms;
-        position: relative;
-        aspect-ratio: 1 / 1;
-    }
+  .gamesInfo h3 {
+    font-weight: 400;
+    font-size: calc(1.1vw + 0.7rem);
+  }
 
+  .gamesInfo p {
+    font-size: calc(1vw + 0.615rem);
+  }
 
+  .gamesPrice {
+    display: flex;
+    gap: 6%;
+    font-weight: 400;
+  }
 
+  .discountColor {
+    color: #0084d1;
+    font-weight: 600;
+  }
 
+  .strikeThrough {
+    text-decoration: line-through;
+    color: rgb(206, 206, 206);
+  }
 
-    .buyingSection {
-        display: flex;
-        position: inherit;
-        top: 15%;
-        left: 19.5%;
-        justify-content: flex-start;
-        flex-direction: column;
-        width: 65%;
-        border-radius: 3.5vw;
-        overflow: hidden;
-    }
+  .addBtn {
+    background: #0084d1;
+    border: none;
+    font-size: calc(2.2vw + 0.9rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    height: 13vw;
+    transition: 170ms;
+  }
 
-    .gamePortrait {
-        height: 41vw;
-        width: 100%;
-        aspect-ratio: 16 / 10;
-    }
+  .addBtn:hover {
+    background: #004b77;
+    transition: 170ms;
+    cursor: pointer;
+  }
 
-    .gamesInfo {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(20, 20, 20);
-        padding: 2vw;
-        gap: 1.2vw;
-    }
+  .imgContainerMobile {
+    display: flex;
+    flex-direction: column;
+    position: inherit;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+  }
 
-    .gamesInfo h3 {
-        font-weight: 400;
-        font-size: calc(1.1vw + .7rem);
-    }
+  .imgItemsMobile {
+    width: 90.72vw;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    transition: 170ms;
+    border-radius: 2.5vw;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
 
-    .gamesInfo p {
-        font-size: calc(1vw + .615rem);
-    }
+  .imgItemsMobile:hover {
+    cursor: pointer;
+    transition: 170ms;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
 
-    .gamesPrice {
-        display: flex;
-        gap: 6%;
-        font-weight: 400;
-    }
+  .selectedImg {
+    transform: scale(1);
+    transition: 170ms;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
 
-    .discountColor {
-        color: #0084D1;
-        font-weight: 600;
-    }
+  .detailsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 6vw;
+  }
 
+  .detailsTitle {
+    text-transform: uppercase;
+    text-align: center;
+    color: #c51700;
+    font-size: calc(1rem + 2.5vw);
+  }
 
-    .strikeThrough {
-        text-decoration: line-through;
-        color: rgb(206, 206, 206);
-    }
-
-    .addBtn {
-        background: #0084D1;
-        border: none;
-        font-size: calc(2.2vw + .9rem);
-        font-weight: 600;
-        text-transform: uppercase;
-        color: white;
-        text-decoration: none;
-        height: 13vw;
-        transition: 170ms;
-    }
-
-    .addBtn:hover {
-        background: #004b77;
-        transition: 170ms;
-        cursor: pointer;
-    }
-
-
-
-
-
-
-
-    .imgContainerMobile {
-        display: flex;
-        flex-direction: column;
-        position: inherit;
-        justify-content: center;
-        align-items: center;
-        gap: 4vw;
-    }
-
-
-    .imgItemsMobile {
-        width: 90.72vw;
-        aspect-ratio: 16 / 9;
-        background-size: cover;
-        transition: 170ms;
-        border-radius: 2.5vw;
-        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-    }
-
-    .imgItemsMobile:hover {
-        cursor: pointer;
-        transition: 170ms;
-        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-    }
-
-    .selectedImg {
-        transform: scale(1);
-        transition: 170ms;
-        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-    }
-
-
-
-
-
-
-    .detailsContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
-        gap: 6vw;
-    }
-
-    .detailsTitle {
-        text-transform: uppercase;
-        text-align: center;
-        color: #c51700;
-        font-size: calc(1rem + 2.5vw);
-    }
-
-    .detailsContent {
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: 400;
-        color: black;
-        font-size: calc(0.7rem + 1.2vw);
-        margin-top: 0.8vw;
-    }
+  .detailsContent {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    color: black;
+    font-size: calc(0.7rem + 1.2vw);
+    margin-top: 0.8vw;
+  }
 }
-
-
-
-
-
-
 
 /* Tablet: */
 @media (min-width: 768px) and (max-width: 1023px) {
+  .imgItems {
+    display: none;
+  }
 
-    .imgItems {
-        display: none;
-    }
+  .imgDisplay {
+    height: 90vw;
+    background-size: cover;
+    background-position: 60%;
+    transition: 200ms;
+    position: relative;
+    aspect-ratio: 1 / 1;
+  }
 
+  .buyingSection {
+    display: flex;
+    position: inherit;
+    top: 18%;
+    left: 8%;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 50%;
+    border-radius: 1.8vw;
+    overflow: hidden;
+  }
 
+  .gamePortrait {
+    aspect-ratio: 16 / 10;
+  }
 
+  .gamesInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(20, 20, 20);
+    padding: 1.5vw;
+    gap: 1.05vw;
+  }
 
+  .gamesInfo h3 {
+    font-weight: 400;
+    font-size: calc(1.1vw + 0.7rem);
+  }
 
-    .imgDisplay {
-        height: 90vw;
-        background-size: cover;
-        background-position: 60%;
-        transition: 200ms;
-        position: relative;
-        aspect-ratio: 1 / 1;
-    }
+  .gamesInfo p {
+    font-size: calc(1vw + 0.615rem);
+  }
 
+  .gamesPrice {
+    display: flex;
+    gap: 6%;
+    font-weight: 400;
+  }
 
+  .discountColor {
+    color: #0084d1;
+    font-weight: 600;
+  }
 
+  .strikeThrough {
+    text-decoration: line-through;
+    color: rgb(206, 206, 206);
+  }
 
+  .addBtn {
+    background: #0084d1;
+    border: none;
+    font-size: calc(2.5vw + 1rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    height: 8vw;
+    transition: 170ms;
+  }
 
-    .buyingSection {
-        display: flex;
-        position: inherit;
-        top: 18%;
-        left: 8%;
-        justify-content: flex-start;
-        flex-direction: column;
-        width: 50%;
-        border-radius: 1.8vw;
-        overflow: hidden;
-    }
+  .addBtn:hover {
+    background: #004b77;
+    transition: 170ms;
+    cursor: pointer;
+  }
 
+  .imgContainerMobile {
+    display: flex;
+    flex-direction: column;
+    position: inherit;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+  }
 
-    .gamePortrait {
-        aspect-ratio: 16 / 10;
-    }
+  .imgItemsMobile {
+    width: 83.2vw;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    transition: 170ms;
+    border-radius: 2.5vw;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
 
-    .gamesInfo {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(20, 20, 20);
-        padding: 1.5vw;
-        gap: 1.05vw;
-    }
+  .imgItemsMobile:hover {
+    cursor: pointer;
+    transition: 170ms;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
 
-    .gamesInfo h3 {
-        font-weight: 400;
-        font-size: calc(1.1vw + .7rem);
-    }
+  .selectedImg {
+    transform: scale(1);
+    transition: 170ms;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  }
 
-    .gamesInfo p {
-        font-size: calc(1vw + .615rem);
-    }
+  .detailsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 6vw;
+  }
 
-    .gamesPrice {
-        display: flex;
-        gap: 6%;
-        font-weight: 400;
-    }
+  .detailsTitle {
+    text-transform: uppercase;
+    text-align: center;
+    color: #c51700;
+    font-size: calc(1rem + 3.5vw);
+  }
 
-    .discountColor {
-        color: #0084D1;
-        font-weight: 600;
-    }
-
-
-    .strikeThrough {
-        text-decoration: line-through;
-        color: rgb(206, 206, 206);
-    }
-
-    .addBtn {
-        background: #0084D1;
-        border: none;
-        font-size: calc(2.5vw + 1rem);
-        font-weight: 600;
-        text-transform: uppercase;
-        color: white;
-        text-decoration: none;
-        height: 8vw;
-        transition: 170ms;
-    }
-
-    .addBtn:hover {
-        background: #004b77;
-        transition: 170ms;
-        cursor: pointer;
-    }
-
-
-
-
-
-
-
-    .imgContainerMobile {
-        display: flex;
-        flex-direction: column;
-        position: inherit;
-        justify-content: center;
-        align-items: center;
-        gap: 4vw;
-    }
-
-
-    .imgItemsMobile {
-        width: 83.2vw;
-        aspect-ratio: 16 / 9;
-        background-size: cover;
-        transition: 170ms;
-        border-radius: 2.5vw;
-        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-    }
-
-    .imgItemsMobile:hover {
-        cursor: pointer;
-        transition: 170ms;
-        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-    }
-
-    .selectedImg {
-        transform: scale(1);
-        transition: 170ms;
-        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
-    }
-
-
-
-
-
-
-    .detailsContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 100%;
-        gap: 6vw;
-    }
-
-    .detailsTitle {
-        text-transform: uppercase;
-        text-align: center;
-        color: #c51700;
-        font-size: calc(1rem + 3.5vw);
-    }
-
-    .detailsContent {
-        text-transform: uppercase;
-        text-align: center;
-        font-weight: 400;
-        color: black;
-        font-size: calc(1rem + 1.2vw);
-        margin-top: 0.8vw;
-    }
+  .detailsContent {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    color: black;
+    font-size: calc(1rem + 1.2vw);
+    margin-top: 0.8vw;
+  }
 }

@@ -9,7 +9,7 @@ import styles from './Navbar.module.css';
 import SearchBar from "../SearchBar/SearchBar";
 import logo from '/images/nav/logo.png';
 import cartIcon from '/images/nav/cart.png';
-import profilePic from '/images/nav/Profile.jpg';
+import profilePic from '/images/nav/profile.jpg';
 import NavMobile from "../NavMobile/NavMobile";
 
 

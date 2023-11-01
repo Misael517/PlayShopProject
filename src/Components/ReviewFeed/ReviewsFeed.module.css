@@ -1,35 +1,160 @@
-.reviewsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5vw;
-    background-color: rgb(175, 175, 175);
+.titleContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.55vw;
+  width: 100%;
+  flex-direction: column;
 }
 
-
-.reviewsTitle {
-    color: black;
-    font-size: 1.2vw;
-    font-weight: 400;
+.gameTitle {
+  color: black;
+  text-transform: uppercase;
+  font-size: 2.8vw;
 }
 
-.starsContainer {
-    display: flex;
-    justify-content: center;
-    gap: 1%;
-    align-items: center;
-    height: auto;
-    width: auto;
+.titleDesc {
+  color: black;
+  font-size: 1.09vw;
+  font-weight: 300;
+  line-height: 2vw;
+  width: 45%;
+  text-align: center;
 }
 
-.reviewsRating {
-    font-size: 2.6vw;
-    color: black;
-    margin-right: 5%;
+.videoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2.8%;
 }
 
-.stars {
-    background-color: rgb(255, 166, 0);
-    height: 3.4vw;
-    width: 4vw;
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+.gamesTrailer {
+  width: 42vw;
+  border-radius: 28px;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0px 4px 12px 4px rgba(0, 0, 0, 0.9);
+  border: none;
+}
+
+.gameDescription {
+  color: black;
+  font-size: 0.85vw;
+  width: 37%;
+  line-height: 1.84vw;
+  padding: 1.5%;
+  font-weight: 300;
+  border-radius: 28px;
+  background-color: rgba(0, 0, 0, 0.99);
+  color: white;
+}
+
+.gameExtras {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9vw;
+  width: 94.1%;
+}
+
+.criticsTitle {
+  color: black;
+  font-weight: 500;
+  font-size: 1.4vw;
+  padding-bottom: 0.67%;
+  text-transform: uppercase;
+}
+
+.scoreContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5.5vw;
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-right: 1.2vw;
+  padding-top: 1.2vw;
+  padding-bottom: 1.2vw;
+}
+
+.scorePlatform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.platformItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.725vw;
+}
+
+.circleBorder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: green;
+  box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.4);
+  width: 4.95vw;
+  height: 4.95vw;
+  border-radius: 1000px;
+}
+
+.circleInside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 4.48vw;
+  height: 4.48vw;
+  border-radius: 1000px;
+}
+
+.score {
+  font-size: 1.8vw;
+  font-weight: 400;
+  color: black;
+}
+
+.criticsText {
+  font-size: 0.78vw;
+  font-weight: 400;
+  color: black;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 92.3%;
+}
+
+.detailsTags {
+  display: flex;
+  gap: 2.3vw;
+}
+
+.detailsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28vw;
+}
+
+.detailsTitle {
+  font-size: 0.9vw;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgb(58, 58, 58);
+}
+
+.detailsDesc {
+  display: flex;
+  gap: 0.55vw;
+}
+
+.detailsText {
+  color: black;
+  font-weight: 300;
+  font-size: 0.7vw;
 }
