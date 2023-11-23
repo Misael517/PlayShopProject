@@ -56,9 +56,6 @@
     "icon": "/images/icons/icon4.webp",
     "searchIcon": "/images/searchIcons/icon4.webp",
     "link": "/HorizonForbiddenWest",
-    "Platforms": "PlayStation",
-    "Publisher": "Sony Interactive Entertainment",
-    "Genre": "Adventure",
     "price": 59.99,
     "comingSoon": false,
     "isOnSale": false,
@@ -199,7 +196,7 @@
   },
   {
     "id": 13,
-    "name": "The Witcher 3",
+    "name": "The Witcher 3: Wild Hunt",
     "icon": "/images/icons/icon13.webp",
     "searchIcon": "/images/searchIcons/icon13.webp",
     "link": "/TheWitcher3",
@@ -466,7 +463,7 @@
     "actualPrice": 0,
     "itemAmount": 1,
     "cartPrice": 0,
-    "apiSlug": "Forza-Motorsport",
+    "apiSlug": "Forza-Motorsport-2020",
     "trailer": "em4gv1Ietko"
   },
   {
@@ -642,7 +639,7 @@
     "actualPrice": 0,
     "itemAmount": 1,
     "cartPrice": 59.99,
-    "apiSlug": "Dead-space",
+    "apiSlug": "Dead-space-5",
     "trailer": "ctQl9wa3ydE"
   },
   {

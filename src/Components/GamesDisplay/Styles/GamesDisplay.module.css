@@ -1,536 +1,468 @@
 .itemsHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-left: 0.1%;
+  width: 100%;
+  margin-bottom: 0.8%;
+}
+
+.sectionName {
+  display: flex;
+  flex-direction: column;
+  color: #1a1a1a;
+  text-align: center;
+  font-size: 1.3vw;
+  font-display: swap;
+  font-weight: 500;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.6vw;
+  width: 1.9vw;
+  height: 1.9vw;
+  background: #0084d1;
+  border-radius: 3em;
+  transition: 200ms;
+}
+
+.sectionBtn:hover {
+  transform: scale(1.03);
+  transition: 200ms;
+  cursor: pointer;
+  background: #005c91;
+}
+
+.btnImgLeft {
+  width: 40%;
+  margin-right: 14%;
+  aspect-ratio: 164 / 245;
+}
+
+.btnImgRight {
+  width: 40%;
+  margin-left: 14%;
+  aspect-ratio: 164 / 245;
+}
+
+.itemsCarousel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.4%;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  width: 100%;
+  transform: translateZ(0);
+  border-radius: 0.7vw;
+}
+
+.itemsCarousel::-webkit-scrollbar {
+  display: none;
+}
+
+.itemsCarousel {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.itemsContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.27vw;
+}
+
+.itemIcon {
+  border-radius: 0.7vw;
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.2);
+  width: 11.15vw;
+  aspect-ratio: 337 / 464;
+  transition: 100ms;
+}
+
+.itemIcon:hover {
+  opacity: 80%;
+  transition: 100ms;
+  cursor: pointer;
+}
+
+.gamesInfo {
+  display: flex;
+  padding: 3%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: calc(0.28vw + 0.1em);
+  align-self: stretch;
+  border-radius: 0.3vw;
+  background: #1a1a1a;
+}
+
+.gameName {
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  font-display: swap;
+  font-size: calc(0.64vw + 0.1rem);
+}
+
+.gamesPrice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  color: #fff;
+  text-align: center;
+  font-size: calc(0.59vw + 0.15rem);
+  font-display: swap;
+  font-weight: 400;
+}
+
+.discountColor {
+  color: #45ace5;
+  text-align: center;
+  font-weight: 500;
+}
+
+.strikeThrough {
+  text-decoration: line-through;
+  color: rgb(206, 206, 206);
+}
+
+/* Phones */
+@media (min-width: 100px) and (max-width: 767px) {
+  .itemsHeader {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     padding-left: 0.1%;
-    width: 86.6vw;
-    margin-bottom: 0.5vw;
-}
+    width: 100%;
+    margin-bottom: 0.8%;
+  }
 
-.sectionName {
+  .sectionName {
     display: flex;
     flex-direction: column;
-    color: #1A1A1A;
+    color: #1a1a1a;
     text-align: center;
-    font-size: calc(1.25vw + .5rem);
+    font-size: calc(2.8vw + 1rem);
     font-display: swap;
-    font-weight: 600;
-}
+    font-weight: 500;
+    margin-bottom: 1.2%;
+  }
 
-.btnContainer {
+  .btnContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
 
-.sectionBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0.6vw;
-    width: 1.9vw;
-    height: 1.9vw;
-    background: #0084D1;
-    border-radius: 3em;
-    transition: 200ms;
-}
+  .sectionBtn {
+    display: none;
+  }
 
-.sectionBtn:hover {
-    transform: scale(1.03);
-    transition: 200ms;
-    cursor: pointer;
-    background: #005c91;
-}
-
-.btnImgLeft {
-    width: 40%;
-    margin-right: 14%;
-    aspect-ratio: 164 / 245;
-}
-
-.btnImgRight {
-    width: 40%;
-    margin-left: 14%;
-    aspect-ratio: 164 / 245;
-}
-
-
-.itemsCarousel {
+  .itemsCarousel {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 1.4%;
+    gap: 4.8%;
     overflow: scroll;
     scroll-behavior: smooth;
-    height: 20vw;
-    width: 86.6vw;
-    padding: 0.1%;
+    width: 100%;
     transform: translateZ(0);
-}
+    border-radius: none;
+  }
 
-.itemsCarousel::-webkit-scrollbar {
+  .itemsCarousel::-webkit-scrollbar {
     display: none;
-}
+  }
 
-
-.itemsCarousel {
-    -ms-overflow-style: none;
-    /* IE 11 */
-    scrollbar-width: none;
-    /* Firefox 64 */
-}
-
-
-
-
-
-.itemsContent {
+  .itemsContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.27vw;
-}
+    gap: 1.8vw;
+  }
 
-
-.itemIcon {
-    border-radius: 4%;
-    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
-    width: 11.3vw;
+  .itemIcon {
+    border-radius: 4vw;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.2);
+    width: 58vw;
     aspect-ratio: 337 / 464;
     transition: 100ms;
-}
+  }
 
-.itemIcon:hover {
-    opacity: 80%;
-    transition: 100ms;
-    cursor: pointer;
-}
+  .itemIcon:hover {
+    opacity: 100%;
+  }
 
-
-
-
-
-
-.gamesInfo {
+  .gamesInfo {
     display: flex;
-    padding: 3%;
+    padding: 3.6%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: calc(0.28vw + 0.1em);
+    gap: calc(1.1vw + 0.1em);
     align-self: stretch;
-    border-radius: 0.3vw;
-    background: #1A1A1A;
-}
+    border-radius: 1.8vw;
+    background: #1a1a1a;
+  }
 
-.gameName {
-    color: #FFF;
+  .gameName {
+    font-size: calc(50.5% + 0.4rem);
+    color: #fff;
     text-align: center;
     font-weight: 400;
     font-display: swap;
-    font-size: calc(0.64vw + 0.1rem);
-}
+  }
 
-.gamesPrice {
+  .gamesPrice {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10%;
-    color: #FFF;
+    gap: 7%;
+    color: #fff;
     text-align: center;
-    font-size: calc(0.59vw + .15rem);
-    font-display: swap;
-}
+    font-size: calc(50% + 0.4rem);
+  }
 
-.discountColor {
-    color: #45ACE5;
+  .discountColor {
+    color: #45ace5;
     text-align: center;
     font-weight: 600;
-}
+  }
 
-.strikeThrough {
+  .strikeThrough {
     text-decoration: line-through;
     color: rgb(206, 206, 206);
+  }
 }
-
-
-
-
-
-
-
-
-
-/* Phones */
-@media (min-width: 100px) and (max-width: 767px) {
-
-    .carousel {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .itemsHeader {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        width: 100%;
-        padding: 1%;
-        margin-bottom: 0.1vw;
-    }
-
-    .sectionName {
-        display: flex;
-        flex-direction: column;
-        color: #1A1A1A;
-        text-align: center;
-        font-size: calc(2.8vw + 1rem);
-        font-weight: 600;
-    }
-
-    .btnContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sectionBtn {
-        display: none;
-    }
-
-
-    .itemsCarousel {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 5%;
-        overflow: scroll;
-        scroll-behavior: smooth;
-        height: 100%;
-        width: 92vw;
-        padding: 1%;
-        overflow-x: scroll;
-    }
-
-    .itemsCarousel::-webkit-scrollbar {
-        display: none;
-    }
-
-
-
-    .itemsContent {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1.45vw;
-    }
-
-
-
-    .itemIcon {
-        border-radius: 4%;
-        width: 58vw;
-        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
-        aspect-ratio: 337 / 464;
-    }
-
-    .itemIcon:hover {
-        opacity: 100%;
-    }
-
-    .gamesInfo {
-        display: flex;
-        padding: 3.5%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: calc(0.5vw + 0.1em);
-        align-self: stretch;
-        border-radius: 1.5vw;
-        background: #1A1A1A;
-    }
-
-    .gameName {
-        color: #FFF;
-        text-align: center;
-        font-weight: 400;
-        font-size: calc(50.5% + 0.4rem);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .gamesPrice {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 6.5%;
-        color: #FFF;
-        text-align: center;
-        font-size: calc(50% + 0.4rem);
-    }
-
-    .discountColor {
-        color: #45ACE5;
-        text-align: center;
-        font-weight: 600;
-    }
-
-    .strikeThrough {
-        text-decoration: line-through;
-        color: rgb(206, 206, 206);
-    }
-}
-
-
-
-
 
 /* Phones */
 @media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
-    .carousel {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .itemsHeader {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-left: 0.1%;
+    width: 100%;
+    margin-bottom: 0.8%;
+  }
 
-    .itemsHeader {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        width: 100%;
-        padding: 1%;
-        margin-bottom: 0.1vw;
-    }
+  .sectionName {
+    display: flex;
+    flex-direction: column;
+    color: #1a1a1a;
+    text-align: center;
+    font-size: calc(2.8vw + 1rem);
+    font-display: swap;
+    font-weight: 500;
+  }
 
-    .sectionName {
-        display: flex;
-        flex-direction: column;
-        color: #1A1A1A;
-        text-align: center;
-        font-size: calc(2.8vw + 1rem);
-        font-weight: 600;
-    }
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .btnContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .sectionBtn {
+    display: none;
+  }
 
-    .sectionBtn {
-        display: none;
-    }
+  .itemsCarousel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5.8%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    transform: translateZ(0);
+    border-radius: none;
+  }
 
+  .itemsCarousel::-webkit-scrollbar {
+    display: none;
+  }
 
-    .itemsCarousel {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 5%;
-        overflow: scroll;
-        scroll-behavior: smooth;
-        height: 100%;
-        width: 92vw;
-        padding: 1%;
-        overflow-x: scroll;
-    }
+  .itemsContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.8vw;
+  }
 
-    .itemsCarousel::-webkit-scrollbar {
-        display: none;
-    }
+  .itemIcon {
+    border-radius: 4vw;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.2);
+    width: 58vw;
+    aspect-ratio: 337 / 464;
+    transition: 100ms;
+  }
 
+  .itemIcon:hover {
+    opacity: 100%;
+  }
 
+  .gamesInfo {
+    display: flex;
+    padding: 3.6%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(1.6vw + 0.1em);
+    align-self: stretch;
+    border-radius: 1.8vw;
+    background: #1a1a1a;
+  }
 
-    .itemsContent {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1.45vw;
-    }
+  .gameName {
+    font-size: calc(50.5% + 0.4rem);
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    font-display: swap;
+  }
 
+  .gamesPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7%;
+    color: #fff;
+    text-align: center;
+    font-size: calc(50% + 0.4rem);
+  }
 
+  .discountColor {
+    color: #45ace5;
+    text-align: center;
+    font-weight: 600;
+  }
 
-    .itemIcon {
-        border-radius: 4%;
-        width: 58vw;
-        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
-        aspect-ratio: 337 / 464;
-    }
-
-    .itemIcon:hover {
-        opacity: 100%;
-    }
-
-    .gamesInfo {
-        display: flex;
-        padding: 3.5%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: calc(0.5vw + 0.1em);
-        align-self: stretch;
-        border-radius: 1.5vw;
-        background: #1A1A1A;
-    }
-
-    .gameName {
-        color: #FFF;
-        text-align: center;
-        font-weight: 400;
-        font-size: calc(50.5% + 0.4rem);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .gamesPrice {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 6.5%;
-        color: #FFF;
-        text-align: center;
-        font-size: calc(50% + 0.4rem);
-    }
-
-    .discountColor {
-        color: #45ACE5;
-        text-align: center;
-        font-weight: 600;
-    }
-
-    .strikeThrough {
-        text-decoration: line-through;
-        color: rgb(206, 206, 206);
-    }
+  .strikeThrough {
+    text-decoration: line-through;
+    color: rgb(206, 206, 206);
+  }
 }
-
-
-
 
 /* Tablet   */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .carousel {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .itemsHeader {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-left: 0.1%;
+    width: 100%;
+    margin-bottom: 0.8%;
+  }
 
-    .itemsHeader {
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0.5%;
-        margin-bottom: 0.05vw;
-    }
+  .sectionName {
+    display: flex;
+    flex-direction: column;
+    color: #1a1a1a;
+    text-align: center;
+    font-size: calc(2.8vw + 1rem);
+    font-display: swap;
+    font-weight: 500;
+  }
 
-    .sectionName {
-        display: flex;
-        flex-direction: column;
-        color: #1A1A1A;
-        text-align: center;
-        font-size: calc(3vw + 1rem);
-        font-weight: 600;
-    }
+  .btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .btnContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .sectionBtn {
+    display: none;
+  }
 
-    .sectionBtn {
-        display: none;
-    }
+  .itemsCarousel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3%;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    transform: translateZ(0);
+    border-radius: none;
+  }
 
+  .itemsCarousel::-webkit-scrollbar {
+    display: none;
+  }
 
+  .itemsContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8vw;
+  }
 
+  .itemIcon {
+    border-radius: 2vw;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.2);
+    width: 32.8vw;
+    aspect-ratio: 337 / 464;
+    transition: 100ms;
+  }
 
+  .itemIcon:hover {
+    opacity: 100%;
+  }
 
+  .gamesInfo {
+    display: flex;
+    padding: 2.6%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(0.28vw + 0.2em);
+    align-self: stretch;
+    border-radius: 1vw;
+    background: #1a1a1a;
+  }
 
-    .itemsCarousel {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        gap: 3%;
-        overflow: scroll;
-        scroll-behavior: smooth;
-        height: 100%;
-        padding: 0.5%;
-        width: 96.54vw;
-        overflow-x: scroll;
-    }
+  .gameName {
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    font-size: calc(1.2vw + 0.6rem);
+  }
 
-    .itemsCarousel::-webkit-scrollbar {
-        display: none;
-    }
+  .gamesPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+    color: #fff;
+    text-align: center;
+    font-size: calc(1.2vw + 0.55rem);
+  }
 
+  .discountColor {
+    color: #45ace5;
+    text-align: center;
+    font-weight: 600;
+  }
 
-    .itemsContent {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 0.85vw;
-    }
-
-
-
-    .itemIcon {
-        border-radius: 4%;
-        box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
-        width: 32vw;
-        aspect-ratio: 337 / 464;
-        transition: 100ms;
-    }
-
-    .itemIcon:hover {
-        opacity: 100%;
-    }
-
-
-    .gamesInfo {
-        display: flex;
-        padding: 2.6%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: calc(0.28vw + 0.2em);
-        align-self: stretch;
-        border-radius: 1vw;
-        background: #1A1A1A;
-    }
-
-    .gameName {
-        color: #FFF;
-        text-align: center;
-        font-weight: 400;
-        font-size: calc(1.2vw + 0.6rem);
-    }
-
-    .gamesPrice {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8%;
-        color: #FFF;
-        text-align: center;
-        font-size: calc(1.2vw + .55rem);
-    }
-
-    .discountColor {
-        color: #45ACE5;
-        text-align: center;
-        font-weight: 600;
-    }
-
-    .strikeThrough {
-        text-decoration: line-through;
-        color: rgb(206, 206, 206);
-    }
+  .strikeThrough {
+    text-decoration: line-through;
+    color: rgb(206, 206, 206);
+  }
 }

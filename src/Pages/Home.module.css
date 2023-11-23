@@ -1,251 +1,113 @@
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: calc(3vw + 1rem);
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 96px;
 }
 
 .ReleasesSec {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  aspect-ratio: 2.2 / 1;
+  max-height: 91vh;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+  transform: translateZ(0);
+}
+
+.sellsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 86%;
+}
+
+/* Phones */
+@media (min-width: 100px) and (max-width: 767px) {
+  .main {
+    gap: 17vw;
+    min-height: 100vh;
+  }
+
+  .ReleasesSec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150vw;
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+    aspect-ratio: 2.2 / 1;
+    transform: translateZ(0);
+  }
+
+  .sellsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 93%;
+  }
+}
+
+/* Phones */
+@media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
+  .main {
+    gap: 17vw;
+    min-height: 100vh;
+  }
+
+  .ReleasesSec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 85vw;
+    position: relative;
+    background-color: black;
+    aspect-ratio: 2.2 / 1;
+    transform: translateZ(0);
+  }
+
+  .sellsSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 86%;
+  }
+}
+
+/* Tablet   */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main {
+    gap: 13vw;
+    min-height: 100vh;
+  }
+
+  .ReleasesSec {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: relative;
-    margin-bottom: 4%;
-    height: 42vw;
+    margin-bottom: 0%;
+    max-height: 74vw;
     aspect-ratio: 1 / 1;
-}
+  }
 
-.OnSaleSec {
+  .sellsSection {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-
-.PopularSec {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.CoomingSec {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.BestSec {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 86vw;
-    max-width: 86vw;
-    margin-bottom: 4%;
-}
-
-.footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 3vw;
-    background: #000;
-}
-
-
-
-/* Phones */
-@media (min-width: 100px) and (max-width: 767px) {
-
-    .main {
-        gap: 17vw;
-        min-height: 100vh;
-    }
-
-
-    .ReleasesSec {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        position: relative;
-        margin-bottom: 0%;
-        height: 150vw;
-        aspect-ratio: 1 / 1;
-    }
-
-    .OnSaleSec {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .PopularSec {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .CoomingSec {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .BestSec {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 90vw;
-        margin-bottom: 10vw;
-    }
-
-
-    .footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 12vw;
-        background: #000;
-    }
-}
-
-
-
-/* Phones */
-@media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
-
-    .main {
-        gap: 17vw;
-        min-height: 100vh;
-    }
-
-
-    .ReleasesSec {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        position: relative;
-        margin-bottom: 0%;
-        height: 150vw;
-        aspect-ratio: 1 / 1;
-    }
-
-    .OnSaleSec {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .PopularSec {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .CoomingSec {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .BestSec {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 90vw;
-        margin-bottom: 12vw;
-    }
-
-
-    .footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 12vw;
-        background: #000;
-    }
-}
-
-
-
-
-
-/* Tablet   */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .main {
-        gap: 13.5vw;
-        min-height: 100vh;
-    }
-
-
-    .ReleasesSec {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        position: relative;
-        margin-bottom: 0%;
-        height: 121vw;
-        aspect-ratio: 1 / 1;
-    }
-
-    .OnSaleSec {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .PopularSec {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .CoomingSec {
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-
-    .BestSec {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 96.54vw;
-        margin-bottom: 8vw;
-    }
-
-    .footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 9.3vw;
-        background: #000;
-    }
-
+    width: 96%;
+  }
 }

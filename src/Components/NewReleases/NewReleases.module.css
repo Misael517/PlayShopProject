@@ -1,457 +1,492 @@
 .itemsDisplay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
-    background-size: cover;
-    height: 42vw;
-    width: 100%;
-    transition: 200ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  width: 66.8%;
+  min-height: 100%;
+  transition: 200ms;
+  position: relative;
 }
 
+.itemsDisplay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
 
+.gameIcon {
+  aspect-ratio: 2 / 3;
+  width: 33.2%;
+  opacity: 0.28;
+}
+
+.gameLogo {
+  width: 80%;
+  z-index: 1;
+  position: absolute;
+  top: 8.1%;
+  aspect-ratio: 32 / 25;
+  bottom: 0;
+  left: 63.8%;
+  right: 29.5%;
+  filter: saturate(1.2);
+  border: 10px black;
+}
 
 .itemsFrame {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: calc(0.85vw + .1em);
-    margin-right: 48%;
-    margin-bottom: 2%;
-    width: 61%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: calc(0.85vw + 0.1em);
+  z-index: 1;
+  width: 70%;
+  position: relative;
+}
+
+.itemsFrame h1 {
+  color: #fff;
+  font-family: Roboto;
+  font-size: 3.75vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+  font-display: swap;
 }
 
 .itemsFrame a {
-    text-decoration: none;
-}
-
-.itemslogo {
-    width: 61%;
-    aspect-ratio: 515 / 148;
+  text-decoration: none;
 }
 
 .itemDesc {
-    display: flex;
-    max-width: 50%;
-    flex-direction: column;
-    font-display: swap;
-    color: #FFF;
-    text-align: center;
-    font-display: swap;
-    font-size: calc(1.39vw + .25rem);
-    font-weight: 100;
-    line-height: calc(2vw + .15rem);
-    letter-spacing: 0.0125vw;
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  font-display: swap;
+  color: #fff;
+  text-align: left;
+  font-display: swap;
+  font-size: 1.65vw;
+  font-weight: 300;
+  line-height: calc(2vw + 0.15rem);
+  letter-spacing: 0.0125vw;
 }
 
-
-
-
 .buyBtn {
-    display: flex;
-    padding: 0.315em 1em;
-    justify-content: center;
-    align-items: center;
-    border-radius: 0.25em;
-    border: 1px solid rgba(0, 0, 0, 0.10);
-    background: #0084D1;
-    color: #FFF;
-    text-align: center;
-    font-display: swap;
-    font-size: calc(1vw + 0.45rem);
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: 200ms;
+  display: flex;
+  padding: 0.39em 0.8em;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.61vw;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #0084d1;
+  color: #fff;
+  text-align: center;
+  font-display: swap;
+  font-size: 1.15vw;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 200ms;
 }
 
 .buyBtn:hover {
+  transition: 200ms;
+  cursor: pointer;
+  background: #005c91;
+}
+
+.thumbContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2%;
+  position: absolute;
+  top: 26.8vw;
+  bottom: 0;
+  width: 24.5vw;
+}
+
+.itemsThumbnail {
+  border-radius: 28px;
+  background: #d2d2d2;
+  width: 3.9vw;
+  height: 0.25vw;
+  flex-shrink: 0;
+}
+
+.itemsThumbnail:hover {
+  cursor: pointer;
+  transition: 170ms;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
+}
+
+.selectedGame {
+  transform: scale(1.1);
+  background: #00a2ff;
+  transition: 170ms;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
+}
+
+.btnMobileFrame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnImgLeft {
+  display: none;
+}
+
+.btnImgRight {
+  display: none;
+}
+
+/* Phones */
+@media (orientation: portrait) and (min-width: 100px) and (max-width: 767px) {
+  .thumbContainer {
+    display: none;
+  }
+
+  .itemsDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-size: cover;
+    background-position: 40%;
+    transition: 300ms;
+  }
+
+  .itemsDisplay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  .itemsFrame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5.5vw;
+    z-index: 1;
+    width: 100%;
+    position: relative;
+  }
+
+  .itemsFrame h1 {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 11vw;
+    font-weight: 500;
+    text-align: center;
+    font-display: swap;
+    text-transform: uppercase;
+  }
+
+  .gameIcon {
+    display: none;
+  }
+
+  .gameLogo {
+    display: none;
+  }
+
+  .itemDesc {
+    display: flex;
+    width: 83%;
+    flex-direction: column;
+    color: #fff;
+    font-display: swap;
+    text-align: center;
+    font-size: calc(3.4vw + 0.5rem);
+    font-weight: 300;
+    line-height: calc(5vw + 0.5rem);
+    letter-spacing: 0.0125vw;
+  }
+
+  .btnMobileFrame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7vw;
+  }
+
+  .buyBtn {
+    background: #0084d1;
+    border: none;
+    border-radius: 2.5vw;
+    font-size: calc(1vw + 1rem);
+    padding: 2.2vw 5.2vw;
+    font-display: swap;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: 200ms;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .buyBtn:hover {
     transition: 200ms;
     border-radius: 0.3em;
     cursor: pointer;
     background: #005c91;
-}
+  }
 
+  .btnImgLeft {
+    display: block;
+    width: 6.3vw;
+    aspect-ratio: 164 / 245;
+  }
 
+  .btnImgRight {
+    display: block;
+    width: 6.3vw;
+    aspect-ratio: 164 / 245;
+  }
 
-
-
-
-.thumbContainer {
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    top: 91%;
-    gap: 0.6%;
-}
-
-.itemsThumbnail {
-    background-size: cover;
-    transition: 170ms;
-    z-index: 2;
-    border-radius: 0.45vw;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.32);
-    width: 12.5%;
-    aspect-ratio: 16 / 9;
-}
-
-.itemsThumbnail:hover {
-    cursor: pointer;
-    transition: 170ms;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
-}
-
-.selectedGame {
-    transform: scale(1.05);
-    transition: 170ms;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.7);
-}
-
-
-
-
-.btnMobileFrame {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btnImgLeft {
+  .itemsContent {
     display: none;
+  }
 }
-
-.btnImgRight {
-    display: none;
-}
-
-
-
-
-
-/* Phones */
-@media (orientation: portrait) and (min-width: 100px) and (max-width: 767px) {
-
-    .thumbContainer {
-        display: none;
-    }
-
-
-    .itemsDisplay {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 150vw;
-        width: 100%;
-        background-size: cover;
-        background-position: 40%;
-        transition: 300ms;
-    }
-
-
-    .itemsFrame {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: calc(2vw + 0.75em);
-        margin-right: 0%;
-        margin-bottom: 0%;
-        width: 89%;
-    }
-
-    .itemslogo {
-        width: 100%;
-        aspect-ratio: 515 / 148;
-    }
-
-
-
-    .itemDesc {
-        display: flex;
-        max-width: 90%;
-        flex-direction: column;
-        color: #FFF;
-        font-display: swap;
-        text-align: center;
-        font-size: calc(3vw + 0.5rem);
-        font-weight: 100;
-        line-height: calc(4.5vw + .5rem);
-        letter-spacing: 0.0125vw;
-    }
-
-
-
-
-    .btnMobileFrame {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 7vw;
-    }
-
-    .buyBtn {
-        background: #0084D1;
-        border: none;
-        border-radius: 0.3rem;
-        font-size: calc(1vw + 1rem);
-        padding: 3.3%;
-        font-display: swap;
-        width: 42vw;
-        max-width: 42vw;
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-        transition: 200ms;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
-    }
-
-    .buyBtn:hover {
-        transition: 200ms;
-        border-radius: 0.3em;
-        cursor: pointer;
-        background: #005c91;
-    }
-
-
-    .btnImgLeft {
-        display: block;
-        width: 6.3vw;
-        aspect-ratio: 164 / 245;
-    }
-
-    .btnImgRight {
-        display: block;
-        width: 6.3vw;
-        aspect-ratio: 164 / 245;
-    }
-
-
-
-    .itemsContent {
-        display: none;
-    }
-
-}
-
-
-
-
-
-
 
 /* Phones */
 @media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
+  .thumbContainer {
+    display: none;
+  }
 
+  .itemsDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-size: cover;
+    background-position: 40%;
+    transition: 300ms;
+  }
 
-    .thumbContainer {
-        display: none;
-    }
+  .itemsDisplay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+  }
 
+  .itemsFrame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6vw;
+    z-index: 1;
+    width: 100%;
+    position: relative;
+  }
 
-    .itemsDisplay {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 150vw;
-        width: 100%;
-        background-size: cover;
-        background-position: 40%;
-        transition: 300ms;
-    }
+  .itemsFrame h1 {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 11vw;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    font-display: swap;
+    text-transform: uppercase;
+  }
 
+  .gameIcon {
+    display: none;
+  }
 
-    .itemsFrame {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: calc(2vw + 0.75em);
-        margin-right: 0%;
-        margin-bottom: 0%;
-        width: 89%;
-    }
+  .gameLogo {
+    display: none;
+  }
 
-    .itemslogo {
-        width: 100%;
-        aspect-ratio: 515 / 148;
-    }
+  .itemDesc {
+    display: flex;
+    width: 83%;
+    flex-direction: column;
+    color: #fff;
+    font-display: swap;
+    text-align: center;
+    font-size: calc(3.4vw + 0.5rem);
+    font-weight: 300;
+    line-height: calc(5vw + 0.5rem);
+    letter-spacing: 0.0125vw;
+  }
 
+  .btnMobileFrame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7vw;
+  }
 
+  .buyBtn {
+    background: #0084d1;
+    border: none;
+    border-radius: 2.5vw;
+    font-size: calc(1vw + 1rem);
+    padding: 2.2vw 5.2vw;
+    font-display: swap;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: 200ms;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+  }
 
-    .itemDesc {
-        display: flex;
-        max-width: 90%;
-        flex-direction: column;
-        color: #FFF;
-        font-display: swap;
-        text-align: center;
-        font-size: calc(3vw + 0.5rem);
-        font-weight: 100;
-        line-height: calc(4.5vw + .5rem);
-        letter-spacing: 0.0125vw;
-    }
+  .buyBtn:hover {
+    transition: 200ms;
+    border-radius: 0.3em;
+    cursor: pointer;
+    background: #005c91;
+  }
 
+  .btnImgLeft {
+    display: block;
+    width: 6.3vw;
+    aspect-ratio: 164 / 245;
+  }
 
+  .btnImgRight {
+    display: block;
+    width: 6.3vw;
+    aspect-ratio: 164 / 245;
+  }
 
-
-    .btnMobileFrame {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 7vw;
-    }
-
-    .buyBtn {
-        background: #0084D1;
-        border: none;
-        border-radius: 0.3rem;
-        font-size: calc(1vw + 1rem);
-        padding: 3.3%;
-        font-display: swap;
-        width: 42vw;
-        max-width: 42vw;
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-        transition: 200ms;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
-    }
-
-    .buyBtn:hover {
-        transition: 200ms;
-        border-radius: 0.3em;
-        cursor: pointer;
-        background: #005c91;
-    }
-
-
-    .btnImgLeft {
-        display: block;
-        width: 6.3vw;
-        aspect-ratio: 164 / 245;
-    }
-
-    .btnImgRight {
-        display: block;
-        width: 6.3vw;
-        aspect-ratio: 164 / 245;
-    }
-
-
-
-    .itemsContent {
-        display: none;
-    }
+  .itemsContent {
+    display: none;
+  }
 }
-
-
-
-
-
 
 /* Tablets */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .thumbContainer {
-        display: none;
-    }
+  .thumbContainer {
+    display: none;
+  }
 
+  .itemsDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-size: cover;
+    background-position: 40%;
+    transition: 300ms;
+  }
 
-    .itemsDisplay {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 121vw;
-        min-height: 121vw;
-        width: 100%;
-        background-size: cover;
-        background-position: 35%;
-        transition: 300ms;
-    }
+  .itemsDisplay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+  }
 
+  .itemsFrame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4.8vw;
+    z-index: 1;
+    width: 100%;
+    position: relative;
+  }
 
-    .itemsFrame {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: calc(1.8vw + 0.8em);
-        margin-right: 0%;
-        margin-bottom: 0%;
-        width: 90%;
-    }
+  .itemsFrame h1 {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 11vw;
+    font-weight: 500;
+    text-align: center;
+    line-height: 13vw;
+    font-display: swap;
+    text-transform: uppercase;
+  }
 
-    .itemslogo {
-        height: 22vw;
-        width: 90%;
-        aspect-ratio: 515 / 148;
-    }
+  .gameIcon {
+    display: none;
+  }
 
+  .gameLogo {
+    display: none;
+  }
 
-    .itemDesc {
-        display: flex;
-        max-width: 90%;
-        flex-direction: column;
-        color: #FFF;
-        text-align: center;
-        font-size: calc(3.5vw + 0.5rem);
-        font-weight: 100;
-        line-height: calc(4.5vw + .7rem);
-        letter-spacing: 0.0125vw;
-    }
+  .itemDesc {
+    display: flex;
+    width: 70%;
+    flex-direction: column;
+    color: #fff;
+    font-display: swap;
+    text-align: center;
+    font-size: calc(3.4vw + 0.5rem);
+    font-weight: 300;
+    line-height: calc(5vw + 0.5rem);
+    letter-spacing: 0.0125vw;
+  }
 
+  .btnMobileFrame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7vw;
+  }
 
+  .buyBtn {
+    background: #0084d1;
+    border: none;
+    border-radius: 2.5vw;
+    font-size: calc(1.3vw + 1rem);
+    padding: 1.9vw 5.2vw;
+    font-display: swap;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: 200ms;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
+  }
 
+  .buyBtn:hover {
+    transition: 200ms;
+    border-radius: 0.3em;
+    cursor: pointer;
+    background: #005c91;
+  }
 
-    .btnMobileFrame {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5vw;
-    }
+  .btnImgLeft {
+    display: block;
+    width: 5vw;
+    aspect-ratio: 164 / 245;
+  }
 
-    .buyBtn {
-        background: #0084D1;
-        border: none;
-        border-radius: 0.3em;
-        font-size: calc(1.5vw + 1rem);
-        padding: 3.3%;
-        width: 30vw;
-        font-weight: 600;
-        color: white;
-        text-decoration: none;
-        transition: 200ms;
-        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);
-    }
+  .btnImgRight {
+    display: block;
+    width: 5vw;
+    aspect-ratio: 164 / 245;
+  }
 
-    .buyBtn:hover {
-        transition: 200ms;
-        border-radius: 0.3em;
-        cursor: pointer;
-        background: #005c91;
-    }
-
-
-    .btnImgLeft {
-        display: block;
-        width: 4.3vw;
-        aspect-ratio: 164 / 245;
-    }
-
-    .btnImgRight {
-        display: block;
-        width: 4.3vw;
-        aspect-ratio: 164 / 245;
-    }
-
-
-
-    .itemsContent {
-        display: none;
-    }
-
+  .itemsContent {
+    display: none;
+  }
 }

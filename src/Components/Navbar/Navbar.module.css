@@ -1,174 +1,146 @@
 .navbar {
-    display: flex;
-    width: 100%;
-    padding-top: calc(0.4vw + 0.3em);
-    padding-bottom: calc(0.4vw + 0.3em);
-    padding-left: calc(0.4vw + 1em);
-    padding-right: calc(0.4vw + 1em);
-    justify-content: space-between;
-    align-items: center;
-    background: #050505;
+  display: flex;
+  width: 100%;
+  padding-top: calc(0.4vw + 0.3em);
+  padding-bottom: calc(0.4vw + 0.3em);
+  padding-left: calc(0.4vw + 1em);
+  padding-right: calc(0.4vw + 1em);
+  justify-content: space-between;
+  align-items: center;
+  background: #050505;
 }
-
 
 .navFrame {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7vw;
 }
 
-
 .linksContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.7vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7vw;
 }
 
 .navbar ul li {
-    display: inline-block;
-    color: #FFF;
-    font-size: calc(0.62vw + .25rem);
-    font-weight: 100;
+  display: inline-block;
+  color: #fff;
+  font-size: calc(0.62vw + 0.25rem);
+  font-weight: 100;
 }
 
 .navbar ul li a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .navbar ul li a:hover {
-    color: #0084D1;
-    border-bottom: 0.1em solid #0084D1;
-    cursor: pointer;
+  color: #0084d1;
+  border-bottom: 0.1em solid #0084d1;
+  cursor: pointer;
 }
 
-
 .logo {
-    width: calc(2.25vw + .6rem);
-    aspect-ratio: 16 / 9;
+  width: calc(2.25vw + 0.6rem);
+  aspect-ratio: 16 / 9;
 }
 
 .logo:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-
-
-
-
-
-
 .userFrame {
-    display: flex;
-    align-items: center;
-    gap: 0.7vw;
-    position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7vw;
+  position: relative;
 }
 
 .cartContainer {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 0.2vw;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.2vw;
 }
 
 .cart {
-    width: 1.15vw;
-    aspect-ratio: 98 / 93;
+  width: 1.15vw;
+  aspect-ratio: 98 / 93;
 }
 
 .cart:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-
-
-
 
 .profilePic {
-    display: none;
-    background-size: cover;
-    background-position: center;
-    height: 1.65vw;
-    width: 1.65vw;
-    aspect-ratio: 16/9;
-    border-radius: 2.5em;
-    cursor: pointer;
+  display: none;
+  background-size: cover;
+  background-position: center;
+  height: 1.65vw;
+  width: 1.65vw;
+  aspect-ratio: 16/9;
+  border-radius: 2.5em;
+  cursor: pointer;
 }
-
-
 
 .sessionFrame {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
 }
 
 .signInBtn {
-    color: #FFF;
-    font-size: calc(0.62vw + .25rem);
-    font-weight: 100;
+  color: #fff;
+  font-size: calc(0.62vw + 0.25rem);
+  font-weight: 100;
 }
 
 .signInBtn {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .signInBtn:hover {
-    border-bottom: 1px solid #0084D1;
-    color: #0084D1;
-    cursor: pointer;
+  border-bottom: 1px solid #0084d1;
+  color: #0084d1;
+  cursor: pointer;
 }
 
-
-
-
 .signOutContainer {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background: #050505;
-    position: absolute;
-    z-index: 3;
-    top: 2.2vw;
-    height: 1.8vw;
-    width: 100%;
-    right: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: #050505;
+  position: absolute;
+  z-index: 3;
+  top: 2.2vw;
+  height: 1.8vw;
+  width: 100%;
+  right: 0;
 }
 
 .signOutBtn {
-    font-size: calc(0.62vw + .25rem);
-    font-weight: 100;
-    border: none;
-    background: #050505;
+  font-size: calc(0.62vw + 0.25rem);
+  font-weight: 100;
+  border: none;
+  background: #050505;
 }
 
 .signOutBtn:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-
-
-
-
-
-
-
-
 
 /* Phones */
 @media (min-width: 100px) and (max-width: 767px) {
-    .navbar {
-        display: none;
-    }
-
+  .navbar {
+    display: none;
+  }
 }
-
 
 /* Tablet: */
 @media (min-width: 768px) and (max-width: 1023px) {
-    .navbar {
-        display: none;
-    }
-
+  .navbar {
+    display: none;
+  }
 }
