@@ -35,8 +35,8 @@
 /* Phones */
 @media (min-width: 100px) and (max-width: 767px) {
   .main {
-    gap: 14.5vw;
-    margin-bottom: 13.1vw;
+    gap: 20vw;
+    margin-bottom: 20.1vw;
   }
 
   .ReleasesSec {
@@ -63,8 +63,8 @@
 /* Phones */
 @media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
   .main {
-    gap: 14.5vw;
-    margin-bottom: 13.1vw;
+    gap: 20vw;
+    margin-bottom: 20.1vw;
   }
 
   .ReleasesSec {
