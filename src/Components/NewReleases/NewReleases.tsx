@@ -247,6 +247,7 @@ function NewReleases() {
         src={gamesContent[currentGame].icon}
         className={styles.gameIcon}
         loading="lazy"
+        alt={`${gamesContent[currentGame].name} icon`}
       />
     </>
   );
