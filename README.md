@@ -55,6 +55,15 @@ It includes a catalog of 40+ items.
 
 
 
+-- APIs used in this project ---
+
+1- Rawg.io API.
+
+2- Youtube Iframe API.
+
+
+
+
 -- How to start it --
 
 1- Download the repository from GitHub.
@@ -69,6 +78,17 @@ It includes a catalog of 40+ items.
 -- Project website ---
 
 https://playshop.netlify.app/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
