@@ -8,7 +8,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 96px;
+  gap: 3.6vw;
+  margin-bottom: 4.1vw;
 }
 
 .ReleasesSec {
@@ -34,8 +35,8 @@
 /* Phones */
 @media (min-width: 100px) and (max-width: 767px) {
   .main {
-    gap: 17vw;
-    min-height: 100vh;
+    gap: 14.5vw;
+    margin-bottom: 13.1vw;
   }
 
   .ReleasesSec {
@@ -62,8 +63,8 @@
 /* Phones */
 @media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
   .main {
-    gap: 17vw;
-    min-height: 100vh;
+    gap: 14.5vw;
+    margin-bottom: 13.1vw;
   }
 
   .ReleasesSec {
@@ -89,8 +90,8 @@
 /* Tablet   */
 @media (min-width: 768px) and (max-width: 1023px) {
   .main {
-    gap: 13vw;
-    min-height: 100vh;
+    gap: 10.5vw;
+    margin-bottom: 10.1vw;
   }
 
   .ReleasesSec {

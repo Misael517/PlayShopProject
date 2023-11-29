@@ -8,7 +8,7 @@ interface Game {
     name: string;
     icon: string;
     searchIcon: string;
-    link?: string;
+    link: string;
     price: number;
     comingSoon: boolean;
     isOnSale: boolean;
@@ -18,6 +18,7 @@ interface Game {
     cartPrice: number;
     apiSlug: string;
     trailer: string;
+    descriptionIndex: number;
   };
 }
 
@@ -48,13 +49,24 @@ function ReviewsFeed({ currentGame }: Game) {
     queryKey: ["gamesData"],
   });
 
-  const cleanDesc =
+  const cleanDesc: string =
     gamesData?.description_raw
       .replace(/\b(About|Setting|Characters|Gameplay|###)\b/g, "")
       .replace("###", "") || "";
 
-  const delimiters = /[.!]/;
-  const paragraphs = cleanDesc.split(delimiters);
+  const firstLine: string[] = cleanDesc.split(/[\n,!]/);
+
+  const paragraphs: string[] = cleanDesc.split(/[\n,™]/);
+
+  function fixDescription() {
+    if (gamesData === undefined) {
+      paragraphs.push(
+        "The description of this game is not available right now. This game has not been released yet."
+      );
+    }
+  }
+
+  fixDescription();
 
   return (
     <>
@@ -63,13 +75,15 @@ function ReviewsFeed({ currentGame }: Game) {
           {gamesData?.name ? gamesData?.name : currentGame.name}
         </h1>
 
-        {paragraphs.splice(0, 1).map((text: string, index: number) => {
-          return (
-            <p className={styles.titleDesc} key={index}>
-              {text.length > 0 ? text : "This game is not available"}
-            </p>
-          );
-        })}
+        {firstLine
+          .splice(0, firstLine.length > 2 ? 1 : 0)
+          .map((text: string, index: number) => {
+            return (
+              <p className={styles.titleDesc} key={index}>
+                {text.length > 0 ? text : " "}
+              </p>
+            );
+          })}
       </div>
 
       <div className={styles.videoContainer}>
@@ -82,7 +96,9 @@ function ReviewsFeed({ currentGame }: Game) {
         ></iframe>
 
         <p className={styles.gameDescription}>
-          {paragraphs ? paragraphs.splice(0, 5) : "Description not Available"}
+          {paragraphs.length > 1 && firstLine.length > 2
+            ? paragraphs.splice(1, currentGame.descriptionIndex)
+            : paragraphs}
         </p>
       </div>
 
@@ -110,7 +126,7 @@ function ReviewsFeed({ currentGame }: Game) {
                                   ? "#ffbd3f"
                                   : item.metascore >= 0
                                   ? "#ff6874"
-                                  : "",
+                                  : "#000",
                             }}
                           >
                             <span className={styles.circleInside}>
@@ -210,7 +226,7 @@ function ReviewsFeed({ currentGame }: Game) {
                 {gamesData?.genres.map((item: genres) => {
                   return (
                     <a className={styles.detailsText} key={item.id} href="#">
-                      {item.name ? item.name : "No Available"}
+                      {item.name.length > 0 ? item.name : "No Available"}
                     </a>
                   );
                 })}

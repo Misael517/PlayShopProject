@@ -1,12 +1,7 @@
 // import styles from './App.module.css'
 
 function App() {
-
-  return (
-    <>
-
-    </>
-  )
+  return <></>;
 }
 
-export default App
+export default App;

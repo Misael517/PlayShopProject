@@ -1,6 +1,7 @@
 import { memo, lazy, Suspense } from "react";
 import { RootState } from "../../app/store";
 import { useSelector } from "react-redux";
+import { useQuery } from "@tanstack/react-query";
 import useGetImages from "../../Hooks/useGetImages";
 import styles from "./GamesPage.module.css";
 import jsonData from "../../assets/gamesInfo.json";
@@ -28,6 +29,13 @@ const currentGame = jsonData[currentIndex];
 
 function GamesPages() {
   useSelector((state: RootState) => state.gamesPages.contentID);
+
+  const getGamesInfo = `https://api.rawg.io/api/games/${currentGame.apiSlug}?key=cf132742c746463da1769589de43d833`;
+
+  const { data: gamesData } = useQuery({
+    queryFn: () => fetch(getGamesInfo).then((response) => response.json()),
+    queryKey: ["gamesData"],
+  });
 
   // Save the images in cache
   const {
@@ -97,14 +105,12 @@ function GamesPages() {
 
   return (
     <Suspense>
-      {/* This is the navbar */}
       <header className={styles.header}>
         <Suspense>
           <Navbar />
         </Suspense>
       </header>
 
-      {/* This is the main part of the body */}
       <main className={styles.main}>
         <section className={styles.section1}>
           <GameContent
@@ -114,12 +120,16 @@ function GamesPages() {
           />
         </section>
 
-        <section className={styles.section2}>
+        <section
+          className={styles.section2}
+          style={{
+            display: gamesData?.name ? "flex" : "none",
+          }}
+        >
           <ReviewsFeed currentGame={currentGame} />
         </section>
       </main>
 
-      {/* This is the footer, the end of the page */}
       <footer className={styles.footer}>
         <Suspense>
           <Footer />

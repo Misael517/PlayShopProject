@@ -6,7 +6,7 @@
   background-size: cover;
   width: 66.8%;
   min-height: 100%;
-  transition: 200ms;
+  transition: 300ms;
   position: relative;
 }
 
@@ -56,7 +56,7 @@
   font-size: 3.75vw;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
+  line-height: 3.8vw;
   text-align: left;
   font-display: swap;
 }
@@ -162,7 +162,7 @@
     width: 100%;
     background-size: cover;
     background-position: 40%;
-    transition: 300ms;
+    transition: 400ms;
   }
 
   .itemsDisplay::before {
@@ -275,7 +275,7 @@
     width: 100%;
     background-size: cover;
     background-position: 40%;
-    transition: 300ms;
+    transition: 400ms;
   }
 
   .itemsDisplay::before {
@@ -390,7 +390,7 @@
     width: 100%;
     background-size: cover;
     background-position: 40%;
-    transition: 300ms;
+    transition: 400ms;
   }
 
   .itemsDisplay::before {

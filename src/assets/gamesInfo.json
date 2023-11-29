@@ -13,7 +13,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "grand-theft-auto-v",
-    "trailer": "QkkoHAzjnUs"
+    "trailer": "QkkoHAzjnUs",
+    "descriptionIndex": 9
   },
   {
     "id": 2,
@@ -29,7 +30,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "elden-ring",
-    "trailer": "AKXiKBnzpBQ"
+    "trailer": "AKXiKBnzpBQ",
+    "descriptionIndex": 18
   },
   {
     "id": 3,
@@ -48,7 +50,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "stray-2",
-    "trailer": "kJawWyRUOBM"
+    "trailer": "kJawWyRUOBM",
+    "descriptionIndex": 12
   },
   {
     "id": 4,
@@ -64,7 +67,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "horizon-zero-dawn-2",
-    "trailer": "UxDWGW7Z67I"
+    "trailer": "UxDWGW7Z67I",
+    "descriptionIndex": 11
   },
   {
     "id": 5,
@@ -80,7 +84,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "a-plague-tale-requiem",
-    "trailer": "qIbzwb8vzNI"
+    "trailer": "qIbzwb8vzNI",
+    "descriptionIndex": 14
   },
   {
     "id": 6,
@@ -96,7 +101,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "the-callisto-protocol",
-    "trailer": "pihqx8XQ3r4"
+    "trailer": "pihqx8XQ3r4",
+    "descriptionIndex": 10
   },
   {
     "id": 7,
@@ -112,7 +118,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "need-for-speed-unbound",
-    "trailer": "H2Y8XCe7F9E"
+    "trailer": "H2Y8XCe7F9E",
+    "descriptionIndex": 9
   },
   {
     "id": 8,
@@ -128,7 +135,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "batman-gotham-knights",
-    "trailer": "wIXJAqs9dG4"
+    "trailer": "wIXJAqs9dG4",
+    "descriptionIndex": 10
   },
   {
     "id": 9,
@@ -144,7 +152,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "High-On-Life",
-    "trailer": "kx56ecTCbOU"
+    "trailer": "kx56ecTCbOU",
+    "descriptionIndex": 10
   },
   {
     "id": 10,
@@ -160,7 +169,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "Sonic-Frontiers",
-    "trailer": "t4Mnp5A5iG4"
+    "trailer": "t4Mnp5A5iG4",
+    "descriptionIndex": 10
   },
   {
     "id": 11,
@@ -176,7 +186,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "Kirby-and-the-forgotten-land",
-    "trailer": "H3LAkr0ANgw"
+    "trailer": "H3LAkr0ANgw",
+    "descriptionIndex": 10
   },
   {
     "id": 12,
@@ -192,7 +203,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "Dying-Light-2",
-    "trailer": "68bZ1LKKh7Q"
+    "trailer": "68bZ1LKKh7Q",
+    "descriptionIndex": 10
   },
   {
     "id": 13,
@@ -208,7 +220,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "The-Witcher-3-wild-hunt",
-    "trailer": "Vr27jM9Lk6M"
+    "trailer": "Vr27jM9Lk6M",
+    "descriptionIndex": 10
   },
   {
     "id": 14,
@@ -224,7 +237,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "God-of-war-Ragnarok",
-    "trailer": "hfJ4Km46A-0"
+    "trailer": "hfJ4Km46A-0",
+    "descriptionIndex": 10
   },
   {
     "id": 15,
@@ -240,7 +254,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "cyberpunk-2077",
-    "trailer": "8X2kIfS6fb8"
+    "trailer": "8X2kIfS6fb8",
+    "descriptionIndex": 11
   },
   {
     "id": 16,
@@ -256,7 +271,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "Kena-bridge-of-spirits",
-    "trailer": "pWh5388AEHw"
+    "trailer": "pWh5388AEHw",
+    "descriptionIndex": 10
   },
   {
     "id": 17,
@@ -272,7 +288,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "Assetto-Corsa-Competizione",
-    "trailer": "CYncAnd31Q8"
+    "trailer": "CYncAnd31Q8",
+    "descriptionIndex": 11
   },
   {
     "id": 18,
@@ -288,7 +305,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "Forza-Horizon-5",
-    "trailer": "FYH9n37B7Yw"
+    "trailer": "FYH9n37B7Yw",
+    "descriptionIndex": 14
   },
   {
     "id": 19,
@@ -304,7 +322,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "Destiny-2",
-    "trailer": "SEn-HzPaLOo"
+    "trailer": "SEn-HzPaLOo",
+    "descriptionIndex": 4
   },
   {
     "id": 20,
@@ -320,7 +339,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "Doom-Eternal",
-    "trailer": "_oVwrpfo_QA"
+    "trailer": "_oVwrpfo_QA",
+    "descriptionIndex": 13
   },
   {
     "id": 21,
@@ -336,7 +356,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "Horizon-Zero-Dawn",
-    "trailer": "wzx96gYA8ek"
+    "trailer": "wzx96gYA8ek",
+    "descriptionIndex": 5
   },
   {
     "id": 22,
@@ -352,7 +373,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "Assassins-Creed-Valhalla",
-    "trailer": "ssrNcwxALS4"
+    "trailer": "ssrNcwxALS4",
+    "descriptionIndex": 10
   },
   {
     "id": 23,
@@ -368,7 +390,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "jedi-the-fallen-order",
-    "trailer": "0GLbwkfhYZk"
+    "trailer": "0GLbwkfhYZk",
+    "descriptionIndex": 10
   },
   {
     "id": 24,
@@ -384,7 +407,8 @@
     "itemAmount": 1,
     "cartPrice": 39.99,
     "apiSlug": "Mortal-Kombat-X",
-    "trailer": "Ci6lMQNLKZU"
+    "trailer": "Ci6lMQNLKZU",
+    "descriptionIndex": 7
   },
   {
     "id": 25,
@@ -400,7 +424,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "stalker-2",
-    "trailer": "0ZqMt74hO6U"
+    "trailer": "0ZqMt74hO6U",
+    "descriptionIndex": 10
   },
   {
     "id": 26,
@@ -416,7 +441,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "Black-Myth-Wu-Kong",
-    "trailer": "O2nNljv0MOw"
+    "trailer": "O2nNljv0MOw",
+    "descriptionIndex": 11
   },
   {
     "id": 27,
@@ -432,7 +458,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "Suicide-Squad-kill-the-justice-league",
-    "trailer": "2EVFYstVuVk"
+    "trailer": "2EVFYstVuVk",
+    "descriptionIndex": 7
   },
   {
     "id": 28,
@@ -447,8 +474,9 @@
     "actualPrice": 0,
     "itemAmount": 1,
     "cartPrice": 0,
-    "apiSlug": "",
-    "trailer": ""
+    "apiSlug": "Rise-of-the-ronin",
+    "trailer": "0gwsQvDGh4o",
+    "descriptionIndex": 10
   },
   {
     "id": 29,
@@ -464,7 +492,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "Forza-Motorsport-2020",
-    "trailer": "em4gv1Ietko"
+    "trailer": "em4gv1Ietko",
+    "descriptionIndex": 10
   },
   {
     "id": 30,
@@ -480,7 +509,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "starfield",
-    "trailer": "kfYEiTdsyas"
+    "trailer": "kfYEiTdsyas",
+    "descriptionIndex": 10
   },
   {
     "id": 31,
@@ -496,7 +526,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "the-day-before-2",
-    "trailer": "xyYz8uo87I8"
+    "trailer": "xyYz8uo87I8",
+    "descriptionIndex": 12
   },
   {
     "id": 32,
@@ -512,7 +543,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "Robocop-rogue-city",
-    "trailer": "FaNmYn4Rcac"
+    "trailer": "FaNmYn4Rcac",
+    "descriptionIndex": 11
   },
   {
     "id": 33,
@@ -528,7 +560,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "lies-of-p",
-    "trailer": "kXZoKdr-xeo"
+    "trailer": "kXZoKdr-xeo",
+    "descriptionIndex": 10
   },
   {
     "id": 34,
@@ -544,7 +577,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "Immortals-Of-Aveum",
-    "trailer": "mNP3ztvNBFI"
+    "trailer": "mNP3ztvNBFI",
+    "descriptionIndex": 19
   },
   {
     "id": 35,
@@ -560,7 +594,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "final-fantasy-xvi",
-    "trailer": "wvunu2e29tc"
+    "trailer": "wvunu2e29tc",
+    "descriptionIndex": 10
   },
   {
     "id": 36,
@@ -576,7 +611,8 @@
     "itemAmount": 1,
     "cartPrice": 0,
     "apiSlug": "pikmin-4",
-    "trailer": "WtY29lvEup8"
+    "trailer": "WtY29lvEup8",
+    "descriptionIndex": 11
   },
   {
     "id": 37,
@@ -592,7 +628,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "Vampire-The-Masquerade-Bloodlines-2",
-    "trailer": "2lKb7X9_T_w"
+    "trailer": "2lKb7X9_T_w",
+    "descriptionIndex": 6
   },
   {
     "id": 38,
@@ -608,7 +645,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "Hogwarts-Legacy",
-    "trailer": "1O6Qstncpnc"
+    "trailer": "1O6Qstncpnc",
+    "descriptionIndex": 6
   },
   {
     "id": 39,
@@ -624,7 +662,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "Atomic-heart",
-    "trailer": "jLmukRHiXUE"
+    "trailer": "jLmukRHiXUE",
+    "descriptionIndex": 10
   },
   {
     "id": 40,
@@ -640,7 +679,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "Dead-space-5",
-    "trailer": "ctQl9wa3ydE"
+    "trailer": "ctQl9wa3ydE",
+    "descriptionIndex": 10
   },
   {
     "id": 41,
@@ -656,7 +696,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "star-wars-jedi-survivor",
-    "trailer": "VRaobDJjiec"
+    "trailer": "VRaobDJjiec",
+    "descriptionIndex": 10
   },
   {
     "id": 42,
@@ -671,8 +712,9 @@
     "actualPrice": 0,
     "itemAmount": 1,
     "cartPrice": 59.99,
-    "apiSlug": "Resident-Evil-4",
-    "trailer": "j5Ic2z3_xp0"
+    "apiSlug": "Resident-Evil-4-2023",
+    "trailer": "j5Ic2z3_xp0",
+    "descriptionIndex": 12
   },
   {
     "id": 43,
@@ -688,7 +730,8 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "the-legend-of-zelda-breath-of-the-wild-sequel",
-    "trailer": "2SNF4M_v7wc"
+    "trailer": "2SNF4M_v7wc",
+    "descriptionIndex": 10
   },
   {
     "id": 44,
@@ -704,6 +747,7 @@
     "itemAmount": 1,
     "cartPrice": 59.99,
     "apiSlug": "redfall",
-    "trailer": "8cCFN77wtHY"
+    "trailer": "8cCFN77wtHY",
+    "descriptionIndex": 5
   }
 ]

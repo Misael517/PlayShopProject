@@ -23,7 +23,7 @@ interface Game {
     name: string;
     icon: string;
     searchIcon: string;
-    link?: string;
+    link: string;
     price: number;
     comingSoon: boolean;
     isOnSale: boolean;
@@ -33,6 +33,7 @@ interface Game {
     cartPrice: number;
     apiSlug: string;
     trailer: string;
+    descriptionIndex: number;
   };
 }
 

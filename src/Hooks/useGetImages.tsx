@@ -1,18 +1,22 @@
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from "@tanstack/react-query";
 
-function useGetImages(queryKey: string, imagesDirectory: string, name: string, format: string, numb: number) {
-
+function useGetImages(
+  queryKey: string,
+  imagesDirectory: string,
+  name: string,
+  format: string,
+  numb: number
+) {
   function getImages() {
-    const images: string[] = []
+    const images: string[] = [];
     for (let i = 1; i <= numb; i++) {
-      const url = `${imagesDirectory}${name}${i}${format}`
+      const url = `${imagesDirectory}${name}${i}${format}`;
 
-      images.push(url)
+      images.push(url);
     }
 
     return images;
   }
-
 
   return useQuery({ queryKey: [queryKey], queryFn: getImages });
 }

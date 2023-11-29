@@ -2,8 +2,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.55vw;
-  width: 100%;
+  gap: 0.3vw;
+  width: 82%;
   flex-direction: column;
 }
 
@@ -11,6 +11,8 @@
   color: black;
   text-transform: uppercase;
   font-size: 2.8vw;
+  text-align: center;
+  min-width: 100%;
 }
 
 .titleDesc {
@@ -18,34 +20,35 @@
   font-size: 1.09vw;
   font-weight: 300;
   line-height: 2vw;
-  width: 45%;
   text-align: center;
+  width: 62%;
 }
 
 .videoContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 94%;
   gap: 2.8%;
+  aspect-ratio: 3 / 1;
 }
 
 .gamesTrailer {
   width: 42vw;
-  border-radius: 28px;
+  border-radius: 1vw;
   aspect-ratio: 16 / 9;
-  box-shadow: 0px 4px 12px 4px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 4px 12px 4px rgba(0, 0, 0, 0.8);
   border: none;
 }
 
 .gameDescription {
   color: black;
   font-size: 0.85vw;
-  width: 37%;
+  max-width: 40%;
   line-height: 1.84vw;
   padding: 1.5%;
   font-weight: 300;
-  border-radius: 28px;
+  border-radius: 1vw;
   background-color: rgba(0, 0, 0, 0.99);
   color: white;
 }
@@ -155,6 +158,89 @@
 
 .detailsText {
   color: black;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 0.7vw;
+}
+
+/* Phones: */
+@media (min-width: 100px) and (max-width: 767px) {
+  .titleContainer {
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3vw;
+    width: 82%;
+    flex-direction: column;
+  }
+
+  .videoContainer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 94%;
+    gap: 2.8%;
+    aspect-ratio: 3 / 1;
+  }
+
+  .gameExtras {
+    display: none;
+    flex-direction: column;
+    gap: 0.9vw;
+    width: 94.1%;
+  }
+}
+/* Phones */
+@media (orientation: landscape) and (min-width: 100px) and (max-width: 767px) {
+  .titleContainer {
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3vw;
+    width: 82%;
+    flex-direction: column;
+  }
+
+  .videoContainer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 94%;
+    gap: 2.8%;
+    aspect-ratio: 3 / 1;
+  }
+
+  .gameExtras {
+    display: none;
+    flex-direction: column;
+    gap: 0.9vw;
+    width: 94.1%;
+  }
+}
+
+/* Tablet: */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .titleContainer {
+    display: none;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.3vw;
+    width: 82%;
+    flex-direction: column;
+  }
+
+  .videoContainer {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 94%;
+    gap: 2.8%;
+    aspect-ratio: 3 / 1;
+  }
+
+  .gameExtras {
+    display: none;
+    flex-direction: column;
+    gap: 0.9vw;
+    width: 94.1%;
+  }
 }

@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // interfaces:
-export interface Game {
+interface Game {
   id: number;
   name: string;
   icon: string;
   searchIcon: string;
-  link?: string;
+  link: string;
   price: number;
   comingSoon: boolean;
   isOnSale: boolean;
@@ -16,6 +16,7 @@ export interface Game {
   cartPrice: number;
   apiSlug: string;
   trailer: string;
+  descriptionIndex: number;
 }
 
 interface initialState {
